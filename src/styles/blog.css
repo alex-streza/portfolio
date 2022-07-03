@@ -26,7 +26,7 @@
 
   /* Typography */
   h1 {
-    @apply text-5xl leading-[60px];
+    @apply text-3xl leading-10 md:text-5xl md:leading-[60px];
   }
   h1:first-of-type {
     @apply mb-3;
@@ -39,7 +39,7 @@
   }
 
   h2 {
-    @apply text-4xl leading-[52px];
+    @apply text-2xl md:text-4xl md:leading-[52px];
   }
 
   a {
@@ -93,6 +93,6 @@
 
   /* POST CONTENT */
   .content {
-    @apply max-w-[65ch] mx-auto;
+    @apply max-w-[65ch] mx-auto p-5;
   }
 }
