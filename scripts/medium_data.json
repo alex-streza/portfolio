@@ -1,0 +1,985 @@
+{
+  "user_id": "fcaae663f248",
+  "articles": [
+    {
+      "id": "d0a111af5e19",
+      "tags": [
+        "humor",
+        "technology",
+        "software-development",
+        "stackoverflow",
+        "april-fools"
+      ],
+      "claps": 249,
+      "last_modified_at": "2022-04-05 05:02:50",
+      "published_at": "2022-04-05 05:02:50",
+      "url": "https://medium.com/@alex.streza/a-history-of-big-tech-april-fools-jokes-d0a111af5e19",
+      "image_url": "https://miro.medium.com/1*qWNoX4e4qtSqgy6lylDtcQ.png",
+      "lang": "en",
+      "publication_id": "*Self-Published*",
+      "title": "A History Of Big Tech April Fool’s Jokes",
+      "word_count": 1374,
+      "reading_time": 6.5349056603774,
+      "voters": 7,
+      "topics": [
+        "programming"
+      ],
+      "subtitle": "Stack Overflow Edition",
+      "author": "fcaae663f248"
+    },
+    {
+      "id": "94d1c9bf75bf",
+      "tags": [
+        "github",
+        "open-source",
+        "programming",
+        "technology",
+        "devops"
+      ],
+      "claps": 88,
+      "last_modified_at": "2022-04-07 02:13:14",
+      "published_at": "2022-03-29 05:02:41",
+      "url": "https://javascript.plainenglish.io/when-github-goes-down-the-world-comes-apart-94d1c9bf75bf",
+      "image_url": "https://miro.medium.com/1*SK5xbdHbO0L2T_KX390bew.png",
+      "lang": "en",
+      "publication_id": "4b3a1ed4f11c",
+      "title": "When GitHub Goes Down the World Comes Apart",
+      "word_count": 1110,
+      "reading_time": 5.138679245283,
+      "voters": 5,
+      "topics": [
+        "programming"
+      ],
+      "subtitle": "Or Does It Truly?",
+      "author": "fcaae663f248"
+    },
+    {
+      "id": "23901deed017",
+      "tags": [
+        "artificial-intelligence",
+        "deepfakes",
+        "technology",
+        "humor",
+        "open-source"
+      ],
+      "claps": 1642,
+      "last_modified_at": "2022-03-21 15:49:54",
+      "published_at": "2022-03-07 06:02:55",
+      "url": "https://javascript.plainenglish.io/i-deep-faked-myself-in-every-meeting-for-a-whole-week-23901deed017",
+      "image_url": "https://miro.medium.com/1*kYZIAxCrKFHZAUgL71vvzw.png",
+      "lang": "en",
+      "publication_id": "4b3a1ed4f11c",
+      "title": "I Deep Faked Myself In Every Meeting For A Whole Week",
+      "word_count": 1034,
+      "reading_time": 5.0352201257862,
+      "voters": 366,
+      "topics": [
+        "artificial-intelligence",
+        "digital-life",
+        "visual-design"
+      ],
+      "subtitle": "Not even one person noticed.",
+      "author": "fcaae663f248"
+    },
+    {
+      "id": "6a99bdc075c8",
+      "tags": [
+        "artificial-intelligence",
+        "writing",
+        "startup",
+        "programming",
+        "saas"
+      ],
+      "claps": 142,
+      "last_modified_at": "2022-04-19 09:03:58",
+      "published_at": "2022-04-19 09:03:58",
+      "url": "https://medium.com/@alex.streza/i-build-what-ai-tells-me-to-and-why-you-should-too-6a99bdc075c8",
+      "image_url": "https://miro.medium.com/1*h-N3nqNmqN4hkcYYq2SKIA.png",
+      "lang": "en",
+      "publication_id": "*Self-Published*",
+      "title": "I Build What AI Tells Me To, And Why You Should Too",
+      "word_count": 727,
+      "reading_time": 3.2933962264151,
+      "voters": 17,
+      "topics": [
+        "artificial-intelligence"
+      ],
+      "subtitle": "AI as a Service",
+      "author": "fcaae663f248"
+    },
+    {
+      "id": "4aa920f932fc",
+      "tags": [
+        "writing",
+        "money",
+        "work",
+        "technology",
+        "side-hustle"
+      ],
+      "claps": 63,
+      "last_modified_at": "2022-04-11 05:02:37",
+      "published_at": "2022-04-11 05:02:37",
+      "url": "https://medium.com/@alex.streza/how-i-earn-1300-a-month-writing-stuff-people-actually-read-4aa920f932fc",
+      "image_url": "https://miro.medium.com/0*bbns4OUOBLnneDET",
+      "lang": "en",
+      "publication_id": "*Self-Published*",
+      "title": "How I Earn 1300$ A Month Writing Stuff People Actually Read",
+      "word_count": 814,
+      "reading_time": 3.6216981132075,
+      "voters": 4,
+      "topics": [
+        "writing"
+      ],
+      "subtitle": "Not an everyday writer",
+      "author": "fcaae663f248"
+    },
+    {
+      "id": "651d48b168f5",
+      "tags": [
+        "artificial-intelligence",
+        "books",
+        "horror",
+        "writing",
+        "art"
+      ],
+      "claps": 102,
+      "last_modified_at": "2022-03-22 12:37:47",
+      "published_at": "2022-03-22 06:03:08",
+      "url": "https://medium.com/@alex.streza/how-i-generated-horror-book-covers-with-ai-651d48b168f5",
+      "image_url": "https://miro.medium.com/1*pd4T7Gqz9k_pX22172HwPw.png",
+      "lang": "en",
+      "publication_id": "*Self-Published*",
+      "title": "How I Generated Horror Book Covers With AI",
+      "word_count": 1152,
+      "reading_time": 5.4805031446541,
+      "voters": 8,
+      "topics": [
+        "visual-design",
+        "writing"
+      ],
+      "subtitle": "AI can create horror, oh and what horror",
+      "author": "fcaae663f248"
+    },
+    {
+      "id": "598a62f3560",
+      "tags": [
+        "ukraine",
+        "war",
+        "artificial-intelligence",
+        "technology",
+        "news"
+      ],
+      "claps": 104,
+      "last_modified_at": "2022-04-04 10:23:12",
+      "published_at": "2022-03-16 06:03:23",
+      "url": "https://python.plainenglish.io/artificial-intelligence-in-modern-warfare-598a62f3560",
+      "image_url": "https://miro.medium.com/1*IMog-6PSYQCGiww8rykTcA.png",
+      "lang": "en",
+      "publication_id": "78073def27b8",
+      "title": "Artificial Intelligence In Modern Warfare",
+      "word_count": 1173,
+      "reading_time": 5.559748427673,
+      "voters": 4,
+      "topics": [
+        "artificial-intelligence"
+      ],
+      "subtitle": "How AI Impacts Current Wars",
+      "author": "fcaae663f248"
+    },
+    {
+      "id": "17cb67ffa816",
+      "tags": [
+        "artificial-intelligence",
+        "art",
+        "technology",
+        "ai",
+        "python"
+      ],
+      "claps": 590,
+      "last_modified_at": "2022-03-31 06:36:35",
+      "published_at": "2022-03-11 06:03:31",
+      "url": "https://medium.com/geekculture/i-used-ai-to-create-marvelous-art-for-blog-images-17cb67ffa816",
+      "image_url": "https://miro.medium.com/1*EKO5gY_YIZkq79QF7xAZnQ.png",
+      "lang": "en",
+      "publication_id": "9758482ba857",
+      "title": "I Used AI To Create Marvelous Art For Blog Images",
+      "word_count": 948,
+      "reading_time": 4.777358490566,
+      "voters": 77,
+      "topics": [
+        "artificial-intelligence",
+        "machine-learning",
+        "visual-design",
+        "design"
+      ],
+      "subtitle": "Make your own art in seconds",
+      "author": "fcaae663f248"
+    },
+    {
+      "id": "b9f20b804186",
+      "tags": [
+        "technology",
+        "automation",
+        "no-code",
+        "writing",
+        "programming"
+      ],
+      "claps": 164,
+      "last_modified_at": "2022-03-10 07:29:36",
+      "published_at": "2022-03-04 06:03:24",
+      "url": "https://javascript.plainenglish.io/how-im-automating-sharing-articles-across-multiple-social-media-b9f20b804186",
+      "image_url": "https://miro.medium.com/0*uRdLs_iwULpjr4uE.jpg",
+      "lang": "en",
+      "publication_id": "4b3a1ed4f11c",
+      "title": "How I’m Automating Sharing Articles Across Multiple Social Media",
+      "word_count": 991,
+      "reading_time": 4.7896226415094,
+      "voters": 7,
+      "topics": {},
+      "subtitle": "Automation > Manual Labour",
+      "author": "fcaae663f248"
+    },
+    {
+      "id": "59e4dc638873",
+      "tags": [
+        "blockchain",
+        "artificial-intelligence",
+        "technology",
+        "programming",
+        "nft"
+      ],
+      "claps": 108,
+      "last_modified_at": "2022-02-28 14:04:58",
+      "published_at": "2022-02-28 06:01:15",
+      "url": "https://javascript.plainenglish.io/how-im-turning-my-ai-powered-saas-into-an-nft-minter-59e4dc638873",
+      "image_url": "https://miro.medium.com/1*EkysbYZDDZuzs1i0wZ57pw.png",
+      "lang": "en",
+      "publication_id": "4b3a1ed4f11c",
+      "title": "How I’m Turning My AI-Powered SaaS Into An NFT Minter",
+      "word_count": 1071,
+      "reading_time": 5.0915094339623,
+      "voters": 7,
+      "topics": [
+        "cryptocurrency"
+      ],
+      "subtitle": "And why I’m doing such blasphemy",
+      "author": "fcaae663f248"
+    },
+    {
+      "id": "6ea0d83980c6",
+      "tags": [
+        "hacking",
+        "javascript",
+        "programming",
+        "web-development",
+        "technology"
+      ],
+      "claps": 458,
+      "last_modified_at": "2022-02-28 14:01:26",
+      "published_at": "2022-02-25 06:03:09",
+      "url": "https://javascript.plainenglish.io/nowadays-inspecting-html-is-considered-hacking-6ea0d83980c6",
+      "image_url": "https://miro.medium.com/1*unzpkt9zgl3TG4L3oUsC8Q.png",
+      "lang": "en",
+      "publication_id": "4b3a1ed4f11c",
+      "title": "Nowadays, Inspecting HTML Is Considered Hacking",
+      "word_count": 779,
+      "reading_time": 3.7729559748428,
+      "voters": 74,
+      "topics": [
+        "javascript",
+        "programming",
+        "technology"
+      ],
+      "subtitle": "Browser DevTools = Hacking?",
+      "author": "fcaae663f248"
+    },
+    {
+      "id": "42b1b683c6d6",
+      "tags": [
+        "artificial-intelligence",
+        "productivity",
+        "programming",
+        "technology",
+        "javascript"
+      ],
+      "claps": 102,
+      "last_modified_at": "2022-02-27 22:14:55",
+      "published_at": "2022-02-23 06:01:08",
+      "url": "https://javascript.plainenglish.io/how-i-boosted-my-coding-speed-and-productivity-with-ai-42b1b683c6d6",
+      "image_url": "https://miro.medium.com/0*TQ1yHsl5OpYuGD1v.jpg",
+      "lang": "en",
+      "publication_id": "4b3a1ed4f11c",
+      "title": "How I Boosted My Coding Speed and Productivity with AI",
+      "word_count": 671,
+      "reading_time": 3.4820754716981,
+      "voters": 4,
+      "topics": [
+        "programming"
+      ],
+      "subtitle": "AI Will Replace Coding Or Will It?",
+      "author": "fcaae663f248"
+    },
+    {
+      "id": "f7c5b6ab3908",
+      "tags": [
+        "programming",
+        "github",
+        "javascript",
+        "web-development",
+        "software-development"
+      ],
+      "claps": 66,
+      "last_modified_at": "2022-02-24 11:14:01",
+      "published_at": "2022-02-21 06:01:09",
+      "url": "https://javascript.plainenglish.io/top-10-most-popular-github-repos-leaderboard-f7c5b6ab3908",
+      "image_url": "https://miro.medium.com/1*LSYJIrhkEgd8KlpPQ6OOXg.png",
+      "lang": "en",
+      "publication_id": "4b3a1ed4f11c",
+      "title": "Top 10 Most Popular GitHub Repos Leaderboard",
+      "word_count": 911,
+      "reading_time": 4.6877358490566,
+      "voters": 8,
+      "topics": [
+        "javascript",
+        "programming"
+      ],
+      "subtitle": "React isn’t number one?",
+      "author": "fcaae663f248"
+    },
+    {
+      "id": "d072e4eac3ab",
+      "tags": [
+        "programming",
+        "artificial-intelligence",
+        "technology",
+        "college",
+        "education"
+      ],
+      "claps": 23,
+      "last_modified_at": "2022-02-19 10:39:42",
+      "published_at": "2022-02-17 06:02:08",
+      "url": "https://medium.com/geekculture/i-tried-opencv-face-recognition-in-c-d072e4eac3ab",
+      "image_url": "https://miro.medium.com/1*BnfS5mpV0sfZbms6Qk_zZg.png",
+      "lang": "en",
+      "publication_id": "9758482ba857",
+      "title": "I Tried OpenCV Face Recognition in C++",
+      "word_count": 835,
+      "reading_time": 4.2009433962264,
+      "voters": 4,
+      "topics": [
+        "machine-learning",
+        "programming"
+      ],
+      "subtitle": "It was a horrible & creepy mistake",
+      "author": "fcaae663f248"
+    },
+    {
+      "id": "7d2b1575be01",
+      "tags": [
+        "programming",
+        "javascript",
+        "legal",
+        "gdpr",
+        "technology"
+      ],
+      "claps": 270,
+      "last_modified_at": "2022-02-17 08:36:35",
+      "published_at": "2022-02-14 06:03:17",
+      "url": "https://javascript.plainenglish.io/how-google-fonts-became-illegal-in-europe-7d2b1575be01",
+      "image_url": "https://miro.medium.com/1*q9RQfMwULW7MW3drQkaH2A.png",
+      "lang": "en",
+      "publication_id": "4b3a1ed4f11c",
+      "title": "How Google Fonts Became Illegal in Europe",
+      "word_count": 915,
+      "reading_time": 4.6528301886792,
+      "voters": 54,
+      "topics": [
+        "cybersecurity",
+        "programming"
+      ],
+      "subtitle": "Cookies are everywhere",
+      "author": "fcaae663f248"
+    },
+    {
+      "id": "8afb053b5f3e",
+      "tags": [
+        "saas",
+        "javascript",
+        "artificial-intelligence",
+        "startup",
+        "software-development"
+      ],
+      "claps": 166,
+      "last_modified_at": "2022-02-09 07:30:33",
+      "published_at": "2022-02-08 15:01:51",
+      "url": "https://javascript.plainenglish.io/generate-app-ideas-with-openais-gpt-3-8afb053b5f3e",
+      "image_url": "https://miro.medium.com/1*TFqK3yknT168sj0LfWLX8g.png",
+      "lang": "en",
+      "publication_id": "4b3a1ed4f11c",
+      "title": "Generate App Ideas With OpenAI’s GPT-3",
+      "word_count": 562,
+      "reading_time": 3.0707547169811,
+      "voters": 13,
+      "topics": [
+        "design"
+      ],
+      "subtitle": "GenIdea, an OpenAI GPT-3 powered web app that will boost everyone’s inspiration and creativity to the next level.",
+      "author": "fcaae663f248"
+    },
+    {
+      "id": "313aa59c3e78",
+      "tags": [
+        "startup",
+        "saas",
+        "javascript",
+        "software-development",
+        "programming"
+      ],
+      "claps": 892,
+      "last_modified_at": "2022-02-09 07:26:18",
+      "published_at": "2022-02-07 09:03:42",
+      "url": "https://javascript.plainenglish.io/how-i-launched-a-saas-in-60-days-with-an-empty-pocket-313aa59c3e78",
+      "image_url": "https://miro.medium.com/1*VNjd_sg9sYsaaburpPm6PA.png",
+      "lang": "en",
+      "publication_id": "4b3a1ed4f11c",
+      "title": "How I Launched a SaaS in 60 Days with an Empty Pocket",
+      "word_count": 1296,
+      "reading_time": 5.9405660377358,
+      "voters": 177,
+      "topics": [
+        "startups",
+        "programming"
+      ],
+      "subtitle": "Building a SaaS is expensive unless you are a developer.",
+      "author": "fcaae663f248"
+    },
+    {
+      "id": "c61a62be24ba",
+      "tags": [
+        "javascript",
+        "ux",
+        "programming",
+        "web-development",
+        "software-development"
+      ],
+      "claps": 137,
+      "last_modified_at": "2022-01-31 12:12:38",
+      "published_at": "2022-01-27 10:02:26",
+      "url": "https://javascript.plainenglish.io/learning-blender-made-me-a-better-software-developer-c61a62be24ba",
+      "image_url": "https://miro.medium.com/1*KTM29ODeFrmr050nQe5SjA.png",
+      "lang": "en",
+      "publication_id": "4b3a1ed4f11c",
+      "title": "Learning Blender Made Me A Better Software Developer",
+      "word_count": 984,
+      "reading_time": 4.7632075471698,
+      "voters": 16,
+      "topics": [
+        "javascript",
+        "programming"
+      ],
+      "subtitle": "Blender’s interface is scary at first sight but it shouldn’t be",
+      "author": "fcaae663f248"
+    },
+    {
+      "id": "c14caba386a8",
+      "tags": [
+        "javascript",
+        "open-source",
+        "programming",
+        "web-development",
+        "software-development"
+      ],
+      "claps": 256,
+      "last_modified_at": "2022-01-21 13:29:47",
+      "published_at": "2022-01-11 09:30:24",
+      "url": "https://javascript.plainenglish.io/open-source-a-horror-story-c14caba386a8",
+      "image_url": "https://miro.medium.com/1*MuKzDwX6gFMou3h4FTfYqg.png",
+      "lang": "en",
+      "publication_id": "4b3a1ed4f11c",
+      "title": "Open Source — A Horror Story",
+      "word_count": 1109,
+      "reading_time": 5.1349056603774,
+      "voters": 36,
+      "topics": [
+        "javascript",
+        "programming"
+      ],
+      "subtitle": "What happened to Faker.js and its creator?",
+      "author": "fcaae663f248"
+    },
+    {
+      "id": "2638f456647f",
+      "tags": [
+        "javascript",
+        "programming",
+        "web-development",
+        "software-development",
+        "coding"
+      ],
+      "claps": 53,
+      "last_modified_at": "2022-01-21 13:22:41",
+      "published_at": "2022-01-09 13:54:19",
+      "url": "https://javascript.plainenglish.io/new-year-new-javascript-features-from-es2022-2638f456647f",
+      "image_url": "https://miro.medium.com/1*tfkSTd2EWWzFgGELNJuNwQ.png",
+      "lang": "en",
+      "publication_id": "4b3a1ed4f11c",
+      "title": "New Year, New JavaScript Features from ES2022",
+      "word_count": 1494,
+      "reading_time": 6.0210691823899,
+      "voters": 3,
+      "topics": [
+        "javascript"
+      ],
+      "subtitle": "Top-level await. Private #. At() & more. What’s coming in ES2022.",
+      "author": "fcaae663f248"
+    },
+    {
+      "id": "7a40d03ee8ca",
+      "tags": [
+        "social-media",
+        "programming",
+        "self-improvement",
+        "investing",
+        "software-development"
+      ],
+      "claps": 13,
+      "last_modified_at": "2022-01-22 09:13:08",
+      "published_at": "2022-01-06 11:43:37",
+      "url": "https://medium.com/geekculture/from-developer-to-youtuber-to-financial-freedom-7a40d03ee8ca",
+      "image_url": "https://miro.medium.com/1*1_IZROzIjFHXfKqz-hVgbw.png",
+      "lang": "en",
+      "publication_id": "9758482ba857",
+      "title": "Financial Freedom. Developer to Content Creator",
+      "word_count": 1148,
+      "reading_time": 5.2820754716981,
+      "voters": 4,
+      "topics": [
+        "money",
+        "freelancing",
+        "work"
+      ],
+      "subtitle": "5 steps to building multiple income streams",
+      "author": "fcaae663f248"
+    },
+    {
+      "id": "d30038db70be",
+      "tags": [
+        "blogging",
+        "new-year-eve",
+        "development",
+        "saas",
+        "productivity"
+      ],
+      "claps": 1,
+      "last_modified_at": "2022-01-08 11:45:13",
+      "published_at": "2021-12-31 22:03:06",
+      "url": "https://medium.com/@alex.streza/building-a-saas-on-new-years-eve-d30038db70be",
+      "image_url": "https://miro.medium.com/1*LcuJYMUJxugV56sT6rbG0w.png",
+      "lang": "en",
+      "publication_id": "*Self-Published*",
+      "title": "Building a SaaS on New Year’s Eve",
+      "word_count": 645,
+      "reading_time": 2.9839622641509,
+      "voters": 1,
+      "topics": [
+        "programming"
+      ],
+      "subtitle": "New Year’s Eve. Celebrating productively.",
+      "author": "fcaae663f248"
+    },
+    {
+      "id": "310ef73e9a70",
+      "tags": [
+        "react",
+        "javascript",
+        "web-development",
+        "programming",
+        "coding"
+      ],
+      "claps": 61,
+      "last_modified_at": "2022-01-24 06:25:29",
+      "published_at": "2021-12-27 10:11:42",
+      "url": "https://javascript.plainenglish.io/react-conf-2021-react-forget-310ef73e9a70",
+      "image_url": "https://miro.medium.com/1*k9IbrpOjBd9paWzDwY7WRw.png",
+      "lang": "en",
+      "publication_id": "4b3a1ed4f11c",
+      "title": "React Conf 2021 — React Forget",
+      "word_count": 344,
+      "reading_time": 1.8481132075472,
+      "voters": 6,
+      "topics": [
+        "javascript"
+      ],
+      "subtitle": "A Christmas miracle — End of ‘memo all the things’",
+      "author": "fcaae663f248"
+    },
+    {
+      "id": "4fa48923097a",
+      "tags": [
+        "blockchain",
+        "solana-network",
+        "ethereum",
+        "react",
+        "javascript"
+      ],
+      "claps": 8,
+      "last_modified_at": "2021-11-14 21:35:36",
+      "published_at": "2021-11-14 21:35:36",
+      "url": "https://medium.com/@alex.streza/get-started-with-solana-blockchain-nft-minting-using-metaplex-4fa48923097a",
+      "image_url": "https://miro.medium.com/1*Ps6DKxfGvaVKPfjME6FzOA.png",
+      "lang": "en",
+      "publication_id": "*Self-Published*",
+      "title": "Get Started With Solana Blockchain NFT Minting using Metaplex",
+      "word_count": 831,
+      "reading_time": 4.0858490566038,
+      "voters": 4,
+      "topics": [
+        "cryptocurrency",
+        "blockchain",
+        "programming"
+      ],
+      "subtitle": "Crypto & NFTs have been all the rage in 2021 and the hype is far from over.",
+      "author": "fcaae663f248"
+    },
+    {
+      "id": "6cc4551494a3",
+      "tags": [
+        "javascript",
+        "programming",
+        "nodejs",
+        "web-security",
+        "software-development"
+      ],
+      "claps": 52,
+      "last_modified_at": "2021-08-31 08:29:26",
+      "published_at": "2021-08-31 06:05:20",
+      "url": "https://javascript.plainenglish.io/5-minutes-to-jwt-authentication-in-javascript-6cc4551494a3",
+      "image_url": "https://miro.medium.com/0*j_2zq5YwOaRhey1m",
+      "lang": "en",
+      "publication_id": "4b3a1ed4f11c",
+      "title": "JWT Authentication in JavaScript in 5 Minutes",
+      "word_count": 627,
+      "reading_time": 3.5660377358491,
+      "voters": 3,
+      "topics": [
+        "javascript"
+      ],
+      "subtitle": "How to use JWTs to authenticate users — Express JWT Middleware, Node.js Crypto & React",
+      "author": "fcaae663f248"
+    },
+    {
+      "id": "8d4ac3072b93",
+      "tags": [
+        "javascript",
+        "programming",
+        "react",
+        "unsplash",
+        "web-development"
+      ],
+      "claps": 58,
+      "last_modified_at": "2022-01-11 10:50:29",
+      "published_at": "2021-08-24 06:51:50",
+      "url": "https://javascript.plainenglish.io/generate-random-avatars-in-react-8d4ac3072b93",
+      "image_url": "https://miro.medium.com/0*iTxosbEPkS134kwv",
+      "lang": "en",
+      "publication_id": "4b3a1ed4f11c",
+      "title": "Generate Random Avatars in React",
+      "word_count": 457,
+      "reading_time": 3.2245283018868,
+      "voters": 7,
+      "topics": [
+        "javascript"
+      ],
+      "subtitle": "Funky and Sophisticated Random Avatar Generation APIs",
+      "author": "fcaae663f248"
+    },
+    {
+      "id": "228adb151b09",
+      "tags": [
+        "javascript",
+        "web-development",
+        "programming",
+        "software-development",
+        "coding"
+      ],
+      "claps": 60,
+      "last_modified_at": "2021-08-20 07:51:29",
+      "published_at": "2021-08-20 06:40:49",
+      "url": "https://javascript.plainenglish.io/javascript-date-libraries-showdown-228adb151b09",
+      "image_url": "https://miro.medium.com/0*RMNiTVlxDJHhY584",
+      "lang": "en",
+      "publication_id": "4b3a1ed4f11c",
+      "title": "JavaScript Date Libraries Showdown",
+      "word_count": 311,
+      "reading_time": 2.3069182389937,
+      "voters": 5,
+      "topics": [
+        "javascript"
+      ],
+      "subtitle": "Moment vs. Luxon vs. Date-fns vs. DayJS",
+      "author": "fcaae663f248"
+    },
+    {
+      "id": "c7196dfc7e09",
+      "tags": [
+        "javascript",
+        "programming",
+        "web-development",
+        "react",
+        "google-maps"
+      ],
+      "claps": 57,
+      "last_modified_at": "2021-08-18 10:40:54",
+      "published_at": "2021-08-18 06:21:00",
+      "url": "https://javascript.plainenglish.io/integrating-map-services-in-react-c7196dfc7e09",
+      "image_url": "https://miro.medium.com/0*bcucYGcemS9QQ7qp",
+      "lang": "en",
+      "publication_id": "4b3a1ed4f11c",
+      "title": "Integrating Map Services in React",
+      "word_count": 675,
+      "reading_time": 3.8971698113208,
+      "voters": 4,
+      "topics": [
+        "javascript"
+      ],
+      "subtitle": "React Mapbox Guide",
+      "author": "fcaae663f248"
+    },
+    {
+      "id": "579e1b138e74",
+      "tags": [
+        "javascript",
+        "es6",
+        "lodash",
+        "web-development",
+        "array-methods"
+      ],
+      "claps": 41,
+      "last_modified_at": "2021-08-15 09:44:10",
+      "published_at": "2021-08-14 07:07:25",
+      "url": "https://javascript.plainenglish.io/javascript-vs-lodash-one-liners-579e1b138e74",
+      "image_url": "https://miro.medium.com/0*f5BDC920YkkwYRip",
+      "lang": "en",
+      "publication_id": "4b3a1ed4f11c",
+      "title": "JavaScript vs Lodash One-Liners",
+      "word_count": 304,
+      "reading_time": 2.5471698113208,
+      "voters": 4,
+      "topics": [
+        "javascript"
+      ],
+      "subtitle": "5 Lodash Alternatives in Modern JavaScript",
+      "author": "fcaae663f248"
+    },
+    {
+      "id": "9e605416f1af",
+      "tags": [
+        "javascript",
+        "programming",
+        "react",
+        "web-development",
+        "software-development"
+      ],
+      "claps": 107,
+      "last_modified_at": "2022-01-30 11:48:55",
+      "published_at": "2021-08-11 18:33:53",
+      "url": "https://javascript.plainenglish.io/form-handling-in-react-9e605416f1af",
+      "image_url": "https://miro.medium.com/0*hDpM-JD1QbJ_u-JU",
+      "lang": "en",
+      "publication_id": "4b3a1ed4f11c",
+      "title": "Form Handling in React",
+      "word_count": 376,
+      "reading_time": 2.2522012578616,
+      "voters": 3,
+      "topics": [
+        "javascript"
+      ],
+      "subtitle": "React Hook Form Guide — Intro",
+      "author": "fcaae663f248"
+    },
+    {
+      "id": "4d195ccdab09",
+      "tags": [
+        "react",
+        "graphql",
+        "hasura",
+        "nextjs",
+        "programming"
+      ],
+      "claps": 1,
+      "last_modified_at": "2021-08-16 11:33:09",
+      "published_at": "2021-08-09 09:03:39",
+      "url": "https://javascript.plainenglish.io/consuming-graphql-apis-in-react-4d195ccdab09",
+      "image_url": "https://miro.medium.com/0*AC96783_VV6QI-da",
+      "lang": "en",
+      "publication_id": "4b3a1ed4f11c",
+      "title": "Consuming GraphQL APIs in React",
+      "word_count": 583,
+      "reading_time": 3.55,
+      "voters": 1,
+      "topics": [
+        "javascript"
+      ],
+      "subtitle": "Urql Hooks & Hasura Instant Cloud GraphQL API",
+      "author": "fcaae663f248"
+    },
+    {
+      "id": "7846508bc804",
+      "tags": [
+        "programming",
+        "vscode",
+        "software-development",
+        "coding",
+        "computer-science"
+      ],
+      "claps": 115,
+      "last_modified_at": "2021-08-19 09:51:07",
+      "published_at": "2021-08-05 07:24:00",
+      "url": "https://javascript.plainenglish.io/fun-vscode-extensions-every-developer-should-try-7846508bc804",
+      "image_url": "https://miro.medium.com/0*VX5O8WNv6ux3k2r2",
+      "lang": "en",
+      "publication_id": "4b3a1ed4f11c",
+      "title": "Fun VSCode Extensions Every Developer Should Try",
+      "word_count": 448,
+      "reading_time": 2.8238993710692,
+      "voters": 6,
+      "topics": [
+        "javascript",
+        "programming"
+      ],
+      "subtitle": "7 VSCode Extensions for Web Development in 2021",
+      "author": "fcaae663f248"
+    },
+    {
+      "id": "252553a7db10",
+      "tags": [
+        "github-copilot",
+        "react",
+        "javascript",
+        "programming",
+        "artificial-intelligence"
+      ],
+      "claps": 62,
+      "last_modified_at": "2021-11-25 22:24:35",
+      "published_at": "2021-08-03 12:02:19",
+      "url": "https://javascript.plainenglish.io/master-github-copilot-252553a7db10",
+      "image_url": "https://miro.medium.com/1*Ck5ojjZYFPIqnkHB3DtxkQ.jpeg",
+      "lang": "en",
+      "publication_id": "4b3a1ed4f11c",
+      "title": "Master Github Copilot",
+      "word_count": 1002,
+      "reading_time": 5.3811320754717,
+      "voters": 7,
+      "topics": [
+        "programming"
+      ],
+      "subtitle": "Is AI Pair Programming the Future?",
+      "author": "fcaae663f248"
+    },
+    {
+      "id": "355efb720c96",
+      "tags": [
+        "javascript",
+        "programming",
+        "react",
+        "nodejs",
+        "coding"
+      ],
+      "claps": 54,
+      "last_modified_at": "2021-08-18 09:27:17",
+      "published_at": "2021-08-02 13:34:29",
+      "url": "https://javascript.plainenglish.io/great-npm-libraries-for-react-355efb720c96",
+      "image_url": "https://miro.medium.com/1*eZbP77ag0102PdQHW8GfmA.png",
+      "lang": "en",
+      "publication_id": "4b3a1ed4f11c",
+      "title": "Great NPM Libraries for React",
+      "word_count": 624,
+      "reading_time": 3.7547169811321,
+      "voters": 5,
+      "topics": [
+        "javascript"
+      ],
+      "subtitle": "5 NPM libraries for every React project",
+      "author": "fcaae663f248"
+    },
+    {
+      "id": "44764e4ee17f",
+      "tags": [
+        "javascript",
+        "programming",
+        "web-development",
+        "figma",
+        "software-development"
+      ],
+      "claps": 102,
+      "last_modified_at": "2021-08-23 11:32:36",
+      "published_at": "2021-08-01 12:13:16",
+      "url": "https://javascript.plainenglish.io/figma-plugins-i-cannot-live-without-44764e4ee17f",
+      "image_url": "https://miro.medium.com/1*pbun8rcTW2R-H7G_cP0EHw.png",
+      "lang": "en",
+      "publication_id": "4b3a1ed4f11c",
+      "title": "Figma Plugins I Cannot Live Without",
+      "word_count": 542,
+      "reading_time": 3.3452830188679,
+      "voters": 4,
+      "topics": [
+        "design",
+        "javascript"
+      ],
+      "subtitle": "10 Figma Plugins for Designers and Developers",
+      "author": "fcaae663f248"
+    },
+    {
+      "id": "257a95c86e77",
+      "tags": [
+        "javascript",
+        "programming",
+        "react",
+        "web-development",
+        "software-development"
+      ],
+      "claps": 115,
+      "last_modified_at": "2021-08-17 11:22:42",
+      "published_at": "2021-07-31 10:12:03",
+      "url": "https://javascript.plainenglish.io/data-fetching-with-react-query-axios-257a95c86e77",
+      "image_url": "https://miro.medium.com/0*jVo04AyJ_pyVt0Go",
+      "lang": "en",
+      "publication_id": "4b3a1ed4f11c",
+      "title": "Data Fetching with React Query & Axios",
+      "word_count": 465,
+      "reading_time": 3.0047169811321,
+      "voters": 15,
+      "topics": [
+        "javascript"
+      ],
+      "subtitle": "Implementing Hooks for Furry HTTP Requests in react-query",
+      "author": "fcaae663f248"
+    },
+    {
+      "id": "67de8f5803cf",
+      "tags": [
+        "react",
+        "javascript",
+        "hook",
+        "beginner",
+        "tutorial"
+      ],
+      "claps": 54,
+      "last_modified_at": "2021-07-30 13:49:25",
+      "published_at": "2021-07-30 13:49:25",
+      "url": "https://medium.com/@alex.streza/useful-react-tricks-for-beginners-67de8f5803cf",
+      "image_url": "https://miro.medium.com/1*Yd3W9pxHirUOqB9gVMh1QA.png",
+      "lang": "en",
+      "publication_id": "*Self-Published*",
+      "title": "Useful React Tricks for Beginners",
+      "word_count": 567,
+      "reading_time": 3.1896226415094,
+      "voters": 4,
+      "topics": [
+        "javascript"
+      ],
+      "subtitle": "3 Important Topics every React Developer should understand",
+      "author": "fcaae663f248"
+    }
+  ]
+}

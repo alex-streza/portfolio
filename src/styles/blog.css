@@ -1,0 +1,98 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-gray-1000 text-white;
+  }
+
+  body > * {
+    @apply font-sans dark:text-white text-gray-1000;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-serif;
+  }
+
+  ::selection {
+    @apply text-main bg-[hsla(169,65%,38%,0.3)];
+  }
+
+  /* Typography */
+  h1 {
+    @apply text-5xl leading-[60px];
+  }
+  h1:first-of-type {
+    @apply mb-3;
+  }
+  h2:first-of-type {
+    @apply font-sans font-extrabold;
+  }
+  hr {
+    @apply my-10 bg-white;
+  }
+
+  h2 {
+    @apply text-4xl leading-[52px];
+  }
+
+  a {
+    @apply text-main font-normal items-center gap-3 underline underline-offset-8;
+  }
+
+  a > code {
+    @apply relative text-main bg-transparent underline-offset-8;
+  }
+
+  a > code::before {
+    @apply absolute inset-0 block bg-main opacity-10 rounded;
+    content: '';
+  }
+
+  p {
+    @apply my-5 leading-8;
+  }
+  img {
+    @apply mt-10 rounded;
+  }
+  code {
+    --border-radius: 3px;
+    --padding-block: 0.2rem;
+    --padding-inline: 0.33rem;
+    @apply text-sm bg-main-1000 p-5 rounded break-words;
+    color: inherit;
+  }
+
+  pre.astro-code > code {
+    all: unset;
+  }
+
+  pre {
+    @apply relative px-5 py-4 overflow-x-auto overflow-y-hidden;
+  }
+
+  img.cover {
+    @apply w-full max-h-[50vh] object-cover;
+  }
+
+  blockquote {
+    @apply mt-3 text-lg font-semibold mb-7;
+  }
+  blockquote > p {
+    all: unset;
+  }
+  p > em {
+    @apply not-italic w-full text-center block mb-10 mt-3 font-semibold;
+  }
+
+  /* POST CONTENT */
+  .content {
+    @apply max-w-[65ch] mx-auto;
+  }
+}

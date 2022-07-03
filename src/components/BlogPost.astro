@@ -1,0 +1,38 @@
+---
+export interface Props {
+  publishDate: string
+  likes: string
+  readTime: number
+  likeCount: number
+  shareCount: number
+  commentCount: number
+}
+
+const { publishDate, readTime, likeCount, shareCount, commentCount } = Astro.props
+---
+
+<div class='layout'>
+  <article class='content'>
+    <header class='flex mb-7'>
+      <button>All stories</button>
+      <div class='ml-auto text-sm'>
+        <span>{publishDate} - {readTime} min read -</span>
+        <span class='text-main'>
+          {likeCount}
+          likes -
+          {commentCount}
+          comments -
+          {shareCount}
+          shares
+        </span>
+      </div>
+    </header>
+    <main>
+      <slot></slot>
+    </main>
+  </article>
+</div>
+
+<style>
+
+</style>
