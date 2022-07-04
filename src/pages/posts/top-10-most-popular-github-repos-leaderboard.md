@@ -1,19 +1,18 @@
 ---
 setup: |
-   import Layout from '../../layouts/BlogPost.astro'
+  import Layout from '../../layouts/BlogPost.astro'
 publishDate: Feb 24th
 description: What makes an open-source project stand out in the sea of repos isn’t really a mystery. Let’s find out what are the most starred repositories out there and what may have helped them reach such…
 title: Top 10 Most Popular GitHub Repos Leaderboard
 readTime: 5 min read
 name: Alex Streza
 ---
+
 ![](https://miro.medium.com/max/1400/1*LSYJIrhkEgd8KlpPQ6OOXg.png)
 
-Top 10 Most Popular GitHub Repos Leaderboard
-============================================
+# Top 10 Most Popular GitHub Repos Leaderboard
 
-React isn’t number one?
------------------------
+## React isn’t number one?
 
 What makes an open-source project **stand out** in the sea of repos isn’t really a **mystery**. Let’s find out what are the most starred repositories out there and what may have helped them reach such numbers.
 
@@ -21,8 +20,7 @@ What makes an open-source project **stand out** in the sea of repos isn’t real
 
 free vs. paid learning resources
 
-1\. [freeCodeCamp / freeCodeCamp](https://github.com/freeCodeCamp/freeCodeCamp) (⭐341k )
-========================================================================================
+# 1\. [freeCodeCamp / freeCodeCamp](https://github.com/freeCodeCamp/freeCodeCamp) (⭐341k )
 
 > Everyone loves free stuff
 
@@ -38,8 +36,7 @@ The plethora of free educational information they provide is simply astounding a
 
 Giving away **free** learning resources for coding in the golden age is definitely the main factor for their popularity since people love free resources & advice.
 
-2\. [996icu/996.ICU](https://github.com/996icu/996.ICU) (⭐261k)
-===============================================================
+# 2\. [996icu/996.ICU](https://github.com/996icu/996.ICU) (⭐261k)
 
 > Work / life balance saver
 
@@ -53,8 +50,7 @@ The term 996.ICU comes from the Chinese phrase “Work by ‘996’, sick in ICU
 
 The repository contains multiple lists from Chinese companies not forcing 996 schedules to covering awesome repositories.
 
-3\. [EbookFoundation / free-programming-books](https://github.com/EbookFoundation/free-programming-books) (⭐222k)
-=================================================================================================================
+# 3\. [EbookFoundation / free-programming-books](https://github.com/EbookFoundation/free-programming-books) (⭐222k)
 
 > Free continues to be king
 
@@ -66,8 +62,7 @@ It’s extremely straightforward what this project does, it lists books and othe
 
 Seems revealing free educational information to the world is key to a repositories popularity.
 
-4\. [jwasham/coding-interview-university](https://github.com/jwasham/coding-interview-university) (⭐210k)
-=========================================================================================================
+# 4\. [jwasham/coding-interview-university](https://github.com/jwasham/coding-interview-university) (⭐210k)
 
 > FAANG interviews solved
 
@@ -81,8 +76,7 @@ The repository covers exactly the steps to getting ready for a hard coding inter
 
 ‘Selling’ a dream or providing it for free is a sure-fire way to achieving popularity on the internet.
 
-5\. [vuejs/vue](https://github.com/vuejs/vue) (⭐193k)
-=====================================================
+# 5\. [vuejs/vue](https://github.com/vuejs/vue) (⭐193k)
 
 > Wait React isn’t the most popular web frontend framework?
 
@@ -96,17 +90,15 @@ It consists of an approachable core library that focuses on the view layer only,
 
 It’s simple and easy to learn API, great documentation and a friendly community are likely reasons for its success.
 
-6\. [sindresorhus/awesome](https://github.com/sindresorhus/awesome) (⭐190k)
-===========================================================================
+# 6\. [sindresorhus/awesome](https://github.com/sindresorhus/awesome) (⭐190k)
 
 > Awesome is awesome
 
 Consists of a list of many free & premium resources and platforms related to tech from Programming Languages, Databases to even Security & Blockchain.
 
-A cool trick I found out recently is if you want high-quality, curated information in most tech stacks you just search awesome-${tech} GitHub repo and you’ll be pleasantly surprised.
+A cool trick I found out recently is if you want high-quality, curated information in most tech stacks you just search awesome-'tech' GitHub repo and you’ll be pleasantly surprised.
 
-7\. [kamranahmedse/developer-roadmap](https://github.com/kamranahmedse/developer-roadmap) (⭐187k)
-=================================================================================================
+# 7\. [kamranahmedse/developer-roadmap](https://github.com/kamranahmedse/developer-roadmap) (⭐187k)
 
 > Career roadmaps everywhere
 
@@ -118,8 +110,7 @@ Nowadays everyone wants to **get started** with programming but because of so ma
 
 This repository provides several developer roadmaps by a specific job position (frontend/backend/DBA…), language (Java/Python/Go…) or tech (React/Angular).
 
-8\. [facebook/react](https://github.com/facebook/react) (⭐183k)
-===============================================================
+# 8\. [facebook/react](https://github.com/facebook/react) (⭐183k)
 
 > How can React be so low on the leaderboard
 
@@ -131,8 +122,7 @@ Everyone knows what [React](https://reactjs.org/) is whether you like it or hate
 
 Writing React code is mostly satisfying as you have access to a plethora of solid, community-built packages on [NPM](https://www.npmjs.com/) which complete the React ecosystem.
 
-9\. [tensorflow/tensorflow](https://github.com/tensorflow/tensorflow) (⭐163k)
-=============================================================================
+# 9\. [tensorflow/tensorflow](https://github.com/tensorflow/tensorflow) (⭐163k)
 
 > Robots everywhere
 
@@ -144,8 +134,7 @@ Writing React code is mostly satisfying as you have access to a plethora of soli
 
 Since AI is on a huge ascent in the past few years is expected for such an open-source project to garner attention and popularity.
 
-10\. [donnemartin / system-design-primer](https://github.com/donnemartin/system-design-primer) (⭐162k)
-======================================================================================================
+# 10\. [donnemartin / system-design-primer](https://github.com/donnemartin/system-design-primer) (⭐162k)
 
 > Architecture is hard, system architecture is harder
 
@@ -153,14 +142,13 @@ One of the **hardest** endeavours in software engineering is designing complex, 
 
 This repository **saves** you the trouble of buying expensive courses by preparing you for system design interviews through several quizzes, interactive coding challenges, and countless links to free resources.
 
-Conclusion
-==========
+# Conclusion
 
 After checking out all of these repositories, we can conclude that a popular open-source project needs at least some of the following features:
 
-*   Free learning resources
-*   Great documentation
-*   Solution to a problem in field on the rise like AI/ML/Blockchain
+- Free learning resources
+- Great documentation
+- Solution to a problem in field on the rise like AI/ML/Blockchain
 
 Hope you liked this top 10 list and **comment** below which repositories you starred and that you think deserve to shine. Don’t forget to 👏 and follow for more software and programming-related content 💜 or even [**building** a startup from the ground up](/how-i-launched-a-saas-in-60-days-with-an-empty-pocket-313aa59c3e78).
 
