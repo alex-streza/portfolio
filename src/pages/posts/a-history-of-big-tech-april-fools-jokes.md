@@ -1,11 +1,14 @@
 ---
   setup: |
-    import Layout from '../../layouts/BlogPost.astro'
-  title: Hello world!
-  publishDate: 12 Sep 2021
-  name: Nate Moore
-  value: 128
-  description: Just a Hello World Post!
+    import Layout from '@layouts/BlogPost.astro'
+  title: A History Of Big Tech April Fool’s Jokes
+  publishDate: 4 Apr 2022
+  readTime: 7
+  shareCount: 0
+  commentCount: 0
+  likeCount: 249
+  name: Alex Streza
+  description: April Fool’s is a time where companies like Stack Overflow pull out all the stops to show off their ‘latest and greatest’ features. But it’s also a time where we can look back and see some of the funniest, and most clever, April Fool’s Day jokes from tech giants. Let’s admire a decade of unicorns and tech pranks on Stack Overflow.
 ---
 
 ![](https://miro.medium.com/max/1050/1*qWNoX4e4qtSqgy6lylDtcQ.png)
