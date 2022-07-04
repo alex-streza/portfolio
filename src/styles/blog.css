@@ -59,7 +59,7 @@
     @apply my-5 leading-8;
   }
   img {
-    @apply mt-10 rounded;
+    @apply mx-auto mt-10 rounded;
   }
   code {
     --border-radius: 3px;

@@ -8,7 +8,8 @@ export interface Props {
   commentCount: number
 }
 
-const { publishDate, readTime, likeCount, shareCount, commentCount } = Astro.props
+const { publishDate, readTime, likeCount, shareCount, commentCount } =
+  Astro.props
 ---
 
 <div class='layout'>
@@ -17,15 +18,16 @@ const { publishDate, readTime, likeCount, shareCount, commentCount } = Astro.pro
       <a href='/' class='text-white no-underline w-1/3'>All stories</a>
       <div class='ml-auto text-sm'>
         <span>{publishDate} - {readTime} min read</span>
-        <span class='hidden md:inline-block'> -</span>
-        <br class='md:hidden' />
+
+        <!-- <span class='hidden md:inline-block'> -</span> -->
+        <!-- <br class='md:hidden' /> -->
         <span class='text-main'>
-          {likeCount}
-          likes -
-          {commentCount}
-          comments -
-          {shareCount}
-          shares
+          <!-- {' ' + likeCount} -->
+          <!-- claps -->
+          <!-- {commentCount} -->
+          <!-- comments - -->
+          <!-- {shareCount} -->
+          <!-- shares -->
         </span>
       </div>
     </header>
