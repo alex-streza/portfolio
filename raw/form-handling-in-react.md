@@ -1,19 +1,18 @@
 ---
 setup: |
-   import Layout from '../../layouts/BlogPost.astro'
-publishDate: Jan 30th
+  import Layout from '../../layouts/BlogPost.astro'
+publishDate: Jan 30th 2022
 description: Every Frontend Developer will at some point in their journey write an ungodly sized form and often question their existence for countless hours. Serializing fields, error handling, validation, field…
 title: Form Handling in React
 readTime: 3 min read
 name: Alex Streza
 ---
+
 ![](https://miro.medium.com/max/1400/0*hDpM-JD1QbJ_u-JU)
 
-Handle Forms Like A Pro in React
-================================
+# Handle Forms Like A Pro in React
 
-React Hook Form Guide — Intro
------------------------------
+## React Hook Form Guide — Intro
 
 ![](https://miro.medium.com/max/1154/0*VLNo4knW1GOmcr8s.png)
 
@@ -27,11 +26,9 @@ Let’s write a Vanilla (classic) [React](https://reactjs.org/) form for a PetSh
 
 This works fine for smaller forms but having to add field validation and handling errors manually becomes a huge hassle as forms expand.
 
-Drumrolls please 🥁…
---------------------
+## Drumrolls please 🥁…
 
-Introducing [React Hook Form](https://react-hook-form.com/)
-===========================================================
+# Introducing [React Hook Form](https://react-hook-form.com/)
 
 I’m aware of the presence of many other form managing libraries but I for one enjoy working with react-hook-form more than others like [Formik](https://formik.org/), [redux-form](https://redux-form.com/) or [react-final-form](https://final-form.org/react) due to its simple hooks API.
 

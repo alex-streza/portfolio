@@ -1,7 +1,7 @@
 ---
 setup: |
   import Layout from '../../layouts/BlogPost.astro'
-publishDate: Aug 16th
+publishDate: Aug 16 2021
 description: React is the most popular Frontend Framework (library) for obvious reasons, it has a great community with many ready made packages to solve every task and allows for fast component driven development…
 title: Consuming GraphQL APIs in React
 readTime: 4 min read

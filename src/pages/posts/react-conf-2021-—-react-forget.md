@@ -1,19 +1,18 @@
 ---
 setup: |
-   import Layout from '../../layouts/BlogPost.astro'
-publishDate: Jan 24th
+  import Layout from '../../layouts/BlogPost.astro'
+publishDate: Jan 24 2022
 description: Everyone who loves React in its entirety has had the unlucky moment of hating its optimization process. Here, I’m not talking about code splitting or server rendering but about the component level…
 title: React Conf 2021 — React Forget
 readTime: 2 min read
 name: Alex Streza
 ---
+
 ![](https://miro.medium.com/max/1400/1*k9IbrpOjBd9paWzDwY7WRw.png)
 
-React Conf 2021 — React Forget
-==============================
+# React Conf 2021 — React Forget
 
-A Christmas miracle — End of ‘memo all the things’
-==================================================
+# A Christmas miracle — End of ‘memo all the things’
 
 Everyone who loves React in its entirety has had the unlucky moment of hating its optimization process. Here, I’m not talking about code splitting or server rendering but about the component level usage of memoization and useCallback.
 

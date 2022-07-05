@@ -1,19 +1,18 @@
 ---
 setup: |
-   import Layout from '../../layouts/BlogPost.astro'
-publishDate: Apr 5th
+  import Layout from '../../layouts/BlogPost.astro'
+publishDate: Apr 5th 2022
 description: April Fool’s is a time where companies like Stack Overflow pull out all the stops to show off their ‘latest and greatest’ features. But it’s also a time where we can look back and see some of the…
 title: A History Of Big Tech April Fool’s Jokes
 readTime: 7 min read
 name: Alex Streza
 ---
+
 ![](https://miro.medium.com/max/700/1*qWNoX4e4qtSqgy6lylDtcQ.png)
 
-A History Of Big Tech April Fool’s Jokes
-========================================
+# A History Of Big Tech April Fool’s Jokes
 
-Stack Overflow Edition
-----------------------
+## Stack Overflow Edition
 
 **April Fool’s** is a time where companies like Stack Overflow pull out all the stops to show off their ‘latest and greatest’ features. But it’s also a time where we can look back and see some of the funniest, and most clever, April Fool’s Day jokes from tech giants. Let’s admire a decade of **unicorns and tech pranks** on Stack Overflow.
 
@@ -21,8 +20,7 @@ Stack Overflow Edition
 
 Don’t Get Caught Coding At Midnight April 1st
 
-[Filters](https://stackoverflow.blog/2022/03/31/time-to-get-on-trend-filters/) (2022)
-=====================================================================================
+# [Filters](https://stackoverflow.blog/2022/03/31/time-to-get-on-trend-filters/) (2022)
 
 > CSS Kung Fu for the modern age
 
@@ -36,8 +34,7 @@ A range of themes were added to the site that changed the UI in not exactly UX f
 
 You can make the page appear like Facebook — or Bookface, as they’ve dubbed it; Windows 3.1’s iconic color scheme, Hot Dog Stand; or Lisa Frank-inspired colors, dubbed Frisa Lank, using those eight distinct filters.
 
-[The Key](https://stackoverflow.blog/2021/03/31/the-key-copy-paste/) (2021)
-===========================================================================
+# [The Key](https://stackoverflow.blog/2021/03/31/the-key-copy-paste/) (2021)
 
 > A truly worth it product
 
@@ -51,8 +48,7 @@ This was a paywall feature where users would have to purchase a key in order to 
 
 Obviously it was a joke that preyed on developers for the widespread copy & paste & understand later mentality, the website showcased a countdown of 3 or 5 free CTRL Cs before being forced to **buy the Key**, fortunately it could be turned off and ignored in the settings.
 
-[Ultra Dark Mode](https://stackoverflow.blog/2020/04/01/ultra-dark-mode-april-fools/) (2020)
-============================================================================================
+# [Ultra Dark Mode](https://stackoverflow.blog/2020/04/01/ultra-dark-mode-april-fools/) (2020)
 
 > Dark mode goes pitch black
 
@@ -66,8 +62,7 @@ Developers went crazy for it. Stack Overflow’s dark mode is so black that it r
 
 I usually make sure to turn on dark mode on every app that supports it, and even go the distance to implement it in my own apps but for some reason I never turned it on in SOF, I guess it’s because I always forget to sign in 😅.
 
-[Time Machine](https://meta.stackexchange.com/questions/326036/announcing-the-stack-exchange-time-machine) (2019)
-=================================================================================================================
+# [Time Machine](https://meta.stackexchange.com/questions/326036/announcing-the-stack-exchange-time-machine) (2019)
 
 > Wait a minute Doc, are you telling me you built a time machine out of Stack Overflow?
 
@@ -79,8 +74,7 @@ Back To Web 1.0
 
 So they unveiled a new Time Machine feature that allows you to experience Stack Exchange before it’s time, removing the need for you to imagine it.
 
-[Quack Overflow](https://meta.stackexchange.com/questions/308564/stack-exchange-has-been-taken-over-by-a-rubber-duck) (2018)
-============================================================================================================================
+# [Quack Overflow](https://meta.stackexchange.com/questions/308564/stack-exchange-has-been-taken-over-by-a-rubber-duck) (2018)
 
 > If you don’t speed duck you won’t understand
 
@@ -98,8 +92,7 @@ The idea was programming slang since according to Wikipedia:
 
 The name is a reference to a story in the book The Pragmatic Programmer in which a programmer would carry around a rubber duck and debug their code by forcing themselves to **explain it**, line-by-line, to the duck.
 
-[Dance Dance Authentication](https://stackoverflow.blog/2017/03/30/stack-overflow-unveils-next-steps-computer-security/) (2017)
-===============================================================================================================================
+# [Dance Dance Authentication](https://stackoverflow.blog/2017/03/30/stack-overflow-unveils-next-steps-computer-security/) (2017)
 
 > AI & ML & Buzzword Powered Authentication
 
@@ -113,8 +106,7 @@ DDA Protocol Recognizing Motion
 
 Unfortunately this mean of authentication was rolled back due to the dangers of dancing and getting publicly reprimanded for horrendous dance moves, therefore the DDA protocol remains an unfulfilled dream.
 
-[Unikong](https://meta.stackoverflow.com/questions/320189/whats-with-the-stack-overflow-unikong-game) (2016)
-============================================================================================================
+# [Unikong](https://meta.stackoverflow.com/questions/320189/whats-with-the-stack-overflow-unikong-game) (2016)
 
 > The Donkey Kong Evolution
 
@@ -128,8 +120,7 @@ UniKong in action
 
 While I was researching for this article I discovered a [crypto metaverse project](https://unikong.io/) with the same name, whether that’s a coincidence or not we can still admit that SOF ideas were way ahead of their time.
 
-[StackEgg](https://meta.stackoverflow.com/questions/289032/whats-stackegg) (2015)
-=================================================================================
+# [StackEgg](https://meta.stackoverflow.com/questions/289032/whats-stackegg) (2015)
 
 > A DDOS inducing game
 
@@ -143,8 +134,7 @@ You could hatch a ‘site’ and evolve it through multiple phases while gaining
 
 As I progress through older iterations of April Fools pranks I found less information so I apologize as they may lack content.
 
-[Unicoins](https://meta.stackexchange.com/questions/tagged/unicoins) (2014)
-===========================================================================
+# [Unicoins](https://meta.stackexchange.com/questions/tagged/unicoins) (2014)
 
 > The future of currencies
 
@@ -156,8 +146,7 @@ On April 2nd, Unicorntopia hosts a limbo game with hats, unicoins, and prizes al
 
 If Unicoins happened today most likely they would have been a full fledged cryptocurrency and 10x in seconds, to the unicorn mooooon.
 
-[Chat with an expert](https://meta.stackexchange.com/questions/174407/what-is-chat-with-an-expert) (2013)
-=========================================================================================================
+# [Chat with an expert](https://meta.stackexchange.com/questions/174407/what-is-chat-with-an-expert) (2013)
 
 > An AI-less Chat Bot
 
@@ -169,8 +158,7 @@ A useless chatbot
 
 It’s important to note that the chatbot **is not** powered by artificial intelligence, which means it won’t get smarter and smarter over time. So be sure to ask it any question you have about Stack Overflow — you will be disappointed.
 
-Clippy (2012)
-=============
+# Clippy (2012)
 
 > The OG Windows Helper Tool
 

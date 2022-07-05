@@ -1,19 +1,18 @@
 ---
 setup: |
-   import Layout from '../../layouts/BlogPost.astro'
-publishDate: Jan 8th
+  import Layout from '../../layouts/BlogPost.astro'
+publishDate: Jan 8 2022
 description: Happy New Year dear reader! As developers we often get asked how we spend our time in a day, is it really only couch potato coding 24/7? A less asked question is what we do on special days like New…
 title: Building a SaaS on New Year’s Eve
 readTime: 3 min read
 name: Alex Streza
 ---
+
 ![](https://miro.medium.com/max/700/1*LcuJYMUJxugV56sT6rbG0w.png)
 
-Building a SaaS on New Year’s Eve
-=================================
+# Building a SaaS on New Year’s Eve
 
-New Year’s Eve. Celebrating productively.
-=========================================
+# New Year’s Eve. Celebrating productively.
 
 Happy New Year dear reader! As developers we often get asked how we spend our time in a day, is it really only couch potato coding 24/7? A less asked question is what we do on special days like New Years Eve or Christmas, short answer -> coding and a tad bit of drinking.
 

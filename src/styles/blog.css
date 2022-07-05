@@ -29,10 +29,13 @@
     @apply text-3xl leading-10 md:text-5xl md:leading-[60px];
   }
   h1:first-of-type {
-    @apply mb-3;
+    @apply mb-2;
   }
   h2:first-of-type {
-    @apply font-sans font-extrabold;
+    @apply font-sans font-extrabold text-lg;
+  }
+  h2:not(:first-of-type) {
+    @apply mt-10;
   }
   hr {
     @apply my-10 bg-white;
@@ -51,7 +54,7 @@
   }
 
   a > code::before {
-    @apply absolute inset-0 block bg-main opacity-10 rounded;
+    @apply absolute inset-0 block bg-gray-300 opacity-10 rounded;
     content: '';
   }
 
@@ -62,11 +65,7 @@
     @apply mx-auto mt-10 rounded;
   }
   code {
-    --border-radius: 3px;
-    --padding-block: 0.2rem;
-    --padding-inline: 0.33rem;
-    @apply text-sm bg-main-1000 p-5 rounded break-words;
-    color: inherit;
+    @apply text-sm bg-gray-700 p-1 rounded break-words;
   }
 
   pre.astro-code > code {
@@ -82,13 +81,18 @@
   }
 
   blockquote {
-    @apply mt-3 text-lg font-semibold mb-7;
+    @apply p-1 text-main bg-[hsla(169,65%,38%,0.3)] mt-3 text-lg font-semibold mb-7;
   }
   blockquote > p {
     all: unset;
   }
   p > em {
     @apply not-italic w-full text-center block mb-10 mt-3 font-semibold;
+  }
+
+  li:before {
+    @apply mr-2;
+    content: '\1F95E';
   }
 
   /* POST CONTENT */

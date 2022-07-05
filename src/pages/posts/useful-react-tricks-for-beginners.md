@@ -1,24 +1,22 @@
 ---
 setup: |
-   import Layout from '../../layouts/BlogPost.astro'
-publishDate: Jul 30th
+  import Layout from '../../layouts/BlogPost.astro'
+publishDate: Jul 30 2021
 description: 99% of the time it’s better, lighter and easier to use hooks, although classes provide some useful functionalities. A project may have both class & function components defined so you can mix and…
 title: Useful React Tricks for Beginners
 readTime: 4 min read
 name: Alex Streza
 ---
-Useful React Tricks for Beginners
-=================================
+
+# Useful React Tricks for Beginners
 
 3 Important Topics every React Developer should understand
 
 ![](https://miro.medium.com/max/700/1*Yd3W9pxHirUOqB9gVMh1QA.png)
 
-For a beginner React may seem like a minefield filled with weird behaviours, uncanny interactions between hooks and whether to use classes or hooks. I hope this small article will aid you in your Frontend Journey as I explain some simple yet effective modern React techniques.
-====================================================================================================================================================================================================================================================================================
+# For a beginner React may seem like a minefield filled with weird behaviours, uncanny interactions between hooks and whether to use classes or hooks. I hope this small article will aid you in your Frontend Journey as I explain some simple yet effective modern React techniques.
 
-1\. Class or Function (Hooks) Components
-========================================
+# 1\. Class or Function (Hooks) Components
 
 99% of the time it’s better, lighter and easier to use **hooks**, although classes provide some useful functionalities. A project may have both class & function components defined so you can mix and match if required.
 
@@ -43,8 +41,7 @@ There are many hooks available but I’ll discuss 2 which I consider the most im
 \- **useState**  
 \- **useEffect**
 
-2\. How useState works
-======================
+# 2\. How useState works
 
 **useState** is one of the most important hooks and provides state to our components. State is what makes a component interactive and dynamic but it can also reduce performances in case of frequent state updates if not used properly.
 
@@ -64,8 +61,7 @@ Let’s say we have an array of users which liked a post how do we add a new use
 
 It’s not that complicated to update the state in the end isn’t it 🤓?
 
-3\. How useEffect works
-=======================
+# 3\. How useEffect works
 
 **useEffect** is another essential hook which allows us to add a callback function to listen to changes in a certain variable.
 

@@ -3,6 +3,7 @@
 import BaseHead from '@components/BaseHead.astro'
 import BlogHeader from '@components/BlogHeader.astro'
 import BlogPostPreview from '@components/BlogPostPreview.astro'
+import spacetime from 'spacetime'
 
 // Component Script:
 // You can write any JavaScript/TypeScript that you'd like here.
@@ -16,11 +17,21 @@ let permalink = 'https://www.blog.alexstreza.dev/'
 // Data Fetching: List all Markdown posts in the repo.
 
 let allPosts = await Astro.glob('./posts/*.md')
-allPosts = allPosts.sort(
-  (a, b) =>
-    new Date(b.frontmatter.publishDate).valueOf() -
-    new Date(a.frontmatter.publishDate).valueOf(),
-)
+allPosts = allPosts
+  .sort((a, b) => {
+    const d1 = spacetime(a.frontmatter.publishDate)
+    const d2 = spacetime(b.frontmatter.publishDate)
+    return d1.isAfter(d2) ? -1 : 1
+  })
+  .map((post) => ({
+    ...post,
+    frontmatter: {
+      ...post.frontmatter,
+      publishDate: spacetime(post.frontmatter.publishDate).format(
+        '{month-short} {date-ordinal}, {year}',
+      ),
+    },
+  }))
 
 // Full Astro Component Syntax:
 // https://docs.astro.build/core-concepts/astro-components/
@@ -32,35 +43,23 @@ allPosts = allPosts.sort(
 
     <style>
       header {
-        width: 100%;
-        height: 100%;
-        background-color: var(--theme-bg-offset);
-        display: flex;
-        align-items: center;
-        justify-content: center;
+        @apply w-full h-full grid place-content-center;
       }
 
       .content {
         @apply my-10;
       }
 
-      .content :global(main > * + *) {
-        margin-top: 1rem;
-      }
-
       .intro {
-        padding-bottom: 4rem;
-        margin-bottom: 2rem;
-        border-bottom: 4px solid var(--theme-divider);
-      }
-
-      .intro > * {
-        margin: 0;
+        @apply mb-20;
       }
 
       .latest {
         font-size: 2.5rem;
         font-weight: 700;
+      }
+      hr {
+        @apply bg-gray-100 opacity-50;
       }
     </style>
   </head>
@@ -74,7 +73,12 @@ allPosts = allPosts.sort(
           <p>{description}</p>
         </section>
         <section aria-label='Blog post list'>
-          {allPosts.map((p) => <BlogPostPreview post={p} />)}
+          {allPosts.map((p, i) => (
+            <>
+              <BlogPostPreview post={p} />
+              {i < allPosts.length - 1 && <hr />}
+            </>
+          ))}
         </section>
       </main>
     </div>

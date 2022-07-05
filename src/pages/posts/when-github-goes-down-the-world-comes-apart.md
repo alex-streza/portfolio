@@ -1,7 +1,7 @@
 ---
 setup: |
   import Layout from '../../layouts/BlogPost.astro'
-publishDate: Apr 7th
+publishDate: Apr 7 2022
 description: Does the world truly come apart when GitHub goes down?
 title: When GitHub Goes Down the World Comes Apart
 readTime: 6 min read

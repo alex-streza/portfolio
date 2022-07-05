@@ -1,7 +1,7 @@
 ---
 setup: |
   import Layout from '../../layouts/BlogPost.astro'
-publishDate: Feb 24th
+publishDate: Feb 24 2022
 description: What makes an open-source project stand out in the sea of repos isn’t really a mystery. Let’s find out what are the most starred repositories out there and what may have helped them reach such…
 title: Top 10 Most Popular GitHub Repos Leaderboard
 readTime: 5 min read

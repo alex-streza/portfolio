@@ -1,24 +1,22 @@
 ---
 setup: |
-   import Layout from '../../layouts/BlogPost.astro'
-publishDate: Jan 21st
+  import Layout from '../../layouts/BlogPost.astro'
+publishDate: Jan 21 2022
 description: Things have been running wild in the Open Source community lately and this is a story of minds gone rogue. One bright and beautiful morning you wake up and decide to build something. The what, who…
 title: Open Source — A Horror Story
 readTime: 6 min read
 name: Alex Streza
 ---
+
 ![](https://miro.medium.com/max/1400/1*MuKzDwX6gFMou3h4FTfYqg.png)
 
-Open Source — A Horror Story
-============================
+# Open Source — A Horror Story
 
-What happened to Faker.js and its creator?
-------------------------------------------
+## What happened to Faker.js and its creator?
 
 Things have been running wild in the Open Source community lately and this is a story of minds gone rogue.
 
-A dream of freedom
-==================
+# A dream of freedom
 
 One bright and beautiful morning you wake up and decide to build something. The what, who, how’s are flooding your brain but your heart sees a greater purpose and that’s to make it free to use for all souls on this developer inhabited, floating, space rock.
 
@@ -26,14 +24,13 @@ That’s how it started for [Marak](https://github.com/Marak) 8 years ago with t
 
 Faker provided a service for many that may not have been deemed essential, hard or costly to replicate with a couple of unpaid interns at work as many Redditers suggested but it was nevertheless popular, having over 2.4 million downloads/week.
 
-A desperate shout
-=================
+# A desperate shout
 
 In October 2020 Marak added a commit to the Faker repository confirming the most dreaded situation in open source. Lack of funding. When you create a piece of software and people use it you expect to make money of it but that’s not valid with open source libraries that are entirely based on donations. The countless added features to the Faker codebase over the years increased the maintenance cost and time invested into the project.
 
 It’s a known fact in the industry that no matter how great your open source library may be, if a big tech firm doesn’t sponsor it, you are pretty much broke. Marak knew this and made this point very clearly in his post that he will stop maintaining until he will receive a full salary offer since he had no income.
 
-> After digging more, I found an even more unsettling information. The rough years Marak had may have been his own fault as his [house burned down after he allegedly built **bombs**](https://abc7ny.com/suspicious-package-queens-astoria-fire/6425363/)  with the intent of harming others. **Such actions shouldn’t be supported.**
+> After digging more, I found an even more unsettling information. The rough years Marak had may have been his own fault as his [house burned down after he allegedly built **bombs**](https://abc7ny.com/suspicious-package-queens-astoria-fire/6425363/) with the intent of harming others. **Such actions shouldn’t be supported.**
 
 A while later things were looking better, a brand new service was launched using Faker at it’s core meant to monetize the existent feature in a cloud environment for large scale use but that wouldn’t last long.
 
@@ -51,8 +48,7 @@ Now, this is where it gets interesting, this final commit added to the reader fi
 
 > What really happened with Aaron Swartz?
 
-A glimpse of hope
-=================
+# A glimpse of hope
 
 Why would Marak write this and who is Aaron?
 
@@ -68,8 +64,7 @@ Freedom of information is what we should all strive for and Aaron may have wante
 
 What Marak did to make his story viral by pointing to the Aaron Schwartz conspiracies was uncalled for as it could hurt his remaining relatives, we should not compare Marak’s ‘activist’ work to others before him.
 
-A shady commit
-==============
+# A shady commit
 
 A few days after the erasure of Faker & FakerCloud off the face of the internet, Marak pushed a controversial update to another of his maintained libraries colors.js.
 
@@ -93,8 +88,7 @@ You can search for such packages using this [one-liner](https://twitter.com/bita
 
 npm access ls-packages | jq keys
 
-A spooky finale
-===============
+# A spooky finale
 
 His latest acts shouldn’t be considered anything but abuse, and mustn’t be looked up to, as his desire to hurt the Open Source community is despicable.
 

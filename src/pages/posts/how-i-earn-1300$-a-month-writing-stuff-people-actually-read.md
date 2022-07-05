@@ -1,17 +1,16 @@
 ---
 setup: |
-   import Layout from '../../layouts/BlogPost.astro'
-publishDate: Apr 11th
+  import Layout from '../../layouts/BlogPost.astro'
+publishDate: Apr 11 2022
 description: No, I’m not selling courses or e-books, nor am I some sort of “guru” and my lovely audience is not in the tens of thousands. I’m just a regular person, who figured out how to make some bucks by…
 title: How I Earn 1300$ A Month Writing Stuff People Actually Read
 readTime: 4 min read
 name: Alex Streza
 ---
-How I Earn 1300$ A Month Writing Stuff People Actually Read
-===========================================================
 
-Not an everyday writer
-----------------------
+# How I Earn 1300$ A Month Writing Stuff People Actually Read
+
+## Not an everyday writer
 
 No, I’m not selling courses or e-books, nor am I some sort of “guru” and my lovely audience is not in the tens of thousands. I’m just a regular person, who figured out how to make some bucks by writing articles people actually **want to read**.
 
@@ -23,8 +22,7 @@ For parts of the world, $1300 is pocket change, whereas for others, it’s a sma
 
 By day I work as a developer, and by night I write and learn as much as I can to become a jack of all trades but a master of none, I promise that’s the final poetic cringe you’ll encounter in this article.
 
-I Don’t Write Tutorials (Coding) Anymore
-========================================
+# I Don’t Write Tutorials (Coding) Anymore
 
 > I Code
 
@@ -48,8 +46,7 @@ Scheduling articles is hard but for starters try to write 2–4 articles a month
 
 Last month I achieved over $1340 and the main reason for that was hitting the viral jackpot with one of [my articles](https://javascript.plainenglish.io/i-deep-faked-myself-in-every-meeting-for-a-whole-week-23901deed017) that’s responsible for a bit more than half of that revenue. You never truly know which article will perform best or when but those previous steps I’ve covered were, in my humble opinion a big factor.
 
-I Use AI To Speed Up Everything
-===============================
+# I Use AI To Speed Up Everything
 
 > I Love Productivity Tools
 

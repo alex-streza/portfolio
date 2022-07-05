@@ -1,17 +1,16 @@
 ---
 setup: |
-   import Layout from '../../layouts/BlogPost.astro'
-publishDate: Feb 17th
+  import Layout from '../../layouts/BlogPost.astro'
+publishDate: Feb 17th 2022
 description: GDPR & EPR restrictions aren’t well known to developers outside of the EU or small websites with no legal team and this can affect many applications out there. Recently an article surfaced on…
 title: How Google Fonts Became Illegal in Europe
 readTime: 5 min read
 name: Alex Streza
 ---
-How Google Fonts Became ‘Illegal’ in Europe
-===========================================
 
-Cookies are everywhere
-----------------------
+# How Google Fonts Became ‘Illegal’ in Europe
+
+## Cookies are everywhere
 
 ![](https://miro.medium.com/max/1400/1*q9RQfMwULW7MW3drQkaH2A.png)
 
@@ -21,8 +20,7 @@ GDPR & EPR restrictions aren’t well known to developers outside of the EU or s
 
 Cookies are the Definition of Annoying
 
-Google Fonts Illegal?
-=====================
+# Google Fonts Illegal?
 
 **_Yes & No_**
 
@@ -34,8 +32,7 @@ That sounds like a very improbable thing to happen to you because you may be hos
 
 The puny penalty isn’t that scary for large businesses but it should raise the question if it’s worth ignoring it further and risk higher penalties since solving it isn’t really that much of a hassle.
 
-What are GDPR & EPR
-===================
+# What are GDPR & EPR
 
 **_Overly complicated legal stuff no developer likes._**
 
@@ -55,8 +52,7 @@ A few weeks before the Google Fonts legal claim the Austrian Data Protection Aut
 
 This confirms the importance of giving users a way to decide which cookies they consent to even if it downgrades the user experience through annoying popups.
 
-How to comply with EU laws
-==========================
+# How to comply with EU laws
 
 **_Dreaded consent to cookies popup everywhere_**
 
@@ -100,4 +96,4 @@ If you are integrating with [Next.js](https://nextjs.org/) you can easily append
 
 Hope you liked this short “legal” story, don’t forget to clap and follow for more software-related content 🚀.
 
-_More content at_  [**_plainenglish.io_**](http://plainenglish.io/)_. Sign up for our_ [**_free weekly newsletter_**](http://newsletter.plainenglish.io/)_. Get exclusive access to writing opportunities and advice in our_ [**_community Discord_**](https://discord.gg/GtDtUAvyhW)_._
+_More content at_ [**_plainenglish.io_**](http://plainenglish.io/)_. Sign up for our_ [**_free weekly newsletter_**](http://newsletter.plainenglish.io/)_. Get exclusive access to writing opportunities and advice in our_ [**_community Discord_**](https://discord.gg/GtDtUAvyhW)_._

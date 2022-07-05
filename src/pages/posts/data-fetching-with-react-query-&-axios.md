@@ -1,31 +1,28 @@
 ---
 setup: |
-   import Layout from '../../layouts/BlogPost.astro'
-publishDate: Aug 17th
+  import Layout from '../../layouts/BlogPost.astro'
+publishDate: Aug 17 2021
 description: There are many libraries that provide ways to make HTTP requests for the frontend but one remained the de facto leader for many years and that is Axios. It’s a neat library which allows for more…
 title: Data Fetching with React Query & Axios
 readTime: 4 min read
 name: Alex Streza
 ---
-Data Fetching with React Query & Axios
-======================================
 
-Implementing Hooks for Furry HTTP Requests in react-query
----------------------------------------------------------
+# Data Fetching with React Query & Axios
+
+## Implementing Hooks for Furry HTTP Requests in react-query
 
 ![](https://miro.medium.com/max/1400/0*jVo04AyJ_pyVt0Go)
 
 There are many libraries that provide ways to make HTTP requests for the frontend but one remained the de facto leader for many years and that is [Axios](https://axios-http.com/docs/intro). It’s a neat library which allows for more structured and faster development but there’s a library which recently surfaced called [react-query](https://react-query.tanstack.com/). It’s made for React and uses hooks and providers which are a more native approach in a React application and it’s **great**.
 
-1\. Why not use only Axios?
-===========================
+# 1\. Why not use only Axios?
 
 Axios is a solid library don’t get me wrong but react-query brings a caching mechanism under the hood and its API is incredibly friendly for React users. This doesn’t mean you can’t use both at the same time if you want instead of using the browser-based fetch API.
 
 ![](https://miro.medium.com/max/1200/0*nygrYwJO-2SP1vE_)
 
-**2\. Axios Base Service**
-==========================
+# **2\. Axios Base Service**
 
 We will use the great [Dog CEO API](https://dog.ceo/dog-api/) to show a random furry friend and a list of 🐶. We want to make the request when the component mounts and destructure the response data (messsage) using a custom request function using Axios.
 
@@ -47,8 +44,7 @@ We would need to add an isLoading state variable and manually update it when req
 
 Also if we require to show an error message we have to define another error state variable and those pieces of state have to be handled for multiple requests in an application and it can get rather messy.
 
-3\. React Query Implementation
-==============================
+# 3\. React Query Implementation
 
 This works great but we can improve on it by caching the \`getAllDogs()\` request using react-query, which will also remove the need of useEffect to make request on mount and include error, isLoading values and many other useful stateful variables.
 

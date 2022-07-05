@@ -1,7 +1,7 @@
 ---
 setup: |
   import Layout from '../../layouts/BlogPost.astro'
-publishDate: Aug 15th
+publishDate: Aug 15 2021
 description: Lodash has been one of the most popular libraries on NPM for a long time with over 30M downloads per week as it brings great utility functions for every projects needs. It was regarded as a must have…
 title: JavaScript vs Lodash One-Liners
 readTime: 3 min read
@@ -32,39 +32,39 @@ All following examples will be on this array:
 
 ![](https://miro.medium.com/max/1400/1*Lun-eASFJGO2v6R_NUV2RA.png)
 
-# 1\. Remove Duplicates
+## 1\. Remove Duplicates
 
 In Lodash it’s pretty straightforward using `uniqWith` and `isEqual` as comparator, for ES6 we’ll need to check for duplicate objects on each filter iteration.
 
 ![](https://miro.medium.com/max/1400/1*5wEsZHQMxXdlurzWsAGUaA.png)
 
-# 2\. Calculate Average
+## 2\. Calculate Average
 
 We need to calculate the average (or mean for Lodash) price of all pets.
 
 ![](https://miro.medium.com/max/1400/1*EH0poGjgYfEeLO1b_d2bcQ.png)
 
-# 3\. Random Id
+## 3\. Random Id
 
 Add a random id to each pet in the array.
 
-> I do not recommend using `Math.random` to generate keys or passwords as it’s not entirely random, see more about r[andom numbers](https://www.random.org/randomness/).
+> I do not recommend using `Math.random` to generate keys or passwords as it’s not entirely random, see more about [random numbers](https://www.random.org/randomness/).
 
 ![](https://miro.medium.com/max/1400/1*ac5Ews1eQqSsamZYC-2UlQ.png)
 
-# 4\. Capitalize String
+## 4\. Capitalize String
 
 For each pet we need to make the first letter upper cased.
 
 ![](https://miro.medium.com/max/1400/1*RLjk2s8TmH-EfEbhBulCHw.png)
 
-# 5\. Remove Field
+## 5\. Remove Field
 
 We’ll remove the price property as we all know 🐶 are priceless.
 
 ![](https://miro.medium.com/max/1400/1*d_fs9VP6UQhE89I7-qmkRA.png)
 
-# Bonus Tip
+## Bonus Tip
 
 If you are using Lodash or date-fns import utility functions like this:
 
@@ -76,6 +76,6 @@ That way the import size is considerably reduced unlike importing the entire mod
 
 If you want to check the code here is the [CodeSandbox](https://codesandbox.io/s/lodash-vs-es6-6g8h4?file=/src/index.js).
 
-![](https://miro.medium.com/max/1400/0*Ztf4RZCfwI5dQxEB.jpg)
+<!-- link -->
 
-buymeacoffee.com/snappy.guy
+Liked the article? Consider maybe [buying me a ☕](https://buymeacoffee.com/snappy.guy) or [following me on Twitter](https://twitter.com/alex_streza).

@@ -1,24 +1,22 @@
 ---
 setup: |
-   import Layout from '../../layouts/BlogPost.astro'
-publishDate: Apr 19th
+  import Layout from '../../layouts/BlogPost.astro'
+publishDate: Apr 19 2022
 description: Ideas are hard to come by, great ideas are rare but it doesn’t have to be like that. AI, the utterly abstract black box of endless creativity and wisdom can sometimes be of great aid at building the…
 title: I Build What AI Tells Me To, And Why You Should Too
 readTime: 4 min read
 name: Alex Streza
 ---
+
 ![](https://miro.medium.com/max/700/1*h-N3nqNmqN4hkcYYq2SKIA.png)
 
-I Build What AI Tells Me To, And Why You Should Too
-===================================================
+# I Build What AI Tells Me To, And Why You Should Too
 
-AI as a Service
----------------
+## AI as a Service
 
 Ideas are hard to come by, great ideas are rare but it doesn’t have to be like that. AI, the utterly **abstract black box of endless creativity and wisdom** can sometimes be of great aid at building the foundation of unicorn company in it’s infancy. A while back I stopped stressing over the unfathomably large todo list by relaxing in the uncanny sight of AI based Idea Generators.
 
-An Overly Complicated Introduction
-==================================
+# An Overly Complicated Introduction
 
 > The As A Service Fiesta
 
@@ -38,8 +36,7 @@ During my constant search for the next cool platform, tool or library I can dip 
 
 I’m not saying AI is the next big thing, it already is but what I am saying is AI can help you with your ideas, it can give you a nudge in the right direction or a gigantic leap. It all depends on how you use it. This paragraph and article is in fact generated with AI 🤖.
 
-AI as a Service
-===============
+# AI as a Service
 
 > No robot revolution imminent
 

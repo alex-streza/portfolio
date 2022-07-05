@@ -1,26 +1,24 @@
 ---
 setup: |
-   import Layout from '../../layouts/BlogPost.astro'
-publishDate: Aug 18th
+  import Layout from '../../layouts/BlogPost.astro'
+publishDate: Aug 18th 2021
 description: Nowadays every project has a ton of dependencies and a Frontend library like React is the perfect candidate for a black hole-sized node_modules folder. With NPM you can easily download libraries and…
 title: Great NPM Libraries for React
 readTime: 4 min read
 name: Alex Streza
 ---
+
 ![](https://miro.medium.com/max/1400/1*eZbP77ag0102PdQHW8GfmA.png)
 
-Great NPM Libraries for React
-=============================
+# Great NPM Libraries for React
 
-5 NPM libraries for every React project
----------------------------------------
+## 5 NPM libraries for every React project
 
-Nowadays every project has a ton of dependencies and a Frontend library like [React](https://reactjs.org/) is the perfect candidate for a black hole-sized **node\_modules** folder. With [NPM](https://www.npmjs.com/) you can easily download libraries and keep the versions up to date which is more or less a bit of a hassle.
+Nowadays every project has a ton of dependencies and a Frontend library like [React](https://reactjs.org/) is the perfect candidate for a black hole-sized **node_modules** folder. With [NPM](https://www.npmjs.com/) you can easily download libraries and keep the versions up to date which is more or less a bit of a hassle.
 
 Let’s jump straight to what I consider in no particular order, some of the coolest libraries that most React projects would benefit from immensely.
 
-[1\. Next.js](https://nextjs.org/docs/getting-started)
-======================================================
+# [1\. Next.js](https://nextjs.org/docs/getting-started)
 
 ![](https://miro.medium.com/max/1400/0*yxUPzeyOQrgfR127.png)
 
@@ -39,8 +37,7 @@ as follows:
 
 Next.js has routing included so there’s no need for other 3rd party dependencies like react-router or others. If we want to use images we can use the Image component which comes with optimisations for SSR and payload size (to use hosts other than current domain you may need to configure [next.config.js](https://github.com/vercel/next.js/discussions/20953)).
 
-[2\. Redux](https://redux.js.org/)
-==================================
+# [2\. Redux](https://redux.js.org/)
 
 ![](https://miro.medium.com/max/1400/0*r5hoNQVJxQ89YYXR.png)
 
@@ -52,8 +49,7 @@ To check Redux, out let’s use CRA with Redux template:
 
 I’ll not explain the basics of Redux as that deserves a whole separate article 😢.
 
-[3\. React Query](https://react-query.tanstack.com/)
-====================================================
+# [3\. React Query](https://react-query.tanstack.com/)
 
 ![](https://miro.medium.com/max/1400/0*38tM065dHwpO3N3n.png)
 
@@ -69,8 +65,7 @@ In another component:
 
 See a more in-depth tutorial about react-query in this [article](https://alexstreza.hashnode.dev/data-fetching-with-react-query-and-axios).
 
-[4\. Cypress](https://www.cypress.io/)
-======================================
+# [4\. Cypress](https://www.cypress.io/)
 
 ![](https://miro.medium.com/max/1400/0*TanDOa8eeeO2W_7s.png)
 
@@ -80,8 +75,7 @@ We can write a test that checks if the dog image has been displayed like this
 
 ![](https://miro.medium.com/max/1400/1*vcm7FEExqXdRxWK49znRBw.png)
 
-[5\. React Three Fiber](https://docs.pmnd.rs/react-three-fiber/getting-started/introduction)
-============================================================================================
+# [5\. React Three Fiber](https://docs.pmnd.rs/react-three-fiber/getting-started/introduction)
 
 ![](https://miro.medium.com/max/1400/0*2g9ZmgDDulD8LL0E.png)
 

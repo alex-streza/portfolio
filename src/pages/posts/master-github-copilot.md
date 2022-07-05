@@ -1,26 +1,24 @@
 ---
 setup: |
-   import Layout from '../../layouts/BlogPost.astro'
-publishDate: Nov 25th
+  import Layout from '../../layouts/BlogPost.astro'
+publishDate: Nov 25 2021
 description: A few weeks ago Github announced a state-of-the-art, AI-based pair programmer beta extension for VSCode which shook considerably the software development industry. While many were concerned this AI…
 title: Master Github Copilot
 readTime: 6 min read
 name: Alex Streza
 ---
+
 ![](https://miro.medium.com/max/1400/1*pWO8ioHkpjHz9_QU4Gbkvg.png)
 
-Master Github Copilot AI for React in VS Code
-=============================================
+# Master Github Copilot AI for React in VS Code
 
-Is AI Pair Programming the Future?
-----------------------------------
+## Is AI Pair Programming the Future?
 
 A few weeks ago [Github](https://github.com/) announced a state-of-the-art, AI-based pair programmer beta extension for [VSCode](https://code.visualstudio.com/) which shook considerably the software development industry. While many were concerned this AI tool will take our jobs this is definitely not the case **yet**. This past month I’ve been testing [Github Copilot](https://copilot.github.com/) in many projects mainly JS and both on the frontend, backend, and also for other more uncanny tasks.
 
 ![](https://miro.medium.com/max/1400/1*Ck5ojjZYFPIqnkHB3DtxkQ.jpeg)
 
-1\. How It Works
-================
+# 1\. How It Works
 
 Once you have registered for the beta program, you will get a notification you are eligible to test the extension and gain access to it via the [VSCode Extension Marketplace](https://marketplace.visualstudio.com/items?itemName=GitHub.copilot) after that you are pretty much good to go. Now, whenever we write some code the extension will give a suggestion on how to complete the line in a light gray tint and we can press \`Tab\` to accept it.
 
@@ -127,8 +125,7 @@ Damn this AI is really narcissistic but unfortunately not great at writing markd
 
 > We can say Github Copilot is not great at Blogging
 
-3\. Should You Use It
-=====================
+# 3\. Should You Use It
 
 In my opinion, Github Copilot is a great tool to add to your productivity workflow although is far from complete and requires some performance improvements.
 

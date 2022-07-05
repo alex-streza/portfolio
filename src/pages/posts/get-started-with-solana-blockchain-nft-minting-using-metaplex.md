@@ -1,21 +1,20 @@
 ---
 setup: |
-   import Layout from '../../layouts/BlogPost.astro'
-publishDate: Nov 14th
+  import Layout from '../../layouts/BlogPost.astro'
+publishDate: Nov 14 2021
 description: The days when the infinite money glitch of living off investments and dividends is boomer talk, crypto makes people millionaires left and right and other more broke than ever. Out of all the popular…
 title: Get Started With Solana Blockchain NFT Minting using Metaplex
 readTime: 5 min read
 name: Alex Streza
 ---
+
 ![](https://miro.medium.com/max/700/1*Ps6DKxfGvaVKPfjME6FzOA.png)
 
-Get Started With Solana Blockchain NFT Minting using Metaplex
-=============================================================
+# Get Started With Solana Blockchain NFT Minting using Metaplex
 
 Crypto & NFTs have been all the rage in 2021 and the hype is far from over.
 
-1\. Intro
-=========
+# 1\. Intro
 
 The days when the infinite money glitch of living off investments and dividends is boomer talk, crypto makes people millionaires left and right and other more broke than ever.
 
@@ -41,8 +40,7 @@ Restart the terminal and run `solana — version` to check the installation.
 
 The tool suite we installed provides many useful utilities for setting the network config and creating testing wallets with airdropped SOL. All commands can be found in the [Official Documentation](https://docs.solana.com/cli/conventions).
 
-2\. NFTs & Metaplex Upload
-==========================
+# 2\. NFTs & Metaplex Upload
 
 Let’s talk NFTs in the simplest way, digital art validated through blockchain allowing for digital artist to sell their artwork and earn bucks. NFTs are tokens which link an asset (most often an image) hosted on the internet to a certain transaction in the blockchain making it unique and valuable but not entirely immune to copy paste.
 
@@ -60,12 +58,12 @@ Metaplex is a suite of contracts to ease the process of launching an NFT collect
 
 Make sure you have installed node, yarn and ts-node:
 
-sudo apt update && sudo apt upgradesudo apt -y install curl dirmngr apt-transport-https lsb-release ca-certificates && curl -sL [https://deb.nodesource.com/setup\_14.x](https://deb.nodesource.com/setup_12.x) | sudo -E bash -sudo apt -y install nodejscurl -sS [https://dl.yarnpkg.com/debian/pubkey.gpg](https://dl.yarnpkg.com/debian/pubkey.gpg) | sudo apt-key add - && echo "deb [https://dl.yarnpkg.com/debian/](https://dl.yarnpkg.com/debian/) stable main" | sudo tee /etc/apt/sources.list.d/yarn.listsudo apt update && sudo apt install yarnnpm install -g ts-node
+sudo apt update && sudo apt upgradesudo apt -y install curl dirmngr apt-transport-https lsb-release ca-certificates && curl -sL [https://deb.nodesource.com/setup_14.x](https://deb.nodesource.com/setup_12.x) | sudo -E bash -sudo apt -y install nodejscurl -sS [https://dl.yarnpkg.com/debian/pubkey.gpg](https://dl.yarnpkg.com/debian/pubkey.gpg) | sudo apt-key add - && echo "deb [https://dl.yarnpkg.com/debian/](https://dl.yarnpkg.com/debian/) stable main" | sudo tee /etc/apt/sources.list.d/yarn.listsudo apt update && sudo apt install yarnnpm install -g ts-node
 
 After that we’ll clone the Metaplex repo, make sure to use the same path or update the .sh scripts in solana-candy-factory/devtools.
 
 git clone git@github.com:metaplex-foundation/metaplex.git \\  
-  ~/metaplex-foundation/metaplex
+ ~/metaplex-foundation/metaplex
 
 Now we can proceed to move all nft related files (.png and .json) to /nft-sources directory and run
 
@@ -73,8 +71,7 @@ yarn installyarn setup-dev
 
 The script will generate the keys and an account for deployment to the devnet network, you’ll have the option to airdrop the new account some SOL to get started and will inject all required environment variables to .env file in our DAPP.
 
-**3\. NextJS DAPP**
-===================
+# **3\. NextJS DAPP**
 
 Before we run the template we should import the created wallet into Phantom or other Solana Wallet Provider you may like. Copy the content of ~/.config/solana/candyfactory-devnet.json into the private key field in import wallet.
 

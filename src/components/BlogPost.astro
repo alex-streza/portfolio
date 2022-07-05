@@ -2,7 +2,7 @@
 export interface Props {
   publishDate: string
   likes: string
-  readTime: number
+  readTime: string
   likeCount: number
   shareCount: number
   commentCount: number
@@ -17,7 +17,7 @@ const { publishDate, readTime, likeCount, shareCount, commentCount } =
     <header class='flex mb-7'>
       <a href='/' class='text-white no-underline w-1/3'>All stories</a>
       <div class='ml-auto text-sm'>
-        <span>{publishDate} - {readTime} min read</span>
+        <span>{publishDate} - {readTime}</span>
 
         <!-- <span class='hidden md:inline-block'> -</span> -->
         <!-- <br class='md:hidden' /> -->

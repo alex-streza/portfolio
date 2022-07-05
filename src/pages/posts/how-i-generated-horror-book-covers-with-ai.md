@@ -1,19 +1,18 @@
 ---
 setup: |
-   import Layout from '../../layouts/BlogPost.astro'
-publishDate: Mar 22nd
+  import Layout from '../../layouts/BlogPost.astro'
+publishDate: Mar 22 2022
 description: Halloween is not around the corner but that’s not an excuse to skip reading terrifying tales that make your spine shiver. Stories that keep you awake at night covered in goosebumps. Add AI on top of…
 title: How I Generated Horror Book Covers With AI
 readTime: 6 min read
 name: Alex Streza
 ---
+
 ![](https://miro.medium.com/max/700/1*pd4T7Gqz9k_pX22172HwPw.png)
 
-How I Generated Horror Book Covers With AI
-==========================================
+# How I Generated Horror Book Covers With AI
 
-AI can create horror, oh and what horror
-----------------------------------------
+## AI can create horror, oh and what horror
 
 Halloween is not around the corner but that’s not an excuse to skip reading terrifying tales that make your spine shiver. Stories that keep you awake at night covered in **goosebumps.** Add AI on top of that and you’ve got the recipe for bestseller worthy horror.
 
@@ -31,8 +30,7 @@ I’ve already showcased what AI can do when it’s tasked with generating uniqu
 
 Before we start let me present what Goosebumps is and what it meant to me **growing up**.
 
-What is Goosebumps?
-===================
+# What is Goosebumps?
 
 > The Stephen King of Children Horror Series
 
@@ -54,8 +52,7 @@ I can’t help but wonder, what if R.L. Stine started publishing books nowadays 
 
 Enough with the jibber jabber you are here to see some AI imagining horrid book covers from titles it considered truly **frightening**.
 
-Generating Book Titles
-======================
+# Generating Book Titles
 
 > Let the AI decide what it wants
 
@@ -73,14 +70,13 @@ Jasper Long Form Content U
 
 I didn’t even ask and it already came up with the following gory titles:
 
-*   _The Girl Who Cried Blood_
-*   _The Boy Who Lived in the Woods_
-*   _The Girl Who Ate Her Own Skin_
+- _The Girl Who Cried Blood_
+- _The Boy Who Lived in the Woods_
+- _The Girl Who Ate Her Own Skin_
 
 They are sort of similar to R.L. Stine’s writing style, “_The Curse of the Mummy’s Tomb_”, “_The Ghost Next Door_” or “_The Haunted School”_ so I decided to use those suggestions.
 
-Creating Horror Book Covers
-===========================
+# Creating Horror Book Covers
 
 > Change prompt and press run … 3 hours later
 
@@ -90,13 +86,13 @@ Firstly I’ll insert the titles one by one into the [**Google Colab file**](htt
 
 ![](https://miro.medium.com/max/340/1*jC7a9CyZk8ZJ0Yat1wkPKA.png)
 
-“_The Girl Who Cried Blood_” Book Cover
+“The Girl Who Cried Blood” Book Cover
 
 I won’t show book cover for the third title since it was particularly disgusting and fear inducing but the other 2 titles have an **eery look** although the AI had some trouble with the text and attempted to draw it within the illustrations causing a mumbled appearance.
 
 ![](https://miro.medium.com/max/340/1*cayBdwj2EJALGbHp5q2wzA.png)
 
-_“The Boy Who Lived in the Woods” Book Cover_
+“The Boy Who Lived in the Woods” Book Cover
 
 I’ve only run the colab twice since each run took more than 30 minutes to complete, maybe the AI was getting spooked and took breaks to **cope** with the horrifying creation it was forced to make.
 
@@ -124,13 +120,6 @@ Get your Medium subscription now to get your knowledge **over 9000:**
 
 [
 
-Join Medium with my referral link - Alex Streza
------------------------------------------------
+## Join Medium with my referral link
 
-### As a Medium member, a portion of your membership fee goes to writers you read, and you get full access to every story…
-
-medium.com
-
-
-
-](/@alex.streza/membership)
+As a Medium member, a portion of your membership fee goes to writers you read, and you get full access to every story and a ton more. Support me here [medium.com](https://medium.com/@alex.streza/membership)

@@ -1,7 +1,7 @@
 ---
 setup: |
   import Layout from '../../layouts/BlogPost.astro'
-publishDate: Mar 21st
+publishDate: Mar 21 2022
 description: We all know those countless, mandatory, post-pandemic Zoom calls where time seems to halt and all that is marvelous about a developer’s daily life turns to dust. Luckily some of us have more…
 title: I Deep Faked Myself In Every Meeting For A Whole Week
 readTime: 6 min read

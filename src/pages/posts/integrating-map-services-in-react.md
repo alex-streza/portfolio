@@ -1,19 +1,18 @@
 ---
 setup: |
-   import Layout from '../../layouts/BlogPost.astro'
-publishDate: Aug 18th
+  import Layout from '../../layouts/BlogPost.astro'
+publishDate: Aug 18 2021
 description: For years there’s been a never-ending debate in the development industry on which is the best map provider, let’s see who wins the Game of Map Providers. Google Maps SDK remained king for a long time…
 title: Integrating Map Services in React
 readTime: 4 min read
 name: Alex Streza
 ---
+
 ![](https://miro.medium.com/max/1400/0*bcucYGcemS9QQ7qp)
 
-Integrating Map Services in React
-=================================
+# Integrating Map Services in React
 
-React Mapbox Guide
-==================
+# React Mapbox Guide
 
 For years there’s been a never-ending debate in the development industry on which is the best map provider, let’s see who wins the Game of Map Providers.
 
@@ -21,16 +20,15 @@ Google Maps SDK remained king for a long time due to its reliability but this st
 
 When you decide on a mapping service you have to consider multiple factors:
 
-*   price point ($/map load or API request)
-*   reliability (how accurate and robust the service is)
-*   customizability (the level of personalisation available, color palette or markers)
-*   developer experience (how easy to integrate and develop in an application)
-*   other services such as Search (also known as Geocoding), Navigation and others
+- price point ($/map load or API request)
+- reliability (how accurate and robust the service is)
+- customizability (the level of personalisation available, color palette or markers)
+- developer experience (how easy to integrate and develop in an application)
+- other services such as Search (also known as Geocoding), Navigation and others
 
 ![](https://miro.medium.com/max/1000/0*YCsDSMz_cLWDA-h5)
 
-1\. Why [Mapbox](https://www.mapbox.com/)?
-==========================================
+# 1\. Why [Mapbox](https://www.mapbox.com/)?
 
 Earlier this year I developed a full-stack application to increase bicycle theft awareness using Mapbox and React and loved how easy to use and customize it is. Check it out over at [bike-theft-map.bikmo.com](https://bike-theft-map.bikmo.com/).
 
@@ -42,15 +40,13 @@ Using Mapbox Studio you can create the dark mode map of your dreams and even int
 
 Even more, the free plan allows for up to 100k/month map loads which is extremely good for development and even small-sized applications.
 
-2\. What are we building?
-=========================
+# 2\. What are we building?
 
 ![](https://miro.medium.com/max/1400/0*XapYfE2iyzxw_FUr)
 
 We’ll make a [NextJS](https://nextjs.org/) app for a Pet Veterinary with multiple clinics in New York, using it people can view markers for each location on the map and by clicking on it can complete a form regarding their pet details before taking it there.
 
-3\. Creating a custom Map Style
-===============================
+# 3\. Creating a custom Map Style
 
 After we create an account we can visit [Mapbox Studio](https://studio.mapbox.com/) and create a new style by pressing the New style button.
 
@@ -68,8 +64,7 @@ In order to publish the changes we have to press the tiny Publish button in the 
 
 ![](https://miro.medium.com/max/1400/0*kpS4tRwhMPUSB7Wp)
 
-4\. Mapbox in React
-===================
+# 4\. Mapbox in React
 
 Since we are building this App in NextJS we can either use the official Vanilla JS [Mapbox GL JS](https://docs.mapbox.com/mapbox-gl-js/example/) library or the great React Wrapper [react-map-gl](https://visgl.github.io/react-map-gl/). I’ll use the latter as it works great in our use case.
 
@@ -102,7 +97,7 @@ If you want to check this demo project (replace mapboxApiAccessToken & mapStyle 
 Check the official website [examples](https://visgl.github.io/react-map-gl/examples) or check this great Mapbox based tool to [increase bicycle theft awareness](https://bike-theft-map.bikmo.com/).
 
 > I hope you enjoyed this short tutorial on integrating map services with Mapbox and NextJS and would love if you give it a 🦄!
-> 
+>
 > Check more of my **work** at [alexstreza.dev](http://alexstreza.dev/).
 
 _More content at_ [_plainenglish.io_](http://plainenglish.io/)

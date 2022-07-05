@@ -1,7 +1,7 @@
 ---
 setup: |
   import Layout from '../../layouts/BlogPost.astro'
-publishDate: Feb 28th
+publishDate: Feb 28 2022
 description: There are two things I hate, lack of sleep and crypto scams, and nope I’m not doing either this year. In 2022 everyone dreams to launch their own apps & products but not many end up building their…
 title: How I’m Turning My AI-Powered SaaS Into An NFT Minter
 readTime: 6 min read
