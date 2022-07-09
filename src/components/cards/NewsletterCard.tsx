@@ -5,7 +5,7 @@ const NewsletterCard = () => {
   return (
     <div className="flex gap-3 items-end">
       <Input name="email" label="Email" placeholder="cool@cooler.com" />
-      <Button>Subscribe</Button>
+      <Button className="primary w-auto">Subscribe</Button>
     </div>
   )
 }

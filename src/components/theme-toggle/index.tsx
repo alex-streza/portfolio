@@ -41,7 +41,11 @@ const ThemeToggle = () => {
     setIsDark(!isDark)
   }, [isDark])
 
-  useEffect(() => setIsMounted(true), [])
+  useEffect(() => {
+    setIsMounted(true)
+    document.getElementsByTagName('body')[0].classList.add('duration-500')
+    document.getElementsByTagName('body')[0].classList.add('transition-colors')
+  }, [])
 
   if (!isMounted) return <SunIcon />
 

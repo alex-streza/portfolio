@@ -1,9 +1,28 @@
 @font-face {
   font-family: 'PP Pangram Sans';
-  src: url('/assets/fonts/PP Pangram Sans/PPPangramSans-Medium.woff2') format('woff2'),
-    url('/assets/fonts/PP Pangram Sans/PPPangramSans-Medium.woff') format('woff'),
-    url('/assets/fonts/PP Pangram Sans/PPPangramSans-Medium.ttf') format('truetype');
+  src: url('/assets/fonts/PP Pangram Sans/PPPangramSans-Medium.woff2')
+      format('woff2'),
+    url('/assets/fonts/PP Pangram Sans/PPPangramSans-Medium.woff')
+      format('woff'),
+    url('/assets/fonts/PP Pangram Sans/PPPangramSans-Medium.ttf')
+      format('truetype'),
+    url('/assets/fonts/PP Pangram Sans/PPPangramSans-Medium.otf') format('otf');
   font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'PP Pangram Sans';
+  src: url('/assets/fonts/PP Pangram Sans/PPPangramSans-Semibold.woff2')
+      format('woff2'),
+    url('/assets/fonts/PP Pangram Sans/PPPangramSans-Semibold.woff')
+      format('woff'),
+    url('/assets/fonts/PP Pangram Sans/PPPangramSans-Semibold.ttf')
+      format('truetype'),
+    url('/assets/fonts/PP Pangram Sans/PPPangramSans-Semibold.otf')
+      format('otf');
+  font-weight: 600;
   font-style: normal;
   font-display: swap;
 }
@@ -12,7 +31,10 @@
   font-family: 'PP Migra';
   src: url('/assets/fonts/PP Migra/PPMigra-Extrabold.woff2') format('woff2'),
     url('/assets/fonts/PP Migra/PPMigra-Extrabold.woff') format('woff'),
-    url('/assets/fonts/PP Migra/PPMigra-Extrabold.ttf') format('truetype');
+    url('/assets/fonts/PP Migra/PPMigra-Extrabold.ttf') format('truetype'),
+    url('/assets/fonts/PP Migra/PPMigra-Extrabold.otf') format('otf'),
+    url('/assets/fonts/PP Migra/PPMigra-Extrabold.eot')
+      format('embedded-opentype');
   font-weight: 500;
   font-style: normal;
   font-display: swap;
