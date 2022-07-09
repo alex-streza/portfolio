@@ -2,6 +2,7 @@
 import BaseHead from '@components/BaseHead.astro'
 import BlogHeader from '@components/BlogHeader.astro'
 import BlogPostPreview from '@components/BlogPostPreview.astro'
+import NewsletterCard from '@components/cards/NewsletterCard'
 import spacetime from 'spacetime'
 
 let title = 'Blog | Alex Streza'
@@ -78,6 +79,7 @@ const actions = [
         <section class='intro'>
           <h1 class='latest'>{title}</h1>
           <p>{description}</p>
+          <NewsletterCard />
         </section>
         <section aria-label='Blog post list'>
           {allPosts.map((p, i) => (

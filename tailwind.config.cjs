@@ -25,6 +25,7 @@ module.exports = {
         900: 'hsla(169, 65%, 43%, 1)',
         1000: 'hsla(169, 65%, 38%, 1)',
         transparent: 'rgba(99, 222, 199, 0.8)',
+        transparent2: 'rgba(99, 222, 199, 0.5)',
       },
       green: {
         0: 'hsla(169, 65%, 88%, 1)',
