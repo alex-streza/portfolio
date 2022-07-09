@@ -1,12 +1,32 @@
+---
+import { Icon } from 'astro-icon'
+import ThemeToggle from '@components/theme-toggle'
+---
+
 <nav class='navbar'>
-  <h1>Alex Streza</h1>
+  <span>Alex Streza</span>
+  <div class='navbar-actions'>
+    <Icon name='jam:search' />
+    <ThemeToggle client:load />
+  </div>
+  <script is:inline>
+    if (localStorage.getItem('dark') == 'true') {
+      document.documentElement.classList.add('dark')
+    } else {
+      document.documentElement.classList.remove('dark')
+    }
+  </script>
 </nav>
 
 <style>
   .navbar {
-    @apply py-5 md:py-10 px-[120px] grid place-content-center w-full;
+    @apply flex justify-between items-center p-5 md:py-10 md:px-[120px] w-full;
   }
-  h1 {
-    @apply text-[28px] mb-0;
+
+  .navbar-actions {
+    @apply flex gap-5 h-[32px];
+  }
+  span {
+    @apply text-[28px] mb-0 font-serif font-black;
   }
 </style>

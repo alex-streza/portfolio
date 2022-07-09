@@ -4,11 +4,11 @@
 
 @layer base {
   body {
-    @apply bg-gray-1000 text-white;
+    @apply dark:bg-gray-1000 dark:text-white bg-white text-gray-1000 transition-colors duration-500;
   }
 
   body > * {
-    @apply font-sans dark:text-white text-gray-1000;
+    @apply font-sans;
   }
 
   h1,
@@ -46,7 +46,7 @@
   }
 
   a {
-    @apply text-main font-normal items-center gap-3 underline underline-offset-8;
+    @apply dark:text-main text-main-900 font-normal items-center gap-3 underline underline-offset-8;
   }
 
   a > code {
@@ -81,7 +81,7 @@
   }
 
   blockquote {
-    @apply p-1 text-main bg-[hsla(169,65%,38%,0.3)] mt-3 text-lg font-semibold mb-7;
+    @apply p-1 dark:text-main text-main-900  dark:bg-[hsla(169,65%,38%,0.3)] bg-[hsla(169,65%,38%,0.2)] mt-3 text-lg font-semibold mb-7;
   }
   blockquote > p {
     all: unset;

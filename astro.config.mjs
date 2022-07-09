@@ -1,9 +1,13 @@
-import { defineConfig } from "astro/config";
-import preact from "@astrojs/preact";
-
-import tailwind from "@astrojs/tailwind";
+import react from '@astrojs/react'
+import tailwind from '@astrojs/tailwind'
+import { defineConfig } from 'astro/config'
 
 // https://astro.build/config
 export default defineConfig({
-	integrations: [preact(), tailwind({ config: { applyBaseStyles: false } })],
-});
+  vite: {
+    ssr: {
+      external: ['svgo'],
+    },
+  },
+  integrations: [react(), tailwind({ config: { applyBaseStyles: false } })],
+})
