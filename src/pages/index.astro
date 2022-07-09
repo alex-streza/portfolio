@@ -1,22 +1,13 @@
 ---
-// Component Imports
 import BaseHead from '@components/BaseHead.astro'
 import BlogHeader from '@components/BlogHeader.astro'
 import BlogPostPreview from '@components/BlogPostPreview.astro'
-import KBar from '../components/kbar'
-import { KBarPortal, KBarProvider } from 'kbar'
 import spacetime from 'spacetime'
 
-// Component Script:
-// You can write any JavaScript/TypeScript that you'd like here.
-// It will run during the build, but never in the browser.
-// All variables are available to use in the HTML template below.
 let title = 'Blog | Alex Streza'
 let description =
   "Everything JavaScript, Typescript and Web Development. I sometimes tackle AI, Web3 and have a massive soft spot for 3D and CGI. I also think I'm funny at times too."
 let permalink = 'https://www.blog.alexstreza.dev/'
-
-// Data Fetching: List all Markdown posts in the repo.
 
 let allPosts = await Astro.glob('./posts/*.md')
 allPosts = allPosts
@@ -81,9 +72,6 @@ const actions = [
   </head>
 
   <body>
-    <KBarProvider client:only actions={actions}>
-      <KBar client:only />
-    </KBarProvider>
     <BlogHeader />
     <div class='wrapper'>
       <main class='content'>

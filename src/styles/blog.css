@@ -24,7 +24,7 @@
     @apply text-main bg-[hsla(169,65%,38%,0.3)];
   }
 
-  /* Typography */
+  /* TYPOGRAPHY */
   h1 {
     @apply text-3xl leading-10 md:text-5xl md:leading-[60px];
   }
