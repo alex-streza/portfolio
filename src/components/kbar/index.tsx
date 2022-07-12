@@ -19,7 +19,6 @@ const actions = [
     name: 'Commands center',
     shortcut: ['ctrl', 'k'],
     keywords: 'writing words',
-    perform: () => (window.location.pathname = '/'),
   },
   {
     id: 'blog',
@@ -35,8 +34,7 @@ const actions = [
     section: 'Social links',
     keywords: 'contact',
     icon: <MediumIcon />,
-    perform: () =>
-      (window.location.pathname = 'https://medium.com/@alex.streza'),
+    perform: () => (window.location.href = 'https://medium.com/@alex.streza'),
   },
   {
     id: 'twitter',
@@ -44,8 +42,7 @@ const actions = [
     section: 'Social links',
     icon: <TwitterIcon />,
     keywords: 'contact',
-    perform: () =>
-      (window.location.pathname = 'https://twitter.com/alex_streza'),
+    perform: () => (window.location.href = 'https://twitter.com/alex_streza'),
   },
 ]
 

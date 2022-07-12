@@ -1,19 +1,13 @@
 import { useKBar, VisualState } from 'kbar'
-import { useCallback } from 'react'
 
 const Command = () => {
-  const { query, visualState, showing } = useKBar((state) => ({
+  const { query } = useKBar((state) => ({
     visualState: state.visualState,
     showing: state.visualState !== VisualState.hidden,
   }))
 
-  const handleToggle = useCallback(() => {
-    console.log('query, visualState', query, visualState)
-    query.toggle()
-  }, [])
-
   return (
-    <button onClick={handleToggle}>
+    <button onClick={query.toggle}>
       <svg
         width="32"
         height="32"

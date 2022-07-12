@@ -134,7 +134,7 @@
     @apply flex gap-3 ml-auto;
   }
   .command-center-shortcuts > span {
-    @apply p-1 bg-[rgba(99,222,199,0.33)] text-main;
+    @apply p-1 bg-[rgba(99,222,199,0.33)] text-main uppercase font-bold rounded;
   }
   .command-center-result {
     @apply flex gap-3 items-center hover:text-main hover:bg-[rgba(99,222,199,0.2)] cursor-pointer;
