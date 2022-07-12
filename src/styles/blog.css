@@ -115,4 +115,34 @@
   .btn.primary {
     @apply bg-main-600 hover:bg-main focus:bg-main-700 focus:shadow-[0px_0px_4px_4px_hsla(169,65%,63%,0.3)] disabled:bg-gray-300 disabled:shadow-none;
   }
+
+  /* COMMAND CENTER */
+  .command-center-positioner {
+    @apply bg-[hsla(0,0%,7%,0.5)];
+    backdrop-filter: blur(10px);
+  }
+  .command-center-animator,
+  .command-center-input {
+    @apply transition-all duration-500 w-full max-w-[480px];
+  }
+  .command-center-input,
+  .command-center-result {
+    @apply p-6 bg-gray-900 transition-all duration-500 text-base h-[60px] border-none outline-none rounded-t text-gray-100;
+  }
+
+  .command-center-shortcuts {
+    @apply flex gap-3 ml-auto;
+  }
+  .command-center-shortcuts > span {
+    @apply p-1 bg-[rgba(99,222,199,0.33)] text-main;
+  }
+  .command-center-result {
+    @apply flex gap-3 items-center hover:text-main hover:bg-[rgba(99,222,199,0.2)] cursor-pointer;
+  }
+  .command-center-section {
+    @apply h-[33px] text-white px-6 bg-gray-700 flex items-center;
+  }
+  .command-center-result:last-child {
+    @apply rounded-b;
+  }
 }

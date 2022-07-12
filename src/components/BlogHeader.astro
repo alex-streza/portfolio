@@ -1,12 +1,13 @@
 ---
 import { Icon } from 'astro-icon'
 import ThemeToggle from '@components/theme-toggle'
+import KBar from './kbar'
 ---
 
 <nav class='navbar'>
   <span>Alex Streza</span>
   <div class='navbar-actions'>
-    <Icon name='jam:search' />
+    <KBar client:only />
     <ThemeToggle client:load />
   </div>
 </nav>

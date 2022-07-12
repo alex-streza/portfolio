@@ -3,6 +3,8 @@ import BaseHead from '@components/BaseHead.astro'
 import BlogHeader from '@components/BlogHeader.astro'
 import BlogPostPreview from '@components/BlogPostPreview.astro'
 import NewsletterCard from '@components/cards/NewsletterCard'
+import KBar from '@components/kbar'
+import { KBarProvider } from 'kbar'
 import spacetime from 'spacetime'
 
 let title = 'Blog | Alex Streza'
@@ -26,23 +28,6 @@ allPosts = allPosts
       ),
     },
   }))
-
-const actions = [
-  {
-    id: 'blog',
-    name: 'Blog',
-    shortcut: ['b'],
-    keywords: 'writing words',
-    perform: () => (window.location.pathname = 'blog'),
-  },
-  {
-    id: 'contact',
-    name: 'Contact',
-    shortcut: ['c'],
-    keywords: 'email',
-    perform: () => (window.location.pathname = 'contact'),
-  },
-]
 ---
 
 <html lang='en'>

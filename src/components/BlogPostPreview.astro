@@ -9,7 +9,9 @@ const { post } = Astro.props
 <article class='post-preview'>
   <header>
     <span>{post.frontmatter.publishDate}</span>
-    <h2 class='title'>{post.frontmatter.title}</h2>
+    <a href={post.url} class='unset'>
+      <h2 class='title'>{post.frontmatter.title}</h2>
+    </a>
   </header>
   <p>{post.frontmatter.description}</p>
   <a href={post.url}>Read more</a>
@@ -24,5 +26,8 @@ const { post } = Astro.props
   }
   a {
     @apply p-2;
+  }
+  .unset {
+    all: unset;
   }
 </style>
