@@ -1,4 +1,5 @@
 import Command from '@components/icons/Command'
+import { useLocalStorageValue } from '@react-hookz/web'
 import {
   KBarAnimator,
   KBarPortal,
@@ -7,44 +8,11 @@ import {
   KBarResults,
   KBarSearch,
   useMatches,
+  useRegisterActions,
 } from 'kbar'
-import { useEffect } from 'react'
+import { useMemo } from 'react'
 import MediumIcon from '../icons/Medium'
 import TwitterIcon from '../icons/Twitter'
-
-const actions = [
-  {
-    id: 'command_center',
-    section: 'Shortcuts',
-    name: 'Commands center',
-    shortcut: ['ctrl', 'k'],
-    keywords: 'writing words',
-  },
-  {
-    id: 'blog',
-    section: 'Navigation',
-    name: 'All blog posts',
-    shortcut: ['b'],
-    keywords: 'writing words',
-    perform: () => (window.location.pathname = '/'),
-  },
-  {
-    id: 'medium',
-    name: 'Medium',
-    section: 'Social links',
-    keywords: 'contact',
-    icon: <MediumIcon />,
-    perform: () => (window.location.href = 'https://medium.com/@alex.streza'),
-  },
-  {
-    id: 'twitter',
-    name: 'Twitter',
-    section: 'Social links',
-    icon: <TwitterIcon />,
-    keywords: 'contact',
-    perform: () => (window.location.href = 'https://twitter.com/alex_streza'),
-  },
-]
 
 const RenderResults = () => {
   const { results } = useMatches()
@@ -74,7 +42,58 @@ const RenderResults = () => {
 }
 
 const KBar = () => {
-  useEffect(() => {}, [])
+  const [, setTheme] = useLocalStorageValue('theme', 'light')
+
+  const actions = useMemo(
+    () => [
+      {
+        id: 'command_center',
+        section: 'Shortcuts',
+        name: 'Commands center',
+        shortcut: ['ctrl', 'k'],
+        keywords: 'writing words',
+        perform: () => {},
+      },
+      {
+        id: 'switch_theme',
+        section: 'Shortcuts',
+        name: 'Switch theme',
+        shortcut: ['t'],
+        keywords: 'switch theme',
+        perform: () => {
+          const theme = localStorage.getItem('theme')
+          setTheme(theme.includes('light') ? 'dark' : 'light')
+        },
+      },
+      {
+        id: 'blog',
+        section: 'Navigation',
+        name: 'All blog posts',
+        shortcut: ['b'],
+        keywords: 'writing words',
+        perform: () => (window.location.pathname = '/'),
+      },
+      {
+        id: 'medium',
+        name: 'Medium',
+        section: 'Social links',
+        keywords: 'contact',
+        icon: <MediumIcon />,
+        perform: () =>
+          (window.location.href = 'https://medium.com/@alex.streza'),
+      },
+      {
+        id: 'twitter',
+        name: 'Twitter',
+        section: 'Social links',
+        icon: <TwitterIcon />,
+        keywords: 'contact',
+        perform: () =>
+          (window.location.href = 'https://twitter.com/alex_streza'),
+      },
+    ],
+    [theme],
+  )
 
   return (
     <KBarProvider actions={actions}>
@@ -83,7 +102,7 @@ const KBar = () => {
         <KBarPositioner className="command-center-positioner">
           <KBarAnimator className="command-center-animator">
             <KBarSearch className="command-center-input" />
-            <RenderResults />
+            <RenderResults actions={actions} />
           </KBarAnimator>
         </KBarPositioner>
       </KBarPortal>

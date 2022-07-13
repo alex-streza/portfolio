@@ -1,6 +1,5 @@
+import { useLocalStorageValue } from '@react-hookz/web'
 import { useState, useEffect, useCallback } from 'react'
-
-const getIsDarkTheme = () => localStorage.getItem('theme') === 'dark'
 
 const MoonIcon = () => (
   <svg
@@ -25,32 +24,42 @@ const SunIcon = () => (
 )
 
 const ThemeToggle = () => {
-  const [isDark, setIsDark] = useState(getIsDarkTheme ?? false)
+  const [theme, setTheme] = useLocalStorageValue('theme', 'light')
   const [isMounted, setIsMounted] = useState(false)
 
-  const toggleTheme = useCallback(() => {
-    if (isDark) localStorage.setItem('theme', 'light')
-    else localStorage.setItem('theme', 'dark')
+  const switchTheme = useCallback(() => {
+    if (theme.includes('dark')) setTheme('light')
+    else setTheme('dark')
+  }, [theme])
 
-    if (isDark) {
+  const toggleTheme = useCallback(() => {
+    if (theme.includes('dark')) {
       document.documentElement.classList.remove('dark')
     } else {
       document.documentElement.classList.add('dark')
     }
-
-    setIsDark(!isDark)
-  }, [isDark])
+  }, [theme])
 
   useEffect(() => {
-    setIsMounted(true)
-    document.getElementsByTagName('body')[0].classList.add('duration-500')
-    document.getElementsByTagName('body')[0].classList.add('transition-colors')
-  }, [])
+    toggleTheme()
+    if (!isMounted) {
+      const id = setTimeout(() => {
+        document.getElementsByTagName('body')[0].classList.add('duration-500')
+        document
+          .getElementsByTagName('body')[0]
+          .classList.add('transition-colors')
+        setIsMounted(true)
+      }, 500)
+      return () => clearTimeout(id)
+    }
+  }, [theme])
 
   if (!isMounted) return <SunIcon />
 
   return (
-    <button onClick={toggleTheme}>{isDark ? <MoonIcon /> : <SunIcon />}</button>
+    <button onClick={switchTheme}>
+      {theme.includes('dark') ? <MoonIcon /> : <SunIcon />}
+    </button>
   )
 }
 

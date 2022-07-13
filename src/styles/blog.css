@@ -4,7 +4,7 @@
 
 @layer base {
   body {
-    @apply dark:bg-gray-1000 dark:text-white bg-white text-gray-1000;
+    @apply dark:bg-gray-1000 dark:text-white bg-white text-gray-1000 scroll-smooth;
   }
 
   body > * {
@@ -102,10 +102,10 @@
 
   /* INPUTS */
   .input-container {
-    @apply flex flex-col gap-2 font-semibold;
+    @apply flex flex-col gap-2 font-semibold w-full;
   }
   .input-container > input {
-    @apply border-gray-400 items-center transition-colors duration-500 dark:bg-gray-700 bg-white rounded px-5 py-3 h-[48px] focus:border-green-900 dark:focus:border-main border focus:shadow-[0px_0px_4px_4px_hsla(169,65%,63%,0.3)] outline-none;
+    @apply border-gray-400 items-center transition-colors w-full duration-500 dark:bg-gray-700 bg-white rounded px-5 py-3 h-[48px] focus:border-green-900 dark:focus:border-main border focus:shadow-[0px_0px_4px_4px_hsla(169,65%,63%,0.3)] outline-none;
   }
 
   /* BUTTONS */
@@ -113,7 +113,7 @@
     @apply transition-all py-3 w-full px-6 flex items-center justify-center gap-2.5 text-gray-1000 rounded outline-none font-semibold h-[48px] align-middle;
   }
   .btn.primary {
-    @apply bg-main-600 hover:bg-main focus:bg-main-700 focus:shadow-[0px_0px_4px_4px_hsla(169,65%,63%,0.3)] disabled:bg-gray-300 disabled:shadow-none;
+    @apply bg-main-600 hover:bg-main focus:bg-main-700 focus:shadow-[0px_0px_4px_4px_hsla(169,65%,63%,0.3)] dark:disabled:bg-gray-300 disabled:bg-gray-100 disabled:shadow-none;
   }
 
   /* COMMAND CENTER */
@@ -127,7 +127,7 @@
   }
   .command-center-input,
   .command-center-result {
-    @apply p-6 bg-gray-900 transition-all duration-500 text-base h-[60px] border-none outline-none rounded-t text-gray-100;
+    @apply p-6 bg-gray-hex bg-opacity-80 transition-all duration-500 text-base h-[60px] border-none outline-none rounded-t text-gray-100;
   }
 
   .command-center-shortcuts {
@@ -137,12 +137,26 @@
     @apply p-1 bg-[rgba(99,222,199,0.33)] text-main uppercase font-bold rounded;
   }
   .command-center-result {
-    @apply flex gap-3 items-center hover:text-main hover:bg-[rgba(99,222,199,0.2)] cursor-pointer;
+    @apply flex gap-3 items-center hover:text-main hover:bg-main-hex hover:bg-opacity-10 cursor-pointer;
   }
   .command-center-section {
-    @apply h-[33px] text-white px-6 bg-gray-700 flex items-center;
+    @apply h-[33px] text-white px-6 bg-gray-600 flex items-center;
   }
   .command-center-result:last-child {
     @apply rounded-b;
+  }
+
+  ::-webkit-scrollbar {
+    @apply w-4 h-4;
+  }
+  ::-webkit-scrollbar-track {
+    @apply dark:bg-gray-700 bg-light-gray-600;
+  }
+  ::-webkit-scrollbar-thumb {
+    @apply bg-gray-200 hover:bg-gray-100;
+  }
+
+  .newsletter-card {
+    @apply bg-gray-900 p-5 w-full mt-10 rounded;
   }
 }

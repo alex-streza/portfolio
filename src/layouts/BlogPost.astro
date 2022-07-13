@@ -2,6 +2,7 @@
 import BaseHead from '@components/BaseHead.astro'
 import BlogHeader from '@components/BlogHeader.astro'
 import BlogPost from '@components/BlogPost.astro'
+import NewsletterCard from '@components/cards/NewsletterCard'
 
 const { content } = Astro.props
 const {
@@ -41,6 +42,7 @@ const {
         {readTime}
       >
         <slot></slot>
+        <NewsletterCard />
       </BlogPost>
     </div>
   </body>
