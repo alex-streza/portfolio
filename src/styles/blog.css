@@ -91,8 +91,7 @@
   }
 
   li:before {
-    @apply mr-2;
-    content: '\1F95E';
+    @apply mr-2 content-['\1F95E'];
   }
 
   /* POST CONTENT */
@@ -125,9 +124,12 @@
   .command-center-input {
     @apply transition-all duration-500 w-full max-w-[480px];
   }
+  .command-center-input {
+    @apply rounded-t-2;
+  }
   .command-center-input,
   .command-center-result {
-    @apply p-6 bg-gray-hex bg-opacity-80 transition-all duration-500 text-base h-[60px] border-none outline-none rounded-t text-gray-100;
+    @apply p-6 bg-gray-hex bg-opacity-80 transition-all duration-500 text-base h-[60px] border-none outline-none text-gray-100;
   }
 
   .command-center-shortcuts {
@@ -142,9 +144,6 @@
   .command-center-section {
     @apply h-[33px] text-white px-6 bg-gray-600 flex items-center;
   }
-  .command-center-result:last-child {
-    @apply rounded-b;
-  }
 
   ::-webkit-scrollbar {
     @apply w-4 h-4;
@@ -158,5 +157,12 @@
 
   .newsletter-card {
     @apply bg-gray-900 p-5 w-full mt-10 rounded;
+  }
+
+  .transition {
+    @apply fixed z-10 flex overflow-x-hidden h-[200vh] md:h-[300vh] left-0 top-[-71vh] md:top-[-105vh] p-0 m-0 pointer-events-none rotate-45;
+  }
+  .transition > li {
+    @apply w-[20vh] md:w-[32vh] scale-y-0 odd:bg-main-transparent even:bg-main-900 before:content-none;
   }
 }

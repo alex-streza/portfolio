@@ -27,6 +27,8 @@
     "spacetime": "^7.1.4"
   },
   "dependencies": {
+    "@barba/core": "^2.9.7",
+    "@gsap/business": "^3.10.4",
     "@react-hookz/web": "^15.0.1",
     "ahooks": "^3.5.2",
     "astro-icon": "^0.7.1",

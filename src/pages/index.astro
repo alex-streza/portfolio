@@ -30,7 +30,7 @@ allPosts = allPosts
 
 <html lang='en'>
   <head>
-    <BaseHead {title} {description} {permalink} />
+    <BaseHead title={title} description={description} permalink={permalink} />
 
     <style>
       header {
@@ -55,10 +55,10 @@ allPosts = allPosts
     </style>
   </head>
 
-  <body>
+  <body data-barba='wrapper'>
     <BlogHeader />
-    <div class='wrapper'>
-      <main class='content'>
+    <main data-barba='container' data-barba-namespace='home'>
+      <div class='content'>
         <section class='intro'>
           <h1 class='latest'>{title}</h1>
           <p>{description}</p>
@@ -72,7 +72,36 @@ allPosts = allPosts
             </>
           ))}
         </section>
-      </main>
-    </div>
+      </div>
+    </main>
+
+    <ul class='transition'>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+    </ul>
+
+    <script is:inline src='https://unpkg.com/@barba/core'>
+
+    </script>
+
+    <script is:inline src='https://unpkg.com/@barba/prefetch'>
+
+    </script>
+
+    <script
+      is:inline
+      src='https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.1/gsap.min.js'
+    >
+
+    </script>
+
+    <script is:inline type='module'>
+      import '../assets/scripts/transition.js'
+    </script>
   </body>
 </html>
