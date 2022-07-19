@@ -13,7 +13,7 @@ const pageTransition = () => {
     scaleY: 0,
     transformOrigin: 'top right',
     stagger: 0.1,
-    delay: 0.1,
+    delay: -0.3,
   })
 }
 

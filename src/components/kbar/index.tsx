@@ -1,5 +1,6 @@
 import Command from '@components/icons/Command'
 import { useLocalStorageValue } from '@react-hookz/web'
+import gsap from 'gsap'
 import {
   KBarAnimator,
   KBarPortal,
@@ -8,9 +9,8 @@ import {
   KBarResults,
   KBarSearch,
   useMatches,
-  useRegisterActions,
 } from 'kbar'
-import { useMemo } from 'react'
+import { useMemo, useLayoutEffect, useRef } from 'react'
 import MediumIcon from '../icons/Medium'
 import TwitterIcon from '../icons/Twitter'
 
@@ -96,7 +96,15 @@ const KBar = () => {
   )
 
   return (
-    <KBarProvider actions={actions}>
+    <KBarProvider
+      actions={actions}
+      options={{
+        animations: {
+          enterMs: 300,
+          exitMs: 300,
+        },
+      }}
+    >
       <Command />
       <KBarPortal>
         <KBarPositioner className="command-center-positioner">

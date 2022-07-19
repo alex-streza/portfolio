@@ -28,10 +28,10 @@
   },
   "dependencies": {
     "@barba/core": "^2.9.7",
-    "@gsap/business": "^3.10.4",
     "@react-hookz/web": "^15.0.1",
     "ahooks": "^3.5.2",
     "astro-icon": "^0.7.1",
+    "gsap": "npm:@gsap/business@^3.10.4",
     "kbar": "^0.1.0-beta.36",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
