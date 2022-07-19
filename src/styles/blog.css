@@ -96,7 +96,7 @@
 
   /* POST CONTENT */
   .content {
-    @apply max-w-[65ch] mx-auto p-5;
+    @apply animate-fade-in max-w-[65ch] mx-auto p-5;
   }
 
   /* INPUTS */

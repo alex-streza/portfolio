@@ -2,16 +2,16 @@ const pageTransition = () => {
   var tl = gsap.timeline()
 
   tl.to('.transition li', {
-    duration: 0.33,
+    duration: 0.6,
     scaleY: 1,
     transformOrigin: 'bottom left',
     stagger: 0.2,
   })
 
   tl.to('.transition li', {
-    duration: 0.33,
+    duration: 0.6,
     scaleY: 0,
-    transformOrigin: 'bottom left',
+    transformOrigin: 'top right',
     stagger: 0.1,
     delay: 0.1,
   })
@@ -36,15 +36,10 @@ barba.init({
       async leave() {
         const done = this.async()
         pageTransition()
-        await delay(1000)
+        await delay(1200)
         done()
       },
       enter(data) {
-        return gsap.from(data.next.container, {
-          opacity: 0,
-        })
-      },
-      once(data) {
         return gsap.from(data.next.container, {
           opacity: 0,
         })

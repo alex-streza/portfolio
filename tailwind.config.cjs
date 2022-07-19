@@ -180,6 +180,20 @@ module.exports = {
       32: '32px',
       full: '50%',
     },
+    animation: {
+      'fade-out': 'fadeOut 0.5s ease-in-out',
+      'fade-in': 'fadeIn 0.5s ease-in-out',
+    },
+    keyframes: (theme) => ({
+      fadeOut: {
+        '100%': { opacity: theme('opacity.0') },
+        '0%': { opacity: theme('opacity.100') },
+      },
+      fadeIn: {
+        '0%': { opacity: theme('opacity.0') },
+        '100%': { opacity: theme('opacity.100') },
+      },
+    }),
   },
   plugins: [],
 }

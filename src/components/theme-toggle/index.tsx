@@ -33,7 +33,7 @@ const ThemeToggle = () => {
   }, [theme])
 
   const toggleTheme = useCallback(() => {
-    if (theme.includes('dark')) {
+    if (theme.includes('light')) {
       document.documentElement.classList.remove('dark')
     } else {
       document.documentElement.classList.add('dark')
