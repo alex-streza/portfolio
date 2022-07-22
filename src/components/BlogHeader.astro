@@ -12,20 +12,6 @@ import KBar from './kbar'
   </div>
 </nav>
 
-<script is:inline>
-  const theme = localStorage.getItem('theme')
-  if (
-    theme === 'dark' ||
-    (!theme && matchMedia('(prefers-color-scheme: dark)').matches)
-  ) {
-    document.documentElement.classList.add('dark')
-    localStorage.setItem('theme', 'dark')
-  } else {
-    document.documentElement.classList.remove('dark')
-    localStorage.setItem('theme', 'light')
-  }
-</script>
-
 <style>
   .navbar {
     @apply flex justify-between items-center p-5 md:py-10 md:px-[120px] w-full;

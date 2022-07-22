@@ -1,11 +1,13 @@
 const theme = (() => {
+  let theme = 'light'
   if (typeof localStorage !== 'undefined' && localStorage.getItem('theme')) {
-    return localStorage.getItem('theme')
+    theme = localStorage.getItem('theme')
+  } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+    theme = 'dark'
   }
-  if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
-    return 'dark'
-  }
-  return 'light'
+
+  window.localStorage.setItem('theme', theme)
+  return theme
 })()
 
 if (theme.includes('light')) {
@@ -13,4 +15,3 @@ if (theme.includes('light')) {
 } else {
   document.documentElement.classList.add('dark')
 }
-window.localStorage.setItem('theme', theme)

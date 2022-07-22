@@ -1,5 +1,5 @@
 import { useLocalStorageValue } from '@react-hookz/web'
-import { useState, useEffect, useCallback } from 'react'
+import { useCallback, useEffect, useState } from 'react'
 
 const MoonIcon = () => (
   <svg
@@ -23,33 +23,34 @@ const SunIcon = () => (
   </svg>
 )
 
+export const toggleTheme = (theme) => {
+  if (theme.includes('light')) {
+    document.documentElement.classList.remove('dark')
+  } else {
+    document.documentElement.classList.add('dark')
+  }
+}
+
 const ThemeToggle = () => {
   const [theme, setTheme] = useLocalStorageValue('theme', 'light')
   const [isMounted, setIsMounted] = useState(false)
 
   const switchTheme = useCallback(() => {
-    if (theme.includes('dark')) setTheme('light')
-    else setTheme('dark')
-  }, [theme])
-
-  const toggleTheme = useCallback(() => {
-    if (theme.includes('light')) {
-      document.documentElement.classList.remove('dark')
-    } else {
-      document.documentElement.classList.add('dark')
-    }
+    const newTheme = theme.includes('dark') ? 'light' : 'dark'
+    console.log('newTheme', newTheme)
+    setTheme(newTheme)
+    toggleTheme(newTheme)
   }, [theme])
 
   useEffect(() => {
-    toggleTheme()
     if (!isMounted) {
       const id = setTimeout(() => {
         document.getElementsByTagName('body')[0].classList.add('duration-500')
         document
           .getElementsByTagName('body')[0]
           .classList.add('transition-colors')
-        setIsMounted(true)
       }, 500)
+      setIsMounted(true)
       return () => clearTimeout(id)
     }
   }, [theme])

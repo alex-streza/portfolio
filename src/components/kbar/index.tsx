@@ -1,6 +1,6 @@
 import Command from '@components/icons/Command'
+import { toggleTheme } from '@components/theme-toggle'
 import { useLocalStorageValue } from '@react-hookz/web'
-import gsap from 'gsap'
 import {
   KBarAnimator,
   KBarPortal,
@@ -10,7 +10,7 @@ import {
   KBarSearch,
   useMatches,
 } from 'kbar'
-import { useMemo, useLayoutEffect, useRef } from 'react'
+import { useMemo } from 'react'
 import MediumIcon from '../icons/Medium'
 import TwitterIcon from '../icons/Twitter'
 
@@ -61,8 +61,10 @@ const KBar = () => {
         shortcut: ['t'],
         keywords: 'switch theme',
         perform: () => {
-          const theme = localStorage.getItem('theme')
-          setTheme(theme.includes('light') ? 'dark' : 'light')
+          const theme = localStorage.getItem('theme') ?? 'light'
+          const newTheme = theme.includes('light') ? 'dark' : 'light'
+          setTheme(newTheme)
+          toggleTheme(newTheme)
         },
       },
       {
@@ -92,7 +94,7 @@ const KBar = () => {
           (window.location.href = 'https://twitter.com/alex_streza'),
       },
     ],
-    [theme],
+    [],
   )
 
   return (
