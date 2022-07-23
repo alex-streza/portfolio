@@ -1,9 +1,11 @@
-import gsap from 'gsap'
-import { DrawSVGPlugin } from 'gsap/dist/DrawSVGPlugin'
+import { gsap } from 'gsap'
+import DrawSVGPlugin from 'gsap/dist/DrawSVGPlugin.js'
 import { useRef, useEffect } from 'react'
 import { useMediaQuery } from '@react-hookz/web' // cjs
 
-gsap.registerPlugin(DrawSVGPlugin)
+if (typeof window !== 'undefined') {
+  gsap.registerPlugin(DrawSVGPlugin)
+}
 
 const Curtain = ({ position = 'top' }) => {
   const ref = useRef(null)
