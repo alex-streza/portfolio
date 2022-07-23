@@ -5,6 +5,8 @@ import BlogPost from '@components/BlogPost.astro'
 import BlogPostPreview from '@components/BlogPostPreview.astro'
 import NewsletterCard from '@components/cards/NewsletterCard'
 import spacetime from 'spacetime'
+import PageTransition from '@components/transition/PageTransition'
+import PageLoader from '@components/transition/PageLoader'
 
 const { content } = Astro.props
 const {
@@ -71,6 +73,9 @@ allPosts = allPosts
         ))}
       </BlogPost>
     </main>
+
+    <PageTransition />
+    {title.includes('Loading') && <PageLoader client:load />}
 
     <script is:inline src='https://unpkg.com/@barba/core'>
 

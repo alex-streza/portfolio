@@ -3,6 +3,8 @@ import BaseHead from '@components/BaseHead.astro'
 import BlogHeader from '@components/BlogHeader.astro'
 import BlogPostPreview from '@components/BlogPostPreview.astro'
 import NewsletterForm from '@components/forms/NewsletterForm'
+import PageTransition from '@components/transition/PageTransition'
+import PageLoader from '@components/transition/PageLoader'
 import spacetime from 'spacetime'
 
 let title = 'Blog | Alex Streza'
@@ -75,15 +77,7 @@ allPosts = allPosts
       </div>
     </main>
 
-    <ul class='transition'>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-    </ul>
+    <PageTransition />
 
     <script is:inline src='https://unpkg.com/@barba/core'>
 

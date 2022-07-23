@@ -4,7 +4,7 @@
 
 @layer base {
   body {
-    @apply dark:bg-gray-1000 dark:text-white bg-white text-gray-1000 scroll-smooth;
+    @apply dark:bg-gray-1000 dark:text-white bg-white text-gray-1000 scroll-smooth overflow-x-hidden;
   }
 
   body > * {
