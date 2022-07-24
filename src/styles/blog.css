@@ -167,6 +167,6 @@
     @apply fixed z-10 flex overflow-x-hidden h-[200vh] md:h-[300vh] left-0 top-[-71vh] md:top-[-105vh] p-0 m-0 pointer-events-none rotate-45;
   }
   .transition > li {
-    @apply w-[20vh] md:w-[32vh] scale-y-0 odd:bg-main-transparent even:bg-main-900 before:content-none;
+    @apply rounded-[120px] w-[20vh] md:w-[32vh] scale-y-0 odd:bg-main-transparent even:bg-main-900 before:content-none;
   }
 }

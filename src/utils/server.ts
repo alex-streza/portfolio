@@ -12,7 +12,7 @@ export const getPosts = (allPosts) => {
       frontmatter: {
         ...post.frontmatter,
         publishDate: spacetime(post.frontmatter.publishDate).format(
-          '{mo  nth-short} {date-ordinal}, {year}',
+          '{month-short} {date-ordinal}, {year}',
         ),
       },
     }))

@@ -28,6 +28,7 @@
   },
   "dependencies": {
     "@barba/core": "^2.9.7",
+    "@codesandbox/sandpack-react": "^1.3.0",
     "@react-hookz/web": "^15.0.1",
     "ahooks": "^3.5.2",
     "astro-icon": "^0.7.1",

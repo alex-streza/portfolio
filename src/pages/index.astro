@@ -4,8 +4,6 @@ import BlogHeader from '@components/BlogHeader.astro'
 import BlogPostPreview from '@components/BlogPostPreview.astro'
 import NewsletterForm from '@components/forms/NewsletterForm'
 import PageTransition from '@components/transition/PageTransition'
-import PageLoader from '@components/transition/PageLoader'
-import spacetime from 'spacetime'
 import { getPosts } from '@utils/server'
 
 let title = 'Blog | Alex Streza'
@@ -81,8 +79,8 @@ const allPosts = getPosts(await Astro.glob('./posts/*.md'))
     </script>
 
     <script is:inline type="module">
-      import '../assets/scripts/transition.js'
       import '../assets/scripts/theme.js'
+      import '../assets/scripts/transition.js'
     </script>
   </body>
 </html>
