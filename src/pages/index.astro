@@ -6,31 +6,17 @@ import NewsletterForm from '@components/forms/NewsletterForm'
 import PageTransition from '@components/transition/PageTransition'
 import PageLoader from '@components/transition/PageLoader'
 import spacetime from 'spacetime'
+import { getPosts } from '@utils/server'
 
 let title = 'Blog | Alex Streza'
 let description =
   "Everything JavaScript, Typescript and Web Development. I sometimes tackle AI, Web3 and have a massive soft spot for 3D and CGI. I also think I'm funny at times too."
 let permalink = 'https://www.blog.alexstreza.dev/'
 
-let allPosts = await Astro.glob('./posts/*.md')
-allPosts = allPosts
-  .sort((a, b) => {
-    const d1 = spacetime(a.frontmatter.publishDate)
-    const d2 = spacetime(b.frontmatter.publishDate)
-    return d1.isAfter(d2) ? -1 : 1
-  })
-  .map((post) => ({
-    ...post,
-    frontmatter: {
-      ...post.frontmatter,
-      publishDate: spacetime(post.frontmatter.publishDate).format(
-        '{month-short} {date-ordinal}, {year}',
-      ),
-    },
-  }))
+const allPosts = getPosts(await Astro.glob('./posts/*.md'))
 ---
 
-<html lang='en'>
+<html lang="en">
   <head>
     <BaseHead title={title} description={description} permalink={permalink} />
 
@@ -57,16 +43,16 @@ allPosts = allPosts
     </style>
   </head>
 
-  <body data-barba='wrapper'>
+  <body data-barba="wrapper">
     <BlogHeader />
-    <main data-barba='container' data-barba-namespace='home'>
-      <div class='content'>
-        <section class='intro'>
-          <h1 class='latest'>{title}</h1>
+    <main data-barba="container" data-barba-namespace="home">
+      <div class="content">
+        <section class="intro">
+          <h1 class="latest">{title}</h1>
           <p>{description}</p>
           <NewsletterForm />
         </section>
-        <section aria-label='Blog post list'>
+        <section aria-label="Blog post list">
           {allPosts.map((p, i) => (
             <>
               <BlogPostPreview post={p} />
@@ -79,22 +65,22 @@ allPosts = allPosts
 
     <PageTransition />
 
-    <script is:inline src='https://unpkg.com/@barba/core'>
+    <script is:inline src="https://unpkg.com/@barba/core">
 
     </script>
 
-    <script is:inline src='https://unpkg.com/@barba/prefetch'>
+    <script is:inline src="https://unpkg.com/@barba/prefetch">
 
     </script>
 
     <script
       is:inline
-      src='https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.1/gsap.min.js'
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.1/gsap.min.js"
     >
 
     </script>
 
-    <script is:inline type='module'>
+    <script is:inline type="module">
       import '../assets/scripts/transition.js'
       import '../assets/scripts/theme.js'
     </script>

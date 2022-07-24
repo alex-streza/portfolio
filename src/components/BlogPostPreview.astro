@@ -6,15 +6,15 @@ export interface Props {
 const { post } = Astro.props
 ---
 
-<article class='post-preview'>
+<article class="post-preview">
   <header>
     <span>{post.frontmatter.publishDate}</span>
-    <a href={post.url} class='unset'>
-      <h2 class='title'>{post.frontmatter.title}</h2>
+    <a href={post.url} class="unset !cursor-pointer">
+      <h2 class="title">{post.frontmatter.title}</h2>
     </a>
   </header>
   <p>{post.frontmatter.description}</p>
-  <a href={post.url} class='!pl-0'>Read more</a>
+  <a href={post.url} class="!pl-0">Read more</a>
 </article>
 
 <style>

@@ -3,8 +3,12 @@
 @tailwind utilities;
 
 @layer base {
+  html {
+    @apply scroll-smooth;
+  }
+
   body {
-    @apply dark:bg-gray-1000 dark:text-white bg-white text-gray-1000 scroll-smooth overflow-x-hidden;
+    @apply dark:bg-gray-1000 dark:text-white bg-white text-gray-1000 overflow-x-hidden;
   }
 
   body > * {

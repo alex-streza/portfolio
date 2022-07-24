@@ -41,7 +41,7 @@ const RenderResults = () => {
   )
 }
 
-const KBar = () => {
+const KBar = ({ posts }) => {
   const [, setTheme] = useLocalStorageValue('theme', 'light')
 
   const actions = useMemo(
@@ -93,6 +93,14 @@ const KBar = () => {
         perform: () =>
           (window.location.href = 'https://twitter.com/alex_streza'),
       },
+      ...posts.map((post, i) => {
+        return {
+          id: `blog_${i}`,
+          section: 'Blogs',
+          name: post.title,
+          perform: () => (window.location.pathname = post.url),
+        }
+      }),
     ],
     [],
   )

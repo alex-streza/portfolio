@@ -8,6 +8,13 @@ const pageTransition = () => {
     stagger: 0.2,
   })
 
+  gsap.to('main', {
+    delay: 0.3,
+    duration: 0.3,
+    opacity: 0,
+    y: -150,
+  })
+
   tl.to('.transition li', {
     duration: 0.6,
     scaleY: 0,
@@ -36,12 +43,31 @@ barba.init({
       async leave() {
         const done = this.async()
         pageTransition()
-        await delay(1200)
+        await delay(900)
+        window.scrollTo({ top: 0 })
         done()
       },
-      enter(data) {
-        return gsap.from(data.next.container, {
-          opacity: 0,
+      enter() {
+        const done = this.async()
+
+        gsap.fromTo(
+          'main',
+          {
+            opacity: 0,
+            y: 150,
+          },
+          {
+            duration: 0.3,
+            opacity: 1,
+            y: 0,
+          },
+        )
+        done()
+      },
+      once() {
+        return gsap.to('main', {
+          duration: 0.3,
+          opacity: 1,
         })
       },
     },

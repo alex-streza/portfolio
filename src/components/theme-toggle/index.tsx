@@ -58,7 +58,7 @@ const ThemeToggle = () => {
   if (!isMounted) return <SunIcon />
 
   return (
-    <button onClick={switchTheme}>
+    <button onClick={switchTheme} aria-label="Theme Toggle" >
       {theme.includes('dark') ? <MoonIcon /> : <SunIcon />}
     </button>
   )

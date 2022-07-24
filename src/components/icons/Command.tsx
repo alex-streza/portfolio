@@ -7,7 +7,7 @@ const Command = () => {
   }))
 
   return (
-    <button onClick={query.toggle}>
+    <button onClick={query.toggle} aria-label="Command Menu">
       <svg
         width="32"
         height="32"

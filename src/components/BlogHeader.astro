@@ -1,12 +1,18 @@
 ---
 import ThemeToggle from '@components/theme-toggle'
+import { getPosts } from '@utils/server'
 import KBar from './kbar'
+
+const posts = getPosts(await Astro.glob('../pages/posts/*.md')).map((p) => ({
+  ...p.frontmatter,
+  url: p.url,
+}))
 ---
 
-<nav class='navbar'>
+<nav class="navbar">
   <span>Alex Streza</span>
-  <div class='navbar-actions'>
-    <KBar client:only />
+  <div class="navbar-actions">
+    <KBar client:only {posts} />
     <ThemeToggle client:load />
   </div>
 </nav>

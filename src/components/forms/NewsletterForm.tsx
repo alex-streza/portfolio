@@ -18,6 +18,7 @@ const NewsletterForm = () => {
       <a
         href="https://twitter.com/alex_streza"
         className="dark:text-white text-gray-1000 transition-all hover:rotate-12 hover:scale-105 hover:text-main dark:hover:text-main"
+        aria-label="Twitter"
       >
         <Twitter width={40} />
       </a>
