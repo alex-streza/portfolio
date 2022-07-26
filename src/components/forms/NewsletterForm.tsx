@@ -9,7 +9,7 @@ const NewsletterForm = () => {
       <Button className="primary w-auto">
         <Medium />
         <a
-          className="!text-gray-1000 no-underline font-semibold"
+          className="reset-link !text-gray-1000"
           href="https://medium.com/subscribe/@alex.streza"
         >
           Subscribe on Medium

@@ -9,7 +9,7 @@ const { post } = Astro.props
 <article class="post-preview">
   <header>
     <span>{post.frontmatter.publishDate}</span>
-    <a href={post.url} class="unset !cursor-pointer">
+    <a href={post.url} class="reset-link">
       <h2 class="title">{post.frontmatter.title}</h2>
     </a>
   </header>

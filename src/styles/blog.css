@@ -52,6 +52,9 @@
   a {
     @apply dark:text-main text-main-900 font-normal items-center gap-3 underline underline-offset-8;
   }
+  a.reset-link {
+    @apply no-underline !p-0 text-gray-1000 dark:text-white cursor-pointer font-semibold;
+  }
 
   a > code {
     @apply relative text-main bg-transparent underline-offset-8;
@@ -102,6 +105,9 @@
   .content {
     @apply animate-fade-in max-w-[65ch] mx-auto p-5;
   }
+  .scene-content {
+    @apply animate-fade-in p-5;
+  }
 
   /* INPUTS */
   .input-container {
@@ -113,7 +119,7 @@
 
   /* BUTTONS */
   .btn {
-    @apply transition-all py-3 w-full px-6 flex items-center justify-center gap-2.5 text-gray-1000 rounded outline-none font-semibold h-[48px] align-middle;
+    @apply transition-all py-3 w-full px-6 flex items-center justify-center gap-2.5 text-gray-1000 rounded outline-none font-semibold h-[48px] align-middle w-fit;
   }
   .btn.primary {
     @apply bg-main-600 hover:bg-main focus:bg-main-700 focus:shadow-[0px_0px_4px_4px_hsla(169,65%,63%,0.3)] dark:disabled:bg-gray-300 disabled:bg-gray-100 disabled:shadow-none;

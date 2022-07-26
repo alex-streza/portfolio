@@ -1,0 +1,58 @@
+---
+import BaseHead from '@components/BaseHead.astro'
+import BlogHeader from '@components/BlogHeader.astro'
+import PageTransition from '@components/transition/PageTransition'
+import Scene from '@components/scene/Scene'
+
+let title = 'Developer | Alex Streza'
+let description =
+  "Everything JavaScript, Typescript and Web Development. I sometimes tackle AI, Web3 and have a massive soft spot for 3D and CGI. I also think I'm funny at times too."
+let permalink = 'https://www.blog.alexstreza.dev/'
+---
+
+<html lang="en">
+  <head>
+    <BaseHead title={title} description={description} permalink={permalink} />
+
+    <style>
+      header {
+        @apply w-full h-full grid place-content-center;
+      }
+
+      .developer-content {
+        @apply absolute inset-0 p-0 w-screen h-screen mx-[none];
+      }
+    </style>
+  </head>
+
+  <body data-barba="wrapper">
+    <BlogHeader />
+    <main data-barba="container" data-barba-namespace="home">
+      <div class="developer-content">
+        <Scene client:only />
+      </div>
+    </main>
+
+    <PageTransition />
+
+    <script is:inline src="https://unpkg.com/@barba/core">
+
+    </script>
+
+    <script is:inline src="https://unpkg.com/@barba/prefetch">
+
+    </script>
+
+    <script
+      is:inline
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.1/gsap.min.js"
+    >
+
+    </script>
+
+    <script is:inline type="module">
+      import '../assets/scripts/theme.js'
+      import '../assets/scripts/transition.js'
+    </script>
+  </body>
+</html>
