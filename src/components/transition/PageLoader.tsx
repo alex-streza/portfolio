@@ -1,7 +1,7 @@
+import { useMediaQuery } from '@react-hookz/web' // cjs
 import { gsap } from 'gsap'
 import DrawSVGPlugin from 'gsap/dist/DrawSVGPlugin.js'
-import { useRef, useEffect } from 'react'
-import { useMediaQuery } from '@react-hookz/web' // cjs
+import { useEffect, useRef } from 'react'
 
 if (typeof window !== 'undefined') {
   gsap.registerPlugin(DrawSVGPlugin)
@@ -19,9 +19,9 @@ const Curtain = ({ position = 'top' }) => {
 
     tl.current = gsap.timeline().to(q('li'), {
       [position]: 0,
-      duration: 0.5,
+      duration: 0.25,
       delay: 0.1,
-      stagger: (i) => (i % 2 !== 0 ? 0.5 : 0),
+      stagger: (i) => (i % 2 !== 0 ? 0.25 : 0),
     })
   }, [])
 
@@ -98,10 +98,10 @@ const LoadingBar = () => {
 }
 
 const PageLoader = () => {
-  const progressRef = useRef()
-  const node0Ref = useRef()
-  const node1Ref = useRef()
-  const tl = useRef()
+  const progressRef = useRef<SVGSVGElement>()
+  const node0Ref = useRef<SVGTextElement>()
+  const node1Ref = useRef<SVGTextElement>()
+  const tl = useRef<gsap.core.Timeline>()
   const q = gsap.utils.selector(progressRef)
 
   const swapNodes = () => {
@@ -126,7 +126,7 @@ const PageLoader = () => {
     tl.current = gsap.timeline().to(q('#node-0, #node-1'), {
       y: '+=100',
       delay: 0.1,
-      duration: 0.2,
+      duration: 0.01,
       onComplete: swapNodes,
     })
   }
@@ -134,48 +134,47 @@ const PageLoader = () => {
   useEffect(countDown, [])
 
   return (
-    <div className="absolute h-screen w-screen inset-0">
-      <div className="relative h-full bg-gray-1000 overflow-x-hidden">
-        <Curtain />
-        <Curtain position="bottom" />
-        <div className="absolute inset-0 m-auto w-48 h-32">
-          <svg
-            ref={progressRef}
-            className="overflow-hidden mx-auto font-serif"
-            xmlns="http://www.w3.org/2000/svg"
-            width="180"
-            height="100"
-            viewBox="0 0 180 100"
-          >
-            <g mask="url(#theMask)">
-              <text
-                ref={node0Ref}
-                id="node-0"
-                transform="translate(90 75)"
-                textAnchor="middle"
-                fontSize="100"
-                className="fill-gray-1000 dark:fill-white"
-              >
-                0%
-              </text>
-              <text
-                ref={node1Ref}
-                id="node-1"
-                transform="translate(90 -25)"
-                textAnchor="middle"
-                fontSize="100"
-                className="fill-gray-1000 dark:fill-white"
-              >
-                0%
-              </text>
-            </g>
-          </svg>
-          <div className="flex flex-col gap-10 items-center mt-10">
-            <p className="text-lg tracking-[0.3em] !my-0 font-semibold">
-              LOADING
-            </p>
-            <LoadingBar />
-          </div>
+    <div className="relative h-full bg-gray-1000 overflow-x-hidden">
+      <Curtain />
+      <Curtain position="bottom" />
+
+      <div className="absolute inset-0 m-auto w-48 h-32">
+        <svg
+          ref={progressRef}
+          className="overflow-hidden mx-auto font-serif"
+          xmlns="http://www.w3.org/2000/svg"
+          width="180"
+          height="100"
+          viewBox="0 0 180 100"
+        >
+          <g mask="url(#theMask)">
+            <text
+              ref={node0Ref}
+              id="node-0"
+              transform="translate(90 75)"
+              textAnchor="middle"
+              fontSize="100"
+              className="fill-gray-1000 dark:fill-white"
+            >
+              0%
+            </text>
+            <text
+              ref={node1Ref}
+              id="node-1"
+              transform="translate(90 -25)"
+              textAnchor="middle"
+              fontSize="100"
+              className="fill-gray-1000 dark:fill-white"
+            >
+              0%
+            </text>
+          </g>
+        </svg>
+        <div className="flex flex-col gap-10 items-center mt-10">
+          <p className="text-lg tracking-[0.3em] !my-0 font-semibold">
+            LOADING
+          </p>
+          <LoadingBar />
         </div>
       </div>
     </div>

@@ -175,4 +175,8 @@
   .transition > li {
     @apply rounded-[120px] w-[20vh] md:w-[32vh] scale-y-0 odd:bg-main-transparent even:bg-main-900 before:content-none;
   }
+
+  .project-container {
+    @apply opacity-0 absolute -top-10 p-5 dark:bg-[#000000] dark:bg-opacity-20 bg-none backdrop-blur-sm;
+  }
 }

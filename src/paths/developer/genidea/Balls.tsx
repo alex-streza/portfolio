@@ -4,37 +4,57 @@ import { useCompoundBody } from '@react-three/cannon/dist/index'
 import { Edges } from '@react-three/drei'
 import { Depth, Fresnel, LayerMaterial } from 'lamina'
 import { useControls } from 'leva'
-import { useEffect, useRef } from 'react'
+import { useEffect, useMemo, useRef } from 'react'
 import * as THREE from 'three'
+import { useMediaQuery } from '@react-hookz/web'
 
 THREE.ColorManagement.legacyMode = false
 
 const sphereGeometry = new THREE.SphereGeometry(1, 28, 28)
-const balls = [...Array(25)].map(() => ({
-  args: [0.3, 0.3, 1, 1, 1.25][Math.floor(Math.random() * 1)],
-  mass: 1,
-  angularDamping: 0.2,
-  linearDamping: 0.95,
-}))
 
 const Ball = ({ vec = new THREE.Vector3(), index, ...props }) => {
   const materialRef = useRef<MaterialProps>()
-  const [ref, api] = useCompoundBody(() => ({
-    ...props,
-    shapes: [
-      {
-        type: 'Box',
-        position: [8, 5, 1.2 * props.args],
-        args: new THREE.Vector3().setScalar(props.args * 0.4).toArray(),
-      },
-      {
-        type: 'Sphere',
-        args: [props.args],
-      },
-    ],
-  }))
-  useEffect(() => api.position.subscribe((p) => api.applyForce(vec.set(...p).normalize().multiplyScalar(-props.args * 35).toArray(), [0, 0, 0])), [api]) // prettier-ignore
-  const { gradient } = useControls({ gradient: { value: 0.7, min: 0, max: 1 } })
+  const [ref, api] = useCompoundBody(
+    () => ({
+      ...props,
+      shapes: [
+        {
+          type: 'Box',
+          position: [8, 5, 1.2 * props.args],
+          args: new THREE.Vector3().setScalar(props.args * 0.4).toArray(),
+        },
+        {
+          type: 'Sphere',
+          args: [props.args],
+        },
+      ],
+    }),
+    null,
+    [props.args],
+  )
+
+  useEffect(
+    () =>
+      api.position.subscribe((p) =>
+        api.applyForce(
+          vec
+            .set(...p)
+            .normalize()
+            .multiplyScalar(-props.args * 35)
+            .toArray(),
+          [0, 0, 0],
+        ),
+      ),
+    [api],
+  )
+
+  const { gradient } = useControls({
+    gradient: {
+      value: 0.7,
+      min: 0,
+      max: 1,
+    },
+  })
 
   useFrame((state) => {
     const sin = Math.sin(state.clock.elapsedTime / 2)
@@ -105,6 +125,25 @@ const Ball = ({ vec = new THREE.Vector3(), index, ...props }) => {
 }
 
 const Balls = () => {
+  const isDesktop = useMediaQuery('(min-width: 768px)')
+
+  const { count, mass, size } = useControls({
+    count: { value: isDesktop ? 25 : 15, min: 0, max: 50, step: 1 },
+    mass: { value: 1, min: 0, max: 10 },
+    size: { value: 0.3, min: 0.1, max: 1 },
+  })
+
+  const balls = useMemo(
+    () =>
+      [...Array(count)].map(() => ({
+        args: [size, size, 1, 1, 1.25][Math.floor(Math.random() * 1)],
+        mass,
+        angularDamping: 0.2,
+        linearDamping: 0.95,
+      })),
+    [count, mass, size],
+  )
+
   return (
     <>
       {balls.map((props, i) => (
