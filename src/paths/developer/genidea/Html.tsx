@@ -10,6 +10,8 @@ import {
 } from '@icons-pack/react-simple-icons'
 import { useEffect, useRef } from 'react'
 import gsap from 'gsap'
+import { useThree } from '@react-three/fiber'
+import { useMediaQuery } from '@react-hookz/web'
 
 const Content = () => {
   const ref = useRef(null)
@@ -31,10 +33,9 @@ const Content = () => {
         <Nextdotjs color="#ffffff" size={40} />
         <Supabase color="#3ecf8e" size={40} />
         <Openai color="#ffffff" size={40} />
-        {/* <Open */}
       </div>
       <h1 className="text-5xl">GenIdea</h1>
-      <p className="max-w-[65ch]">
+      <p className="max-w-[65ch] mb-8">
         Get inspigreen on the go with ideas in diverse tech related fields with
         artificial intelligence. Users can generate app ideas with OpenAI and
         collect them as NFTs.
@@ -53,10 +54,21 @@ const Content = () => {
 }
 
 const HTML = () => {
+  const isDesktop = useMediaQuery('(min-width: 768px)')
+  const { width, height } = useThree((state) => state.viewport)
+
   return (
-    <Html className="w-screen h-screen p-0 md:px-32 mt-20 md:mt-60" center>
-      <Content />
-    </Html>
+    <group
+      position={[
+        -width / 2 + (isDesktop ? 1 : 0),
+        -height / 2 + (isDesktop ? 2 : 3),
+        0,
+      ]}
+    >
+      <Html className="h-screen p-0 md:px-32 pt-20 md:pt-60" center>
+        <Content />
+      </Html>
+    </group>
   )
 }
 

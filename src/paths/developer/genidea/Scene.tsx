@@ -1,13 +1,16 @@
 import { Canvas, useFrame } from '@react-three/fiber'
 
-import { Physics, usePlane, useSphere } from '@react-three/cannon/dist/index'
-import { Html, Loader, useProgress } from '@react-three/drei'
+import Gallery from '@components/gallery/Gallery'
+import {
+  Debug,
+  Physics,
+  usePlane,
+  useSphere,
+} from '@react-three/cannon/dist/index'
 import { useThree } from '@react-three/fiber'
 import { EffectComposer, SSAO } from '@react-three/postprocessing'
-import { Suspense, useEffect, useState } from 'react'
 import Balls from './Balls'
 import HTML from './Html'
-import PageLoader from '@components/transition/PageLoader'
 
 const Collisions = () => {
   const viewport = useThree((state) => state.viewport)
@@ -29,6 +32,7 @@ const Collisions = () => {
   )
 }
 
+const urls = [...Array(6)].map((_, i) => `/assets/images/genidea/${i}.png`)
 const Scene = () => {
   return (
     <Canvas>
@@ -43,6 +47,8 @@ const Scene = () => {
       />
       <directionalLight position={[0, 5, -4]} intensity={4} />
       <directionalLight position={[0, -15, -0]} intensity={2} color="green" />
+      <HTML />
+      <Gallery urls={urls} />
       <Physics gravity={[0, 0, 0]}>
         {/* <Debug color="white" scale={1.1}> */}
         <Collisions />
@@ -65,7 +71,6 @@ const Scene = () => {
           color="green"
         />
       </EffectComposer>
-      <HTML />
     </Canvas>
   )
 }

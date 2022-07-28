@@ -177,6 +177,6 @@
   }
 
   .project-container {
-    @apply opacity-0 absolute -top-10 p-5 dark:bg-[#000000] dark:bg-opacity-20 bg-none backdrop-blur-sm;
+    @apply opacity-0 md:w-[500px] w-screen rounded-8 absolute -top-10 p-5 dark:bg-[#000000] dark:bg-opacity-20 bg-none backdrop-blur-sm;
   }
 }
