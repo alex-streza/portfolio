@@ -1,31 +1,47 @@
-import { MaterialProps, useFrame } from '@react-three/fiber'
+import {
+  GroupProps,
+  MaterialProps,
+  MeshProps,
+  useFrame,
+} from '@react-three/fiber'
 
+import { useMediaQuery } from '@react-hookz/web'
 import { useCompoundBody } from '@react-three/cannon/dist/index'
 import { Edges } from '@react-three/drei'
+import gsap from 'gsap'
+import { useAtom } from 'jotai'
 import { Depth, Fresnel, LayerMaterial } from 'lamina'
 import { useControls } from 'leva'
 import { useEffect, useMemo, useRef } from 'react'
+import { hideBallsAtom } from 'src/store/atoms'
 import * as THREE from 'three'
-import { useMediaQuery } from '@react-hookz/web'
+import CSSRulePlugin from 'gsap/dist/CSSRulePlugin'
+
+gsap.registerPlugin(CSSRulePlugin)
 
 THREE.ColorManagement.legacyMode = false
-
 const sphereGeometry = new THREE.SphereGeometry(1, 28, 28)
 
 const Ball = ({ vec = new THREE.Vector3(), index, ...props }) => {
+  const [hideBalls] = useAtom(hideBallsAtom)
+  const isDesktop = useMediaQuery('(min-width: 768px)')
+
   const materialRef = useRef<MaterialProps>()
-  const [ref, api] = useCompoundBody(
+  const meshRef = useRef<MeshProps>()
+  const size: number = !isDesktop && hideBalls ? 0.1 : props.args
+
+  const [ref, api] = useCompoundBody<GroupProps>(
     () => ({
       ...props,
       shapes: [
         {
           type: 'Box',
-          position: [8, 5, 1.2 * props.args],
-          args: new THREE.Vector3().setScalar(props.args * 0.4).toArray(),
+          position: [8, 5, 1.2 * size],
+          args: new THREE.Vector3().setScalar(size * 0.4).toArray(),
         },
         {
           type: 'Sphere',
-          args: [props.args],
+          args: [size],
         },
       ],
     }),
@@ -40,13 +56,24 @@ const Ball = ({ vec = new THREE.Vector3(), index, ...props }) => {
           vec
             .set(...p)
             .normalize()
-            .multiplyScalar(-props.args * 35)
+            .multiplyScalar(-size * 35)
             .toArray(),
           [0, 0, 0],
         ),
       ),
-    [api],
+    [api, size],
   )
+
+  useEffect(() => {
+    if (hideBalls && !isDesktop) {
+      gsap.to(meshRef.current.scale, {
+        x: 0.1,
+        y: 0.1,
+        z: 0.1,
+        duration: 1,
+      })
+    }
+  }, [hideBalls, isDesktop])
 
   const { gradient } = useControls({
     gradient: {
@@ -68,6 +95,7 @@ const Ball = ({ vec = new THREE.Vector3(), index, ...props }) => {
   return (
     <group ref={ref} dispose={null}>
       <mesh
+        ref={meshRef}
         castShadow
         receiveShadow
         scale={props.args}
@@ -136,7 +164,7 @@ const Balls = () => {
   const balls = useMemo(
     () =>
       [...Array(count)].map(() => ({
-        args: [size, size, 1, 1, 1.25][Math.floor(Math.random() * 1)],
+        args: [size, size, 1, 1, 1.25][Math.floor(Math.random() * 2)],
         mass,
         angularDamping: 0.2,
         linearDamping: 0.95,

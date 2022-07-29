@@ -7,7 +7,9 @@ import {
   useScroll,
 } from '@react-three/drei'
 import { useFrame, useThree } from '@react-three/fiber'
+import { useAtom } from 'jotai'
 import { useRef, useState } from 'react'
+import { hideBallsAtom } from 'src/store/atoms'
 import * as THREE from 'three'
 import Minimap from './Minimap'
 
@@ -23,10 +25,18 @@ const Item = ({
   c = new THREE.Color(),
   ...props
 }) => {
+  const isDesktop = useMediaQuery('(min-width: 768px)')
+
   const ref = useRef<ImageProps>()
   const scroll = useScroll()
+
   const [hovered, hover] = useState(false)
-  const click = () => setClicked(index === clicked ? null : index)
+  const [, setHideBalls] = useAtom(hideBallsAtom)
+
+  const click = () => {
+    setClicked(index === clicked ? null : index)
+    setHideBalls(true)
+  }
   const over = () => hover(true)
   const out = () => hover(false)
 
@@ -43,21 +53,21 @@ const Item = ({
     )
     ref.current.material.scale[0] = ref.current.scale.x = damp(
       ref.current.scale.x,
-      clicked === index ? 4.7 : scale[0],
+      clicked === index ? (isDesktop ? 8 : 4.7) : scale[0],
       6,
       delta,
     )
     if (clicked !== null && index < clicked)
       ref.current.position.x = damp(
         ref.current.position.x,
-        position[0] - 2,
+        position[0] - (isDesktop ? 3.75 : 2.25),
         6,
         delta,
       )
     if (clicked !== null && index > clicked)
       ref.current.position.x = damp(
         ref.current.position.x,
-        position[0] + 2,
+        position[0] + (isDesktop ? 3.75 : 2.25),
         6,
         delta,
       )
