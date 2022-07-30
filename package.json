@@ -31,6 +31,7 @@
     "@codesandbox/sandpack-react": "^1.3.0",
     "@icons-pack/react-simple-icons": "^5.2.0",
     "@react-hookz/web": "^15.0.1",
+    "@react-spring/three": "^9.5.2",
     "@react-three/cannon": "^6.3.0",
     "@react-three/drei": "^9.17.3",
     "@react-three/fiber": "^8.2.2",

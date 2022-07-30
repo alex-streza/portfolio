@@ -1,19 +1,15 @@
 import { Canvas, useFrame } from '@react-three/fiber'
 
 import Gallery from '@components/gallery/Gallery'
-import {
-  Debug,
-  Physics,
-  usePlane,
-  useSphere,
-} from '@react-three/cannon/dist/index'
+import { Physics, usePlane, useSphere } from '@react-three/cannon/dist/index'
+import { Html, useProgress } from '@react-three/drei'
 import { useThree } from '@react-three/fiber'
 import { EffectComposer, SSAO } from '@react-three/postprocessing'
-import Balls from './Balls'
-import HTML from './Html'
 import { Suspense } from 'react'
-import PageLoader from '@components/transition/PageLoader'
-import { Html, useProgress } from '@react-three/drei'
+// import Balls from './genidea/Balls'
+// import HTML from './genidea/Html'
+import HTML from './portfolio/Html'
+import Wobble from './portfolio/Wobble'
 
 const Collisions = () => {
   const viewport = useThree((state) => state.viewport)
@@ -39,16 +35,20 @@ const Loader = () => {
   const { progress } = useProgress()
   return (
     <Html center>
-      <h1>{parseInt(progress)}%</h1>
+      <h1>{parseInt(progress + '')}%</h1>
     </Html>
   )
 }
 
-const urls = [...Array(6)].map((_, i) => `/assets/images/genidea/${i}.png`)
+// const urls = [...Array(6)].map((_, i) => `/assets/images/genidea/${i}.png`)
+const urls = [...Array(6)].map(
+  (_, i) => `/assets/images/portfolio/${i + 1}.png`,
+)
+
 const Scene = () => {
   return (
     <Canvas>
-      <ambientLight intensity={1} />
+      {/* <ambientLight intensity={1} />
       <spotLight
         position={[20, 20, 25]}
         penumbra={1}
@@ -56,18 +56,19 @@ const Scene = () => {
         color="white"
         castShadow
         shadow-mapSize={[512, 512]}
-      />
-      <directionalLight position={[0, 5, -4]} intensity={4} />
-      <directionalLight position={[0, -15, -0]} intensity={2} color="green" />
+      /> */}
+      {/* <directionalLight position={[0, 5, -4]} intensity={4} />
+      <directionalLight position={[0, -15, -0]} intensity={2} color="green" /> */}
       <Suspense fallback={<Loader />}>
         <HTML />
         <Gallery urls={urls} />
-        <Physics gravity={[0, 0, 0]}>
-          {/* <Debug color="white" scale={1.1}> */}
+        <Wobble />
+        {/* <Physics gravity={[0, 0, 0]}>
+          <Debug color="white" scale={1.1}>
           <Collisions />
           <Balls />
-          {/* </Debug> */}
-        </Physics>
+          </Debug>
+        </Physics> */}
       </Suspense>
       <EffectComposer multisampling={0}>
         <SSAO

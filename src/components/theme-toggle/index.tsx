@@ -37,7 +37,6 @@ const ThemeToggle = () => {
 
   const switchTheme = useCallback(() => {
     const newTheme = theme.includes('dark') ? 'light' : 'dark'
-    console.log('newTheme', newTheme)
     setTheme(newTheme)
     toggleTheme(newTheme)
   }, [theme])
@@ -58,7 +57,7 @@ const ThemeToggle = () => {
   if (!isMounted) return <SunIcon />
 
   return (
-    <button onClick={switchTheme} aria-label="Theme Toggle" >
+    <button onClick={switchTheme} aria-label="Theme Toggle">
       {theme.includes('dark') ? <MoonIcon /> : <SunIcon />}
     </button>
   )

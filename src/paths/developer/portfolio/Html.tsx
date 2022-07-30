@@ -3,23 +3,29 @@ import { Html } from '@react-three/drei'
 
 import BrowserIcon from '@components/icons/Browser'
 import {
+  Astro,
+  Blender,
+  Markdown,
   Nextdotjs,
   Openai,
   Postgresql,
   ReactJs,
   Supabase,
   Tailwindcss,
+  Threedotjs,
 } from '@icons-pack/react-simple-icons'
 import { useEffect, useRef } from 'react'
 import gsap from 'gsap'
 import { useThree } from '@react-three/fiber'
-import { useMediaQuery } from '@react-hookz/web'
+import { useLocalStorageValue, useMediaQuery } from '@react-hookz/web'
 
 const Content = () => {
+  const [theme] = useLocalStorageValue('theme', 'light')
+  const isDark = theme.includes('dark')
+
   const ref = useRef(null)
   const tl = useRef<gsap.core.Timeline>()
   const q = gsap.utils.selector(ref)
-  const isDark = theme.includes('dark')
 
   useEffect(() => {
     tl.current = gsap.timeline().to(ref.current, {
@@ -32,40 +38,31 @@ const Content = () => {
   return (
     <div ref={ref} className="project-container">
       <div className="flex mb-5 md:mb-8 gap-5">
-        <a href="https://reactjs.org/" aria-label="reactjs">
+        <a href="https://reactjs.org" aria-label="reactjs">
           <ReactJs color="#61DAFB" size={40} />
         </a>
-        <a href="https://nextjs.org" aria-label="nextjs">
-          <Nextdotjs color={isDark ? '#ffffff' : '#000000'} size={40} />
+        <a href="https://astro.build" aria-label="astro">
+          <Astro color="#FF5D01" size={40} />
         </a>
-        <a href="https://tailwindcss.com/" aria-label="tailwindcss">
+        <a href="https://tailwindcss.com" aria-label="tailwindcss">
           <Tailwindcss color="#06B6D4" size={40} />
         </a>
-        <a href="https://www.postgresql.org" aria-label="postgresql">
-          <Postgresql color="#4169E1" size={40} />
+        <a href="https://www.markdownguide.org" aria-label="markdown">
+          <Markdown color={isDark ? '#ffffff' : '#000000'} size={40} />
         </a>
-        <a href="https://supabase.com" aria-label="supabase">
-          <Supabase color="#3ecf8e" size={40} />
+        <a href="https://threejs.org" aria-label="threedotjs">
+          <Threedotjs color={isDark ? '#ffffff' : '#000000'} size={40} />
         </a>
-        <a href="https://openai.com" aria-label="openai">
-          <Openai color="#ffffff" size={40} />
+        <a href="https://www.blender.org" aria-label="blender">
+          <Blender color="#F5792A" size={40} />
         </a>
       </div>
-      <h1 className="text-5xl">GenIdea</h1>
+      <h1 className="text-5xl">Portfolio</h1>
       <p className="max-w-[65ch] mb-8">
-        Get inspired on the go with ideas in diverse tech related fields with
-        artificial intelligence. Users can generate app ideas with OpenAI and
-        collect them as NFTs.
+        Portfolio websites need to be outstanding as much as the projects
+        showcased. Building a 3D interactive experience to present my expertise
+        in a glamorous way.
       </p>
-      <Button>
-        <BrowserIcon />
-        <a
-          href="http://devnet.genidea.app/"
-          className="reset-link !text-gray-1000"
-        >
-          Check out
-        </a>
-      </Button>
     </div>
   )
 }

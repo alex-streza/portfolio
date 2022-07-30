@@ -166,7 +166,7 @@
   }
 
   .newsletter-card {
-    @apply bg-gray-900 p-5 w-full mt-10 rounded;
+    @apply dark:bg-gray-900 bg-light-gray-600 p-5 w-full mt-10 rounded;
   }
 
   .transition {
