@@ -1,7 +1,8 @@
 import { useMediaQuery } from '@react-hookz/web' // cjs
+import { useProgress } from '@react-three/drei'
 import { gsap } from 'gsap'
 import DrawSVGPlugin from 'gsap/dist/DrawSVGPlugin.js'
-import { useEffect, useRef } from 'react'
+import { useEffect, useLayoutEffect, useRef } from 'react'
 
 if (typeof window !== 'undefined') {
   gsap.registerPlugin(DrawSVGPlugin)
@@ -98,6 +99,8 @@ const LoadingBar = () => {
 }
 
 const PageLoader = () => {
+  const { progress } = useProgress()
+
   const progressRef = useRef<SVGSVGElement>()
   const node0Ref = useRef<SVGTextElement>()
   const node1Ref = useRef<SVGTextElement>()
@@ -131,7 +134,7 @@ const PageLoader = () => {
     })
   }
 
-  useEffect(countDown, [])
+  // useLayoutEffect(countDown, [])
 
   return (
     <div className="relative h-full bg-gray-1000 overflow-x-hidden">

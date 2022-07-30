@@ -7,9 +7,7 @@ import {
   useScroll,
 } from '@react-three/drei'
 import { useFrame, useThree } from '@react-three/fiber'
-import { useAtom } from 'jotai'
 import { useRef, useState } from 'react'
-import { hideBallsAtom } from 'src/store/atoms'
 import * as THREE from 'three'
 import Minimap from './Minimap'
 
@@ -31,11 +29,9 @@ const Item = ({
   const scroll = useScroll()
 
   const [hovered, hover] = useState(false)
-  const [, setHideBalls] = useAtom(hideBallsAtom)
 
   const click = () => {
     setClicked(index === clicked ? null : index)
-    setHideBalls(true)
   }
   const over = () => hover(true)
   const out = () => hover(false)
@@ -109,6 +105,7 @@ const Gallery = ({ urls }) => {
   const w = isDesktop ? 0.7 : 0.35
   const gap = isDesktop ? 0.15 : 0.1
   const xW = w + gap
+  const isLoaded = isDesktop !== undefined
 
   return (
     <ScrollControls
@@ -116,7 +113,7 @@ const Gallery = ({ urls }) => {
       damping={10}
       pages={(width - xW + urls.length * xW) / width}
     >
-      <Minimap urls={urls} />
+      {isLoaded && <Minimap urls={urls} />}
       <Scroll>
         {urls.map((url, i) => (
           <Item
@@ -127,7 +124,7 @@ const Gallery = ({ urls }) => {
             height={isDesktop ? 4 : 2}
             index={i}
             position={[i * xW + (isDesktop ? 3 : 0), isDesktop ? 0 : -1.5, 0]}
-            scale={[w, isDesktop ? 4 : 1, 1]}
+            scale={[isLoaded ? w : 0, isLoaded ? (isDesktop ? 4 : 1) : 0, 1]}
             url={url}
           />
         ))}

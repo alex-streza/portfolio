@@ -12,7 +12,7 @@ import gsap from 'gsap'
 import { useAtom } from 'jotai'
 import { Depth, Fresnel, LayerMaterial } from 'lamina'
 import { useControls } from 'leva'
-import { useEffect, useMemo, useRef } from 'react'
+import { useEffect, useLayoutEffect, useMemo, useRef } from 'react'
 import { hideBallsAtom } from 'src/store/atoms'
 import * as THREE from 'three'
 import CSSRulePlugin from 'gsap/dist/CSSRulePlugin'
@@ -23,12 +23,11 @@ THREE.ColorManagement.legacyMode = false
 const sphereGeometry = new THREE.SphereGeometry(1, 28, 28)
 
 const Ball = ({ vec = new THREE.Vector3(), index, ...props }) => {
-  const [hideBalls] = useAtom(hideBallsAtom)
-  const isDesktop = useMediaQuery('(min-width: 768px)')
-
   const materialRef = useRef<MaterialProps>()
   const meshRef = useRef<MeshProps>()
-  const size: number = !isDesktop && hideBalls ? 0.1 : props.args
+  const size: number = useMemo(() => {
+    return props.args
+  }, [props.args])
 
   const [ref, api] = useCompoundBody<GroupProps>(
     () => ({
@@ -46,7 +45,7 @@ const Ball = ({ vec = new THREE.Vector3(), index, ...props }) => {
       ],
     }),
     null,
-    [props.args],
+    [size],
   )
 
   useEffect(
@@ -63,17 +62,6 @@ const Ball = ({ vec = new THREE.Vector3(), index, ...props }) => {
       ),
     [api, size],
   )
-
-  useEffect(() => {
-    if (hideBalls && !isDesktop) {
-      gsap.to(meshRef.current.scale, {
-        x: 0.1,
-        y: 0.1,
-        z: 0.1,
-        duration: 1,
-      })
-    }
-  }, [hideBalls, isDesktop])
 
   const { gradient } = useControls({
     gradient: {
@@ -155,11 +143,22 @@ const Ball = ({ vec = new THREE.Vector3(), index, ...props }) => {
 const Balls = () => {
   const isDesktop = useMediaQuery('(min-width: 768px)')
 
-  const { count, mass, size } = useControls({
-    count: { value: isDesktop ? 25 : 15, min: 0, max: 50, step: 1 },
-    mass: { value: 1, min: 0, max: 10 },
-    size: { value: 0.3, min: 0.1, max: 1 },
-  })
+  const [{ count, mass, size }, set] = useControls(() => {
+    return {
+      count: { value: isDesktop ? 20 : 10, min: 0, max: 50, step: 1 },
+      mass: { value: 1, min: 0, max: 10 },
+      size: { value: isDesktop ? 0.3 : 0.2, min: 0.1, max: 1 },
+    }
+  }, [isDesktop])
+
+  useEffect(
+    () =>
+      set({
+        count: isDesktop ? 20 : 10,
+        size: isDesktop ? 0.3 : 0.2,
+      }),
+    [isDesktop],
+  )
 
   const balls = useMemo(
     () =>
@@ -169,7 +168,7 @@ const Balls = () => {
         angularDamping: 0.2,
         linearDamping: 0.95,
       })),
-    [count, mass, size],
+    [count, mass, size, isDesktop],
   )
 
   return (

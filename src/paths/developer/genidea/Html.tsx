@@ -31,22 +31,22 @@ const Content = () => {
   return (
     <div ref={ref} className="project-container">
       <div className="flex mb-5 md:mb-8 gap-5">
-        <a href="https://reactjs.org/" aria-label="ReactJS">
+        <a href="https://reactjs.org/" aria-label="reactjs">
           <ReactJs color="#61DAFB" size={40} />
         </a>
-        <a href="https://nextjs.org" aria-label="ReactJS">
+        <a href="https://nextjs.org" aria-label="nextjs">
           <Nextdotjs color="#ffffff" size={40} />
         </a>
-        <a href="https://www.postgresql.org" aria-label="ReactJS">
+        <a href="https://tailwindcss.com/" aria-label="tailwindcss">
           <Tailwindcss color="#06B6D4" size={40} />
         </a>
-        <a href="https://www.postgresql.org" aria-label="ReactJS">
+        <a href="https://www.postgresql.org" aria-label="postgresql">
           <Postgresql color="#4169E1" size={40} />
         </a>
-        <a href="https://supabase.com" aria-label="Supabase">
+        <a href="https://supabase.com" aria-label="supabase">
           <Supabase color="#3ecf8e" size={40} />
         </a>
-        <a href="https://openai.com" aria-label="OpenAI">
+        <a href="https://openai.com" aria-label="openai">
           <Openai color="#ffffff" size={40} />
         </a>
       </div>

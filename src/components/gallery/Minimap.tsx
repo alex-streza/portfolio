@@ -1,11 +1,19 @@
-import * as THREE from 'three'
-import { useRef } from 'react'
-import { GroupProps, useFrame, useThree } from '@react-three/fiber'
-import { useScroll } from '@react-three/drei'
 import { useMediaQuery } from '@react-hookz/web'
+import { useScroll } from '@react-three/drei'
+import {
+  BufferGeometryProps,
+  GroupProps,
+  LineBasicMaterialProps,
+  useFrame,
+  useThree,
+} from '@react-three/fiber'
+import { useRef } from 'react'
+import * as THREE from 'three'
 
-const material = new THREE.LineBasicMaterial({ color: 'white' })
-const geometry = new THREE.BufferGeometry().setFromPoints([
+const material: LineBasicMaterialProps = new THREE.LineBasicMaterial({
+  color: 'white',
+})
+const geometry: BufferGeometryProps = new THREE.BufferGeometry().setFromPoints([
   new THREE.Vector3(0, -0.5, 0),
   new THREE.Vector3(0, 0.5, 0),
 ])
@@ -42,7 +50,7 @@ const Minimap = ({ urls }: { urls: string[] }) => {
           material={material}
           position={[
             i * 0.06 - urls.length * 0.03 + (isDesktop ? 3 : 0),
-            -height / 2 + 0.6,
+            -height / 2 + (isDesktop ? 0.6 : 0.45),
             0,
           ]}
         />
