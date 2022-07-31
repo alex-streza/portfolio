@@ -2,7 +2,7 @@
 import BaseHead from '@components/BaseHead.astro'
 import BlogHeader from '@components/BlogHeader.astro'
 import PageTransition from '@components/transition/PageTransition'
-import Scene from '@paths/developer/Scene'
+import Scene from '@paths/developer/MainScene'
 import { Leva } from 'leva'
 
 let title = 'Developer | Alex Streza'
@@ -31,7 +31,7 @@ let permalink = 'https://www.blog.alexstreza.dev/'
   </head>
 
   <body data-barba="wrapper">
-    <BlogHeader />
+    <BlogHeader path="developer" />
     <Leva client:load hidden={process.env.NODE_ENV === 'production'} />
 
     <main data-barba="container" data-barba-namespace="home">

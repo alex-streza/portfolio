@@ -42,7 +42,7 @@ const allPosts = getPosts(await Astro.glob('./posts/*.md'))
   </head>
 
   <body data-barba="wrapper">
-    <BlogHeader />
+    <BlogHeader path="writer" />
     <main data-barba="container" data-barba-namespace="home">
       <div class="content">
         <section class="intro">

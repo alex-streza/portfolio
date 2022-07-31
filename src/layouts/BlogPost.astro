@@ -35,7 +35,7 @@ const allPosts = getPosts(await Astro.glob('../pages/posts/*.md')).slice(0, 3)
   </head>
 
   <body data-barba="wrapper">
-    <BlogHeader />
+    <BlogHeader path="writer" />
     <main data-barba="container" data-barba-namespace="blog">
       <BlogPost
         {title}

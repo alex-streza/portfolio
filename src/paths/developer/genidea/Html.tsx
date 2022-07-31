@@ -13,9 +13,11 @@ import {
 import { useEffect, useRef } from 'react'
 import gsap from 'gsap'
 import { useThree } from '@react-three/fiber'
-import { useMediaQuery } from '@react-hookz/web'
+import { useLocalStorageValue, useMediaQuery } from '@react-hookz/web'
 
 const Content = () => {
+  const [theme] = useLocalStorageValue('theme', 'light')
+
   const ref = useRef(null)
   const tl = useRef<gsap.core.Timeline>()
   const q = gsap.utils.selector(ref)

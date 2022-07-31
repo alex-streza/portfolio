@@ -50,7 +50,7 @@ const Minimap = ({ urls }: { urls: string[] }) => {
           material={material}
           position={[
             i * 0.06 - urls.length * 0.03 + (isDesktop ? 3 : 0),
-            -height / 2 + (isDesktop ? 0.6 : 0.45),
+            -height / 2 + (isDesktop ? 0.3 : 0.2),
             0,
           ]}
         />
