@@ -35,6 +35,19 @@ const delay = (n) => {
 
 barba.use(barbaPrefetch)
 
+const updatePathTheme = () => {
+  const paths = ['developer', 'designer', 'writer']
+
+  const pathname = window.location.pathname.split('/')[1]
+  const currentPath =
+    pathname.includes('blog') || pathname == '' ? 'writer' : pathname
+
+  paths.forEach((path) => {
+    document.documentElement.classList.remove(path)
+  })
+  document.documentElement.classList.add(currentPath)
+}
+
 barba.init({
   debug: true,
   transitions: [
@@ -49,7 +62,6 @@ barba.init({
       },
       enter() {
         const done = this.async()
-
         gsap.fromTo(
           'main',
           {
@@ -60,16 +72,21 @@ barba.init({
             duration: 0.3,
             opacity: 1,
             y: 0,
+            onComplete: () => updatePathTheme(),
           },
         )
+
         done()
       },
       once() {
         return gsap.to('main', {
           duration: 0.3,
           opacity: 1,
+          onComplete: () => updatePathTheme(),
         })
       },
     },
   ],
 })
+
+updatePathTheme()

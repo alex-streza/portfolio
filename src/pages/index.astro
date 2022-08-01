@@ -81,9 +81,6 @@ const allPosts = getPosts(await Astro.glob('./posts/*.md'))
     <script is:inline type="module">
       import '../assets/scripts/theme.js'
       import '../assets/scripts/transition.js'
-
-      document.documentElement.classList.add('writer')
-      document.documentElement.classList.remove('designer')
     </script>
   </body>
 </html>

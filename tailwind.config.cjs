@@ -1,11 +1,5 @@
 /** @type {import('tailwindcss').Config} */
 const defaultTheme = {
-  screens: {
-    sm: '480px',
-    md: '768px',
-    lg: '976px',
-    xl: '1440px',
-  },
   colors: {
     transparent: 'transparent',
     current: 'currentColor',
@@ -37,6 +31,7 @@ const defaultTheme = {
       900: 'hsla(169, 65%, 43%, 1)',
       1000: 'hsla(169, 65%, 38%, 1)',
       transparent: 'rgba(99, 222, 199, 0.8)',
+      hex: '#63DEC7',
     },
     purple: {
       0: 'hsla(245, 96%, 88%, 1)',
@@ -51,6 +46,7 @@ const defaultTheme = {
       900: 'hsla(245, 96%, 43%, 1)',
       1000: 'hsla(245, 96%, 38%, 1)',
       transparent: 'hsla(245, 96%, 63%, 0.8)',
+      hex: '#5546FB',
     },
     red: {
       0: 'hsla(0, 96%, 88%, 1)',
@@ -93,6 +89,7 @@ const defaultTheme = {
       900: 'hsla(43, 96%, 43%, 1)',
       1000: 'hsla(43, 96%, 38%, 1)',
       transparent: 'rgba(251, 200, 70, 0.8)',
+      hex: '#FBC846',
     },
     white: {
       DEFAULT: '#ffffff',
@@ -249,4 +246,5 @@ module.exports = {
       ],
     }),
   ],
+  safelist: ['md:px-32'],
 }

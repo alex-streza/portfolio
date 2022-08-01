@@ -146,7 +146,7 @@
     @apply flex gap-3 ml-auto;
   }
   .command-center-shortcuts > span {
-    @apply p-1 bg-[rgba(99,222,199,0.33)] text-main uppercase font-bold rounded;
+    @apply p-1 bg-main-hex bg-opacity-20 text-main uppercase font-bold rounded;
   }
   .command-center-result {
     @apply flex gap-3 items-center hover:text-main hover:bg-main-hex hover:bg-opacity-10 cursor-pointer;
@@ -173,7 +173,7 @@
     @apply fixed z-10 flex overflow-x-hidden h-[200vh] md:h-[300vh] left-0 top-[-71vh] md:top-[-105vh] p-0 m-0 pointer-events-none rotate-45;
   }
   .transition > li {
-    @apply rounded-[120px] w-[20vh] md:w-[32vh] scale-y-0 odd:bg-main-transparent even:bg-main-900 before:content-none;
+    @apply rounded-[120px] w-[20vh] md:w-[32vh] transition-colors duration-300 scale-y-0 odd:bg-main-transparent even:bg-main-900 before:content-none;
   }
 
   .project-container {
