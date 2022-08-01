@@ -93,6 +93,27 @@ const KBar = ({ posts }) => {
         perform: () =>
           (window.location.href = 'https://twitter.com/alex_streza'),
       },
+      {
+        id: 'developer',
+        section: 'Paths',
+        name: 'Developer',
+        keywords: 'developer',
+        perform: () => (window.location.pathname = '/developer'),
+      },
+      {
+        id: 'designer',
+        section: 'Paths',
+        name: 'Designer',
+        keywords: 'designer',
+        perform: () => (window.location.pathname = '/designer'),
+      },
+      {
+        id: 'writer',
+        section: 'Paths',
+        name: 'Writer',
+        keywords: 'writer',
+        perform: () => (window.location.pathname = '/writer'),
+      },
       ...posts.map((post, i) => {
         return {
           id: `blog_${i}`,

@@ -72,15 +72,13 @@ const Wobble = () => {
 
   return (
     <>
-      <PerspectiveCamera makeDefault position={[0, 0, 4]} fov={75}>
-        <a.ambientLight intensity={ambient} />
-        <a.pointLight
-          ref={light}
-          position-z={-15}
-          intensity={env}
-          color="#F8C069"
-        />
-      </PerspectiveCamera>
+      <a.ambientLight intensity={ambient} />
+      <a.pointLight
+        ref={light}
+        position-z={-15}
+        intensity={env}
+        color="#F8C069"
+      />
       <Suspense fallback={null}>
         {/* @ts-ignore */}
         <a.mesh
