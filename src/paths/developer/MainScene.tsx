@@ -56,8 +56,8 @@ const MainScene = () => {
   return (
     <Canvas>
       <Suspense fallback={<Loader />}>
-        {project === 0 && <GenIdeaScene />}
-        {project === 1 && <PortfolioScene />}
+        {project === 0 && <PortfolioScene />}
+        {project === 1 && <GenIdeaScene />}
       </Suspense>
       <Projects selectedProject={project} onSelectProject={setProject} />
       <EffectComposer multisampling={0}>

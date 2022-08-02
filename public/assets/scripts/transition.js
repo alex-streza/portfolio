@@ -40,7 +40,7 @@ const updatePathTheme = () => {
 
   const pathname = window.location.pathname.split('/')[1]
   const currentPath =
-    pathname.includes('blog') || pathname == '' ? 'writer' : pathname
+    pathname.includes('posts') || pathname == '' ? 'writer' : pathname
 
   paths.forEach((path) => {
     document.documentElement.classList.remove(path)

@@ -214,6 +214,12 @@ module.exports = {
     require('tailwindcss-themer')({
       defaultTheme: {
         ...defaultTheme,
+        extend: {
+          ...defaultTheme,
+          colors: {
+            main: defaultTheme.colors.gray,
+          },
+        },
       },
       themes: [
         {

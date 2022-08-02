@@ -25,7 +25,7 @@
   }
 
   ::selection {
-    @apply text-main bg-[hsla(169,65%,38%,0.3)];
+    @apply text-main bg-main-hex bg-opacity-20;
   }
 
   /* TYPOGRAPHY */
@@ -88,7 +88,7 @@
   }
 
   blockquote {
-    @apply p-1 dark:text-main text-main-900  dark:bg-[hsla(169,65%,38%,0.3)] bg-[hsla(169,65%,38%,0.2)] mt-3 text-lg font-semibold mb-7;
+    @apply p-1 dark:text-main text-main-900 bg-purple-hex bg-opacity-20 mt-3 text-lg font-semibold mb-7;
   }
   blockquote > p {
     all: unset;
@@ -119,16 +119,15 @@
 
   /* BUTTONS */
   .btn {
-    @apply transition-all py-3 w-full px-6 flex items-center justify-center gap-2.5 text-gray-1000 rounded outline-none font-semibold h-[48px] align-middle w-fit;
+    @apply transition-all py-3 px-6 flex items-center justify-center gap-2.5 text-gray-1000 rounded outline-none font-semibold h-[48px] align-middle w-fit;
   }
   .btn.primary {
-    @apply bg-main-600 hover:bg-main focus:bg-main-700 focus:shadow-[0px_0px_4px_4px_hsla(169,65%,63%,0.3)] dark:disabled:bg-gray-300 disabled:bg-gray-100 disabled:shadow-none;
+    @apply bg-main-600 hover:bg-main focus:bg-main-700 focus:shadow-main dark:disabled:bg-gray-300 disabled:bg-gray-100 disabled:shadow-none;
   }
 
   /* COMMAND CENTER */
   .command-center-positioner {
-    @apply bg-[hsla(0,0%,7%,0.5)];
-    backdrop-filter: blur(10px);
+    @apply bg-gray-hex bg-opacity-50 backdrop-blur-md;
   }
   .command-center-animator,
   .command-center-input {
