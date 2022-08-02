@@ -31,13 +31,13 @@ let permalink = 'https://www.blog.alexstreza.dev/'
   </head>
 
   <body data-barba="wrapper">
-    <BlogHeader path="developer" />
+    <BlogHeader />
     <Leva client:load hidden={process.env.NODE_ENV === 'production'} />
 
     <main data-barba="container" data-barba-namespace="home">
-      <div class="developer-content">
+      <section class="developer-content">
         <Scene client:only />
-      </div>
+      </section>
     </main>
 
     <PageTransition />

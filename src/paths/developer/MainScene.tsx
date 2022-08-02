@@ -34,12 +34,12 @@ const Projects = ({ selectedProject, onSelectProject }: ProjectsProps) => {
       ]}
     >
       <Html center>
-        <div className="bg-gray-hex bg-opacity-20 backdrop-blur-sm rounded-8 p-4 flex md:flex-row flex-col gap-5">
-          {[...Array(5)].map((_, i) => (
+        <div className="bg-gray-hex bg-opacity-75 backdrop-blur-sm rounded-8 p-4 flex md:flex-row flex-col gap-5">
+          {[...Array(2)].map((_, i) => (
             <button
               key={i}
-              className={`bg-gray-600 rotate-45 transition-all duration-300 hover:bg-main-0 ${
-                selectedProject === i ? 'w-[26px] h-[26px] bg-main' : 'w-6 h-6'
+              className={`dark:bg-gray-600 bg-light-gray-800 rotate-45 transition-all duration-300 hover:!bg-main-400 ${
+                selectedProject === i ? 'w-[26px] h-[26px] !bg-main' : 'w-6 h-6'
               }`}
               onClick={() => onSelectProject(i)}
             ></button>
@@ -56,8 +56,8 @@ const MainScene = () => {
   return (
     <Canvas>
       <Suspense fallback={<Loader />}>
-        {project === 0 && <PortfolioScene />}
-        {project === 1 && <GenIdeaScene />}
+        {project === 0 && <GenIdeaScene />}
+        {project === 1 && <PortfolioScene />}
       </Suspense>
       <Projects selectedProject={project} onSelectProject={setProject} />
       <EffectComposer multisampling={0}>

@@ -5,7 +5,6 @@ import BlogPost from '@components/BlogPost.astro'
 import BlogPostPreview from '@components/BlogPostPreview.astro'
 import NewsletterCard from '@components/cards/NewsletterCard'
 import PageTransition from '@components/transition/PageTransition'
-import PageLoader from '@components/transition/PageLoader'
 import { getPosts } from '@utils/server'
 
 const { content } = Astro.props
@@ -35,7 +34,7 @@ const allPosts = getPosts(await Astro.glob('../pages/posts/*.md')).slice(0, 3)
   </head>
 
   <body data-barba="wrapper">
-    <BlogHeader path="writer" />
+    <BlogHeader />
     <main data-barba="container" data-barba-namespace="blog">
       <BlogPost
         {title}
@@ -61,23 +60,11 @@ const allPosts = getPosts(await Astro.glob('../pages/posts/*.md')).slice(0, 3)
     <PageTransition />
 
     <script is:inline src="https://unpkg.com/@barba/core">
-
-    </script>
-
-    <script is:inline src="https://unpkg.com/@barba/prefetch">
-
-    </script>
-
-    <script
-      is:inline
-      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.1/gsap.min.js"
-    >
-
-    </script>
-
-    <script is:inline type="module">
-      import '../assets/scripts/transition.js'
-      import '../assets/scripts/theme.js'
+      export { }; <script is:inline src="https://unpkg.com/@barba/prefetch">
+      export { }; <script is:inline
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.1/gsap.min.js" >
+      export { }; <script is:inline type="module"> import
+      '../assets/scripts/theme.js' import '../assets/scripts/transition.js'
     </script>
   </body>
 </html>

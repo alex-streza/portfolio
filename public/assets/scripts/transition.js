@@ -48,6 +48,14 @@ const updatePathTheme = () => {
   document.documentElement.classList.add(currentPath)
 }
 
+const updatePathIndicator = () => {
+  const pathname = window.location.pathname.split('/')[1]
+  const path =
+    pathname.includes('posts') || pathname == '' ? 'writer' : pathname
+
+  document.getElementsByClassName('path')[0].innerHTML = path
+}
+
 barba.init({
   debug: true,
   transitions: [
@@ -72,7 +80,10 @@ barba.init({
             duration: 0.3,
             opacity: 1,
             y: 0,
-            onComplete: () => updatePathTheme(),
+            onComplete: () => {
+              updatePathTheme()
+              updatePathIndicator()
+            },
           },
         )
 
@@ -82,7 +93,10 @@ barba.init({
         return gsap.to('main', {
           duration: 0.3,
           opacity: 1,
-          onComplete: () => updatePathTheme(),
+          onComplete: () => {
+            updatePathTheme()
+            updatePathIndicator()
+          },
         })
       },
     },

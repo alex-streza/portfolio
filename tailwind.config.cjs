@@ -110,6 +110,7 @@ const defaultTheme = {
     'light-gray': {
       600: 'hsla(0, 0%, 90%, 1)',
       700: 'hsla(0, 0%, 80%, 1)',
+      800: 'hsla(0, 0%, 70%, 1)',
     },
     info: {
       0: 'hsla(218, 96%, 88%, 1)',
@@ -236,7 +237,7 @@ module.exports = {
           extend: {
             ...defaultTheme,
             colors: {
-              main: defaultTheme.colors.yellow,
+              main: defaultTheme.colors.purple,
             },
           },
         },
@@ -245,7 +246,7 @@ module.exports = {
           extend: {
             ...defaultTheme,
             colors: {
-              main: defaultTheme.colors.purple,
+              main: defaultTheme.colors.yellow,
             },
           },
         },

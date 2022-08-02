@@ -28,6 +28,7 @@ const Ball = ({ vec = new THREE.Vector3(), index, ...props }) => {
   const size: number = useMemo(() => {
     return props.args
   }, [props.args])
+  const positionRef = useRef([Math.random() + 4, Math.random() + 5, 1.2 * size])
 
   const [ref, api] = useCompoundBody<GroupProps>(
     () => ({
@@ -35,8 +36,8 @@ const Ball = ({ vec = new THREE.Vector3(), index, ...props }) => {
       shapes: [
         {
           type: 'Box',
-          position: [8, 5, 1.2 * size],
-          args: new THREE.Vector3().setScalar(size * 0.4).toArray(),
+          position: positionRef.current, //[0, 0, 1.2 * size],
+          args: new THREE.Vector3().setScalar(size * 0.1).toArray(),
         },
         {
           type: 'Sphere',
@@ -163,7 +164,7 @@ const Balls = () => {
   const balls = useMemo(
     () =>
       [...Array(count)].map(() => ({
-        args: [size, size, 1, 1, 1.25][Math.floor(Math.random() * 2)],
+        args: 0.2 + Math.random() * 0.15,
         mass,
         angularDamping: 0.2,
         linearDamping: 0.95,

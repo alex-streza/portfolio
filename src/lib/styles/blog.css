@@ -127,7 +127,7 @@
 
   /* COMMAND CENTER */
   .command-center-positioner {
-    @apply bg-gray-hex bg-opacity-50 backdrop-blur-md;
+    @apply bg-gray-hex bg-opacity-50 backdrop-blur-sm;
   }
   .command-center-animator,
   .command-center-input {
@@ -148,7 +148,7 @@
     @apply p-1 bg-main-hex bg-opacity-20 text-main uppercase font-bold rounded;
   }
   .command-center-result {
-    @apply flex gap-3 items-center hover:text-main hover:bg-main-hex hover:bg-opacity-10 cursor-pointer;
+    @apply flex gap-3 items-center dark:hover:text-main-300 hover:text-main-800 hover:bg-main-hex hover:bg-opacity-20 cursor-pointer;
   }
   .command-center-section {
     @apply h-[33px] text-white px-6 bg-gray-600 flex items-center;
@@ -172,10 +172,20 @@
     @apply fixed z-10 flex overflow-x-hidden h-[200vh] md:h-[300vh] left-0 top-[-71vh] md:top-[-105vh] p-0 m-0 pointer-events-none rotate-45;
   }
   .transition > li {
-    @apply rounded-[120px] w-[20vh] md:w-[32vh] transition-colors duration-300 scale-y-0 odd:bg-main-transparent even:bg-main-900 before:content-none;
+    @apply rounded-[120px] w-[20vh] md:w-[32vh] transition-colors duration-300 scale-y-0 odd:bg-main-hex odd:bg-opacity-50 even:bg-main even:bg-opacity-75 before:content-none;
   }
 
   .project-container {
     @apply opacity-0 md:w-[500px] w-screen rounded-8 absolute -top-10 p-5 dark:bg-gray-hex dark:bg-opacity-20 bg-none backdrop-blur-sm;
+  }
+
+  /* MENU */
+  .paths-menu li {
+    @apply before:content-none odd:text-7xl even:text-8xl font-serif last:text-end odd:my-20;
+  }
+
+  .developer-content,
+  .home-content {
+    @apply absolute inset-0 p-0 w-screen h-screen mx-[none] z-0;
   }
 }

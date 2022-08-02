@@ -1,6 +1,8 @@
 import Gallery from '@components/gallery/Gallery'
 import { Debug, Physics, usePlane, useSphere } from '@react-three/cannon'
 import { useFrame, useThree } from '@react-three/fiber'
+import { useControls } from 'leva'
+import { useRef } from 'react'
 import Balls from './Balls'
 import HTML from './Html'
 
@@ -15,18 +17,25 @@ const Collisions = () => {
 
   const [, api] = useSphere(() => ({ type: 'Kinematic', args: [1] }))
 
-  return useFrame((state) =>
+  return useFrame((state) => {
+    const offset = state.clock.elapsedTime > 4 ? 0 : 5
     api.position.set(
       (state.mouse.x * viewport.width) / 2,
-      (state.mouse.y * viewport.height) / 2,
+      (state.mouse.y * viewport.height) / 2 + offset,
       0.5,
-    ),
-  )
+    )
+  })
 }
 
 const urls = [...Array(6)].map((_, i) => `/assets/images/genidea/${i + 1}.png`)
 
 const Scene = () => {
+  const { debug } = useControls({
+    debug: {
+      value: false,
+    },
+  })
+
   return (
     <>
       <ambientLight intensity={1} />
@@ -40,10 +49,18 @@ const Scene = () => {
       />
       <HTML />
       <Physics gravity={[0, 0, 0]}>
-        {/* <Debug color="white" scale={1.1}> */}
-        <Collisions />
-        <Balls />
-        {/* </Debug> */}
+        {debug && (
+          <Debug color="white" scale={1.1}>
+            <Collisions />
+            <Balls />
+          </Debug>
+        )}
+        {!debug && (
+          <>
+            <Collisions />
+            <Balls />
+          </>
+        )}
       </Physics>
       <Gallery urls={urls} />
     </>
