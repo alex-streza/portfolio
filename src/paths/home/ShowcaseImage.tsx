@@ -1,24 +1,39 @@
-import { Image, ImageProps } from '@react-three/drei'
+import { useTexture } from '@react-three/drei'
+import { MeshProps } from '@react-three/fiber'
 import { useRef } from 'react'
-import * as THREE from 'three'
+import { animated } from '@react-spring/three'
+import { imageShader } from './imageShader'
 
-const ShowcaseImage = () => {
-  const ref = useRef<ImageProps>()
-  const position = [0, 0, 0]
-  const scale = [1, 1, 1]
-  const geometry = new THREE.PlaneBufferGeometry(1, 1, 32, 32)
+interface ShowcaseImageProps {
+  urls: string[]
+  open: boolean
+  uAlpha: number
+  uOffset: [number, number]
+}
+
+const ShowcaseImage = ({
+  urls,
+  open,
+  uAlpha,
+  uOffset,
+  ...props
+}: ShowcaseImageProps) => {
+  const ref = useRef<MeshProps>()
+
+  const [texture] = useTexture(urls)
 
   return (
-    <Image
-      ref={ref}
-      position={position}
-      scale={scale}
-      geometry={geometry}
-      url="/assets/images/portfolio/1.png"
-      // onClick={click}
-      // onPointerOver={over}
-      // onPointerOut={out}
-    />
+    <animated.mesh ref={ref} {...props}>
+      <planeBufferGeometry attach="geometry" args={[5, 7]} />
+      <animated.shaderMaterial
+        attach="material"
+        transparent
+        args={[imageShader]}
+        uniforms-uTexture-value={texture}
+        uniforms-uAlpha-value={uAlpha}
+        uniforms-uOffset-value={uOffset}
+      />
+    </animated.mesh>
   )
 }
 

@@ -34,7 +34,11 @@ let permalink = 'https://www.blog.alexstreza.dev/'
     <BlogHeader />
     <Leva client:load hidden={process.env.NODE_ENV === 'production'} />
 
-    <main data-barba="container" data-barba-namespace="home">
+    <main
+      data-barba="container"
+      data-barba-namespace="home"
+      class="absolute top-0"
+    >
       <section class="developer-content">
         <Scene client:only />
       </section>

@@ -10,9 +10,14 @@ const posts = getPosts(await Astro.glob('../pages/posts/*.md')).map((p) => ({
 ---
 
 <nav class="navbar">
-  <a href="/" class="reset-link">
-    <span>Alex Streza</span>
-    <span class="path text-main"></span>
+  <a href="/" class="reset-link" id="logo-container">
+    <span id="logo" class="leading-7 text-center"
+      ><span class="text-main transition-colors duration-300">A</span>lex Strez<span
+        class="text-main transition-colors duration-300"
+        >a
+      </span>
+    </span>
+    <span id="logo-path" class="path text-main"></span>
   </a>
   <div class="navbar-actions">
     <KBar client:only {posts} />
@@ -39,3 +44,11 @@ const posts = getPosts(await Astro.glob('../pages/posts/*.md')).map((p) => ({
     @apply text-[28px] mb-0 font-serif font-black;
   }
 </style>
+
+<script>
+  if (window.location.pathname == '/') {
+    document
+      .querySelector('#logo-path')
+      .classList.add('opacity-0', '-translate-y-5')
+  }
+</script>

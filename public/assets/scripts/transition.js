@@ -35,6 +35,33 @@ const delay = (n) => {
 
 barba.use(barbaPrefetch)
 
+const updateNavbar = () => {
+  const tl = gsap.timeline()
+
+  if (location.pathname === '/') {
+    tl.to('#logo-path', {
+      duration: 0.3,
+      opacity: 0,
+      y: 20,
+    }).to('#logo-container', {
+      duration: 0.3,
+      marginLeft: window.innerWidth / 2 - 200,
+      width: 80,
+    })
+  } else {
+    tl.to('#logo-path', {
+      duration: 0.3,
+      opacity: 1,
+      y: 0,
+    }).to('#logo-container', {
+      duration: 0.3,
+      marginLeft: 0,
+      width: 200,
+    })
+  }
+  tl.play()
+}
+
 const updatePathTheme = () => {
   const paths = ['developer', 'designer', 'writer']
 
@@ -83,6 +110,7 @@ barba.init({
             onComplete: () => {
               updatePathTheme()
               updatePathIndicator()
+              updateNavbar()
             },
           },
         )

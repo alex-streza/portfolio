@@ -3,7 +3,6 @@ import BaseHead from '@components/BaseHead.astro'
 import BlogHeader from '@components/BlogHeader.astro'
 import PageTransition from '@components/transition/PageTransition'
 import Scene from '@paths/home/Scene'
-import { getPosts } from '@utils/server'
 
 let title = 'Blog | Alex Streza'
 let description =
@@ -24,10 +23,12 @@ let permalink = 'https://www.blog.alexstreza.dev/'
 
   <body data-barba="wrapper">
     <BlogHeader />
-    <main data-barba="container" data-barba-namespace="home">
-      <section class="home-content">
-        <Scene client:only />
-      </section>
+    <main
+      data-barba="container"
+      data-barba-namespace="home"
+      class="absolute top-0"
+    >
+      <Scene client:only />
     </main>
 
     <PageTransition />

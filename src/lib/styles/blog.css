@@ -181,7 +181,7 @@
 
   /* MENU */
   .paths-menu li {
-    @apply before:content-none odd:text-7xl even:text-8xl font-serif last:text-end odd:my-20;
+    @apply before:content-none odd:text-5xl even:text-6xl md:odd:text-7xl md:even:text-8xl font-serif last:text-end odd:my-20 hover:text-main;
   }
 
   .developer-content,
