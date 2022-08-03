@@ -7,7 +7,6 @@ import {
   ContactShadows,
   Environment,
   MeshDistortMaterial,
-  PerspectiveCamera,
 } from '@react-three/drei'
 import { LightProps, useFrame } from '@react-three/fiber'
 import { Suspense, useEffect, useRef, useState } from 'react'

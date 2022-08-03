@@ -4,26 +4,14 @@ import { useRef } from 'react'
 import { animated } from '@react-spring/three'
 import { imageShader } from './imageShader'
 
-interface ShowcaseImageProps {
-  urls: string[]
-  open: boolean
-  uAlpha: number
-  uOffset: [number, number]
+interface ShowcaseImagesProps {
+  textures: any[]
+  springs: any[]
 }
 
-const ShowcaseImage = ({
-  urls,
-  open,
-  uAlpha,
-  uOffset,
-  ...props
-}: ShowcaseImageProps) => {
-  const ref = useRef<MeshProps>()
-
-  const [texture] = useTexture(urls)
-
+const Image = ({ uAlpha, uOffset, texture }) => {
   return (
-    <animated.mesh ref={ref} {...props}>
+    <>
       <planeBufferGeometry attach="geometry" args={[5, 7]} />
       <animated.shaderMaterial
         attach="material"
@@ -33,8 +21,20 @@ const ShowcaseImage = ({
         uniforms-uAlpha-value={uAlpha}
         uniforms-uOffset-value={uOffset}
       />
-    </animated.mesh>
+    </>
   )
 }
 
-export default ShowcaseImage
+const ShowcaseImages = ({ textures, springs }: ShowcaseImagesProps) => {
+  return (
+    <group>
+      {textures.map((texture, i) => (
+        <animated.mesh key={i} {...springs[i]}>
+          <Image {...springs[i]} texture={texture} />
+        </animated.mesh>
+      ))}
+    </group>
+  )
+}
+
+export default ShowcaseImages
