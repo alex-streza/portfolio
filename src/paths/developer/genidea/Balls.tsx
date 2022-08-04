@@ -9,13 +9,11 @@ import { useMediaQuery } from '@react-hookz/web'
 import { useCompoundBody } from '@react-three/cannon/dist/index'
 import { Edges } from '@react-three/drei'
 import gsap from 'gsap'
-import { useAtom } from 'jotai'
+import CSSRulePlugin from 'gsap/dist/CSSRulePlugin'
 import { Depth, Fresnel, LayerMaterial } from 'lamina'
 import { useControls } from 'leva'
-import { useEffect, useLayoutEffect, useMemo, useRef } from 'react'
-import { hideBallsAtom } from 'src/store/atoms'
+import { useEffect, useMemo, useRef } from 'react'
 import * as THREE from 'three'
-import CSSRulePlugin from 'gsap/dist/CSSRulePlugin'
 
 gsap.registerPlugin(CSSRulePlugin)
 

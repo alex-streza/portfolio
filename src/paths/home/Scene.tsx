@@ -5,6 +5,7 @@ import { EffectComposer, SSAO } from '@react-three/postprocessing'
 import { createRef, Suspense, useRef, useState } from 'react'
 import ShowcaseImages from './ShowcaseImage'
 import { config, useSpring, useSprings } from '@react-spring/three'
+import MenuLink from './MenuLink'
 
 const Loader = () => {
   const { progress } = useProgress()
@@ -33,6 +34,11 @@ const images = {
   ],
 }
 const paths = ['writer', 'developer', 'designer']
+const subtitles = [
+  'Tech - JavaScript | Medium',
+  'Creative - Interactive | ReactJS',
+  'Design - Prototype | Figma',
+]
 
 const mapNumber = function (number, in_min, in_max, out_min, out_max) {
   return ((number - in_min) * (out_max - out_min)) / (in_max - in_min) + out_min
@@ -41,7 +47,7 @@ const mapNumber = function (number, in_min, in_max, out_min, out_max) {
 const SceneContent = () => {
   const { viewport } = useThree()
   const textures = useTexture([...images[0], ...images[1], ...images[2]])
-  console.log('textures', textures)
+
   const [hoveredIndex, setHoveredIndex] = useState(0)
 
   const itemsRefs = useRef([])
@@ -80,7 +86,8 @@ const SceneContent = () => {
     const position = itemsRefs.current[i].current.getBoundingClientRect()
     const x = (position.x / window.innerWidth) * 2 - 1
     const y =
-      -(position.y / window.innerHeight) * 2 + (i == 2 ? 1.2 : i == 1 ? 1 : 0.8)
+      -(position.y / window.innerHeight) * 2 +
+      (i == 2 ? 1.05 : i == 1 ? 0.9 : 0.8)
 
     api.start((i) => ({
       position: [
@@ -112,19 +119,14 @@ const SceneContent = () => {
       <Html center prepend>
         <ul className="paths-menu">
           {paths.map((path, i) => (
-            <li
+            <MenuLink
               key={i}
+              link={path}
               ref={itemsRefs.current[i]}
               onMouseEnter={() => handleMouseEnter(i)}
               onMouseLeave={() => handleMouseLeave(i)}
-            >
-              <a
-                className="hover:!text-main reset-link capitalize "
-                href={`/${path}`}
-              >
-                {path}
-              </a>
-            </li>
+              subtitle={subtitles[i]}
+            />
           ))}
         </ul>
       </Html>

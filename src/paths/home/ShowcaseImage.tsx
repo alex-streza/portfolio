@@ -1,6 +1,3 @@
-import { useTexture } from '@react-three/drei'
-import { MeshProps } from '@react-three/fiber'
-import { useRef } from 'react'
 import { animated } from '@react-spring/three'
 import { imageShader } from './imageShader'
 
@@ -16,10 +13,10 @@ const Image = ({ uAlpha, uOffset, texture }) => {
       <animated.shaderMaterial
         attach="material"
         transparent
-        args={[imageShader]}
+        args={[{ ...imageShader }]}
         uniforms-uTexture-value={texture}
         uniforms-uAlpha-value={uAlpha}
-        uniforms-uOffset-value={uOffset}
+        // uniforms-uOffset-value={uOffset}
       />
     </>
   )

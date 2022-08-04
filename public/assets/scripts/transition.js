@@ -41,16 +41,18 @@ const updateNavbar = () => {
   if (location.pathname === '/') {
     tl.to('#logo-path', {
       duration: 0.3,
+      display: 'none',
       opacity: 0,
       y: 20,
     }).to('#logo-container', {
       duration: 0.3,
-      marginLeft: window.innerWidth / 2 - 200,
+      marginLeft: window.innerWidth / 2 - window.innerWidth / 8,
       width: 80,
     })
   } else {
     tl.to('#logo-path', {
       duration: 0.3,
+      display: 'block',
       opacity: 1,
       y: 0,
     }).to('#logo-container', {

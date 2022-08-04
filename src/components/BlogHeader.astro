@@ -27,7 +27,7 @@ const posts = getPosts(await Astro.glob('../pages/posts/*.md')).map((p) => ({
 
 <style>
   .navbar {
-    @apply flex z-10 relative justify-between items-center p-5 md:py-10 md:px-[120px] w-full;
+    @apply flex z-10 relative justify-between items-center h-20 p-5 md:py-10 md:px-[120px] w-full;
   }
 
   .navbar > a {
@@ -49,6 +49,6 @@ const posts = getPosts(await Astro.glob('../pages/posts/*.md')).map((p) => ({
   if (window.location.pathname == '/') {
     document
       .querySelector('#logo-path')
-      .classList.add('opacity-0', '-translate-y-5')
+      .classList.add('hidden', 'opacity-0', '-translate-y-5')
   }
 </script>
