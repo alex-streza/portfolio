@@ -37,7 +37,7 @@ barba.use(barbaPrefetch)
 
 const updateNavbar = () => {
   const tl = gsap.timeline()
-
+  const isMobile = window.innerWidth > 480
   if (location.pathname === '/') {
     tl.to('#logo-path', {
       duration: 0.3,
@@ -46,8 +46,8 @@ const updateNavbar = () => {
       y: 20,
     }).to('#logo-container', {
       duration: 0.3,
-      marginLeft: window.innerWidth / 2 - window.innerWidth / 8,
-      width: 80,
+      marginLeft: isMobile ? window.innerWidth / 2 - window.innerWidth / 8 : 0,
+      width: isMobile ? 'auto' : 80,
     })
   } else {
     tl.to('#logo-path', {
@@ -58,7 +58,7 @@ const updateNavbar = () => {
     }).to('#logo-container', {
       duration: 0.3,
       marginLeft: 0,
-      width: 200,
+      width: isMobile ? 'auto' : 200,
     })
   }
   tl.play()

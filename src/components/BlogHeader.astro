@@ -1,5 +1,6 @@
 ---
 import ThemeToggle from '@components/theme-toggle'
+import Cursor from '@components/cursor'
 import { getPosts } from '@utils/server'
 import KBar from './kbar'
 
@@ -23,6 +24,7 @@ const posts = getPosts(await Astro.glob('../pages/posts/*.md')).map((p) => ({
     <KBar client:only {posts} />
     <ThemeToggle client:load />
   </div>
+  <Cursor client:only />
 </nav>
 
 <style>
