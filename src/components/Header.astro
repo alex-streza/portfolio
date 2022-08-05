@@ -11,7 +11,7 @@ const posts = getPosts(await Astro.glob('../pages/posts/*.md')).map((p) => ({
 ---
 
 <nav class="navbar">
-  <a href="/" class="reset-link" id="logo-container">
+  <a href="/" class="reset-link h-12" id="logo-container">
     <span id="logo" class="leading-7 text-center"
       ><span class="text-main transition-colors duration-300">A</span>lex Strez<span
         class="text-main transition-colors duration-300"
@@ -21,15 +21,15 @@ const posts = getPosts(await Astro.glob('../pages/posts/*.md')).map((p) => ({
     <span id="logo-path" class="path text-main"></span>
   </a>
   <div class="navbar-actions">
+    <Cursor client:only />
     <KBar client:only {posts} />
     <ThemeToggle client:load />
   </div>
-  <Cursor client:only />
 </nav>
 
 <style>
   .navbar {
-    @apply flex z-10 relative justify-between items-center h-20 p-5 md:py-10 md:px-[120px] w-full;
+    @apply flex z-10 relative justify-between items-center p-5 md:py-10 md:px-[120px] w-full;
   }
 
   .navbar > a {
@@ -52,5 +52,6 @@ const posts = getPosts(await Astro.glob('../pages/posts/*.md')).map((p) => ({
     document
       .querySelector('#logo-path')
       .classList.add('hidden', 'opacity-0', '-translate-y-5')
+    document.querySelector('#logo').classList.add('translate-y-3')
   }
 </script>

@@ -1,6 +1,6 @@
 ---
 import BaseHead from '@components/BaseHead.astro'
-import BlogHeader from '@components/BlogHeader.astro'
+import Header from '@components/Header.astro'
 import BlogPostPreview from '@components/BlogPostPreview.astro'
 import NewsletterForm from '@components/forms/NewsletterForm'
 import PageTransition from '@components/transition/PageTransition'
@@ -42,7 +42,7 @@ const allPosts = getPosts(await Astro.glob('./posts/*.md'))
   </head>
 
   <body data-barba="wrapper">
-    <BlogHeader />
+    <Header />
     <main data-barba="container" data-barba-namespace="home">
       <div class="content">
         <section class="intro">

@@ -43,11 +43,11 @@ const MenuLink = forwardRef<HTMLElement, MenuLinkProps>(
       >
         <animated.span
           style={styles}
-          className="absolute text-sm font-sans text-main w-fit block bg-main bg-opacity-10 backdrop-blur-sm"
+          className="absolute text-sm font-sans text-main-800 w-fit block bg-main bg-opacity-10 backdrop-blur-sm min-w-[200px]"
         >
           {subtitle}
         </animated.span>
-        <a className="hover:!text-main reset-link " href={`/${link}`}>
+        <a className="hover:!text-main reset-link" href={`/${link}`}>
           <span>{link[0].toUpperCase() + link.slice(1)}</span>
         </a>
       </li>

@@ -1,6 +1,6 @@
 ---
 import BaseHead from '@components/BaseHead.astro'
-import BlogHeader from '@components/BlogHeader.astro'
+import Header from '@components/Header.astro'
 import PageTransition from '@components/transition/PageTransition'
 import Scene from '@paths/developer/MainScene'
 import { Leva } from 'leva'
@@ -31,7 +31,7 @@ let permalink = 'https://www.blog.alexstreza.dev/'
   </head>
 
   <body data-barba="wrapper">
-    <BlogHeader />
+    <Header />
     <Leva client:load hidden={process.env.NODE_ENV === 'production'} />
 
     <main

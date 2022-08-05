@@ -37,28 +37,26 @@ barba.use(barbaPrefetch)
 
 const updateNavbar = () => {
   const tl = gsap.timeline()
-  const isMobile = window.innerWidth > 480
   if (location.pathname === '/') {
     tl.to('#logo-path', {
       duration: 0.3,
       display: 'none',
       opacity: 0,
       y: 20,
-    }).to('#logo-container', {
-      duration: 0.3,
-      marginLeft: isMobile ? window.innerWidth / 2 - window.innerWidth / 8 : 0,
-      width: isMobile ? 'auto' : 80,
+    }).to('#logo', {
+      y: 12,
     })
   } else {
-    tl.to('#logo-path', {
+    tl.to('#logo', {
+      y: 0,
+    }).to('#logo-path', {
       duration: 0.3,
       display: 'block',
       opacity: 1,
       y: 0,
-    }).to('#logo-container', {
+    })
+    to('#logo-container', {
       duration: 0.3,
-      marginLeft: 0,
-      width: isMobile ? 'auto' : 200,
     })
   }
   tl.play()
@@ -68,8 +66,7 @@ const updatePathTheme = () => {
   const paths = ['developer', 'designer', 'writer']
 
   const pathname = window.location.pathname.split('/')[1]
-  const currentPath =
-    pathname.includes('posts') || pathname == '' ? 'writer' : pathname
+  const currentPath = pathname.includes('posts') ? 'writer' : pathname
 
   paths.forEach((path) => {
     document.documentElement.classList.remove(path)

@@ -6,6 +6,7 @@ import { createRef, Suspense, useRef, useState } from 'react'
 import ShowcaseImages from './ShowcaseImage'
 import { config, useSpring, useSprings } from '@react-spring/three'
 import MenuLink from './MenuLink'
+import { useLocalStorageValue, useSessionStorageValue } from '@react-hookz/web'
 
 const Loader = () => {
   const { progress } = useProgress()
@@ -45,6 +46,8 @@ const mapNumber = function (number, in_min, in_max, out_min, out_max) {
 }
 
 const SceneContent = () => {
+  const [, setPath] = useSessionStorageValue('path', '')
+
   const { viewport } = useThree()
   const textures = useTexture([...images[0], ...images[1], ...images[2]])
 
@@ -100,8 +103,10 @@ const SceneContent = () => {
     }))
 
     paths.forEach((path, index) => {
-      if (index === i) document.documentElement.classList.add(path)
-      else document.documentElement.classList.remove(path)
+      if (index === i) {
+        document.documentElement.classList.add(path)
+        setPath(path)
+      } else document.documentElement.classList.remove(path)
     })
   }
 
