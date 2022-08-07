@@ -37,6 +37,7 @@ barba.use(barbaPrefetch)
 
 const updateNavbar = () => {
   const tl = gsap.timeline()
+
   if (location.pathname === '/') {
     tl.to('#logo-path', {
       duration: 0.3,
@@ -55,9 +56,6 @@ const updateNavbar = () => {
       opacity: 1,
       y: 0,
     })
-    to('#logo-container', {
-      duration: 0.3,
-    })
   }
   tl.play()
 }
@@ -71,7 +69,7 @@ const updatePathTheme = () => {
   paths.forEach((path) => {
     document.documentElement.classList.remove(path)
   })
-  document.documentElement.classList.add(currentPath)
+  if (currentPath !== '') document.documentElement.classList.add(currentPath)
 }
 
 const updatePathIndicator = () => {
@@ -123,6 +121,7 @@ barba.init({
           onComplete: () => {
             updatePathTheme()
             updatePathIndicator()
+            updateNavbar()
           },
         })
       },

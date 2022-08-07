@@ -2,7 +2,7 @@ import { Canvas, useFrame, useThree } from '@react-three/fiber'
 
 import { Html, useProgress, useTexture } from '@react-three/drei'
 import { EffectComposer, SSAO } from '@react-three/postprocessing'
-import { createRef, Suspense, useRef, useState } from 'react'
+import { createRef, Suspense, useEffect, useRef, useState } from 'react'
 import ShowcaseImages from './ShowcaseImage'
 import { config, useSpring, useSprings } from '@react-spring/three'
 import MenuLink from './MenuLink'
@@ -70,6 +70,10 @@ const SceneContent = () => {
     config: config.gentle,
   }))
 
+  useEffect(() => {
+    setPath('')
+  }, [])
+
   const handleMouseLeave = (i) => {
     const position = itemsRefs.current[i].current.getBoundingClientRect()
     const x = (position.x / window.innerWidth) * 2 - 1
@@ -81,6 +85,12 @@ const SceneContent = () => {
       rotation: [0, 0, 0],
       uAlpha: 0,
     }))
+    paths.forEach((path, index) => {
+      if (index === i) {
+        document.documentElement.classList.remove(path)
+        setPath('')
+      }
+    })
   }
 
   const handleMouseEnter = (i) => {

@@ -1,6 +1,13 @@
-import { useLocalStorageValue, useSessionStorageValue } from '@react-hookz/web'
+import {
+  useLocalStorageValue,
+  usePrevious,
+  useSessionStorageValue,
+} from '@react-hookz/web'
 import gsap from 'gsap'
 import { useLayoutEffect, useRef } from 'react'
+import MorphSVGPlugin from 'gsap/dist/MorphSVGPlugin.js'
+
+gsap.registerPlugin(MorphSVGPlugin)
 
 const cursors = {
   '': (
@@ -85,12 +92,19 @@ const cursors = {
   ),
 }
 
+const writerPath =
+  'M19.4001 7.34001L16.6601 4.60001C16.3024 4.26411 15.8338 4.07137 15.3434 4.05846C14.8529 4.04556 14.3748 4.21338 14.0001 4.53001L5.00005 13.53C4.67682 13.856 4.47556 14.2832 4.43005 14.74L4.00005 18.91C3.98658 19.0565 4.00559 19.2041 4.05571 19.3424C4.10584 19.4807 4.18585 19.6062 4.29005 19.71C4.38349 19.8027 4.49431 19.876 4.61615 19.9258C4.73798 19.9755 4.86845 20.0008 5.00005 20H5.09005L9.26005 19.62C9.71685 19.5745 10.1441 19.3732 10.4701 19.05L19.4701 10.05C19.8194 9.68098 20.0082 9.18852 19.995 8.68055C19.9819 8.17257 19.768 7.69052 19.4001 7.34001ZM16.0001 10.68L13.3201 8.00001L15.2701 6.00001L18.0001 8.73001L16.0001 10.68Z'
+const developerPath =
+  'M11.0001 4L10.5001 3L10.0001 4L9.00006 4.125L9.83406 4.833L9.50006 6L10.5001 5.334L11.5001 6L11.1661 4.833L12.0001 4.125L11.0001 4ZM19.3341 14.666L18.5001 13L17.6661 14.666L16.0001 14.875L17.3891 16.056L16.8341 18L18.5001 16.889L20.1661 18L19.6111 16.056L21.0001 14.875L19.3341 14.666ZM6.66706 6.333L6.00006 5L5.33306 6.333L4.00006 6.5L5.11106 7.444L4.66706 9L6.00006 8.111L7.33306 9L6.88906 7.444L8.00006 6.5L6.66706 6.333ZM3.41406 17C3.41406 17.534 3.62206 18.036 4.00006 18.414L5.58606 20C5.96406 20.378 6.46606 20.586 7.00006 20.586C7.53406 20.586 8.03606 20.378 8.41406 20L20.0001 8.414C20.3781 8.036 20.5861 7.534 20.5861 7C20.5861 6.466 20.3781 5.964 20.0001 5.586L18.4141 4C17.6581 3.244 16.3421 3.244 15.5861 4L4.00006 15.586C3.62206 15.964 3.41406 16.466 3.41406 17ZM17.0001 5.414L18.5861 7L15.0001 10.586L13.4141 9L17.0001 5.414Z'
+
 const Cursor = () => {
   const cursorRef = useRef()
+  const q = gsap.utils.selector(cursorRef)
+
   const mouseRef = useRef({})
 
-  const [theme] = useLocalStorageValue('theme', 'light')
   const [path] = useSessionStorageValue('path', '')
+  const previousPath = usePrevious(path)
 
   useLayoutEffect(() => {
     const pos = { x: window.innerWidth / 2, y: window.innerHeight / 2 }
@@ -121,13 +135,18 @@ const Cursor = () => {
     })
   }, [])
 
+  // useLayoutEffect(() => {
+  //   gsap.to(q('#path'), {
+  //     duration: 0.2,
+  //     morphSVG: q('#' + path) as any,
+  //   })
+  // }, [path])
+
   return (
     <div
       ref={cursorRef}
       className={`w-10 h-10 text-main-1000 grid place-content-center fixed top-0 left-0 rounded-full ${
-        path == 'writer' && theme.includes('dark')
-          ? 'bg-[#b1b1b1]'
-          : 'bg-main-hex'
+        path == '' ? 'bg-[#b1b1b1]' : 'bg-main-hex'
       }  bg-opacity-50 pointer-events-none`}
     >
       {cursors[path]}
