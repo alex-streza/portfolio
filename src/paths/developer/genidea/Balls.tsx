@@ -15,7 +15,9 @@ import { useControls } from 'leva'
 import { useEffect, useMemo, useRef } from 'react'
 import * as THREE from 'three'
 
-gsap.registerPlugin(CSSRulePlugin)
+if (typeof window !== 'undefined') {
+  gsap.registerPlugin(CSSRulePlugin)
+}
 
 THREE.ColorManagement.legacyMode = false
 const sphereGeometry = new THREE.SphereGeometry(1, 28, 28)

@@ -2,9 +2,11 @@ import { useSessionStorageValue } from '@react-hookz/web'
 import { useInterval } from 'ahooks'
 import gsap from 'gsap'
 import MorphSVGPlugin from 'gsap/dist/MorphSVGPlugin.js'
-import { useEffect, useLayoutEffect, useRef, useState } from 'react'
+import { useLayoutEffect, useRef, useState } from 'react'
 
-gsap.registerPlugin(MorphSVGPlugin)
+if (typeof window !== 'undefined') {
+  gsap.registerPlugin(MorphSVGPlugin)
+}
 
 const cursors = {
   '': (
