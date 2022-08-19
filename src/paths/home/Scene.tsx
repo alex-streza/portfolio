@@ -1,12 +1,12 @@
-import { Canvas, useFrame, useThree } from '@react-three/fiber'
+import { Canvas, useThree } from '@react-three/fiber'
 
+import { useRerender, useSessionStorageValue } from '@react-hookz/web'
+import { config, useSprings } from '@react-spring/three'
 import { Html, useProgress, useTexture } from '@react-three/drei'
 import { EffectComposer, SSAO } from '@react-three/postprocessing'
 import { createRef, Suspense, useEffect, useRef, useState } from 'react'
-import ShowcaseImages from './ShowcaseImage'
-import { config, useSpring, useSprings } from '@react-spring/three'
 import MenuLink from './MenuLink'
-import { useLocalStorageValue, useSessionStorageValue } from '@react-hookz/web'
+import ShowcaseImages from './ShowcaseImage'
 
 const Loader = () => {
   const { progress } = useProgress()
@@ -19,19 +19,19 @@ const Loader = () => {
 
 const images = {
   0: [
-    '/assets/images/portfolio/1.png',
-    '/assets/images/portfolio/2.png',
-    '/assets/images/portfolio/3.png',
+    '/assets/images/portfolio/writer.png',
+    '/assets/images/portfolio/writer.png',
+    '/assets/images/portfolio/writer.png',
   ],
   1: [
     '/assets/images/portfolio/5.png',
-    '/assets/images/portfolio/4.png',
     '/assets/images/genidea/1.png',
+    '/assets/images/portfolio/4.png',
   ],
   2: [
     '/assets/images/genidea/2.png',
     '/assets/images/genidea/3.png',
-    '/assets/images/genidea/4.png',
+    '/assets/images/3d-resources/1.png',
   ],
 }
 const paths = ['writer', 'developer', 'designer']
@@ -61,7 +61,7 @@ const SceneContent = () => {
       .map((_, i) => itemsRefs.current[i] || createRef())
   }
 
-  const [springs, api] = useSprings(3, (index) => ({
+  const [springs, api] = useSprings(3, () => ({
     position: [0, 0, 0],
     scale: [0.7, 0.3, 1],
     rotation: [0, 0, 0],
@@ -95,7 +95,6 @@ const SceneContent = () => {
 
   const handleMouseEnter = (i) => {
     setHoveredIndex(i)
-
     const position = itemsRefs.current[i].current.getBoundingClientRect()
     const x = (position.x / window.innerWidth) * 2 - 1
     const y =

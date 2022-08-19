@@ -11,7 +11,7 @@ let description =
   "Everything JavaScript, Typescript and Web Development. I sometimes tackle AI, Web3 and have a massive soft spot for 3D and CGI. I also think I'm funny at times too."
 let permalink = 'https://www.blog.alexstreza.dev/'
 
-const allPosts = getPosts(await Astro.glob('./posts/*.md'))
+const allPosts = getPosts(await Astro.glob('./posts/*.mdx'))
 ---
 
 <html lang="en">
@@ -50,7 +50,7 @@ const allPosts = getPosts(await Astro.glob('./posts/*.md'))
           <p>{description}</p>
           <NewsletterForm />
         </section>
-        <section aria-label="Blog post list">
+        <section aria-label="Blog post list" class="mt-10">
           {allPosts.map((p, i) => (
             <>
               <BlogPostPreview post={p} />

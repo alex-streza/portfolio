@@ -7,7 +7,7 @@ import {
   useScroll,
 } from '@react-three/drei'
 import { useFrame, useThree } from '@react-three/fiber'
-import { useRef, useState } from 'react'
+import { useEffect, useMemo, useRef, useState } from 'react'
 import * as THREE from 'three'
 import Minimap from './Minimap'
 
@@ -85,6 +85,7 @@ const Item = ({
       hovered ? 0.3 : 0.1,
     )
   })
+
   return (
     <Image
       ref={ref}
@@ -106,6 +107,10 @@ const Gallery = ({ urls }) => {
   const gap = isDesktop ? 0.15 : 0.1
   const xW = w + gap
   const isLoaded = isDesktop !== undefined
+
+  useEffect(() => {
+    setClicked(isDesktop ? 0 : null)
+  }, [isDesktop])
 
   return (
     <ScrollControls

@@ -175,11 +175,11 @@ const defaultTheme = {
   },
   boxShadow: {
     main: '0px 0px 4px 4px hsla(169, 65%, 63%, 0.5)',
-    green: 'rgba(99, 222, 199, 0.5)',
-    red: 'rgba(251, 70, 70, 0.5)',
-    blue: 'rgba(70, 136, 251, 0.5)',
+    green: '0px 0px 4px 4px rgba(99, 222, 199, 0.5)',
+    red: '0px 0px 4px 4px rgba(251, 70, 70, 0.5)',
+    blue: '0px 0px 4px 4px rgba(70, 136, 251, 0.5)',
     none: 'none',
-    yellow: 'rgba(251, 200, 70, 0.5)',
+    yellow: '0px 0px 4px 4px rgba(251, 200, 70, 0.5)',
   },
   borderRadius: {
     2: '2px',

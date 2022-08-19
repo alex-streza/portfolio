@@ -155,7 +155,7 @@
   }
 
   ::-webkit-scrollbar {
-    @apply w-4 h-4;
+    @apply w-3 h-3;
   }
   ::-webkit-scrollbar-track {
     @apply dark:bg-gray-700 bg-light-gray-600;

@@ -24,13 +24,13 @@ const Image = ({ uAlpha, uOffset, texture }) => {
 
 const ShowcaseImages = ({ textures, springs }: ShowcaseImagesProps) => {
   return (
-    <group>
+    <>
       {textures.map((texture, i) => (
-        <animated.mesh key={i} {...springs[i]}>
+        <animated.mesh key={texture.uuid} {...springs[i]}>
           <Image {...springs[i]} texture={texture} />
         </animated.mesh>
       ))}
-    </group>
+    </>
   )
 }
 
