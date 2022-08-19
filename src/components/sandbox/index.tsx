@@ -1,9 +1,10 @@
-import {
-  SandpackCodeEditor,
-  SandpackLayout,
-  SandpackPreview,
+import * as pkg from '@codesandbox/sandpack-react'
+const {
   SandpackProvider,
-} from '@codesandbox/sandpack-react'
+  SandpackLayout,
+  SandpackCodeEditor,
+  SandpackPreview,
+} = pkg
 import { useLocalStorageValue } from '@react-hookz/web'
 
 const APP_CODE = `
