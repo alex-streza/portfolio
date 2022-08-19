@@ -1,7 +1,7 @@
 import { useSessionStorageValue } from '@react-hookz/web'
 import { useInterval } from 'ahooks'
 import gsap from 'gsap'
-import { MorphSVGPlugin } from 'gsap/dist/MorphSVGPlugin'
+import { MorphSVGPlugin } from 'gsap/MorphSVGPlugin'
 import { useLayoutEffect, useRef, useState } from 'react'
 
 if (typeof window !== 'undefined') {
