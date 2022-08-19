@@ -10,7 +10,7 @@ export default defineConfig({
   site: 'https://www.blog.alexstreza.dev',
   vite: {
     ssr: {
-      external: ['svgo'],
+      external: ['svgo', 'gsap'],
     },
   },
   integrations: [
