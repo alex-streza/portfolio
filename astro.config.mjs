@@ -12,6 +12,9 @@ export default defineConfig({
     ssr: {
       external: ['svgo', 'gsap', 'react', 'react-dom'],
     },
+    build: {
+      chunkSizeWarningLimit: 1000,
+    },
   },
   integrations: [
     react(),
