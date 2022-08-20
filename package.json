@@ -7,6 +7,7 @@
     "dev": "astro dev",
     "start": "astro dev",
     "build": "astro build",
+    "test:build": "set NODE_ENV=production&& set CI=true&& astro build",
     "preview": "astro preview",
     "md:scrape": "node ./scripts/scrape-medium",
     "md:generate": "node ./scripts/generate-md && yarn prettier:format",
