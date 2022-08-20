@@ -31,8 +31,8 @@ let permalink = 'https://www.blog.alexstreza.dev/'
   </head>
 
   <body data-barba="wrapper">
-    <Header />
-    <Leva client:load hidden={process.env.NODE_ENV === 'production'} />
+    <Header client:only="react" />
+    <Leva client:only="react" hidden={process.env.NODE_ENV === 'production'} />
 
     <main
       data-barba="container"
