@@ -2,7 +2,7 @@ import { useSessionStorageValue } from '@react-hookz/web'
 import { useInterval } from 'ahooks'
 import { gsap } from 'gsap/dist/gsap'
 // import { MorphSVGPlugin } from 'gsap/dist/MorphSVGPlugin'
-import { useLayoutEffect, useRef, useState } from 'react'
+import { useLayoutEffect, useMemo, useRef, useState } from 'react'
 
 if (typeof window !== 'undefined') {
   // gsap.registerPlugin(MorphSVGPlugin)
@@ -102,9 +102,12 @@ const cursors2 = {
 
 const Cursor = () => {
   const cursorRef = useRef()
-  const q = gsap.utils.selector(cursorRef)
+  const q = useMemo(() => gsap.utils.selector(cursorRef), [])
 
-  const mouseRef = useRef({})
+  const mouseRef = useRef({
+    x: 0,
+    y: 0,
+  })
   const [path] = useSessionStorageValue('path', '')
 
   const [hideCursor, setHideCursor] = useState(false)
