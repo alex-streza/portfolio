@@ -1,12 +1,14 @@
-import { animated } from '@react-spring/three'
+import { animated, SpringValue } from '@react-spring/three'
+import { TextureProps } from '@react-three/fiber'
 import { imageShader } from './imageShader'
 
-interface ShowcaseImagesProps {
-  textures: any[]
-  springs: any[]
+interface ImageProps {
+  uAlpha: SpringValue<number>
+  uOffset: SpringValue<number>
+  texture: TextureProps
 }
 
-const Image = ({ uAlpha, uOffset, texture }) => {
+const Image = ({ uAlpha, uOffset, texture }: ImageProps) => {
   return (
     <>
       <planeBufferGeometry attach="geometry" args={[5, 7]} />
@@ -20,6 +22,17 @@ const Image = ({ uAlpha, uOffset, texture }) => {
       />
     </>
   )
+}
+
+interface ShowcaseImagesProps {
+  textures: TextureProps[]
+  springs: {
+    uAlpha: SpringValue<number>
+    uOffset: SpringValue<number[]>
+    position: SpringValue<number[]>
+    scale: SpringValue<number[]>
+    rotation: SpringValue<number[]>
+  }[]
 }
 
 const ShowcaseImages = ({ textures, springs }: ShowcaseImagesProps) => {

@@ -15,14 +15,16 @@ import { useControls } from 'leva'
 import { useEffect, useMemo, useRef } from 'react'
 import * as THREE from 'three'
 
-if (typeof window !== 'undefined') {
-  gsap.registerPlugin(CSSRulePlugin)
-}
+if (typeof window !== 'undefined') gsap.registerPlugin(CSSRulePlugin)
 
 THREE.ColorManagement.legacyMode = false
 const sphereGeometry = new THREE.SphereGeometry(1, 28, 28)
 
-const Ball = ({ vec = new THREE.Vector3(), index, ...props }) => {
+interface BallProps extends MeshProps {
+  index: number
+}
+
+const Ball = ({ vec = new THREE.Vector3(), index, ...props }: BallProps) => {
   const materialRef = useRef<MaterialProps>()
   const meshRef = useRef<MeshProps>()
   const size: number = useMemo(() => {
@@ -61,7 +63,7 @@ const Ball = ({ vec = new THREE.Vector3(), index, ...props }) => {
           [0, 0, 0],
         ),
       ),
-    [api, size],
+    [api, size, vec],
   )
 
   const { gradient } = useControls({
@@ -158,7 +160,7 @@ const Balls = () => {
         count: isDesktop ? 20 : 10,
         size: isDesktop ? 0.3 : 0.2,
       }),
-    [isDesktop],
+    [isDesktop, set],
   )
 
   const balls = useMemo(
@@ -169,7 +171,7 @@ const Balls = () => {
         angularDamping: 0.2,
         linearDamping: 0.95,
       })),
-    [count, mass, size, isDesktop],
+    [count, mass],
   )
 
   return (

@@ -55,4 +55,6 @@ const MenuLink = forwardRef<HTMLElement, MenuLinkProps>(
   },
 )
 
+MenuLink.displayName = 'MenuLink'
+
 export default MenuLink

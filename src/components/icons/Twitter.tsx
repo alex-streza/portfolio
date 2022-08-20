@@ -1,4 +1,4 @@
-const Twitter = ({ width = 32 }) => {
+const Twitter = ({ width = 32 }: IconProps) => {
   return (
     <svg
       width={width}

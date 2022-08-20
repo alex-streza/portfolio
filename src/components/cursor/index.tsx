@@ -140,8 +140,8 @@ const Cursor = () => {
       })
 
       gsap.ticker.add((time, deltaTime) => {
-        var delta = deltaTime * fpms
-        var dt = 1.0 - Math.pow(1.0 - speed, delta)
+        const delta = deltaTime * fpms
+        const dt = 1.0 - Math.pow(1.0 - speed, delta)
 
         pos.x += (mouseRef.current.x - pos.x) * dt
         pos.y += (mouseRef.current.y - pos.y) * dt
@@ -161,7 +161,7 @@ const Cursor = () => {
       delay: 0.2,
       morphSVG: cursors2[path],
     })
-  }, [path])
+  }, [path, q])
 
   useInterval(() => {
     setHideCursor(window.location.pathname.includes('/posts'))

@@ -4,14 +4,16 @@ import { gsap } from 'gsap/dist/gsap'
 import { DrawSVGPlugin } from 'gsap/dist/DrawSVGPlugin'
 import { useEffect, useRef } from 'react'
 
-if (typeof window !== 'undefined') {
-  gsap.registerPlugin(DrawSVGPlugin)
+if (typeof window !== 'undefined') gsap.registerPlugin(DrawSVGPlugin)
+
+interface CurtainProps {
+  position?: string
 }
 
-const Curtain = ({ position = 'top' }) => {
+const Curtain = ({ position = 'top' }: CurtainProps) => {
   const ref = useRef(null)
   const q = gsap.utils.selector(ref)
-  const tl = useRef()
+  const tl = useRef<gsap.core.Timeline>()
 
   const isDesktop = useMediaQuery('(min-width: 768px)')
 
@@ -24,7 +26,7 @@ const Curtain = ({ position = 'top' }) => {
       delay: 0.1,
       stagger: (i) => (i % 2 !== 0 ? 0.25 : 0),
     })
-  }, [])
+  }, [position, q])
 
   const listItemClassName =
     'absolute curtain-item w-[14.28%] md:w-[5%] odd:h-1/4 even:h-1/5 before:content-none odd:bg-main-transparent even:bg-main-900 md:odd:h-4/5 md:even:h-4/5'
@@ -51,7 +53,7 @@ const Curtain = ({ position = 'top' }) => {
 const LoadingBar = () => {
   const svgRef = useRef()
   const q = gsap.utils.selector(svgRef)
-  const tl = useRef()
+  const tl = useRef<gsap.core.Timeline>()
 
   useEffect(() => {
     tl.current = gsap.timeline().fromTo(
@@ -65,7 +67,7 @@ const LoadingBar = () => {
         stagger: (i) => i * 0.1,
       },
     )
-  }, [])
+  }, [q])
 
   return (
     <svg

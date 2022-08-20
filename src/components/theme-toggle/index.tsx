@@ -24,11 +24,8 @@ const SunIcon = () => (
 )
 
 export const toggleTheme = (theme) => {
-  if (theme.includes('light')) {
-    document.documentElement.classList.remove('dark')
-  } else {
-    document.documentElement.classList.add('dark')
-  }
+  if (theme.includes('light')) document.documentElement.classList.remove('dark')
+  else document.documentElement.classList.add('dark')
 }
 
 const ThemeToggle = () => {
@@ -39,7 +36,7 @@ const ThemeToggle = () => {
     const newTheme = theme.includes('dark') ? 'light' : 'dark'
     setTheme(newTheme)
     toggleTheme(newTheme)
-  }, [theme])
+  }, [setTheme, theme])
 
   useEffect(() => {
     setIsMounted(true)

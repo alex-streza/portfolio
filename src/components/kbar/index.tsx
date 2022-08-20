@@ -1,5 +1,6 @@
 import Command from '@components/icons/Command'
 import { toggleTheme } from '@components/theme-toggle'
+import { Post } from '@models/posts'
 import { useLocalStorageValue } from '@react-hookz/web'
 import {
   KBarAnimator,
@@ -10,6 +11,7 @@ import {
   KBarSearch,
   useMatches,
 } from 'kbar'
+import { noop } from 'kbar/lib/utils'
 import { useMemo } from 'react'
 import MediumIcon from '../icons/Medium'
 import TwitterIcon from '../icons/Twitter'
@@ -41,7 +43,11 @@ const RenderResults = () => {
   )
 }
 
-const KBar = ({ posts }) => {
+interface KBarProps {
+  posts: Post[]
+}
+
+const KBar = ({ posts }: KBarProps) => {
   const [, setTheme] = useLocalStorageValue('theme', 'light')
 
   const actions = useMemo(
@@ -52,7 +58,7 @@ const KBar = ({ posts }) => {
         name: 'Commands center',
         shortcut: ['ctrl', 'k'],
         keywords: 'writing words',
-        perform: () => {},
+        perform: noop,
       },
       {
         id: 'switch_theme',
@@ -123,7 +129,7 @@ const KBar = ({ posts }) => {
         }
       }),
     ],
-    [],
+    [posts, setTheme],
   )
 
   return (
@@ -141,7 +147,7 @@ const KBar = ({ posts }) => {
         <KBarPositioner className="command-center-positioner">
           <KBarAnimator className="command-center-animator">
             <KBarSearch className="command-center-input" />
-            <RenderResults actions={actions} />
+            <RenderResults />
           </KBarAnimator>
         </KBarPositioner>
       </KBarPortal>

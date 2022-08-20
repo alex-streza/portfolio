@@ -1,6 +1,6 @@
 import { Canvas, useThree } from '@react-three/fiber'
 
-import { useRerender, useSessionStorageValue } from '@react-hookz/web'
+import { useSessionStorageValue } from '@react-hookz/web'
 import { config, useSprings } from '@react-spring/three'
 import { Html, useProgress, useTexture } from '@react-three/drei'
 import { EffectComposer, SSAO } from '@react-three/postprocessing'
@@ -72,7 +72,7 @@ const SceneContent = () => {
 
   useEffect(() => {
     setPath('')
-  }, [])
+  }, [setPath])
 
   const handleMouseLeave = (i) => {
     const position = itemsRefs.current[i].current.getBoundingClientRect()
@@ -115,7 +115,9 @@ const SceneContent = () => {
       if (index === i) {
         document.documentElement.classList.add(path)
         setPath(path)
-      } else document.documentElement.classList.remove(path)
+      } else {
+        document.documentElement.classList.remove(path)
+      }
     })
   }
 

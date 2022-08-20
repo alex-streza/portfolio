@@ -17,7 +17,8 @@
       "@layouts/*": ["src/layouts/*"],
       "@paths/*": ["src/paths/*"],
       "@styles/*": ["src/lib/styles/*"],
-      "@utils/*": ["src/lib/utils/*"]
+      "@utils/*": ["src/lib/utils/*"],
+      "@models/*": ["src/lib/types/*"]
     }
   }
 }
