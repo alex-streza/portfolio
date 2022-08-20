@@ -21,9 +21,9 @@ const posts = getPosts(await Astro.glob('../pages/posts/*.md')).map((p) => ({
     <span id="logo-path" class="path text-main"></span>
   </a>
   <div class="navbar-actions">
-    <Cursor client:only="react" />
-    <KBar client:only="react" {posts} />
-    <ThemeToggle client:load />
+    <!-- <Cursor client:only="react" /> -->
+    <!-- <KBar client:only="react" {posts} /> -->
+    <ThemeToggle client:only="react" />
   </div>
 </nav>
 

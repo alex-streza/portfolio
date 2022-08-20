@@ -42,16 +42,7 @@ const ThemeToggle = () => {
   }, [theme])
 
   useEffect(() => {
-    if (!isMounted) {
-      const id = setTimeout(() => {
-        document.getElementsByTagName('body')[0].classList.add('duration-500')
-        document
-          .getElementsByTagName('body')[0]
-          .classList.add('transition-colors')
-      }, 500)
-      setIsMounted(true)
-      return () => clearTimeout(id)
-    }
+    setIsMounted(true)
   }, [theme])
 
   if (!isMounted) return <SunIcon />
