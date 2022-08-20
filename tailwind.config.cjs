@@ -1,4 +1,3 @@
-/** @type {import('tailwindcss').Config} */
 const defaultTheme = {
   colors: {
     transparent: 'transparent',
@@ -212,6 +211,7 @@ module.exports = {
     }),
   },
   plugins: [
+    // eslint-disable-next-line @typescript-eslint/no-var-requires
     require('tailwindcss-themer')({
       defaultTheme: {
         ...defaultTheme,

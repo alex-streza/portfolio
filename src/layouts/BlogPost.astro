@@ -21,7 +21,7 @@ const {
   commentCount,
 } = content
 
-const allPosts = getPosts(await Astro.glob('../pages/posts/*.md')).slice(0, 3)
+const allPosts = getPosts(await Astro.glob('../pages/posts/*.mdx')).slice(0, 3)
 ---
 
 <html lang={content.lang || 'en'}>
