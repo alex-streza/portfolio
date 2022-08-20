@@ -11,7 +11,7 @@ const Scene = () => {
     <>
       <HTML />
       <Gallery urls={urls} />
-      <Room />
+      {/* <Room /> */}
     </>
   )
 }
