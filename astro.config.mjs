@@ -26,4 +26,7 @@ export default defineConfig({
     sitemap(),
     mdx(),
   ],
+  legacy: {
+    astroFlavoredMarkdown: true,
+  },
 })
