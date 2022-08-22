@@ -4,6 +4,7 @@ const {
   SandpackLayout,
   SandpackCodeEditor,
   SandpackPreview,
+  SandpackFileExplorer,
 } = pkg
 import { useLocalStorageValue } from '@react-hookz/web'
 
@@ -14,14 +15,25 @@ export default function App() {
   const [count, setCount] = useState(0);
 
   return <>
-    <h1>Hello world!</h1>
     <h2>{count}</h2>
     <button onClick={() => setCount(count + 1)}>Increment</button>
   </>
 }
 `.trim()
 
-const Sandbox = () => {
+interface SandboxProps {
+  showTabs?: boolean
+  showExplorer?: boolean
+  showLineNumbers?: boolean
+  showNavigator?: boolean
+}
+
+const Sandbox = ({
+  showTabs,
+  showExplorer,
+  showLineNumbers,
+  showNavigator,
+}: SandboxProps) => {
   const [theme] = useLocalStorageValue('theme', 'light')
 
   return (
@@ -34,12 +46,20 @@ const Sandbox = () => {
           '/App.js': {
             code: APP_CODE,
           },
+          '/test.js': {
+            code: `const test = 2`,
+          },
         },
       }}
     >
       <SandpackLayout className="my-10 !border-main">
-        <SandpackCodeEditor />
-        <SandpackPreview />
+        {showExplorer && <SandpackFileExplorer />}
+        <SandpackCodeEditor
+          showTabs={showTabs}
+          showLineNumbers={showLineNumbers}
+          closableTabs
+        />
+        <SandpackPreview showNavigator={showNavigator} />
       </SandpackLayout>
     </SandpackProvider>
   )

@@ -1,8 +1,7 @@
 import Gallery from '@components/gallery/Gallery'
 import HTML from './Html'
-import Room from './Room'
 
-const urls = [...Array(4)].map(
+const urls = [...Array(5)].map(
   (_, i) => `/assets/images/3d-resources/${i + 1}.png`,
 )
 
