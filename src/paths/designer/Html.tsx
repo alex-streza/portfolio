@@ -24,12 +24,12 @@ const Content = () => {
         Design <br /> Creative
         <br /> Experiences
       </h1>
-      <span className="flex gap-2 font-bold">
+      <span className="flex items-center gap-2 font-bold">
         <Mail />
         alex.streza@snowfox.art
       </span>
       <a
-        className="flex gap-2 !text-white font-bold mt-3 mb-10 md:mb-20"
+        className="flex gap-2 dark:!text-white! !text-gray-1000 font-bold mt-3 mb-10 md:mb-20"
         href="https://drive.google.com/file/d/11u_cyddp19wu7aazdypeppj4mosqwoae/view?usp=sharing"
         target="_blank"
         rel="noreferrer"
@@ -71,11 +71,11 @@ const Content = () => {
           description="Portfolio websites need to be outstanding as much as the projects showcased. Building a 3D interactive experience to present my expertise in a glamorous way."
           image="/assets/images/portfolio/0.png"
         >
-          <a href="https://www.blender.org" aria-label="blender">
-            <Blender color="#F5792A" size={40} />
-          </a>
           <a href="https://www.blender.org" aria-label="figma">
             <Figma color="#F24E1E" size={40} />
+          </a>
+          <a href="https://www.blender.org" aria-label="blender">
+            <Blender color="#F5792A" size={40} />
           </a>
           <a href="https://www.blender.org" aria-label="dribbble">
             <Dribbble color="#EA4C89" size={40} />
@@ -83,12 +83,12 @@ const Content = () => {
         </DesignProjectCard>
       </div>
       <h2 className="mt-20 mb-8 !font-serif !text-5xl">Get in touch</h2>
-      <span className="flex gap-2 font-bold">
+      <span className="flex gap-2 items-center font-bold">
         <Mail />
         alex.streza@snowfox.art
       </span>
       <a
-        className="flex gap-2 !text-white font-bold mt-5 mb-3"
+        className="flex gap-2 dark:!text-white! !text-gray-1000 font-bold mt-5 mb-3"
         href="https://drive.google.com/file/d/11u_cyddp19wu7aazdypeppj4mosqwoae/view?usp=sharing"
         target="_blank"
         rel="noreferrer"

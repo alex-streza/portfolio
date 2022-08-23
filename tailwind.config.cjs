@@ -91,7 +91,7 @@ const defaultTheme = {
       hex: '#FBC846',
     },
     white: {
-      DEFAULT: '#ffffff',
+      DEFAULT: '#F2F2F2',
     },
     gray: {
       100: 'hsla(0, 0%, 52%, 1)',

@@ -1,6 +1,11 @@
 import Command from '@components/icons/Command'
 import { toggleTheme } from '@components/theme-toggle'
-import { Medium, Twitter } from '@icons-pack/react-simple-icons'
+import {
+  Github,
+  Linkedin,
+  Medium,
+  Twitter,
+} from '@icons-pack/react-simple-icons'
 import { Post } from '@models/posts'
 import { useLocalStorageValue } from '@react-hookz/web'
 import {
@@ -78,7 +83,26 @@ const KBar = ({ posts }: KBarProps) => {
         name: 'All blog posts',
         shortcut: ['b'],
         keywords: 'writing words',
-        perform: () => (window.location.pathname = '/'),
+        perform: () => (window.location.pathname = '/writer'),
+      },
+      {
+        id: 'linkedin',
+        name: 'LinkedIn',
+        section: 'Social links',
+        keywords: 'contact',
+        icon: <Linkedin />,
+        perform: () =>
+          (window.location.href =
+            'https://www.linkedin.com/in/alexandru-streza-7a4254155/'),
+      },
+      {
+        id: 'github',
+        name: 'GitHub',
+        section: 'Social links',
+        keywords: 'contact',
+        icon: <Github />,
+        perform: () =>
+          (window.location.href = 'https://github.com/alex-streza/'),
       },
       {
         id: 'medium',

@@ -57,8 +57,8 @@ const MainScene = () => {
   return (
     <Canvas>
       <Suspense fallback={<Loader />}>
-        {project === 0 && <ResourcesS3Dcene />}
-        {project === 1 && <GenIdeaScene />}
+        {project === 0 && <GenIdeaScene />}
+        {project === 1 && <ResourcesS3Dcene />}
         {project === 2 && <PortfolioScene />}
       </Suspense>
       <Projects selectedProject={project} onSelectProject={setProject} />

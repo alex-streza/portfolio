@@ -2,7 +2,6 @@ import Gallery from '@components/gallery/Gallery'
 import { Debug, Physics, usePlane, useSphere } from '@react-three/cannon'
 import { useFrame, useThree } from '@react-three/fiber'
 import { useControls } from 'leva'
-import { useRef } from 'react'
 import Balls from './Balls'
 import HTML from './Html'
 

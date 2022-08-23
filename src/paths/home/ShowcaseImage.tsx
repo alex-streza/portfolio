@@ -1,6 +1,6 @@
 import { animated, SpringValue } from '@react-spring/three'
-import { TextureProps } from '@react-three/fiber'
-import { imageShader } from './imageShader'
+import { shaderMaterial } from '@react-three/drei'
+import { extend, ShaderMaterialProps, TextureProps } from '@react-three/fiber'
 
 interface ImageProps {
   uAlpha: SpringValue<number>
@@ -8,43 +8,65 @@ interface ImageProps {
   texture: TextureProps
 }
 
-const Image = ({ uAlpha, uOffset, texture }: ImageProps) => {
+const ImageShaderMaterial: ShaderMaterialProps = shaderMaterial(
+  {
+    uTexture: {
+      value: null,
+    },
+    uAlpha: {
+      value: 0,
+    },
+  },
+  `
+  varying vec2 vUv;
+
+  void main() {
+    vUv = uv;
+    vec3 newPosition = position;
+    gl_Position = projectionMatrix * modelViewMatrix * vec4( newPosition, 1.0 );
+  }
+`,
+  `
+  uniform sampler2D uTexture;
+  uniform float uAlpha;
+  varying vec2 vUv;
+
+  void main() {
+    vec3 color = texture2D(uTexture,vUv).rgb;
+    gl_FragColor = vec4(color, uAlpha);
+  }
+`,
+)
+extend({ ImageShaderMaterial })
+
+export type ImageShaderMaterialImpl = {
+  uTexture?: { value: TextureProps }
+  uAlpha?: { value: number }
+} & JSX.IntrinsicElements['shaderMaterial']
+
+declare global {
+  namespace JSX {
+    interface IntrinsicElements {
+      imageShaderMaterial: ImageShaderMaterialImpl
+    }
+  }
+}
+
+export const AnimatedImageShaderMaterial = animated(
+  (props: ImageShaderMaterialImpl) => <imageShaderMaterial {...props} />,
+)
+
+const ShowcaseImage = ({ uAlpha, texture }: ImageProps) => {
   return (
     <>
       <planeBufferGeometry attach="geometry" args={[5, 7]} />
-      <animated.shaderMaterial
+      <AnimatedImageShaderMaterial
         attach="material"
-        transparent
-        args={[{ ...imageShader }]}
-        uniforms-uTexture-value={texture}
-        uniforms-uAlpha-value={uAlpha}
-        // uniforms-uOffset-value={uOffset}
+        uTexture={texture}
+        uAlpha={uAlpha}
       />
     </>
   )
 }
 
-interface ShowcaseImagesProps {
-  textures: TextureProps[]
-  springs: {
-    uAlpha: SpringValue<number>
-    uOffset: SpringValue<number[]>
-    position: SpringValue<number[]>
-    scale: SpringValue<number[]>
-    rotation: SpringValue<number[]>
-  }[]
-}
-
-const ShowcaseImages = ({ textures, springs }: ShowcaseImagesProps) => {
-  return (
-    <>
-      {textures.map((texture, i) => (
-        <animated.mesh key={texture.uuid} {...springs[i]}>
-          <Image {...springs[i]} texture={texture} />
-        </animated.mesh>
-      ))}
-    </>
-  )
-}
-
-export default ShowcaseImages
+export default ShowcaseImage
