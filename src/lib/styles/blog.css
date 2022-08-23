@@ -164,6 +164,7 @@
     @apply bg-gray-200 hover:bg-gray-100;
   }
 
+  /* CARDS */
   .newsletter-card {
     @apply dark:bg-gray-900 bg-light-gray-600 p-5 w-full mt-10 rounded;
   }
@@ -179,6 +180,14 @@
     @apply opacity-0 md:w-[500px] w-screen rounded-8 absolute -top-10 p-5 dark:bg-gray-hex dark:bg-opacity-20 bg-none backdrop-blur-sm;
   }
 
+  .design-project-card {
+    @apply rounded-8 md:max-w-[480px] dark:bg-gray-hex bg-none backdrop-blur-sm;
+  }
+
+  .design-project-card__title {
+    @apply !text-4xl !mb-4 !font-serif;
+  }
+
   /* MENU */
   .paths-menu li {
     @apply w-fit relative before:content-none odd:text-5xl first:-ml-10 md:first:-ml-40 last:-mr-10 md:last:-mr-40 even:text-6xl md:odd:text-7xl md:even:text-8xl font-serif last:ml-auto odd:my-20 hover:text-main;
@@ -187,5 +196,13 @@
   .developer-content,
   .home-content {
     @apply absolute inset-0 p-0 w-screen h-screen mx-[none] z-0;
+  }
+
+  .designer-content-html {
+    @apply !top-20 md:!top-28 !left-0 !transform-none w-screen h-screen overflow-y-auto;
+  }
+
+  .social-link {
+    @apply flex gap-2 !text-white font-semibold;
   }
 }

@@ -1,5 +1,6 @@
 import Command from '@components/icons/Command'
 import { toggleTheme } from '@components/theme-toggle'
+import { Medium, Twitter } from '@icons-pack/react-simple-icons'
 import { Post } from '@models/posts'
 import { useLocalStorageValue } from '@react-hookz/web'
 import {
@@ -13,8 +14,6 @@ import {
 } from 'kbar'
 import { noop } from 'kbar/lib/utils'
 import { useMemo } from 'react'
-import MediumIcon from '../icons/Medium'
-import TwitterIcon from '../icons/Twitter'
 
 const RenderResults = () => {
   const { results } = useMatches()
@@ -86,7 +85,7 @@ const KBar = ({ posts }: KBarProps) => {
         name: 'Medium',
         section: 'Social links',
         keywords: 'contact',
-        icon: <MediumIcon />,
+        icon: <Medium />,
         perform: () =>
           (window.location.href = 'https://medium.com/@alex.streza'),
       },
@@ -94,7 +93,7 @@ const KBar = ({ posts }: KBarProps) => {
         id: 'twitter',
         name: 'Twitter',
         section: 'Social links',
-        icon: <TwitterIcon />,
+        icon: <Twitter />,
         keywords: 'contact',
         perform: () =>
           (window.location.href = 'https://twitter.com/alex_streza'),

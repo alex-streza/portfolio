@@ -1,17 +1,14 @@
 ---
 import BaseHead from '@components/BaseHead.astro'
 import Header from '@components/Header.astro'
-import BlogPostPreview from '@components/BlogPostPreview.astro'
-import NewsletterForm from '@components/forms/NewsletterForm'
 import PageTransition from '@components/transition/PageTransition'
-import { getPosts } from '@utils/server'
+import Scene from '@paths/designer/MainScene'
+import { Leva } from 'leva'
 
-let title = 'Blog | Alex Streza'
+let title = 'Designer | Alex Streza'
 let description =
   "Everything JavaScript, Typescript and Web Development. I sometimes tackle AI, Web3 and have a massive soft spot for 3D and CGI. I also think I'm funny at times too."
 let permalink = 'https://www.blog.alexstreza.dev/'
-
-const allPosts = getPosts(await Astro.glob('./posts/*.mdx'))
 ---
 
 <html lang="en">
@@ -22,43 +19,23 @@ const allPosts = getPosts(await Astro.glob('./posts/*.mdx'))
       header {
         @apply w-full h-full grid place-content-center;
       }
-
-      .content {
-        @apply my-10;
-      }
-
-      .intro {
-        @apply mb-20;
-      }
-
-      .latest {
-        font-size: 2.5rem;
-        font-weight: 700;
-      }
-      hr {
-        @apply bg-gray-100 opacity-50;
-      }
     </style>
   </head>
 
   <body data-barba="wrapper">
     <Header />
-    <main data-barba="container" data-barba-namespace="writer">
-      <div class="content">
-        <section class="intro">
-          <h1 class="latest">{title}</h1>
-          <p>{description}</p>
-          <NewsletterForm />
-        </section>
-        <section aria-label="Blog post list" class="mt-10">
-          {allPosts.map((p, i) => (
-            <>
-              <BlogPostPreview post={p} />
-              {i < allPosts.length - 1 && <hr />}
-            </>
-          ))}
-        </section>
-      </div>
+    <Leva client:only="react" hidden={process.env.NODE_ENV === 'production'} />
+
+    <main
+      data-barba="container"
+      data-barba-namespace="home"
+      class="absolute top-0 w-screen h-screen"
+    >
+      <section
+        class="inset-0 p-0 overflow-x-auto mx-[none] z-0 w-screen h-screen"
+      >
+        <Scene client:only="react" />
+      </section>
     </main>
 
     <PageTransition />

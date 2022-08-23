@@ -1,6 +1,5 @@
 import Button from '@components/button/Button'
-import Medium from '@components/icons/Medium'
-import Twitter from '@components/icons/Twitter'
+import { Medium, Twitter } from '@icons-pack/react-simple-icons'
 
 const NewsletterForm = () => {
   return (
