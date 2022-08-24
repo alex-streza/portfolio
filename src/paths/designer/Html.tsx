@@ -1,4 +1,9 @@
-import { Html, Scroll, ScrollControls } from '@react-three/drei'
+import {
+  Html,
+  PerspectiveCamera,
+  Scroll,
+  ScrollControls,
+} from '@react-three/drei'
 
 import DesignProjectCard from '@components/cards/DesignProjectCard'
 import Book from '@components/icons/Book'
@@ -29,7 +34,7 @@ const Content = () => {
         alex.streza@snowfox.art
       </span>
       <a
-        className="flex gap-2 dark:!text-white! !text-gray-1000 font-bold mt-3 mb-10 md:mb-20"
+        className="flex gap-2 dark:!text-white !text-gray-1000 font-bold mt-3 mb-10 md:mb-20"
         href="https://drive.google.com/file/d/11u_cyddp19wu7aazdypeppj4mosqwoae/view?usp=sharing"
         target="_blank"
         rel="noreferrer"
@@ -88,7 +93,7 @@ const Content = () => {
         alex.streza@snowfox.art
       </span>
       <a
-        className="flex gap-2 dark:!text-white! !text-gray-1000 font-bold mt-5 mb-3"
+        className="flex gap-2 dark:!text-white !text-gray-1000 font-bold mt-5 mb-3"
         href="https://drive.google.com/file/d/11u_cyddp19wu7aazdypeppj4mosqwoae/view?usp=sharing"
         target="_blank"
         rel="noreferrer"

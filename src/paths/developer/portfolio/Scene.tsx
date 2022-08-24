@@ -1,6 +1,6 @@
 import Gallery from '@components/gallery/Gallery'
 import HTML from './Html'
-import Wobble from './Wobble'
+import Blobby from './Blobby'
 
 const urls = [...Array(7)].map((_, i) => `/assets/images/portfolio/${i}.png`)
 
@@ -9,7 +9,7 @@ const Scene = () => {
     <>
       <HTML />
       <Gallery urls={urls} />
-      <Wobble />
+      <Blobby />
     </>
   )
 }

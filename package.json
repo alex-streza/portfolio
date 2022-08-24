@@ -14,7 +14,8 @@
     "prettier:check": "prettier --check \"./src/**/*.{ts,tsx,js,jsx,md}\"",
     "prettier:format": "prettier --write \"./src/**/*.{ts,tsx,js,jsx,md}\"",
     "lint": "eslint --ext .js,.ts,.jsx,.tsx src",
-    "fix": "eslint --fix --ext .js,.ts,.jsx,.tsx src"
+    "fix": "eslint --fix --ext .js,.ts,.jsx,.tsx src",
+    "prepare": "husky install"
   },
   "devDependencies": {
     "@astrojs/mdx": "^0.10.0",
@@ -32,6 +33,7 @@
     "eslint-plugin-prettier": "^4.2.1",
     "eslint-plugin-react": "^7.30.1",
     "eslint-plugin-react-hooks": "^4.6.0",
+    "husky": "^8.0.0",
     "prettier": "^2.7.1",
     "prettier-plugin-astro": "^0.1.1",
     "puppeteer": "^15.3.0",
