@@ -21,6 +21,7 @@ module.exports = {
   rules: {
     // eslint
     semi: 'off',
+    'react-hooks/exhaustive-deps': 'error',
     curly: ['warn', 'multi-or-nest', 'consistent'],
     'no-mixed-spaces-and-tabs': ['warn', 'smart-tabs'],
     'no-async-promise-executor': 'warn',
