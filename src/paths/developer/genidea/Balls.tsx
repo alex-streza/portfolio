@@ -87,13 +87,7 @@ const Ball = memo(
 
     return (
       <group ref={ref} dispose={null}>
-        <mesh
-          ref={meshRef}
-          // castShadow
-          // receiveShadow
-          scale={props.args}
-          geometry={sphereGeometry}
-        >
+        <mesh ref={meshRef} scale={props.args} geometry={sphereGeometry}>
           <LayerMaterial ref={materialRef} toneMapped={false}>
             <Depth
               colorA="#26B59A"
@@ -148,24 +142,13 @@ const Ball = memo(
 Ball.displayName = 'Ball'
 
 const Balls = () => {
-  const isDesktop = useMediaQuery('(min-width: 768px)')
-
-  const [{ count, mass, size }, set] = useControls(() => {
+  const [{ count, mass }] = useControls(() => {
     return {
-      count: { value: isDesktop ? 20 : 7, min: 0, max: 50, step: 1 },
+      count: { value: 20, min: 0, max: 50, step: 1 },
       mass: { value: 1, min: 0, max: 10 },
-      size: { value: isDesktop ? 0.3 : 0.2, min: 0.1, max: 1 },
+      size: { value: 0.2, min: 0.1, max: 1 },
     }
-  }, [isDesktop])
-
-  useEffect(
-    () =>
-      set({
-        count: isDesktop ? 20 : 10,
-        size: isDesktop ? 0.3 : 0.2,
-      }),
-    [isDesktop, set],
-  )
+  }, [])
 
   const balls = useMemo(
     () =>

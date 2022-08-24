@@ -2,11 +2,12 @@ import { Canvas, useThree } from '@react-three/fiber'
 
 import { Html, useProgress } from '@react-three/drei'
 import { EffectComposer, SSAO } from '@react-three/postprocessing'
-import { Suspense, useState } from 'react'
+import { Suspense, useEffect, useRef, useState } from 'react'
 import PortfolioScene from './portfolio/Scene'
 import GenIdeaScene from './genidea/Scene'
 import ResourcesS3Dcene from './3d-resources/Scene'
 import { useMediaQuery } from '@react-hookz/web'
+import { gsap } from 'gsap/dist/gsap'
 
 const Loader = () => {
   const { progress } = useProgress()
