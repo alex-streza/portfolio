@@ -80,13 +80,12 @@ const KBar = ({ posts }: KBarProps) => {
       },
       {
         id: 'email',
-        name: 'E-mail',
+        name: 'alex.streza@snowfox.art',
         section: 'Social links',
         keywords: 'contact,email',
         icon: <Gmail />,
         perform: () =>
-          (window.location.href =
-            'https://www.linkedin.com/in/alexandru-streza-7a4254155/'),
+          (window.location.href = 'mailto:alex.streza@snowfox.art'),
       },
       {
         id: 'linkedin',

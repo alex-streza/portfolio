@@ -43,7 +43,7 @@ const MenuLink = forwardRef<HTMLElement, MenuLinkProps>(
       >
         <animated.span
           style={styles}
-          className="absolute text-sm font-sans dark:text-main-200 text-main-800 w-fit block dark:bg-gray-hex bg-white-hex !bg-opacity-40 backdrop-blur-sm p-1 rounded"
+          className="absolute text-sm font-sans dark:text-main-200 text-main-1000 w-fit block dark:bg-gray-hex bg-white !bg-opacity-80 backdrop-blur-sm p-1 rounded"
         >
           {subtitle}
         </animated.span>

@@ -36,7 +36,7 @@ const Projects = ({ selectedProject, onSelectProject }: ProjectsProps) => {
       ]}
     >
       <Html center>
-        <div className="bg-gray-hex bg-opacity-75 backdrop-blur-sm rounded-8 p-4 flex md:flex-row flex-col gap-5">
+        <div className="dark:bg-gray-hex bg-white bg-opacity-75 backdrop-blur-sm rounded-8 p-4 flex md:flex-row flex-col gap-5">
           {[...Array(3)].map((_, i) => (
             <button
               key={i}

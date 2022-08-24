@@ -5,6 +5,8 @@ import { defineConfig } from 'astro/config';
 import sitemap from '@astrojs/sitemap';
 import image from "@astrojs/image";
 
+import compress from "astro-compress";
+
 // https://astro.build/config
 export default defineConfig({
   site: 'https://www.blog.alexstreza.dev',
@@ -20,5 +22,5 @@ export default defineConfig({
     config: {
       applyBaseStyles: false
     }
-  }), sitemap(), mdx(), image()]
+  }), sitemap(), mdx(), image(), compress()]
 });

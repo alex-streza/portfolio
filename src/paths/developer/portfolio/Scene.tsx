@@ -2,7 +2,7 @@ import Gallery from '@components/gallery/Gallery'
 import HTML from './Html'
 import Blobby from './Blobby'
 
-const urls = [...Array(7)].map((_, i) => `/assets/images/portfolio/${i}.png`)
+const urls = [...Array(9)].map((_, i) => `/assets/images/portfolio/${i}.png`)
 
 const Scene = () => {
   return (

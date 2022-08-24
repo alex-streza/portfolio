@@ -1,5 +1,5 @@
 const pageTransition = () => {
-  let tl = gsap.timeline()
+  const tl = gsap.timeline()
 
   tl.to('.transition li', {
     duration: 0.6,

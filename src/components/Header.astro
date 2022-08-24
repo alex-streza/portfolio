@@ -29,7 +29,7 @@ const posts = getPosts(await Astro.glob('../pages/posts/*.mdx')).map((p) => ({
 
 <style>
   .navbar {
-    @apply flex z-10 relative justify-between items-center p-5 md:py-10 md:px-[120px] w-full;
+    @apply flex z-10 justify-between items-center fixed top-0 p-5 md:py-10 md:px-[120px] w-full backdrop-blur-sm;
   }
 
   .navbar > a {
