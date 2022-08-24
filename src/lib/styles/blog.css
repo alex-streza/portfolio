@@ -68,9 +68,20 @@
   p {
     @apply my-5 leading-8;
   }
-  img {
-    @apply mx-auto mt-10 rounded;
+
+  figure {
+    @apply mx-auto mt-10;
   }
+  img {
+    @apply rounded mb-10 mx-auto;
+  }
+  figure > img {
+    @apply mb-0;
+  }
+  figcaption > p {
+    @apply text-center text-gray-100 m-0 mt-2;
+  }
+
   code {
     @apply text-sm bg-gray-700 p-1 rounded break-words;
   }

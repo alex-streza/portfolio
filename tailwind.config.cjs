@@ -173,8 +173,7 @@ const defaultTheme = {
     serif: ['PP Migra', 'serif'],
   },
   boxShadow: {
-    main: '0px 0px 4px 4px hsla(169, 65%, 63%, 0.5)',
-    green: '0px 0px 4px 4px rgba(99, 222, 199, 0.5)',
+    green: '0px 0px 4px 4px hsla(169, 65%, 63%, 0.5)',
     red: '0px 0px 4px 4px rgba(251, 70, 70, 0.5)',
     blue: '0px 0px 4px 4px rgba(70, 136, 251, 0.5)',
     none: 'none',
@@ -220,6 +219,10 @@ module.exports = {
           colors: {
             main: defaultTheme.colors.gray,
           },
+          boxShadow: {
+            ...defaultTheme.boxShadow,
+            main: defaultTheme.boxShadow.none,
+          },
         },
       },
       themes: [
@@ -230,6 +233,10 @@ module.exports = {
             colors: {
               main: defaultTheme.colors.green,
             },
+            boxShadow: {
+              ...defaultTheme.boxShadow,
+              main: defaultTheme.boxShadow.green,
+            },
           },
         },
         {
@@ -239,6 +246,10 @@ module.exports = {
             colors: {
               main: defaultTheme.colors.purple,
             },
+            boxShadow: {
+              ...defaultTheme.boxShadow,
+              main: defaultTheme.boxShadow.purple,
+            },
           },
         },
         {
@@ -247,6 +258,10 @@ module.exports = {
             ...defaultTheme,
             colors: {
               main: defaultTheme.colors.yellow,
+            },
+            boxShadow: {
+              ...defaultTheme.boxShadow,
+              main: defaultTheme.boxShadow.yellow,
             },
           },
         },

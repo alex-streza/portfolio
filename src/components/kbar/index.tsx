@@ -2,6 +2,7 @@ import Command from '@components/icons/Command'
 import { toggleTheme } from '@components/theme-toggle'
 import {
   Github,
+  Gmail,
   Linkedin,
   Medium,
   Twitter,
@@ -78,12 +79,14 @@ const KBar = ({ posts }: KBarProps) => {
         },
       },
       {
-        id: 'blog',
-        section: 'Navigation',
-        name: 'All blog posts',
-        shortcut: ['b'],
-        keywords: 'writing words',
-        perform: () => (window.location.pathname = '/writer'),
+        id: 'email',
+        name: 'E-mail',
+        section: 'Social links',
+        keywords: 'contact,email',
+        icon: <Gmail />,
+        perform: () =>
+          (window.location.href =
+            'https://www.linkedin.com/in/alexandru-streza-7a4254155/'),
       },
       {
         id: 'linkedin',
@@ -122,6 +125,7 @@ const KBar = ({ posts }: KBarProps) => {
         perform: () =>
           (window.location.href = 'https://twitter.com/alex_streza'),
       },
+
       {
         id: 'developer',
         section: 'Paths',

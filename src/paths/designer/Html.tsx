@@ -9,6 +9,7 @@ import DesignProjectCard from '@components/cards/DesignProjectCard'
 import Book from '@components/icons/Book'
 import Mail from '@components/icons/Mail'
 import {
+  Adobeaftereffects,
   Blender,
   Dribbble,
   Figma,
@@ -35,7 +36,7 @@ const Content = () => {
       </span>
       <a
         className="flex gap-2 dark:!text-white !text-gray-1000 font-bold mt-3 mb-10 md:mb-20"
-        href="https://drive.google.com/file/d/11u_cyddp19wu7aazdypeppj4mosqwoae/view?usp=sharing"
+        href="https://drive.google.com/file/d/11u_cYddP19wu7aAZdYpePpj4MOSQWOAe/view"
         target="_blank"
         rel="noreferrer"
       >
@@ -48,10 +49,10 @@ const Content = () => {
           image="/assets/images/snow-fox-design-system/0.png"
           link="https://www.figma.com/community/file/1120750897470911763"
         >
-          <a href="https://www.blender.org" aria-label="figma">
+          <a href="https://www.figma.com" aria-label="figma">
             <Figma color="#F24E1E" size={40} />
           </a>
-          <a href="https://www.blender.org" aria-label="product hunt">
+          <a href="https://www.producthunt.com" aria-label="product hunt">
             <Producthunt color="#DA552F" size={40} />
           </a>
         </DesignProjectCard>
@@ -64,11 +65,30 @@ const Content = () => {
           <a href="https://www.blender.org" aria-label="figma">
             <Figma color="#F24E1E" size={40} />
           </a>
-          <a href="https://www.blender.org" aria-label="product hunt">
+          <a href="https://www.producthunt.com" aria-label="product hunt">
             <Producthunt color="#DA552F" size={40} />
           </a>
-          <a href="https://www.blender.org" aria-label="gumroad">
+          <a href="https://gumroad.com" aria-label="gumroad">
             <Gumroad color="#36A9AE" size={40} />
+          </a>
+        </DesignProjectCard>
+        <DesignProjectCard
+          title="Genidea"
+          description="Get inspired on the go with ideas in diverse tech related fields with artificial intelligence. Users can generate app ideas with OpenAI and collect them as NFTs."
+          image="/assets/images/genidea/1.png"
+          link="http://devnet.genidea.app/"
+        >
+          <a href="https://www.figma.com" aria-label="figma">
+            <Figma color="#F24E1E" size={40} />
+          </a>
+          <a href="https://www.blender.org" aria-label="blender">
+            <Blender color="#F5792A" size={40} />
+          </a>
+          <a href="https://www.lottiefiles.com" aria-label="lottie">
+            <Adobeaftereffects color="#9999FF" size={40} />
+          </a>
+          <a href="https://dribbble.com" aria-label="dribbble">
+            <Dribbble color="#EA4C89" size={40} />
           </a>
         </DesignProjectCard>
         <DesignProjectCard
@@ -76,13 +96,13 @@ const Content = () => {
           description="Portfolio websites need to be outstanding as much as the projects showcased. Building a 3D interactive experience to present my expertise in a glamorous way."
           image="/assets/images/portfolio/0.png"
         >
-          <a href="https://www.blender.org" aria-label="figma">
+          <a href="https://www.figma.com" aria-label="figma">
             <Figma color="#F24E1E" size={40} />
           </a>
           <a href="https://www.blender.org" aria-label="blender">
             <Blender color="#F5792A" size={40} />
           </a>
-          <a href="https://www.blender.org" aria-label="dribbble">
+          <a href="https://dribbble.com" aria-label="dribbble">
             <Dribbble color="#EA4C89" size={40} />
           </a>
         </DesignProjectCard>
@@ -94,7 +114,7 @@ const Content = () => {
       </span>
       <a
         className="flex gap-2 dark:!text-white !text-gray-1000 font-bold mt-5 mb-3"
-        href="https://drive.google.com/file/d/11u_cyddp19wu7aazdypeppj4mosqwoae/view?usp=sharing"
+        href="https://drive.google.com/file/d/11u_cYddP19wu7aAZdYpePpj4MOSQWOAe/view"
         target="_blank"
         rel="noreferrer"
       >

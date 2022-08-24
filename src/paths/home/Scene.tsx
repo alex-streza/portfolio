@@ -19,18 +19,18 @@ const Loader = () => {
 
 const images = {
   0: [
-    '/assets/images/portfolio/writer.png',
-    '/assets/images/portfolio/writer.png',
-    '/assets/images/portfolio/writer.png',
+    '/assets/images/portfolio/8.png',
+    '/assets/images/portfolio/7.png',
+    '/assets/images/portfolio/9.png',
   ],
   1: [
     '/assets/images/portfolio/5.png',
+    '/assets/images/3d-resources/4.png',
     '/assets/images/genidea/1.png',
-    '/assets/images/portfolio/4.png',
   ],
   2: [
     '/assets/images/genidea/2.png',
-    '/assets/images/genidea/3.png',
+    '/assets/images/snow-fox-design-system/0.png',
     '/assets/images/3d-resources/1.png',
   ],
 }
@@ -59,8 +59,6 @@ const SceneContent = () => {
 
   const { viewport } = useThree()
   const textures = useTexture([...images[0], ...images[1], ...images[2]])
-
-  const [hoveredIndex, setHoveredIndex] = useState(0)
 
   const itemsRefs = useRef([])
 
@@ -101,7 +99,6 @@ const SceneContent = () => {
   }
 
   const handleMouseEnter = (i) => {
-    setHoveredIndex(i)
     const position = itemsRefs.current[i].current.getBoundingClientRect()
     const x = (position.x / window.innerWidth) * 2 - 1
     const y =

@@ -27,7 +27,12 @@ const DesignProjectCard = ({
         {link && (
           <Button className="mt-5 primary">
             <BrowserIcon />
-            <a href={link} className="reset-link !text-gray-1000">
+            <a
+              href={link}
+              className="reset-link !text-gray-1000"
+              target="_blank"
+              rel="noreferrer"
+            >
               Check out
             </a>
           </Button>

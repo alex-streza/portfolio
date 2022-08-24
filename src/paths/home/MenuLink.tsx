@@ -20,7 +20,7 @@ const MenuLink = forwardRef<HTMLElement, MenuLinkProps>(
       api.start({
         letterSpacing: 0,
         opacity: 1,
-        bottom: -16,
+        bottom: -20,
       })
 
       onMouseEnter()
@@ -30,7 +30,7 @@ const MenuLink = forwardRef<HTMLElement, MenuLinkProps>(
       api.start({
         letterSpacing: 2,
         opacity: 0,
-        bottom: -20,
+        bottom: -24,
       })
       onMouseLeave()
     }
@@ -43,7 +43,7 @@ const MenuLink = forwardRef<HTMLElement, MenuLinkProps>(
       >
         <animated.span
           style={styles}
-          className="absolute text-sm font-sans text-main-800 w-fit block bg-main bg-opacity-10 backdrop-blur-sm min-w-[200px]"
+          className="absolute text-sm font-sans dark:text-main-200 text-main-800 w-fit block dark:bg-gray-hex bg-white-hex !bg-opacity-40 backdrop-blur-sm p-1 rounded"
         >
           {subtitle}
         </animated.span>
