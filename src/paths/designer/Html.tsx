@@ -1,9 +1,4 @@
-import {
-  Html,
-  PerspectiveCamera,
-  Scroll,
-  ScrollControls,
-} from '@react-three/drei'
+import { Html, Scroll, ScrollControls } from '@react-three/drei'
 
 import DesignProjectCard from '@components/cards/DesignProjectCard'
 import Book from '@components/icons/Book'
@@ -23,6 +18,29 @@ import {
 import { useMediaQuery } from '@react-hookz/web'
 import { useThree } from '@react-three/fiber'
 
+const socialLinks = [
+  {
+    href: 'https://www.producthunt.com/posts/3d-resources',
+    icon: <Linkedin />,
+    label: 'LinkedIn',
+  },
+  {
+    href: 'https://www.producthunt.com/posts/3d-resources',
+    icon: <Github />,
+    label: 'GitHub',
+  },
+  {
+    href: 'https://www.producthunt.com/posts/3d-resources',
+    icon: <Medium />,
+    label: 'Medium',
+  },
+  {
+    href: 'https://www.producthunt.com/posts/3d-resources',
+    icon: <Twitter />,
+    label: 'Twitter',
+  },
+]
+
 const Content = () => {
   return (
     <div className="flex flex-col pt-10">
@@ -35,7 +53,7 @@ const Content = () => {
         alex.streza@snowfox.art
       </span>
       <a
-        className="flex gap-2 dark:!text-white !text-gray-1000 font-bold mt-3 mb-10 md:mb-20"
+        className="flex gap-2 dark:!text-white w-fit !text-gray-1000 font-bold mt-3 mb-10 md:mb-20"
         href="https://drive.google.com/file/d/11u_cYddP19wu7aAZdYpePpj4MOSQWOAe/view"
         target="_blank"
         rel="noreferrer"
@@ -113,7 +131,7 @@ const Content = () => {
         alex.streza@snowfox.art
       </span>
       <a
-        className="flex gap-2 dark:!text-white !text-gray-1000 font-bold mt-5 mb-3"
+        className="flex gap-2 dark:!text-white !text-gray-1000 w-fit font-bold mt-5 mb-3"
         href="https://drive.google.com/file/d/11u_cYddP19wu7aAZdYpePpj4MOSQWOAe/view"
         target="_blank"
         rel="noreferrer"
@@ -122,22 +140,15 @@ const Content = () => {
       </a>
       <span>Available for freelance work</span>
       <div className="grid gap-5 grid-cols-2 mb-32 md:mb-40 mt-8 w-fit">
-        <a className="social-link" href="">
-          <Linkedin />
-          LinkedIn
-        </a>
-        <a className="social-link" href="">
-          <Github />
-          GitHub
-        </a>
-        <a className="social-link" href="">
-          <Medium />
-          Medium
-        </a>
-        <a className="social-link" href="">
-          <Twitter />
-          Twitter
-        </a>
+        {socialLinks.map(({ href, icon, label }) => (
+          <a
+            key={label}
+            className="flex gap-2 dark:!text-white !text-gray-1000 font-semibold"
+            href={href}
+          >
+            {icon} {label}
+          </a>
+        ))}
       </div>
     </div>
   )
@@ -159,7 +170,7 @@ const HTML = () => {
         <Scroll>
           <Html
             className="h-full w-full px-5 md:px-32 pt-0"
-            wrapperClass="designer-content-html"
+            wrapperClass="!top-20 md:!top-28 !left-0 !transform-none w-screen h-screen overflow-y-auto"
           >
             <Content />
           </Html>

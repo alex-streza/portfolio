@@ -1,4 +1,4 @@
-import { forwardRef } from 'react'
+import { forwardRef, LegacyRef } from 'react'
 import { animated, useSpring, config } from 'react-spring'
 
 interface MenuLinkProps {
@@ -40,6 +40,7 @@ const MenuLink = forwardRef<HTMLElement, MenuLinkProps>(
         ref={ref}
         onMouseEnter={handleMouseEnter}
         onMouseLeave={handleMouseLeave}
+        className="w-fit relative before:content-none odd:text-5xl first:-ml-10 md:first:-ml-40 last:-mr-10 md:last:-mr-40 even:text-6xl md:odd:text-7xl md:even:text-8xl font-serif last:ml-auto odd:my-20 hover:text-main"
       >
         <animated.span
           style={styles}

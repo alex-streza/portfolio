@@ -1,4 +1,5 @@
 ---
+import '@styles/blog.css'
 import BaseHead from '@components/BaseHead.astro'
 import Header from '@components/Header.astro'
 import BlogPost from '@components/BlogPost.astro'
@@ -26,10 +27,6 @@ const allPosts = getPosts(await Astro.glob('../pages/posts/*.mdx')).slice(0, 3)
 
 <html lang={content.lang || 'en'}>
   <head>
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/prism-themes@1.9.0/themes/prism-lucario.css"
-    />
     <BaseHead {title} {description} {permalink} />
   </head>
 

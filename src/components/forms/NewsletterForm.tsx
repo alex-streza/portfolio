@@ -5,7 +5,7 @@ const NewsletterForm = () => {
   return (
     <div className="flex gap-3 items-center">
       {/* <Input name="email" label="Email" placeholder="cool@cooler.com" /> */}
-      <Button className="primary w-auto">
+      <Button className="w-auto">
         <Medium />
         <a
           className="reset-link !text-gray-1000"

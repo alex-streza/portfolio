@@ -88,9 +88,9 @@ const Cursor = () => {
   return (
     <div
       ref={cursorRef}
-      className={`w-10 h-10 text-main-1000 grid place-content-center fixed top-0 left-0 rounded-full z-[100000] ${
+      className={`w-10 h-10 text-main-1000 grid place-content-center absolute top-0 left-0 rounded-full ${
         path == '' ? 'bg-[#b1b1b1]' : 'bg-main-hex'
-      }  bg-opacity-50 pointer-events-none`}
+      }  bg-opacity-40 backdrop-blur-sm pointer-events-none`}
     >
       <svg
         width={32}
@@ -98,6 +98,7 @@ const Cursor = () => {
         viewBox="0 0 24 24"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
+        className="z-[16691940]"
       >
         <path
           id="cursor-path"

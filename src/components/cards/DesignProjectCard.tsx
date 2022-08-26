@@ -18,14 +18,14 @@ const DesignProjectCard = ({
   children,
 }: DesignProjectCardProps) => {
   return (
-    <div className="design-project-card">
+    <div className="rounded-8 md:max-w-[480px] dark:bg-gray-hex dark:bg-opacity-100 bg-light-gray-hex bg-opacity-50 md:shadow-main shadow-none backdrop-blur-sm">
       <img className="mb-6 w-full mt-0 rounded-t-8" src={image} alt={title} />
       <div className="p-5 pt-0">
         <div className="flex mb-5 gap-5">{children}</div>
-        <h3 className="design-project-card__title">{title}</h3>
+        <h3 className="!text-4xl !mb-4 !font-serif">{title}</h3>
         <p className="!my-0">{description}</p>
         {link && (
-          <Button className="mt-5 primary">
+          <Button className="mt-5">
             <BrowserIcon />
             <a
               href={link}

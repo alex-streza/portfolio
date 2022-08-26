@@ -4,18 +4,10 @@ import { useSessionStorageValue } from '@react-hookz/web'
 import { animated, config, useSprings } from '@react-spring/three'
 import { Html, useProgress, useTexture } from '@react-three/drei'
 import { EffectComposer, SSAO } from '@react-three/postprocessing'
-import { createRef, Suspense, useEffect, useRef, useState } from 'react'
+import { createRef, Suspense, useEffect, useRef } from 'react'
 import MenuLink from './MenuLink'
 import ShowcaseImage from './ShowcaseImage'
-
-const Loader = () => {
-  const { progress } = useProgress()
-  return (
-    <Html center>
-      <h1>{parseInt(progress + '')}%</h1>
-    </Html>
-  )
-}
+import Loader from '@components/transition/Loader'
 
 const images = {
   0: [
@@ -148,7 +140,7 @@ const SceneContent = () => {
 
       <Html center prepend>
         <div className="flex flex-col items-end justify-end">
-          <ul className="paths-menu">
+          <ul>
             {paths.map((path, i) => (
               <MenuLink
                 key={i}

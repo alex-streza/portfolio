@@ -1,7 +1,7 @@
 const pageTransition = () => {
   const tl = gsap.timeline()
 
-  tl.to('.transition li', {
+  tl.to('.transition-container li', {
     duration: 0.6,
     scaleY: 1,
     transformOrigin: 'bottom left',
@@ -15,7 +15,7 @@ const pageTransition = () => {
     y: -150,
   })
 
-  tl.to('.transition li', {
+  tl.to('.transition-container li', {
     duration: 0.6,
     scaleY: 0,
     transformOrigin: 'top right',
