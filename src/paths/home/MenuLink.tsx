@@ -1,5 +1,6 @@
-import { forwardRef, LegacyRef } from 'react'
-import { animated, useSpring, config } from 'react-spring'
+import gsap from 'gsap'
+import { forwardRef, useEffect, useLayoutEffect, useRef } from 'react'
+import { animated, useSpring } from 'react-spring'
 
 interface MenuLinkProps {
   link: string
@@ -40,17 +41,22 @@ const MenuLink = forwardRef<HTMLElement, MenuLinkProps>(
         ref={ref}
         onMouseEnter={handleMouseEnter}
         onMouseLeave={handleMouseLeave}
-        className="w-fit relative before:content-none odd:text-5xl first:-ml-10 md:first:-ml-40 last:-mr-10 md:last:-mr-40 even:text-6xl md:odd:text-7xl md:even:text-8xl font-serif last:ml-auto odd:my-20 hover:text-main"
+        className="relative w-fit before:content-none odd:text-5xl first:-ml-10 md:first:-ml-40 last:-mr-10 md:last:-mr-40 even:text-6xl md:odd:text-7xl md:even:text-8xl font-serif last:ml-auto odd:my-20 hover:text-main"
       >
         <animated.span
           style={styles}
-          className="absolute text-sm font-sans dark:text-main-200 text-main-1000 w-fit block dark:bg-gray-hex bg-white !bg-opacity-80 backdrop-blur-sm p-1 rounded"
+          className="w-[220px] absolute text-sm font-sans dark:text-main-200 text-main-1000 block dark:bg-gray-hex bg-white !bg-opacity-80 backdrop-blur-sm p-1 rounded"
         >
           {subtitle}
         </animated.span>
-        <a className="hover:!text-main reset-link" href={`/${link}`}>
-          <span>{link[0].toUpperCase() + link.slice(1)}</span>
-        </a>
+        <div className="overflow-hidden md:h-[96px]">
+          <a
+            className={`hover:!text-main reset-link block translate-y-24`}
+            href={`/${link}`}
+          >
+            <span>{link[0].toUpperCase() + link.slice(1)}</span>
+          </a>
+        </div>
       </li>
     )
   },

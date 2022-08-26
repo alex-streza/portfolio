@@ -4,10 +4,18 @@ import { useSessionStorageValue } from '@react-hookz/web'
 import { animated, config, useSprings } from '@react-spring/three'
 import { Html, useProgress, useTexture } from '@react-three/drei'
 import { EffectComposer, SSAO } from '@react-three/postprocessing'
-import { createRef, Suspense, useEffect, useRef } from 'react'
+import {
+  createRef,
+  Suspense,
+  useEffect,
+  useLayoutEffect,
+  useRef,
+  useState,
+} from 'react'
 import MenuLink from './MenuLink'
 import ShowcaseImage from './ShowcaseImage'
 import Loader from '@components/transition/Loader'
+import gsap from 'gsap'
 
 const images = {
   0: [
@@ -48,9 +56,11 @@ const defaultSpringValues = () => ({
 
 const SceneContent = () => {
   const [, setPath] = useSessionStorageValue('path', '')
-
   const { viewport } = useThree()
   const textures = useTexture([...images[0], ...images[1], ...images[2]])
+
+  const menuRef = useRef<HTMLDivElement>(null)
+  const q = gsap.utils.selector(menuRef)
 
   const itemsRefs = useRef([])
 
@@ -67,6 +77,20 @@ const SceneContent = () => {
   useEffect(() => {
     setPath('')
   }, [setPath])
+
+  useEffect(() => {
+    gsap
+      .timeline()
+      .to(q('a'), {
+        yPercent: -100,
+        stagger: 0.5,
+        delay: 0.5,
+        ease: 'power3.easeInOut',
+      })
+      .to(q('#choosePath'), {
+        opacity: 1,
+      })
+  }, [q])
 
   const handleMouseLeave = (i) => {
     const position = itemsRefs.current[i].current.getBoundingClientRect()
@@ -139,7 +163,7 @@ const SceneContent = () => {
       ))}
 
       <Html center prepend>
-        <div className="flex flex-col items-end justify-end">
+        <div ref={menuRef} className="flex flex-col items-end justify-end">
           <ul>
             {paths.map((path, i) => (
               <MenuLink
@@ -152,7 +176,10 @@ const SceneContent = () => {
               />
             ))}
           </ul>
-          <div className="w-full flex flex-col items-center">
+          <div
+            id="choosePath"
+            className="opacity-0 w-full flex flex-col items-center"
+          >
             <span className="tracking-widest">CHOOSE YOUR PATH</span>
             <h2 className="relative !font-serif !text-2xl mt-5">
               Design. Build. Launch.
