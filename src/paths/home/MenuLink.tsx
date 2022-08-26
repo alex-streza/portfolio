@@ -50,10 +50,7 @@ const MenuLink = forwardRef<HTMLElement, MenuLinkProps>(
           {subtitle}
         </animated.span>
         <div className="overflow-hidden md:h-[96px]">
-          <a
-            className={`hover:!text-main reset-link block translate-y-24`}
-            href={`/${link}`}
-          >
+          <a className={`hover:!text-main reset-link block`} href={`/${link}`}>
             <span>{link[0].toUpperCase() + link.slice(1)}</span>
           </a>
         </div>

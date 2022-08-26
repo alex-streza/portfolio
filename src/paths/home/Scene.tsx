@@ -81,8 +81,8 @@ const SceneContent = () => {
   useEffect(() => {
     gsap
       .timeline()
-      .to(q('a'), {
-        yPercent: -100,
+      .from(q('a'), {
+        yPercent: 102,
         stagger: 0.5,
         delay: 0.5,
         ease: 'power3.easeInOut',
