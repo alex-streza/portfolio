@@ -17,6 +17,8 @@ import {
 } from '@icons-pack/react-simple-icons'
 import { useMediaQuery } from '@react-hookz/web'
 import { useThree } from '@react-three/fiber'
+import { useEffect, useRef } from 'react'
+import gsap from 'gsap'
 
 const socialLinks = [
   {
@@ -42,25 +44,69 @@ const socialLinks = [
 ]
 
 const Content = () => {
+  const contentRef = useRef<HTMLDivElement>(null)
+  const q = gsap.utils.selector(contentRef)
+
+  useEffect(() => {
+    gsap
+      .timeline({
+        ease: 'power3.easeInOut',
+      })
+      .to(q('h1'), {
+        duration: 0,
+        opacity: 1,
+      })
+      .to(q('hr'), {
+        stagger: 0.2,
+        width: '100%',
+      })
+      .from(q('h1 span'), {
+        yPercent: 100,
+        opacity: 0,
+        stagger: 0.5,
+        delay: 0.5,
+      })
+      .to(q('hr'), {
+        stagger: 0.2,
+        width: 0,
+      })
+      .to(q('#mail'), {
+        delay: 0.3,
+        opacity: 1,
+      })
+      .to(q('#resume'), {
+        opacity: 1,
+      })
+      .to(q('#designProjects'), {
+        opacity: 1,
+      })
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [])
+
   return (
-    <div className="flex flex-col pt-10">
-      <h1 className="text-5xl md:text-8xl leading-[60px]">
-        Design <br /> Creative
-        <br /> Experiences
+    <div ref={contentRef} className="flex flex-col pt-10">
+      <h1 className="text-5xl md:text-8xl leading-[60px] opacity-0 overflow-hidden">
+        <span className="block">Design</span>
+        <hr className="mt-2.5 m-0 bg-white w-0" />
+        <span className="block">Creative</span>
+        <hr className="mt-2.5 m-0 bg-white w-0" />
+        <span className="block">Experiences</span>
+        <hr className="mt-2.5 m-0 bg-white w-0" />
       </h1>
-      <span className="flex items-center gap-2 font-bold">
+      <span id="mail" className="flex items-center gap-2 font-bold opacity-0">
         <Mail />
         alex.streza@snowfox.art
       </span>
       <a
-        className="flex gap-2 dark:!text-white w-fit !text-gray-1000 font-bold mt-3 mb-10 md:mb-20"
+        id="resume"
+        className="flex gap-2 dark:!text-white w-fit !text-gray-1000 opacity-0 font-bold mt-3 mb-10 md:mb-20"
         href="https://drive.google.com/file/d/11u_cYddP19wu7aAZdYpePpj4MOSQWOAe/view"
         target="_blank"
         rel="noreferrer"
       >
         <Book /> Resume.pdf
       </a>
-      <div className="flex flex-wrap gap-8 w-fit">
+      <div id="designProjects" className="flex flex-wrap gap-8 w-fit opacity-0">
         <DesignProjectCard
           title="Snow Fox - Design System"
           description="Searching for a design system that will help you create beautiful, consistent user interfaces across all your digital products?  So why wait? Get started today with Snow Fox!"

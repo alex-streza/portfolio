@@ -1,5 +1,4 @@
-import gsap from 'gsap'
-import { forwardRef, useEffect, useLayoutEffect, useRef } from 'react'
+import { forwardRef } from 'react'
 import { animated, useSpring } from 'react-spring'
 
 interface MenuLinkProps {
@@ -12,16 +11,14 @@ interface MenuLinkProps {
 const MenuLink = forwardRef<HTMLElement, MenuLinkProps>(
   ({ link, subtitle, onMouseEnter, onMouseLeave }, ref) => {
     const [styles, api] = useSpring(() => ({
-      letterSpacing: 0,
       opacity: 0,
-      bottom: -20,
+      bottom: -12,
     }))
 
     const handleMouseEnter = () => {
       api.start({
-        letterSpacing: 0,
         opacity: 1,
-        bottom: -20,
+        bottom: -4,
       })
 
       onMouseEnter()
@@ -29,9 +26,8 @@ const MenuLink = forwardRef<HTMLElement, MenuLinkProps>(
 
     const handleMouseLeave = () => {
       api.start({
-        letterSpacing: 2,
         opacity: 0,
-        bottom: -24,
+        bottom: -12,
       })
       onMouseLeave()
     }
@@ -53,6 +49,7 @@ const MenuLink = forwardRef<HTMLElement, MenuLinkProps>(
           <a className={`hover:!text-main reset-link block`} href={`/${link}`}>
             <span>{link[0].toUpperCase() + link.slice(1)}</span>
           </a>
+          <hr className="mt-2.5 bg-white w-0" />
         </div>
       </li>
     )

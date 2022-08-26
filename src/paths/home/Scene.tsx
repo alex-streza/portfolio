@@ -59,6 +59,8 @@ const SceneContent = () => {
   const { viewport } = useThree()
   const textures = useTexture([...images[0], ...images[1], ...images[2]])
 
+  const [revealed, setRevealed] = useState(false)
+
   const menuRef = useRef<HTMLDivElement>(null)
   const q = gsap.utils.selector(menuRef)
 
@@ -80,17 +82,38 @@ const SceneContent = () => {
 
   useEffect(() => {
     gsap
-      .timeline()
-      .from(q('a'), {
-        yPercent: 102,
-        stagger: 0.5,
+      .timeline({
+        onComplete: () => {
+          setRevealed(true)
+        },
+      })
+      .to(q('li hr'), {
         delay: 0.5,
+        width: '100%',
+      })
+      .from(q('a'), {
+        yPercent: 100,
+        opacity: 0,
+        stagger: 0.5,
         ease: 'power3.easeInOut',
       })
-      .to(q('#choosePath'), {
-        opacity: 1,
+      .to(q('hr'), {
+        width: '0%',
       })
-  }, [q])
+      .to(q('#choosePath hr'), {
+        width: '100%',
+      })
+      .from(q('#choosePath span'), {
+        yPercent: 100,
+      })
+      .from(q('#choosePath h2'), {
+        yPercent: -100,
+      })
+      .to(q('#choosePath hr'), {
+        width: '0%',
+      })
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [])
 
   const handleMouseLeave = (i) => {
     const position = itemsRefs.current[i].current.getBoundingClientRect()
@@ -146,21 +169,24 @@ const SceneContent = () => {
 
   return (
     <>
-      {textures.slice(0, 3).map((texture, index) => (
-        <animated.mesh key={texture.uuid} {...springsWriter[index]}>
-          <ShowcaseImage {...springsWriter[index]} texture={texture} />
-        </animated.mesh>
-      ))}
-      {textures.slice(3, 6).map((texture, index) => (
-        <animated.mesh key={texture.uuid} {...springsDeveloper[index]}>
-          <ShowcaseImage {...springsDeveloper[index]} texture={texture} />
-        </animated.mesh>
-      ))}
-      {textures.slice(6, 9).map((texture, index) => (
-        <animated.mesh key={texture.uuid} {...springsDesigner[index]}>
-          <ShowcaseImage {...springsDesigner[index]} texture={texture} />
-        </animated.mesh>
-      ))}
+      {revealed &&
+        textures.slice(0, 3).map((texture, index) => (
+          <animated.mesh key={texture.uuid} {...springsWriter[index]}>
+            <ShowcaseImage {...springsWriter[index]} texture={texture} />
+          </animated.mesh>
+        ))}
+      {revealed &&
+        textures.slice(3, 6).map((texture, index) => (
+          <animated.mesh key={texture.uuid} {...springsDeveloper[index]}>
+            <ShowcaseImage {...springsDeveloper[index]} texture={texture} />
+          </animated.mesh>
+        ))}
+      {revealed &&
+        textures.slice(6, 9).map((texture, index) => (
+          <animated.mesh key={texture.uuid} {...springsDesigner[index]}>
+            <ShowcaseImage {...springsDesigner[index]} texture={texture} />
+          </animated.mesh>
+        ))}
 
       <Html center prepend>
         <div ref={menuRef} className="flex flex-col items-end justify-end">
@@ -176,31 +202,33 @@ const SceneContent = () => {
               />
             ))}
           </ul>
-          <div
-            id="choosePath"
-            className="opacity-0 w-full flex flex-col items-center"
-          >
-            <span className="tracking-widest">CHOOSE YOUR PATH</span>
-            <h2 className="relative !font-serif !text-2xl mt-5">
-              Design. Build. Launch.
-              <svg
-                width="103"
-                height="3"
-                viewBox="0 0 103 3"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-                className="text-main absolute -bottom-0 transition-colors duration-300 -right-2"
-              >
-                <line
-                  x1="0.977539"
-                  y1="1.5"
-                  x2="102.022"
-                  y2="1.5"
-                  stroke="currentColor"
-                  strokeWidth={2}
-                />
-              </svg>
-            </h2>
+          <div id="choosePath" className="w-full flex flex-col items-center">
+            <div className="h-6 overflow-hidden">
+              <span className="tracking-widest block">CHOOSE YOUR PATH</span>
+            </div>
+            <hr className="max-w-[300px] my-2.5 bg-white" />
+            <div className="h-8 overflow-hidden">
+              <h2 className="relative !font-serif !text-2xl">
+                Design. Build. Launch.
+                <svg
+                  height="3"
+                  width="103"
+                  viewBox="0 0 103 3"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="text-main absolute -bottom-0 transition-colors duration-300 -right-2"
+                >
+                  <line
+                    x1="0.977539"
+                    y1="1.5"
+                    x2="102.022"
+                    y2="1.5"
+                    stroke="currentColor"
+                    strokeWidth={2}
+                  />
+                </svg>
+              </h2>
+            </div>
           </div>
         </div>
       </Html>
