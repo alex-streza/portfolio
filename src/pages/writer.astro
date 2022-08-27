@@ -61,7 +61,7 @@ const allPosts = getPosts(await Astro.glob('./posts/*.mdx'))
       </div>
     </main>
 
-    <PageTransition />
+    <PageTransition client:only="react" />
 
     <script is:inline src="https://unpkg.com/@barba/core">
 

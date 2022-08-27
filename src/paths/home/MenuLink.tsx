@@ -12,13 +12,13 @@ const MenuLink = forwardRef<HTMLElement, MenuLinkProps>(
   ({ link, subtitle, onMouseEnter, onMouseLeave }, ref) => {
     const [styles, api] = useSpring(() => ({
       opacity: 0,
-      bottom: -12,
+      bottom: -4,
     }))
 
     const handleMouseEnter = () => {
       api.start({
         opacity: 1,
-        bottom: -4,
+        bottom: -12,
       })
 
       onMouseEnter()
@@ -27,7 +27,7 @@ const MenuLink = forwardRef<HTMLElement, MenuLinkProps>(
     const handleMouseLeave = () => {
       api.start({
         opacity: 0,
-        bottom: -12,
+        bottom: -4,
       })
       onMouseLeave()
     }
@@ -41,16 +41,16 @@ const MenuLink = forwardRef<HTMLElement, MenuLinkProps>(
       >
         <animated.span
           style={styles}
-          className="w-[220px] absolute text-sm font-sans dark:text-main-200 text-main-1000 block dark:bg-gray-hex bg-white !bg-opacity-80 backdrop-blur-sm p-1 rounded"
+          className="min-w-[200px] absolute text-sm font-sans dark:text-main-200 text-main-1000 block dark:bg-gray-hex bg-white !bg-opacity-80 backdrop-blur-sm p-1 rounded"
         >
           {subtitle}
         </animated.span>
-        <div className="overflow-hidden md:h-[96px]">
+        <div className="overflow-hidden">
           <a className={`hover:!text-main reset-link block`} href={`/${link}`}>
             <span>{link[0].toUpperCase() + link.slice(1)}</span>
           </a>
-          <hr className="mt-2.5 bg-white w-0" />
         </div>
+        <hr className="mt-2.5 bg-white w-0" />
       </li>
     )
   },

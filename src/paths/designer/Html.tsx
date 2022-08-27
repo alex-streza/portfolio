@@ -22,22 +22,22 @@ import gsap from 'gsap'
 
 const socialLinks = [
   {
-    href: 'https://www.producthunt.com/posts/3d-resources',
+    href: 'https://www.linkedin.com/in/alexandru-streza-7a4254155',
     icon: <Linkedin />,
     label: 'LinkedIn',
   },
   {
-    href: 'https://www.producthunt.com/posts/3d-resources',
+    href: 'https://github.com/alex-streza',
     icon: <Github />,
     label: 'GitHub',
   },
   {
-    href: 'https://www.producthunt.com/posts/3d-resources',
+    href: 'https://medium.com/@alex.streza',
     icon: <Medium />,
     label: 'Medium',
   },
   {
-    href: 'https://www.producthunt.com/posts/3d-resources',
+    href: 'https://twitter.com/alex_streza',
     icon: <Twitter />,
     label: 'Twitter',
   },
@@ -52,17 +52,16 @@ const Content = () => {
       .timeline({
         ease: 'power3.easeInOut',
       })
-      .to(q('h1'), {
-        duration: 0,
+      .to(contentRef.current, {
         opacity: 1,
+        duration: 0,
       })
       .to(q('hr'), {
         stagger: 0.2,
         width: '100%',
       })
-      .from(q('h1 span'), {
-        yPercent: 100,
-        opacity: 0,
+      .from(q('h1 span span'), {
+        yPercent: 110,
         stagger: 0.5,
         delay: 0.5,
       })
@@ -71,7 +70,7 @@ const Content = () => {
         width: 0,
       })
       .to(q('#mail'), {
-        delay: 0.3,
+        delay: 0.2,
         opacity: 1,
       })
       .to(q('#resume'), {
@@ -84,14 +83,20 @@ const Content = () => {
   }, [])
 
   return (
-    <div ref={contentRef} className="flex flex-col pt-10">
-      <h1 className="text-5xl md:text-8xl leading-[60px] opacity-0 overflow-hidden">
-        <span className="block">Design</span>
-        <hr className="mt-2.5 m-0 bg-white w-0" />
-        <span className="block">Creative</span>
-        <hr className="mt-2.5 m-0 bg-white w-0" />
-        <span className="block">Experiences</span>
-        <hr className="mt-2.5 m-0 bg-white w-0" />
+    <div ref={contentRef} className="flex flex-col pt-10 opacity-0">
+      <h1 className="text-5xl w-fit md:text-8xl leading-[60px]">
+        <span className="block overflow-hidden">
+          <span className="block">Design</span>
+          <hr className="mt-2.5 m-0 bg-white w-0" />
+        </span>
+        <span className="block overflow-hidden">
+          <span className="block">Creative</span>
+          <hr className="mt-2.5 m-0 bg-white w-0" />
+        </span>
+        <span className="block overflow-hidden">
+          <span className="block">Experiences</span>
+          <hr className="mt-2.5 m-0 bg-white w-0" />
+        </span>
       </h1>
       <span id="mail" className="flex items-center gap-2 font-bold opacity-0">
         <Mail />

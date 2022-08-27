@@ -59,7 +59,7 @@
 
   /* COMMAND CENTER */
   .command-center-positioner {
-    @apply bg-gray-hex bg-opacity-50 backdrop-blur-sm;
+    @apply bg-gray-hex bg-opacity-50 backdrop-blur-sm z-[16693000];
   }
   .command-center-animator,
   .command-center-input {
@@ -107,7 +107,8 @@
 
   /* TRANSITION */
   .transition-container {
-    @apply fixed z-10 flex overflow-x-hidden h-[200vh] md:h-[300vh] left-0 top-[-71vh] md:top-[-105vh] p-0 m-0 pointer-events-none rotate-45;
+    /* @apply fixed z-10 flex overflow-x-hidden h-[200vh] md:h-[300vh] left-0 top-[-71vh] md:top-[-105vh] p-0 m-0 pointer-events-none rotate-45; */
+    @apply fixed z-10 flex overflow-x-hidden top-0 p-0 m-0 pointer-events-none rotate-45;
   }
 
   .transition-container__list {

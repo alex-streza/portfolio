@@ -63,6 +63,7 @@ const SceneContent = () => {
 
   const menuRef = useRef<HTMLDivElement>(null)
   const q = gsap.utils.selector(menuRef)
+  const tl = useRef<gsap.core.Timeline>()
 
   const itemsRefs = useRef([])
 
@@ -86,14 +87,18 @@ const SceneContent = () => {
         onComplete: () => {
           setRevealed(true)
         },
+        ease: 'power3.easeInOut',
+      })
+      .to(menuRef.current, {
+        opacity: 1,
+        duration: 0,
       })
       .to(q('li hr'), {
-        delay: 0.5,
+        delay: 0.25,
         width: '100%',
       })
       .from(q('a'), {
         yPercent: 100,
-        opacity: 0,
         stagger: 0.5,
         ease: 'power3.easeInOut',
       })
@@ -112,6 +117,7 @@ const SceneContent = () => {
       .to(q('#choosePath hr'), {
         width: '0%',
       })
+
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
@@ -189,7 +195,10 @@ const SceneContent = () => {
         ))}
 
       <Html center prepend>
-        <div ref={menuRef} className="flex flex-col items-end justify-end">
+        <div
+          ref={menuRef}
+          className="opacity-0 flex flex-col items-end justify-end"
+        >
           <ul>
             {paths.map((path, i) => (
               <MenuLink
