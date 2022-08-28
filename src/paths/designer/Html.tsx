@@ -45,57 +45,59 @@ const socialLinks = [
 
 const Content = () => {
   const contentRef = useRef<HTMLDivElement>(null)
-  const q = gsap.utils.selector(contentRef)
 
   useEffect(() => {
-    gsap
-      .timeline({
-        ease: 'power3.easeInOut',
-      })
-      .to(contentRef.current, {
-        opacity: 1,
-        duration: 0,
-      })
-      .to(q('hr'), {
-        stagger: 0.2,
-        width: '100%',
-      })
-      .from(q('h1 span span'), {
-        yPercent: 110,
-        stagger: 0.5,
-        delay: 0.5,
-      })
-      .to(q('hr'), {
-        stagger: 0.2,
-        width: 0,
-      })
-      .to(q('#mail'), {
-        delay: 0.2,
-        opacity: 1,
-      })
-      .to(q('#resume'), {
-        opacity: 1,
-      })
-      .to(q('#designProjects'), {
-        opacity: 1,
-      })
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+    const ctx = gsap.context(() => {
+      gsap
+        .timeline({
+          ease: 'power3.easeInOut',
+        })
+        .to(contentRef.current, {
+          opacity: 1,
+          duration: 0,
+        })
+        .to('hr', {
+          stagger: 0.2,
+          width: '100%',
+        })
+        .from('h1 span span', {
+          yPercent: 125,
+          stagger: 0.5,
+          delay: 0.5,
+        })
+        .to('hr', {
+          stagger: 0.2,
+          width: 0,
+        })
+        .to('#mail', {
+          delay: 0.2,
+          opacity: 1,
+        })
+        .to('#resume', {
+          opacity: 1,
+        })
+        .to('#designProjects', {
+          opacity: 1,
+        })
+    }, contentRef)
+
+    return () => ctx.revert()
   }, [])
 
   return (
     <div ref={contentRef} className="flex flex-col pt-10 opacity-0">
-      <h1 className="text-5xl w-fit md:text-8xl leading-[60px]">
+      <h1 className="!text-5xl w-fit md:!text-8xl leading-[60px]">
         <span className="block overflow-hidden">
           <span className="block">Design</span>
-          <hr className="mt-2.5 m-0 bg-white w-0" />
+          <hr className="mt-3 m-0 bg-white w-0" />
         </span>
         <span className="block overflow-hidden">
           <span className="block">Creative</span>
-          <hr className="mt-2.5 m-0 bg-white w-0" />
+          <hr className="mt-3 m-0 bg-white w-0" />
         </span>
         <span className="block overflow-hidden">
           <span className="block">Experiences</span>
-          <hr className="mt-2.5 m-0 bg-white w-0" />
+          <hr className="mt-3 m-0 bg-white w-0" />
         </span>
       </h1>
       <span id="mail" className="flex items-center gap-2 font-bold opacity-0">

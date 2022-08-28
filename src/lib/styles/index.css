@@ -30,7 +30,7 @@
 
   /* TYPOGRAPHY */
   h1 {
-    @apply text-3xl leading-10 md:text-5xl md:leading-[60px];
+    @apply !text-3xl leading-10 md:!text-5xl md:leading-[60px];
   }
 
   h2 {
@@ -46,7 +46,7 @@
 
   /* POST CONTENT */
   .content {
-    @apply animate-fade-in max-w-[65ch] mx-auto p-5 mt-24;
+    @apply animate-fade-in max-w-[65ch] mx-auto p-5 mt-28;
   }
 
   /* INPUTS */
@@ -108,10 +108,11 @@
   /* TRANSITION */
   .transition-container {
     /* @apply fixed z-10 flex overflow-x-hidden h-[200vh] md:h-[300vh] left-0 top-[-71vh] md:top-[-105vh] p-0 m-0 pointer-events-none rotate-45; */
-    @apply fixed z-10 flex overflow-x-hidden top-0 p-0 m-0 pointer-events-none rotate-45;
+    @apply fixed z-10 flex overflow-x-hidden scale-y-0 top-0 p-0 m-0 pointer-events-none rotate-45;
   }
 
   .transition-container__list {
-    @apply rounded-[120px] w-[20vh] md:w-[32vh] transition-colors duration-300 scale-y-0 odd:bg-main-hex odd:bg-opacity-50 even:bg-main even:bg-opacity-75 before:content-none;
+    /* //scale-y-0 */
+    @apply rounded-[200px] w-[20vh] md:w-[32vh] transition-colors duration-300 odd:bg-main-hex odd:bg-opacity-50 even:bg-main even:bg-opacity-75 before:content-none;
   }
 }

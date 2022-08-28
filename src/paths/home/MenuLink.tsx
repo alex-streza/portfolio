@@ -16,20 +16,24 @@ const MenuLink = forwardRef<HTMLElement, MenuLinkProps>(
     }))
 
     const handleMouseEnter = () => {
-      api.start({
-        opacity: 1,
-        bottom: -12,
-      })
+      if (onMouseEnter) {
+        api.start({
+          opacity: 1,
+          bottom: -12,
+        })
 
-      onMouseEnter()
+        onMouseEnter()
+      }
     }
 
     const handleMouseLeave = () => {
-      api.start({
-        opacity: 0,
-        bottom: -4,
-      })
-      onMouseLeave()
+      if (onMouseLeave) {
+        api.start({
+          opacity: 0,
+          bottom: -4,
+        })
+        onMouseLeave()
+      }
     }
 
     return (
@@ -46,7 +50,10 @@ const MenuLink = forwardRef<HTMLElement, MenuLinkProps>(
           {subtitle}
         </animated.span>
         <div className="overflow-hidden">
-          <a className={`hover:!text-main reset-link block`} href={`/${link}`}>
+          <a
+            className="hover:!text-main reset-link block translate-y-full"
+            href={`/${link}`}
+          >
             <span>{link[0].toUpperCase() + link.slice(1)}</span>
           </a>
         </div>

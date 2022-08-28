@@ -12,7 +12,6 @@ const MainScene = () => {
     <Canvas>
       <Suspense fallback={<Loader />}>
         <HTML />
-        {/* <Blobby /> */}
         <Camera />
       </Suspense>
     </Canvas>

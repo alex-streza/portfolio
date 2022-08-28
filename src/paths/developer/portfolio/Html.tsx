@@ -24,11 +24,9 @@ const Content = () => {
   const isDark = theme.includes('dark')
 
   const ref = useRef(null)
-  const tl = useRef<gsap.core.Timeline>()
-  const q = gsap.utils.selector(ref)
 
   useEffect(() => {
-    tl.current = gsap.timeline().to(ref.current, {
+    gsap.timeline().to(ref.current, {
       duration: 1,
       opacity: 1,
       top: 0,

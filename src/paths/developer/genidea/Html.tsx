@@ -20,7 +20,6 @@ const Content = () => {
 
   const ref = useRef(null)
   const tl = useRef<gsap.core.Timeline>()
-  const q = gsap.utils.selector(ref)
   const isDark = theme.includes('dark')
 
   useEffect(() => {

@@ -17,11 +17,9 @@ import { useEffect, useRef } from 'react'
 
 const Content = () => {
   const [theme] = useLocalStorageValue('theme', 'light')
-  const isDark = theme.includes('dark')
 
   const ref = useRef(null)
   const tl = useRef<gsap.core.Timeline>()
-  const q = gsap.utils.selector(ref)
 
   useEffect(() => {
     tl.current = gsap.timeline().to(ref.current, {

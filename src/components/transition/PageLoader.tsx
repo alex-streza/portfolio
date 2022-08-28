@@ -15,8 +15,6 @@ const Curtain = ({ position = 'top' }: CurtainProps) => {
   const q = gsap.utils.selector(ref)
   const tl = useRef<gsap.core.Timeline>()
 
-  const isDesktop = useMediaQuery('(min-width: 768px)')
-
   useEffect(() => {
     document.body.style.overflowY = 'hidden'
 

@@ -1,9 +1,11 @@
-import { Canvas, useThree } from '@react-three/fiber'
+import { Canvas, useThree, Viewport } from '@react-three/fiber'
 
+import Loader from '@components/transition/Loader'
 import { useSessionStorageValue } from '@react-hookz/web'
-import { animated, config, useSprings } from '@react-spring/three'
-import { Html, useProgress, useTexture } from '@react-three/drei'
+import { animated, config, SpringRef, useSprings } from '@react-spring/three'
+import { Html, useTexture } from '@react-three/drei'
 import { EffectComposer, SSAO } from '@react-three/postprocessing'
+import gsap from 'gsap'
 import {
   createRef,
   Suspense,
@@ -14,8 +16,7 @@ import {
 } from 'react'
 import MenuLink from './MenuLink'
 import ShowcaseImage from './ShowcaseImage'
-import Loader from '@components/transition/Loader'
-import gsap from 'gsap'
+import HTML from '@paths/designer/Html'
 
 const images = {
   0: [
@@ -54,16 +55,34 @@ const defaultSpringValues = () => ({
   config: config.gentle,
 })
 
-const SceneContent = () => {
-  const [, setPath] = useSessionStorageValue('path', '')
-  const { viewport } = useThree()
-  const textures = useTexture([...images[0], ...images[1], ...images[2]])
+type SpringApi = SpringRef<{
+  position: number[]
+  scale: number[]
+  rotation: number[]
+  uAlpha: number
+  uOffset: number[]
+}>
 
-  const [revealed, setRevealed] = useState(false)
+interface HTMLContentProps {
+  setRevealed: (value: boolean) => void
+  revealed: boolean
+  apiWriter: SpringApi
+  apiDeveloper: SpringApi
+  apiDesigner: SpringApi
+  viewport: Viewport
+}
+
+const HTMLContent = ({
+  setRevealed,
+  revealed,
+  apiWriter,
+  apiDeveloper,
+  apiDesigner,
+  viewport,
+}: HTMLContentProps) => {
+  const [, setPath] = useSessionStorageValue('path', '')
 
   const menuRef = useRef<HTMLDivElement>(null)
-  const q = gsap.utils.selector(menuRef)
-  const tl = useRef<gsap.core.Timeline>()
 
   const itemsRefs = useRef([])
 
@@ -73,53 +92,55 @@ const SceneContent = () => {
       .map((_, i) => itemsRefs.current[i] || createRef())
   }
 
-  const [springsWriter, apiWriter] = useSprings(3, defaultSpringValues)
-  const [springsDeveloper, apiDeveloper] = useSprings(3, defaultSpringValues)
-  const [springsDesigner, apiDesigner] = useSprings(3, defaultSpringValues)
+  useEffect(() => {
+    if (!revealed) {
+      const ctx = gsap.context(() => {
+        gsap
+          .timeline({
+            onComplete: () => {
+              setRevealed(true)
+            },
+            ease: 'power3.easeInOut',
+          })
+          .to(menuRef.current, {
+            delay: 0.5,
+            opacity: 1,
+            duration: 0,
+          })
+          .to('li hr', {
+            delay: 0.25,
+            width: '100%',
+          })
+          .to('a', {
+            yPercent: -100,
+            stagger: 0.5,
+            ease: 'power3.easeInOut',
+          })
+          .to('hr', {
+            width: '0%',
+          })
+          .to('#choosePath hr', {
+            width: '100%',
+          })
+          .to('#choosePath span', {
+            yPercent: -100,
+          })
+          .to('#choosePath h2', {
+            yPercent: 100,
+          })
+          .to('#choosePath hr', {
+            width: '0%',
+          })
+      }, menuRef)
+      return () => ctx.revert()
+    }
+
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [])
 
   useEffect(() => {
     setPath('')
   }, [setPath])
-
-  useEffect(() => {
-    gsap
-      .timeline({
-        onComplete: () => {
-          setRevealed(true)
-        },
-        ease: 'power3.easeInOut',
-      })
-      .to(menuRef.current, {
-        opacity: 1,
-        duration: 0,
-      })
-      .to(q('li hr'), {
-        delay: 0.25,
-        width: '100%',
-      })
-      .from(q('a'), {
-        yPercent: 100,
-        stagger: 0.5,
-        ease: 'power3.easeInOut',
-      })
-      .to(q('hr'), {
-        width: '0%',
-      })
-      .to(q('#choosePath hr'), {
-        width: '100%',
-      })
-      .from(q('#choosePath span'), {
-        yPercent: 100,
-      })
-      .from(q('#choosePath h2'), {
-        yPercent: -100,
-      })
-      .to(q('#choosePath hr'), {
-        width: '0%',
-      })
-
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [])
 
   const handleMouseLeave = (i) => {
     const position = itemsRefs.current[i].current.getBoundingClientRect()
@@ -174,6 +195,68 @@ const SceneContent = () => {
   }
 
   return (
+    <div
+      ref={menuRef}
+      className="opacity-0 flex flex-col items-end justify-end"
+    >
+      <ul>
+        {paths.map((path, i) => (
+          <MenuLink
+            key={i}
+            link={path}
+            ref={itemsRefs.current[i]}
+            onMouseEnter={revealed ? () => handleMouseEnter(i) : undefined}
+            onMouseLeave={revealed ? () => handleMouseLeave(i) : undefined}
+            subtitle={subtitles[i]}
+          />
+        ))}
+      </ul>
+      <div id="choosePath" className="w-full flex flex-col items-center">
+        <div className="h-6 overflow-hidden">
+          <span className="tracking-widest block translate-y-full">
+            CHOOSE YOUR PATH
+          </span>
+        </div>
+        <hr className="max-w-[300px] my-2.5 bg-white" />
+        <div className="h-8 overflow-hidden">
+          <h2 className="relative !font-serif !text-2xl -translate-y-full">
+            Design. Build. Launch.
+            <svg
+              height="3"
+              width="103"
+              viewBox="0 0 103 3"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+              className="text-main absolute -bottom-0 transition-colors duration-300 -right-2"
+            >
+              <line
+                x1="0.977539"
+                y1="1.5"
+                x2="102.022"
+                y2="1.5"
+                stroke="currentColor"
+                strokeWidth={2}
+              />
+            </svg>
+          </h2>
+        </div>
+      </div>
+    </div>
+  )
+}
+
+const SceneContent = () => {
+  const textures = useTexture([...images[0], ...images[1], ...images[2]])
+
+  const { viewport } = useThree()
+
+  const [revealed, setRevealed] = useState(false)
+
+  const [springsWriter, apiWriter] = useSprings(3, defaultSpringValues)
+  const [springsDeveloper, apiDeveloper] = useSprings(3, defaultSpringValues)
+  const [springsDesigner, apiDesigner] = useSprings(3, defaultSpringValues)
+
+  return (
     <>
       {revealed &&
         textures.slice(0, 3).map((texture, index) => (
@@ -195,51 +278,14 @@ const SceneContent = () => {
         ))}
 
       <Html center prepend>
-        <div
-          ref={menuRef}
-          className="opacity-0 flex flex-col items-end justify-end"
-        >
-          <ul>
-            {paths.map((path, i) => (
-              <MenuLink
-                key={i}
-                link={path}
-                ref={itemsRefs.current[i]}
-                onMouseEnter={() => handleMouseEnter(i)}
-                onMouseLeave={() => handleMouseLeave(i)}
-                subtitle={subtitles[i]}
-              />
-            ))}
-          </ul>
-          <div id="choosePath" className="w-full flex flex-col items-center">
-            <div className="h-6 overflow-hidden">
-              <span className="tracking-widest block">CHOOSE YOUR PATH</span>
-            </div>
-            <hr className="max-w-[300px] my-2.5 bg-white" />
-            <div className="h-8 overflow-hidden">
-              <h2 className="relative !font-serif !text-2xl">
-                Design. Build. Launch.
-                <svg
-                  height="3"
-                  width="103"
-                  viewBox="0 0 103 3"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                  className="text-main absolute -bottom-0 transition-colors duration-300 -right-2"
-                >
-                  <line
-                    x1="0.977539"
-                    y1="1.5"
-                    x2="102.022"
-                    y2="1.5"
-                    stroke="currentColor"
-                    strokeWidth={2}
-                  />
-                </svg>
-              </h2>
-            </div>
-          </div>
-        </div>
+        <HTMLContent
+          setRevealed={setRevealed}
+          revealed={revealed}
+          apiWriter={apiWriter}
+          apiDeveloper={apiDeveloper}
+          apiDesigner={apiDesigner}
+          viewport={viewport}
+        />
       </Html>
     </>
   )
