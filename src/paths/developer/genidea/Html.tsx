@@ -58,15 +58,31 @@ const Content = () => {
         artificial intelligence. Users can generate app ideas with OpenAI and
         collect them as NFTs.
       </p>
-      <Button>
-        <BrowserIcon />
+      <div className="flex gap-4 items-center">
+        <Button>
+          <BrowserIcon />
+          <a
+            href="http://devnet.genidea.app/"
+            className="reset-link !text-gray-1000"
+          >
+            Check out
+          </a>
+        </Button>
         <a
-          href="http://devnet.genidea.app/"
-          className="reset-link !text-gray-1000"
+          href="https://www.producthunt.com/posts/genidea?utm_source=badge-featured&utm_medium=badge&utm_souce=badge-genidea"
+          target="_blank"
+          rel="noopener noreferrer"
         >
-          Check out
+          <img
+            className="mb-0"
+            src={`https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=330472&theme=${
+              isDark ? 'dark' : 'light'
+            }`}
+            alt="GenIdea - Get&#0032;inspired&#0032;on&#0032;the&#0032;go&#0032;with&#0032;AI&#0032;generated&#0032;app&#0032;ideas | Product Hunt"
+            width="230"
+          />
         </a>
-      </Button>
+      </div>
     </div>
   )
 }

@@ -20,6 +20,7 @@ const Content = () => {
 
   const ref = useRef(null)
   const tl = useRef<gsap.core.Timeline>()
+  const isDark = theme.includes('dark')
 
   useEffect(() => {
     tl.current = gsap.timeline().to(ref.current, {
@@ -61,12 +62,31 @@ const Content = () => {
         want to push the boundaries of what's possible. High-quality assets and
         tools, to create beautiful visuals 😍.
       </p>
-      <Button>
-        <BrowserIcon />
-        <a href="http://3d-resources.co" className="reset-link !text-gray-1000">
-          Check out
+      <div className="flex gap-4 items-center">
+        <Button>
+          <BrowserIcon />
+          <a
+            href="http://3d-resources.co"
+            className="reset-link !text-gray-1000"
+          >
+            Check out
+          </a>
+        </Button>
+        <a
+          href="https://www.producthunt.com/posts/3d-resources?utm_source=badge-featured&utm_medium=badge&utm_souce=badge-3d&#0045;resources"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <img
+            src={`https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=356448&theme=${
+              isDark ? 'dark' : 'light'
+            }`}
+            alt="3D&#0032;Resources - 3D&#0032;is&#0032;hard&#0044;&#0032;but&#0032;it&#0039;s&#0032;not&#0032;impossible&#0032;with&#0032;the&#0032;right&#0032;resources | Product Hunt"
+            className="mb-0"
+            width="230"
+          />
         </a>
-      </Button>
+      </div>
     </div>
   )
 }

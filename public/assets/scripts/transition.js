@@ -16,7 +16,7 @@ const pageTransition = () => {
   })
 
   tl.to('.transition-container li', {
-    duration: 0.6,
+    duration: 1,
     scaleY: 0,
     transformOrigin: 'top right',
     stagger: 0.1,
