@@ -78,11 +78,11 @@ const Content = () => {
           rel="noopener noreferrer"
         >
           <img
+            className="mb-0 md:w-[230px] w-[200px]"
             src={`https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=356448&theme=${
               isDark ? 'dark' : 'light'
             }`}
             alt="3D&#0032;Resources - 3D&#0032;is&#0032;hard&#0044;&#0032;but&#0032;it&#0039;s&#0032;not&#0032;impossible&#0032;with&#0032;the&#0032;right&#0032;resources | Product Hunt"
-            className="mb-0"
             width="230"
           />
         </a>
