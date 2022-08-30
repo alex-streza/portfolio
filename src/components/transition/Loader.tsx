@@ -2,8 +2,11 @@ import { usePrevious } from '@react-hookz/web'
 import { Html, useProgress } from '@react-three/drei'
 import { useLayoutEffect, useRef } from 'react'
 
-const Loader = () => {
-  const { progress } = useProgress()
+interface HTMLLoaderProps {
+  progress: number
+}
+
+const HTMLLoader = ({ progress }: HTMLLoaderProps) => {
   const previousProgress = usePrevious(progress)
 
   const ref = useRef<HTMLHeadingElement>()
@@ -30,9 +33,19 @@ const Loader = () => {
     }
   }, [progress, previousProgress])
 
+  return <h1 ref={ref} className="md:text-5xl text-3xl overflow-hidden z-0" />
+}
+
+interface LoaderProps {
+  wrapperClass?: string
+}
+
+const Loader = ({ wrapperClass }: LoaderProps) => {
+  const { progress } = useProgress()
+
   return (
-    <Html center>
-      <h1 ref={ref} className="md:text-5xl text-3xl overflow-hidden" />
+    <Html wrapperClass={wrapperClass} center>
+      <HTMLLoader progress={progress} />
     </Html>
   )
 }

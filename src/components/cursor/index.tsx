@@ -74,7 +74,15 @@ const Cursor = () => {
         duration: 0.5,
         morphSVG: '#defaultCursor',
       })
+      gsap.to(cursorRef.current, {
+        border: 0,
+        scale: 1,
+      })
     } else {
+      gsap.to(cursorRef.current, {
+        border: 1,
+        scale: 1.2,
+      })
       gsap.to(q('#cursorPath'), {
         duration: 0.5,
         delay: 0.2,
@@ -90,7 +98,7 @@ const Cursor = () => {
   return (
     <div
       ref={cursorRef}
-      className={`w-10 h-10 text-main-1000 grid place-content-center absolute top-0 left-0 rounded-full ${
+      className={`w-10 h-10 text-main-1000 grid place-content-center absolute top-0 left-0 rounded-full border-main ${
         path == '' ? 'bg-[#b1b1b1]' : 'bg-main-hex'
       }  bg-opacity-40 backdrop-blur-sm pointer-events-none`}
     >

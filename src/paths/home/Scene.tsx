@@ -1,7 +1,7 @@
 import { Canvas, useThree, Viewport } from '@react-three/fiber'
 
 import Loader from '@components/transition/Loader'
-import { useSessionStorageValue } from '@react-hookz/web'
+import { useLocalStorageValue, useSessionStorageValue } from '@react-hookz/web'
 import { animated, config, SpringRef, useSprings } from '@react-spring/three'
 import { Html, useTexture } from '@react-three/drei'
 import { EffectComposer, SSAO } from '@react-three/postprocessing'
@@ -17,6 +17,7 @@ import {
 import MenuLink from './MenuLink'
 import ShowcaseImage from './ShowcaseImage'
 import HTML from '@paths/designer/Html'
+import Intro from '@components/transition/Intro'
 
 const images = {
   0: [
@@ -82,6 +83,8 @@ const HTMLContent = ({
 }: HTMLContentProps) => {
   const [, setPath] = useSessionStorageValue('path', '')
 
+  const [revealedIntro] = useLocalStorageValue('revealed_intro', false)
+
   const menuRef = useRef<HTMLDivElement>(null)
 
   const itemsRefs = useRef([])
@@ -103,7 +106,7 @@ const HTMLContent = ({
             ease: 'power3.easeInOut',
           })
           .to(menuRef.current, {
-            delay: 0.5,
+            delay: revealedIntro ? 0.5 : 3.5,
             opacity: 1,
             duration: 0,
           })
@@ -153,7 +156,6 @@ const HTMLContent = ({
     api.start((i) => ({
       position: [x, y, 0.1 * i],
       rotation: [0, 0, 0],
-      uAlpha: 0,
       scale: [0, 0, 0],
     }))
     paths.forEach((path, index) => {
@@ -180,7 +182,6 @@ const HTMLContent = ({
         i * 0.1,
       ],
       rotation: [0, 0.2, ((i == 0 ? i : -i) + 1) * 0.3],
-      uAlpha: 1,
       scale: [0.7, 0.3, 1],
     }))
 
@@ -292,10 +293,25 @@ const SceneContent = () => {
 }
 
 const MainScene = () => {
+  const [revealedIntro] = useLocalStorageValue('revealed_intro', false)
+  const ref = useRef()
+
+  useLayoutEffect(() => {
+    const ctx = gsap.context(() => {
+      gsap.from(ref.current, {
+        delay: 4,
+        ease: 'easeInOut',
+        opacity: 0,
+      })
+      return () => ctx.revert()
+    }, ref)
+  }, [])
+
   return (
     <section className="home-content">
+      {!revealedIntro && <Intro />}
       <Canvas>
-        <Suspense fallback={<Loader />}>
+        <Suspense fallback={<Loader wrapperClass="!z-10" />}>
           <SceneContent />
         </Suspense>
         <EffectComposer multisampling={0}>

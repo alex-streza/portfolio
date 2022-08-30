@@ -89,15 +89,15 @@ const Content = () => {
       <h1 className="!text-5xl w-fit md:!text-8xl leading-[60px]">
         <span className="block overflow-hidden">
           <span className="block">Design</span>
-          <hr className="mt-3 m-0 bg-white w-0" />
+          <hr className="mt-3 m-0 w-0" />
         </span>
         <span className="block overflow-hidden">
           <span className="block">Creative</span>
-          <hr className="mt-3 m-0 bg-white w-0" />
+          <hr className="mt-3 m-0 w-0" />
         </span>
         <span className="block overflow-hidden">
           <span className="block">Experiences</span>
-          <hr className="mt-3 m-0 bg-white w-0" />
+          <hr className="mt-3 m-0 w-0" />
         </span>
       </h1>
       <span id="mail" className="flex items-center gap-2 font-bold opacity-0">

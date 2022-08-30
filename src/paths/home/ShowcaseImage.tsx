@@ -14,7 +14,7 @@ const ImageShaderMaterial: ShaderMaterialProps = shaderMaterial(
       value: null,
     },
     uAlpha: {
-      value: 0,
+      value: 1,
     },
   },
   `
@@ -33,7 +33,7 @@ const ImageShaderMaterial: ShaderMaterialProps = shaderMaterial(
 
   void main() {
     vec3 color = texture2D(uTexture,vUv).rgb;
-    gl_FragColor = vec4(color, uAlpha);
+    gl_FragColor = vec4(color, 1);
   }
 `,
 )
@@ -60,11 +60,7 @@ const ShowcaseImage = ({ uAlpha, texture }: ImageProps) => {
   return (
     <>
       <planeBufferGeometry attach="geometry" args={[5, 7]} />
-      <AnimatedImageShaderMaterial
-        attach="material"
-        uTexture={texture}
-        uAlpha={uAlpha}
-      />
+      <AnimatedImageShaderMaterial attach="material" uTexture={texture} />
     </>
   )
 }
