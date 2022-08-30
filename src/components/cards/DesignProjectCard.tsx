@@ -19,13 +19,19 @@ const DesignProjectCard = ({
 }: DesignProjectCardProps) => {
   return (
     <div className="rounded-8 md:max-w-[480px] dark:bg-gray-hex dark:bg-opacity-100 bg-light-gray-hex bg-opacity-50 md:shadow-main shadow-none backdrop-blur-sm">
-      <img className="mb-6 w-full mt-0 rounded-t-8" src={image} alt={title} />
+      <div className="bg-no-repeat w-full h-[240px] rounded-t relative overflow-hidden mb-6 mt-0 ">
+        <img
+          className="hover:scale-110 absolute w-full h-full transition-all duration-500 ease-in-out transform bg-center bg-cover rounded-t-8"
+          src={image}
+          alt={title}
+        />
+      </div>
       <div className="p-5 pt-0">
         <div className="flex mb-5 gap-5">{children}</div>
         <h3 className="!text-4xl !mb-4 !font-serif">{title}</h3>
         <p className="!my-0">{description}</p>
         {link && (
-          <Button className="mt-5">
+          <Button className="mt-5 md:mt-8">
             <BrowserIcon />
             <a
               href={link}

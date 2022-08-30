@@ -95,32 +95,42 @@ const Intro = () => {
         gsap.from('#writer', {
           delay: 1,
           ease: 'easeInOut',
-          duration: 3.75,
-          xPercent: -40,
+          yoyoEase: 'none',
+          duration: 4,
+          yoyo: true,
+          repeat: -1,
+          xPercent: -50,
         })
         gsap.from('#developer', {
           delay: 1,
           ease: 'easeInOut',
-          duration: 3.75,
+          yoyoEase: 'none',
+          duration: 5,
+          repeat: -1,
+          yoyo: true,
           xPercent: 50,
         })
         gsap.from('#designer', {
           delay: 1,
           ease: 'easeInOut',
-          duration: 3.75,
-          xPercent: -60,
+          yoyoEase: 'none',
+          duration: 4.5,
+          repeat: -1,
+          yoyo: true,
+          xPercent: -50,
         })
 
         gsap.to(['#writer', '#developer', '#designer'], {
           delay: 3.75,
           ease: 'easeInOut',
-          opacity: 0,
+          opacity: 0.1,
+          // onComplete: () => setRevealedIntro(true),
         })
-        gsap.to(ref.current, {
-          delay: 4.5,
-          display: 'none',
-          onComplete: () => setRevealedIntro(true),
-        })
+        // gsap.to(ref.current, {
+        //   delay: 4.5,
+        //   display: 'none',
+        //   // onComplete: () => setRevealedIntro(true),
+        // })
       }, ref)
 
       return () => ctx.revert()
@@ -137,7 +147,7 @@ const Intro = () => {
           <div
             key={key}
             id={key}
-            className="flex w-fit overflow-hidden font-serif text-3xl md:text-6xl gap-5 items-center mb-5 md:mb-10"
+            className="flex w-fit font-serif text-3xl md:text-6xl gap-5 items-center mb-5 md:mb-10"
           >
             {items[key].map((item, i) => (
               <Fragment key={key}>
@@ -145,7 +155,7 @@ const Intro = () => {
                   className={`${
                     item.className ??
                     'dark:text-white text-gray-dark opacity-90'
-                  } block w-fit`}
+                  } block w-fit hover:font-sans hover:italic`}
                 >
                   {item.name}
                 </span>

@@ -76,6 +76,9 @@ const Content = () => {
         .to('#resume', {
           opacity: 1,
         })
+        .from('p', {
+          opacity: 0,
+        })
         .to('#designProjects', {
           opacity: 1,
         })
@@ -106,17 +109,33 @@ const Content = () => {
       </span>
       <a
         id="resume"
-        className="flex gap-2 dark:!text-white w-fit !text-gray-1000 opacity-0 font-bold mt-3 mb-10 md:mb-20"
+        className="flex gap-2 dark:!text-white w-fit !text-gray-1000 opacity-0 font-bold mt-3 mb-5 md:mb-10"
         href="https://drive.google.com/file/d/11u_cYddP19wu7aAZdYpePpj4MOSQWOAe/view"
         target="_blank"
         rel="noreferrer"
       >
         <Book /> Resume.pdf
       </a>
+      <p className="mb-10 md:mb-20 font-normal text-lg md:text-2xl max-w-[60ch] md:leading-10">
+        Throghout my development career I discovered the significance of product
+        research & design while I worked with global brands and unicorn
+        start-ups. Design is <b>humane</b> and with that in mind I decided to
+        pursue a polivalent career in building products from scratch or bring
+        value to those who need it.
+        <br />
+        <br />
+        In regards to interest, I love CGI/VFX, 3D Creative Experiences which is
+        largely controversial considering my cybersecurity & informatics
+        academic background.
+        <br />
+        <br />I seek to bridge the gap between impossible design and bland,
+        dreadful interfaces by bringing vast expertise in what can be done from
+        a development standpoint.
+      </p>
       <div id="designProjects" className="flex flex-wrap gap-8 w-fit opacity-0">
         <DesignProjectCard
           title="Snow Fox - Design System"
-          description="Searching for a design system that will help you create beautiful, consistent user interfaces across all your digital products?  So why wait? Get started today with Snow Fox!"
+          description="Building an entire Design System from scratch is a huge undertaking. I undertook this project to build a system that I could use for my own personal projects and released it to the Figma community."
           image="/assets/images/snow-fox-design-system/0.png"
           link="https://www.figma.com/community/file/1120750897470911763"
         >
@@ -129,7 +148,7 @@ const Content = () => {
         </DesignProjectCard>
         <DesignProjectCard
           title="3D Resources"
-          description="Looking to create great 3D experiences? Then you need 3D Resources! This collection of resources is perfect for creative developers & artists who want to push the boundaries of what's possible. High-quality assets and tools, to create beautiful visuals 😍."
+          description="Looking to create great 3D experiences? Then you need 3D Resources! This collection of resources is perfect for creative developers & artists who want to push the boundaries of what's possible."
           image="/assets/images/3d-resources/1.png"
           link="https://3d-resources.co"
         >
@@ -145,7 +164,7 @@ const Content = () => {
         </DesignProjectCard>
         <DesignProjectCard
           title="Genidea"
-          description="Get inspired on the go with ideas in diverse tech related fields with artificial intelligence. Users can generate app ideas with OpenAI and collect them as NFTs."
+          description="For my Master's Degree project I designed & developed an app that generates app ideas with OpenAI and allows collecting them as NFTs."
           image="/assets/images/genidea/1.png"
           link="http://devnet.genidea.app/"
         >
@@ -178,8 +197,9 @@ const Content = () => {
           </a>
         </DesignProjectCard>
       </div>
-      <h2 className="mt-20 mb-8 !font-serif !text-5xl">Get in touch</h2>
-      <span className="flex gap-2 items-center font-bold">
+      <h2 className="mt-20 mb-2 !font-serif !text-5xl">Get in touch</h2>
+      <span>Available for remote offers</span>
+      <span className="mt-8 flex gap-2 items-center font-bold">
         <Mail />
         alex.streza@snowfox.art
       </span>
@@ -191,7 +211,6 @@ const Content = () => {
       >
         <Book /> Resume.pdf
       </a>
-      <span>Available for freelance work</span>
       <div className="grid gap-5 grid-cols-2 mb-32 md:mb-40 mt-8 w-fit">
         {socialLinks.map(({ href, icon, label }) => (
           <a
