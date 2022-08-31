@@ -63,7 +63,9 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-spring": "^9.5.2",
+    "react-tsparticles": "^2.2.4",
     "three": "^0.142.0",
+    "tsparticles": "^2.2.4",
     "zustand": "^4.0.0"
   },
   "resolutions": {

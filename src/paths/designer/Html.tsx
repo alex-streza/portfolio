@@ -116,21 +116,29 @@ const Content = () => {
       >
         <Book /> Resume.pdf
       </a>
-      <p className="mb-10 md:mb-20 font-normal text-lg md:text-2xl max-w-[60ch] md:leading-10">
+      <p className="mb-10 md:mb-20 font-normal text-xl md:text-2xl max-w-[60ch] md:leading-10">
+        I’m a freelance designer & developer with +
+        <b className="font-serif">4</b> years of experience in imagining and
+        implementing solutions in various industries and fields ranging from AI,
+        sport registrations, map-based visualizations to blockchain-powered
+        platforms.
+        <br />
+        <br />
         Throghout my development career I discovered the significance of product
         research & design while I worked with global brands and unicorn
-        start-ups. Design is <b>humane</b> and with that in mind I decided to
-        pursue a polivalent career in building products from scratch or bring
-        value to those who need it.
+        start-ups. Design is <b className="font-serif">humane</b> and with that
+        in mind I decided to pursue a polivalent career in building products
+        from scratch or bring value to those who need it.
         <br />
         <br />
-        In regards to interest, I love CGI/VFX, 3D Creative Experiences which is
-        largely controversial considering my cybersecurity & informatics
-        academic background.
+        In regards to interest, I <b className="font-serif">love</b> CGI/VFX, 3D
+        Creative Experiences which is largely controversial considering my
+        cybersecurity & informatics academic background.
         <br />
-        <br />I seek to bridge the gap between impossible design and bland,
-        dreadful interfaces by bringing vast expertise in what can be done from
-        a development standpoint.
+        <br />I seek to bridge the gap between{' '}
+        <b className="font-serif">impossible</b> design and bland, dreadful
+        interfaces by bringing vast expertise in what can be done from a
+        development standpoint and what needs to be done from a UX perspective.
       </p>
       <div id="designProjects" className="flex flex-wrap gap-8 w-fit opacity-0">
         <DesignProjectCard

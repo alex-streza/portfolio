@@ -4,6 +4,7 @@ import Header from '@components/Header.astro'
 import PageTransition from '@components/transition/PageTransition'
 import Scene from '@paths/designer/MainScene'
 import { Leva } from 'leva'
+import Particles from '@paths/designer/Particles'
 
 let title = 'Designer | Alex Streza'
 let description =
@@ -29,12 +30,13 @@ let permalink = 'https://www.blog.alexstreza.dev/'
     <main
       data-barba="container"
       data-barba-namespace="home"
-      class="absolute top-0 w-screen h-screen"
+      class="absolute top-0 w-screen ch-screen"
     >
       <section
         class="inset-0 p-0 overflow-x-auto mx-[none] z-0 w-screen h-screen"
       >
         <Scene client:only="react" />
+        <Particles client:load />
       </section>
     </main>
 
