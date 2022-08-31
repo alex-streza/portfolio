@@ -78,7 +78,7 @@ const Content = () => {
           rel="noopener noreferrer"
         >
           <img
-            className="mb-0 md:w-[230px] w-[200px]"
+            className="mb-0 md:w-[230px] w-[180px]"
             src={`https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=356448&theme=${
               isDark ? 'dark' : 'light'
             }`}

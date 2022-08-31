@@ -45,6 +45,7 @@ const socialLinks = [
 
 const Content = () => {
   const contentRef = useRef<HTMLDivElement>(null)
+  const isDesktop = useMediaQuery('(min-width: 768px)')
 
   useEffect(() => {
     const ctx = gsap.context(() => {
@@ -61,7 +62,7 @@ const Content = () => {
           width: '100%',
         })
         .from('h1 span span', {
-          yPercent: 125,
+          yPercent: isDesktop ? 125 : 130,
           stagger: 0.5,
           delay: 0.5,
         })
@@ -85,7 +86,7 @@ const Content = () => {
     }, contentRef)
 
     return () => ctx.revert()
-  }, [])
+  }, [isDesktop])
 
   return (
     <div ref={contentRef} className="flex flex-col pt-10 opacity-0">
@@ -117,8 +118,8 @@ const Content = () => {
         <Book /> Resume.pdf
       </a>
       <p className="mb-10 md:mb-20 font-normal text-xl md:text-2xl max-w-[60ch] md:leading-10">
-        I’m a freelance designer & developer with +
-        <b className="font-serif">4</b> years of experience in imagining and
+        I’m a freelance designer & developer with
+        <b className="font-serif">+3.5</b> years of experience in imagining and
         implementing solutions in various industries and fields ranging from AI,
         sport registrations, map-based visualizations to blockchain-powered
         platforms.

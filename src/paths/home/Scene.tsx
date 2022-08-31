@@ -1,7 +1,11 @@
 import { Canvas, useThree, Viewport } from '@react-three/fiber'
 
 import Loader from '@components/transition/Loader'
-import { useLocalStorageValue, useSessionStorageValue } from '@react-hookz/web'
+import {
+  useLocalStorageValue,
+  useMediaQuery,
+  useSessionStorageValue,
+} from '@react-hookz/web'
 import { animated, config, SpringRef, useSprings } from '@react-spring/three'
 import { Html, useTexture } from '@react-three/drei'
 import { EffectComposer, SSAO } from '@react-three/postprocessing'
@@ -79,6 +83,7 @@ const HTMLContent = ({
   viewport,
 }: HTMLContentProps) => {
   const [, setPath] = useSessionStorageValue('path', '')
+  const isDesktop = useMediaQuery('(min-width: 768px)')
 
   const [revealedIntro] = useSessionStorageValue('revealed_intro', false)
 
@@ -107,12 +112,12 @@ const HTMLContent = ({
           duration: 0,
         })
         .to('li hr', {
-          delay: 0.25,
+          delay: 0.33,
           width: '100%',
         })
         .to('a', {
-          yPercent: -100,
-          stagger: 0.5,
+          yPercent: isDesktop ? -100 : -110,
+          stagger: 0.33,
           ease: 'power3.easeInOut',
         })
         .to('hr', {
@@ -122,10 +127,10 @@ const HTMLContent = ({
           width: '100%',
         })
         .to('#choosePath span', {
-          yPercent: -100,
+          yPercent: isDesktop ? -100 : -110,
         })
         .to('#choosePath h2', {
-          yPercent: 100,
+          yPercent: isDesktop ? 100 : 110,
         })
         .to('#choosePath hr', {
           width: '0%',
@@ -134,7 +139,7 @@ const HTMLContent = ({
     return () => ctx.revert()
 
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [])
+  }, [isDesktop])
 
   useEffect(() => {
     setPath('')

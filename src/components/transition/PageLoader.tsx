@@ -1,7 +1,6 @@
-import { useMediaQuery } from '@react-hookz/web' // cjs
 import { useProgress } from '@react-three/drei'
-import { gsap } from 'gsap/dist/gsap'
-import { DrawSVGPlugin } from 'gsap/dist/DrawSVGPlugin'
+import { DrawSVGPlugin } from 'gsap/DrawSVGPlugin'
+import { gsap } from 'gsap'
 import { useEffect, useRef } from 'react'
 
 if (typeof window !== 'undefined') gsap.registerPlugin(DrawSVGPlugin)

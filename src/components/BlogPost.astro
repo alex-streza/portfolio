@@ -1,5 +1,7 @@
 ---
 import { Icon } from 'astro-icon'
+import Liveblock from './live/Liveblock'
+import '@styles/blog.css'
 
 export interface Props {
   publishDate: string
@@ -25,7 +27,9 @@ const { publishDate, readTime, likeCount, shareCount, commentCount } =
         <span class="-mt-1 block">All posts</span>
       </a>
       <div class="ml-auto text-sm">
-        <span>{publishDate} - {readTime}</span>
+        <span class="flex">
+          <Liveblock client:only="react" /> - {readTime} - {publishDate}
+        </span>
 
         <!-- <span class='hidden md:inline-block'> -</span> -->
         <!-- <br class='md:hidden' /> -->

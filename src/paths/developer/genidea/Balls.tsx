@@ -5,11 +5,10 @@ import {
   useFrame,
 } from '@react-three/fiber'
 
-import { useMediaQuery } from '@react-hookz/web'
 import { useCompoundBody } from '@react-three/cannon/dist/index'
 import { Edges } from '@react-three/drei'
-import { gsap } from 'gsap/dist/gsap'
-import { CSSRulePlugin } from 'gsap/dist/CSSRulePlugin'
+import { CSSRulePlugin } from 'gsap/CSSRulePlugin'
+import { gsap } from 'gsap'
 import { Depth, Fresnel, LayerMaterial } from 'lamina'
 import { useControls } from 'leva'
 import { memo, useEffect, useMemo, useRef } from 'react'

@@ -13,6 +13,14 @@ const HTMLLoader = ({ progress }: HTMLLoaderProps) => {
   const tl = useRef<gsap.core.Timeline>()
 
   useLayoutEffect(() => {
+    gsap.from(ref.current, {
+      duration: 0.5,
+      opacity: 0,
+      delay: 0.5,
+    })
+  }, [])
+
+  useLayoutEffect(() => {
     const target = {
       value: previousProgress,
     }

@@ -49,7 +49,7 @@ const Content = () => {
           <Supabase color="#3ecf8e" size={40} />
         </a>
         <a href="https://openai.com" aria-label="openai">
-          <Openai color="#ffffff" size={40} />
+          <Openai color={isDark ? '#ffffff' : '#000000'} size={40} />
         </a>
       </div>
       <h1 className="text-5xl">GenIdea</h1>
@@ -74,7 +74,7 @@ const Content = () => {
           rel="noopener noreferrer"
         >
           <img
-            className="mb-0 md:w-[230px] w-[200px]"
+            className="mb-0 md:w-[230px] w-[180px]"
             src={`https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=330472&theme=${
               isDark ? 'dark' : 'light'
             }`}

@@ -8,27 +8,20 @@ export interface Props {
 const { post } = Astro.props
 ---
 
-<article class="post-preview">
-  <header>
+<article class="mb-5">
+  <header class="flex flex-col gap-3">
     <span>{post.frontmatter.publishDate}</span>
-    <a href={post.url} class="reset-link">
-      <h2 class="title">{post.frontmatter.title}</h2>
+    <a href={post.url} class="p-2 reset-link">
+      <h2 class="!font-serif !text-3xl !leading-[40px]">
+        {post.frontmatter.title}
+      </h2>
     </a>
   </header>
   <p>{post.frontmatter.description}</p>
-  <a href={post.url} class="!pl-0">Read more</a>
+  <a href={post.url} class="p-2 !pl-0">Read more</a>
 </article>
 
 <style>
-  header {
-    @apply flex flex-col gap-3;
-  }
-  h2 {
-    @apply !font-serif !text-3xl !leading-[40px] -mb-4;
-  }
-  a {
-    @apply p-2;
-  }
   .unset {
     all: unset;
   }

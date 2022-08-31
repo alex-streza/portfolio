@@ -115,7 +115,9 @@ barba.init({
         done()
       },
       once() {
-        return gsap.to('main', {
+        const done = this.async()
+
+        gsap.to('main', {
           duration: 0.3,
           opacity: 1,
           onComplete: () => {
@@ -124,6 +126,7 @@ barba.init({
             updateNavbar()
           },
         })
+        done()
       },
     },
   ],

@@ -1,6 +1,6 @@
 import { useIntervalEffect, useSessionStorageValue } from '@react-hookz/web'
-import { gsap } from 'gsap/dist/gsap'
-import { MorphSVGPlugin } from 'gsap/dist/MorphSVGPlugin'
+import { gsap } from 'gsap'
+import { MorphSVGPlugin } from 'gsap/MorphSVGPlugin'
 import { useLayoutEffect, useMemo, useRef, useState } from 'react'
 
 if (typeof window !== 'undefined') gsap.registerPlugin(MorphSVGPlugin)
@@ -14,6 +14,18 @@ const cursors = {
     'M7.11991 12.55C6.25045 12.7578 5.47567 13.2509 4.91921 13.9505C4.36276 14.6502 4.05671 15.5161 4.04991 16.41V19.52C4.04855 19.5834 4.06003 19.6464 4.08367 19.7053C4.10731 19.7641 4.14262 19.8176 4.18746 19.8625C4.23231 19.9073 4.28577 19.9426 4.34462 19.9662C4.40348 19.9899 4.46651 20.0014 4.52991 20L7.76991 19.94C8.49376 19.9412 9.20273 19.7345 9.81254 19.3445C10.4223 18.9545 10.9074 18.3976 11.2099 17.74C11.5204 17.1203 11.648 16.4249 11.5777 15.7353C11.5075 15.0457 11.2423 14.3904 10.8133 13.846C10.3843 13.3016 9.80908 12.8906 9.15502 12.661C8.50095 12.4315 7.79506 12.393 7.11991 12.55V12.55ZM19.2599 4.46C18.8403 4.12911 18.3121 3.96717 17.7792 4.00604C17.2462 4.0449 16.7471 4.28174 16.3799 4.67L9.99991 11.08C9.91319 11.1679 9.86458 11.2865 9.86458 11.41C9.86458 11.5335 9.91319 11.6521 9.99991 11.74L12.2499 14C12.3379 14.0867 12.4564 14.1353 12.5799 14.1353C12.7034 14.1353 12.822 14.0867 12.9099 14L19.3999 7.53C19.5922 7.33685 19.7442 7.10746 19.8472 6.85513C19.9502 6.6028 20.0021 6.33254 19.9999 6.06C20.007 5.7545 19.944 5.45143 19.8157 5.17407C19.6874 4.89672 19.4973 4.65244 19.2599 4.46V4.46Z',
 }
 
+const updatePathTheme = () => {
+  const paths = ['developer', 'designer', 'writer']
+
+  const pathname = window.location.pathname.split('/')[1]
+  const currentPath = pathname.includes('posts') ? 'writer' : pathname
+
+  paths.forEach((path) => {
+    document.documentElement.classList.remove(path)
+  })
+  if (currentPath !== '') document.documentElement.classList.add(currentPath)
+}
+
 const Cursor = () => {
   const cursorRef = useRef()
   const q = useMemo(() => gsap.utils.selector(cursorRef), [])
@@ -22,7 +34,7 @@ const Cursor = () => {
     x: 0,
     y: 0,
   })
-  const [path] = useSessionStorageValue('path', '')
+  const [path, setPath] = useSessionStorageValue('path', '')
 
   const [hideCursor, setHideCursor] = useState(false)
 
@@ -74,15 +86,7 @@ const Cursor = () => {
         duration: 0.5,
         morphSVG: '#defaultCursor',
       })
-      gsap.to(cursorRef.current, {
-        border: 0,
-        scale: 1,
-      })
     } else {
-      gsap.to(cursorRef.current, {
-        border: 1,
-        scale: 1.2,
-      })
       gsap.to(q('#cursorPath'), {
         duration: 0.5,
         delay: 0.2,
@@ -92,6 +96,19 @@ const Cursor = () => {
   }, [path, q])
 
   useIntervalEffect(() => {
+    const pathname = window.location.pathname.split('/')[1]
+    const currentPath = pathname.includes('posts') ? 'writer' : pathname
+
+    if (currentPath !== '' && currentPath !== path) {
+      const paths = ['developer', 'designer', 'writer']
+
+      paths.forEach((path) => {
+        document.documentElement.classList.remove(path)
+      })
+      document.documentElement.classList.add(currentPath)
+
+      setPath(currentPath)
+    }
     setHideCursor(window.location.pathname.includes('/posts'))
   }, 500)
 

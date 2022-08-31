@@ -32,20 +32,20 @@
   }
 
   p {
-    @apply my-5 leading-8;
+    @apply !my-5 leading-8;
   }
 
   figure {
-    @apply mx-auto mt-10;
+    @apply mx-auto !mt-10;
   }
   img {
-    @apply rounded mb-10 mx-auto;
+    @apply rounded !mb-10 mx-auto;
   }
   figure > img {
     @apply mb-0;
   }
   figcaption > p {
-    @apply text-center text-gray-100 m-0 mt-2;
+    @apply text-center text-gray-100 m-0 !mt-2;
   }
 
   code {
@@ -57,7 +57,7 @@
   }
 
   pre {
-    @apply relative px-5 py-4 overflow-x-auto overflow-y-hidden;
+    @apply relative !px-5 !py-4 overflow-x-auto overflow-y-hidden;
   }
 
   img.cover {
@@ -65,7 +65,7 @@
   }
 
   blockquote {
-    @apply p-1 dark:text-main text-main-900 bg-main-hex bg-opacity-20 mt-3 text-lg font-semibold mb-7;
+    @apply p-1 dark:text-main text-main-900 bg-main-hex bg-opacity-20 !mt-3 text-lg font-semibold !mb-7;
   }
   blockquote > p {
     all: unset;

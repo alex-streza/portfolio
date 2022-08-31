@@ -46,6 +46,8 @@
     "@barba/core": "^2.9.7",
     "@codesandbox/sandpack-react": "^1.5.0",
     "@icons-pack/react-simple-icons": "^5.2.0",
+    "@liveblocks/client": "^0.17.9",
+    "@liveblocks/react": "^0.17.9",
     "@react-hookz/web": "^15.0.1",
     "@react-spring/three": "^9.5.2",
     "@react-three/cannon": "^6.3.0",
