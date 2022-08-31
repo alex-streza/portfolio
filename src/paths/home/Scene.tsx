@@ -11,6 +11,7 @@ import {
   Suspense,
   useEffect,
   useLayoutEffect,
+  useMemo,
   useRef,
   useState,
 } from 'react'
@@ -65,8 +66,6 @@ type SpringApi = SpringRef<{
 }>
 
 interface HTMLContentProps {
-  setRevealed: (value: boolean) => void
-  revealed: boolean
   apiWriter: SpringApi
   apiDeveloper: SpringApi
   apiDesigner: SpringApi
@@ -74,8 +73,6 @@ interface HTMLContentProps {
 }
 
 const HTMLContent = ({
-  setRevealed,
-  revealed,
   apiWriter,
   apiDeveloper,
   apiDesigner,
@@ -83,7 +80,7 @@ const HTMLContent = ({
 }: HTMLContentProps) => {
   const [, setPath] = useSessionStorageValue('path', '')
 
-  const [revealedIntro] = useLocalStorageValue('revealed_intro', false)
+  const [revealedIntro] = useSessionStorageValue('revealed_intro', false)
 
   const menuRef = useRef<HTMLDivElement>(null)
 
@@ -95,48 +92,46 @@ const HTMLContent = ({
       .map((_, i) => itemsRefs.current[i] || createRef())
   }
 
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  const initialRevealedIntro = useMemo(() => revealedIntro, [])
+
   useEffect(() => {
-    if (!revealed) {
-      const ctx = gsap.context(() => {
-        gsap
-          .timeline({
-            onComplete: () => {
-              setRevealed(true)
-            },
-            ease: 'power3.easeInOut',
-          })
-          .to(menuRef.current, {
-            delay: revealedIntro ? 0.5 : 3.5,
-            opacity: 1,
-            duration: 0,
-          })
-          .to('li hr', {
-            delay: 0.25,
-            width: '100%',
-          })
-          .to('a', {
-            yPercent: -100,
-            stagger: 0.5,
-            ease: 'power3.easeInOut',
-          })
-          .to('hr', {
-            width: '0%',
-          })
-          .to('#choosePath hr', {
-            width: '100%',
-          })
-          .to('#choosePath span', {
-            yPercent: -100,
-          })
-          .to('#choosePath h2', {
-            yPercent: 100,
-          })
-          .to('#choosePath hr', {
-            width: '0%',
-          })
-      }, menuRef)
-      return () => ctx.revert()
-    }
+    const ctx = gsap.context(() => {
+      gsap
+        .timeline({
+          ease: 'power3.easeInOut',
+        })
+        .to(menuRef.current, {
+          delay: initialRevealedIntro ? 0.5 : 3.5,
+          opacity: 1,
+          duration: 0,
+        })
+        .to('li hr', {
+          delay: 0.25,
+          width: '100%',
+        })
+        .to('a', {
+          yPercent: -100,
+          stagger: 0.5,
+          ease: 'power3.easeInOut',
+        })
+        .to('hr', {
+          width: '0%',
+        })
+        .to('#choosePath hr', {
+          width: '100%',
+        })
+        .to('#choosePath span', {
+          yPercent: -100,
+        })
+        .to('#choosePath h2', {
+          yPercent: 100,
+        })
+        .to('#choosePath hr', {
+          width: '0%',
+        })
+    }, menuRef)
+    return () => ctx.revert()
 
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
@@ -206,8 +201,8 @@ const HTMLContent = ({
             key={i}
             link={path}
             ref={itemsRefs.current[i]}
-            onMouseEnter={revealed ? () => handleMouseEnter(i) : undefined}
-            onMouseLeave={revealed ? () => handleMouseLeave(i) : undefined}
+            onMouseEnter={() => handleMouseEnter(i)}
+            onMouseLeave={() => handleMouseLeave(i)}
             subtitle={subtitles[i]}
           />
         ))}
@@ -251,37 +246,30 @@ const SceneContent = () => {
 
   const { viewport } = useThree()
 
-  const [revealed, setRevealed] = useState(false)
-
   const [springsWriter, apiWriter] = useSprings(3, defaultSpringValues)
   const [springsDeveloper, apiDeveloper] = useSprings(3, defaultSpringValues)
   const [springsDesigner, apiDesigner] = useSprings(3, defaultSpringValues)
 
   return (
     <>
-      {revealed &&
-        textures.slice(0, 3).map((texture, index) => (
-          <animated.mesh key={texture.uuid} {...springsWriter[index]}>
-            <ShowcaseImage {...springsWriter[index]} texture={texture} />
-          </animated.mesh>
-        ))}
-      {revealed &&
-        textures.slice(3, 6).map((texture, index) => (
-          <animated.mesh key={texture.uuid} {...springsDeveloper[index]}>
-            <ShowcaseImage {...springsDeveloper[index]} texture={texture} />
-          </animated.mesh>
-        ))}
-      {revealed &&
-        textures.slice(6, 9).map((texture, index) => (
-          <animated.mesh key={texture.uuid} {...springsDesigner[index]}>
-            <ShowcaseImage {...springsDesigner[index]} texture={texture} />
-          </animated.mesh>
-        ))}
+      {textures.slice(0, 3).map((texture, index) => (
+        <animated.mesh key={texture.uuid} {...springsWriter[index]}>
+          <ShowcaseImage {...springsWriter[index]} texture={texture} />
+        </animated.mesh>
+      ))}
+      {textures.slice(3, 6).map((texture, index) => (
+        <animated.mesh key={texture.uuid} {...springsDeveloper[index]}>
+          <ShowcaseImage {...springsDeveloper[index]} texture={texture} />
+        </animated.mesh>
+      ))}
+      {textures.slice(6, 9).map((texture, index) => (
+        <animated.mesh key={texture.uuid} {...springsDesigner[index]}>
+          <ShowcaseImage {...springsDesigner[index]} texture={texture} />
+        </animated.mesh>
+      ))}
 
       <Html center prepend>
         <HTMLContent
-          setRevealed={setRevealed}
-          revealed={revealed}
           apiWriter={apiWriter}
           apiDeveloper={apiDeveloper}
           apiDesigner={apiDesigner}
@@ -293,8 +281,11 @@ const SceneContent = () => {
 }
 
 const MainScene = () => {
-  const [revealedIntro] = useLocalStorageValue('revealed_intro', false)
+  const [revealedIntro] = useSessionStorageValue('revealed_intro', false)
   const ref = useRef()
+
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  const initialRevealedIntro = useMemo(() => revealedIntro, [])
 
   useLayoutEffect(() => {
     const ctx = gsap.context(() => {
@@ -309,8 +300,8 @@ const MainScene = () => {
 
   return (
     <section className="home-content">
-      {!revealedIntro && <Intro />}
-      <Canvas>
+      {!initialRevealedIntro && <Intro />}
+      <Canvas className="!z-30">
         <Suspense fallback={<Loader wrapperClass="!z-10" />}>
           <SceneContent />
         </Suspense>

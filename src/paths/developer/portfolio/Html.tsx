@@ -1,23 +1,17 @@
-import Button from '@components/button/Button'
 import { Html } from '@react-three/drei'
 
-import BrowserIcon from '@components/icons/Browser'
 import {
   Astro,
   Blender,
   Markdown,
-  Nextdotjs,
-  Openai,
-  Postgresql,
   ReactJs,
-  Supabase,
   Tailwindcss,
   Threedotjs,
 } from '@icons-pack/react-simple-icons'
-import { useEffect, useRef } from 'react'
-import gsap from 'gsap'
-import { useThree } from '@react-three/fiber'
 import { useLocalStorageValue, useMediaQuery } from '@react-hookz/web'
+import { useThree } from '@react-three/fiber'
+import gsap from 'gsap'
+import { useEffect, useRef } from 'react'
 
 const Content = () => {
   const [theme] = useLocalStorageValue('theme', 'light')

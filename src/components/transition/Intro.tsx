@@ -1,6 +1,6 @@
-import { useLocalStorageValue } from '@react-hookz/web'
+import { useLocalStorageValue, useSessionStorageValue } from '@react-hookz/web'
 import gsap from 'gsap'
-import { Fragment, useLayoutEffect, useRef, useState } from 'react'
+import { Fragment, useLayoutEffect, useMemo, useRef, useState } from 'react'
 
 const items = {
   writer: [
@@ -78,21 +78,24 @@ const items = {
 }
 
 const Intro = () => {
-  const [revealedIntro, setRevealedIntro] = useLocalStorageValue(
+  const [revealedIntro, setRevealedIntro] = useSessionStorageValue(
     'revealed_intro',
     false,
   )
   const ref = useRef()
 
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  const initialRevealedIntro = useMemo(() => revealedIntro, [])
+
   useLayoutEffect(() => {
-    if (!revealedIntro) {
+    if (!initialRevealedIntro) {
       const ctx = gsap.context(() => {
-        gsap.from(['#writer', '#developer', '#designer'], {
+        gsap.from(['#row-writer', '#row-developer', '#row-designer'], {
           delay: 1,
           ease: 'easeInOut',
           opacity: 0,
         })
-        gsap.from('#writer', {
+        gsap.from('#row-writer', {
           delay: 1,
           ease: 'easeInOut',
           yoyoEase: 'none',
@@ -101,7 +104,7 @@ const Intro = () => {
           repeat: -1,
           xPercent: -50,
         })
-        gsap.from('#developer', {
+        gsap.from('#row-developer', {
           delay: 1,
           ease: 'easeInOut',
           yoyoEase: 'none',
@@ -110,7 +113,7 @@ const Intro = () => {
           yoyo: true,
           xPercent: 50,
         })
-        gsap.from('#designer', {
+        gsap.from('#row-designer', {
           delay: 1,
           ease: 'easeInOut',
           yoyoEase: 'none',
@@ -120,22 +123,17 @@ const Intro = () => {
           xPercent: -50,
         })
 
-        gsap.to(['#writer', '#developer', '#designer'], {
+        gsap.to(['#row-writer', '#row-developer', '#row-designer'], {
           delay: 3.75,
           ease: 'easeInOut',
           opacity: 0.1,
-          // onComplete: () => setRevealedIntro(true),
+          onComplete: () => setRevealedIntro(true),
         })
-        // gsap.to(ref.current, {
-        //   delay: 4.5,
-        //   display: 'none',
-        //   // onComplete: () => setRevealedIntro(true),
-        // })
       }, ref)
 
       return () => ctx.revert()
     }
-  }, [revealedIntro, setRevealedIntro])
+  }, [initialRevealedIntro, setRevealedIntro])
 
   return (
     <div
@@ -145,12 +143,12 @@ const Intro = () => {
       <div className="w-full h-full rotate-0 md:rotate-[-30deg]">
         {Object.keys(items).map((key) => (
           <div
-            key={key}
-            id={key}
+            key={`row-${key}`}
+            id={`row-${key}`}
             className="flex w-fit font-serif text-3xl md:text-6xl gap-5 items-center mb-5 md:mb-10"
           >
             {items[key].map((item, i) => (
-              <Fragment key={key}>
+              <Fragment key={item.name}>
                 <span
                   className={`${
                     item.className ??

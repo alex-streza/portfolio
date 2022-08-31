@@ -1,9 +1,12 @@
+import { useMediaQuery } from '@react-hookz/web'
 import { useCallback } from 'react'
 import Particles from 'react-tsparticles'
 import { loadFull } from 'tsparticles'
 import { Container, Engine } from 'tsparticles-engine'
 
 const BlurryParticles = () => {
+  const isDesktop = useMediaQuery('(min-width: 768px)')
+
   const particlesInit = useCallback(async (engine: Engine) => {
     console.log(engine)
 
@@ -22,7 +25,7 @@ const BlurryParticles = () => {
 
   return (
     <Particles
-      className="absolute top-0 left-0 right-0 bottom-0 blur-[70px]"
+      className="absolute top-0 left-0 right-0 bottom-0 blur-[100px]"
       id="tsparticles"
       init={particlesInit}
       loaded={particlesLoaded}
@@ -36,16 +39,13 @@ const BlurryParticles = () => {
         fpsLimit: 120,
         particles: {
           color: {
-            value: ['#BD10E0', '#B8E986', '#50E3C2', '#FFD300', '#E86363'],
+            value: ['#5546FB', '#4689FB', '#63DEC7', '#FBC846', '#FB4646'],
           },
           move: {
             enable: true,
-            outModes: {
-              default: 'bounce',
-            },
             random: true,
-            speed: 6,
             straight: false,
+            speed: 6,
           },
           number: {
             // density: {
@@ -55,13 +55,13 @@ const BlurryParticles = () => {
             value: 6,
           },
           opacity: {
-            value: { min: 0.1, max: 0.5 },
+            value: { min: 0.1, max: 0.3 },
           },
           shape: {
             type: 'circle',
           },
           size: {
-            value: { min: 33, max: 100 },
+            value: { min: isDesktop ? 200 : 50, max: isDesktop ? 400 : 250 },
           },
         },
         detectRetina: true,
