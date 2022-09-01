@@ -68,6 +68,7 @@
     "react-tsparticles": "^2.2.4",
     "three": "^0.142.0",
     "tsparticles": "^2.2.4",
+    "unique-names-generator": "^4.7.1",
     "zustand": "^4.0.0"
   },
   "resolutions": {

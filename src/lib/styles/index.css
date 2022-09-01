@@ -46,7 +46,7 @@
 
   /* POST CONTENT */
   .content {
-    @apply animate-fade-in max-w-[65ch] mx-auto p-5 mt-28;
+    @apply animate-fade-in max-w-[65ch] mx-auto p-5 md:p-0 mt-28;
   }
 
   /* INPUTS */

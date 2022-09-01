@@ -49,9 +49,9 @@ const MenuLink = forwardRef<HTMLElement, MenuLinkProps>(
         >
           {subtitle}
         </animated.span>
-        <div className="overflow-hidden">
+        <div className="overflow-hidden even:h-12 odd:h-[60px] md:even:h-[79.33px] md:odd:h-[106px]">
           <a
-            className="hover:!text-main reset-link block translate-y-full"
+            className="hover:!text-main reset-link block translate-y-full even:h-12 odd:h-[60px] md:even:h-[79.33px] md:odd:h-[106px]"
             href={`/${link}`}
           >
             <span>{link[0].toUpperCase() + link.slice(1)}</span>
