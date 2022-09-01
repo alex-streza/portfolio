@@ -11,7 +11,7 @@ const UserLiveblock = () => {
           count > 5 ? 'bg-green' : count > 2 ? 'bg-yellow' : 'bg-gray'
         } w-2 h-2 rounded-full`}
       />
-      {count} active
+      {count}
     </span>
   )
 }

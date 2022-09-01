@@ -116,7 +116,7 @@ const HTMLContent = ({
           width: '100%',
         })
         .to('a', {
-          yPercent: isDesktop ? -100 : -110,
+          yPercent: isDesktop ? -100 : -101,
           stagger: 0.33,
           ease: 'power3.easeInOut',
         })
@@ -127,10 +127,10 @@ const HTMLContent = ({
           width: '100%',
         })
         .to('#choosePath span', {
-          yPercent: isDesktop ? -100 : -110,
+          yPercent: isDesktop ? -100 : -101,
         })
         .to('#choosePath h2', {
-          yPercent: isDesktop ? 100 : 110,
+          yPercent: isDesktop ? 100 : 101,
         })
         .to('#choosePath hr', {
           width: '0%',

@@ -6,6 +6,7 @@ import BlogPost from '@components/BlogPost.astro'
 import BlogPostPreview from '@components/BlogPostPreview.astro'
 import NewsletterCard from '@components/cards/NewsletterCard'
 import PageTransition from '@components/transition/PageTransition'
+import FloatingMenu from '@components/cards/FloatingMenu'
 import { getPosts } from '@utils/server'
 
 const { content } = Astro.props
@@ -23,6 +24,10 @@ const {
 } = content
 
 const allPosts = getPosts(await Astro.glob('../pages/posts/*.mdx')).slice(0, 3)
+const url = `https://staging-blog.alexstreza.dev/posts/${title
+  .replaceAll(' ', '-')
+  .toLowerCase()}`
+console.log('first', url)
 ---
 
 <html lang={content.lang || 'en'}>
@@ -44,6 +49,10 @@ const allPosts = getPosts(await Astro.glob('../pages/posts/*.mdx')).slice(0, 3)
         {readTime}
       >
         <slot />
+        <FloatingMenu
+          text={`${title} by @alex_streza ${url}`}
+          client:only="react"
+        />
         <NewsletterCard />
         {allPosts.map((p, i) => (
           <div class="mt-10">
