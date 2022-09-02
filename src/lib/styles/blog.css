@@ -41,9 +41,10 @@ img {
   @apply rounded !mb-10 mx-auto;
 }
 figure > img {
-  @apply mb-0;
+  @apply !mb-0;
 }
-figcaption > p {
+figcaption > p,
+figcaption {
   @apply text-center text-gray-100 m-0 !mt-2;
 }
 

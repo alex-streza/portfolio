@@ -10,29 +10,17 @@ import FloatingMenu from '@components/cards/FloatingMenu'
 import { getPosts } from '@utils/server'
 
 const { content } = Astro.props
-const {
-  title,
-  description,
-  publishDate,
-  author,
-  heroImage,
-  permalink,
-  alt,
-  readTime,
-  likeCount,
-  commentCount,
-} = content
+const { title, description, publishDate, ogImage, readTime } = content
 
 const allPosts = getPosts(await Astro.glob('../pages/posts/*.mdx')).slice(0, 3)
-const url = `https://staging-blog.alexstreza.dev/posts/${title
+const permalink = `https://staging-blog.alexstreza.dev/posts/${title
   .replaceAll(' ', '-')
   .toLowerCase()}`
-console.log('first', url)
 ---
 
 <html lang={content.lang || 'en'}>
   <head>
-    <BaseHead {title} {description} {permalink} />
+    <BaseHead {title} {description} {ogImage} {permalink} alt={title} />
   </head>
 
   <body data-barba="wrapper">
@@ -42,19 +30,10 @@ console.log('first', url)
       data-barba="container"
       data-barba-namespace="blog"
     >
-      <BlogPost
-        {title}
-        {author}
-        {heroImage}
-        {publishDate}
-        {alt}
-        {likeCount}
-        {commentCount}
-        {readTime}
-      >
+      <BlogPost {publishDate} {readTime} alt={title}>
         <slot />
         <FloatingMenu
-          text={`${title} by @alex_streza ${url}`}
+          text={`${title} by @alex_streza ${permalink}`}
           client:only="react"
         />
         <NewsletterCard />

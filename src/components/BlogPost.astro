@@ -4,15 +4,11 @@ import Liveblock from './live/Liveblock'
 
 export interface Props {
   publishDate: string
-  likes: string
   readTime: string
-  likeCount: number
   shareCount: number
-  commentCount: number
 }
 
-const { publishDate, readTime, likeCount, shareCount, commentCount } =
-  Astro.props
+const { publishDate, readTime, shareCount } = Astro.props
 ---
 
 <section class="content">
@@ -28,17 +24,8 @@ const { publishDate, readTime, likeCount, shareCount, commentCount } =
       <span class="flex">
         <Liveblock client:only="react" /> active - {readTime} - {publishDate}
       </span>
-
-      <!-- <span class='hidden md:inline-block'> -</span> -->
-      <!-- <br class='md:hidden' /> -->
-      <span class="text-main">
-        <!-- {' ' + likeCount} -->
-        <!-- claps -->
-        <!-- {commentCount} -->
-        <!-- comments - -->
-        <!-- {shareCount} -->
-        <!-- shares -->
-      </span>
+      <!-- {shareCount} -->
+      <!-- shares -->
     </div>
   </header>
   <article>

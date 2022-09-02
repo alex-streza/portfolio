@@ -34,7 +34,7 @@
   }
 
   h2 {
-    @apply text-2xl md:text-4xl md:leading-[52px];
+    @apply !text-2xl md:text-4xl md:leading-[52px];
   }
 
   a {
