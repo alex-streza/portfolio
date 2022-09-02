@@ -1,23 +1,24 @@
 import LiveCursor from '@components/cursor/LiveCursor'
+import { useSessionStorageValue } from '@react-hookz/web'
 import { useEffect } from 'react'
+import {
+  adjectives,
+  animals,
+  colors,
+  uniqueNamesGenerator,
+} from 'unique-names-generator'
 import {
   RoomProvider,
   useOthers,
   useUpdateMyPresence,
 } from './liveblocks.config'
 
-import {
-  uniqueNamesGenerator,
-  adjectives,
-  colors,
-  animals,
-} from 'unique-names-generator'
-
 const UserLiveblock = () => {
   const others = useOthers()
   const count = others.count + 1
 
   const updateMyPresence = useUpdateMyPresence()
+  const [showCursors] = useSessionStorageValue('show_cursors', false)
 
   useEffect(() => {
     const randomName = uniqueNamesGenerator({
@@ -37,28 +38,31 @@ const UserLiveblock = () => {
       updateMyPresence({
         cursor: {
           x:
-            event.clientX +
-            ((doc && doc.scrollLeft) || (body && body.scrollLeft) || 0) -
-            ((doc && doc.clientLeft) || (body && body.clientLeft) || 0),
+            (event.clientX +
+              ((doc && doc.scrollLeft) || (body && body.scrollLeft) || 0) -
+              ((doc && doc.clientLeft) || (body && body.clientLeft) || 0)) /
+            window.innerWidth,
           y:
-            event.clientY +
-            ((doc && doc.scrollTop) || (body && body.scrollTop) || 0) -
-            ((doc && doc.clientTop) || (body && body.clientTop) || 0),
+            (event.clientY +
+              ((doc && doc.scrollTop) || (body && body.scrollTop) || 0) -
+              ((doc && doc.clientTop) || (body && body.clientTop) || 0)) /
+            window.innerHeight,
         },
       })
     })
   }, [updateMyPresence])
   return (
     <>
-      {others.map((other) => (
-        <LiveCursor
-          key={other.id}
-          x={other.presence?.cursor?.x}
-          y={other.presence?.cursor?.y}
-          color={other.presence?.color}
-          name={other.presence?.name}
-        />
-      ))}
+      {showCursors &&
+        others.map((other) => (
+          <LiveCursor
+            key={other.id}
+            x={other.presence?.cursor?.x * window.innerWidth}
+            y={other.presence?.cursor?.y * window.innerHeight}
+            color={other.presence?.color}
+            name={other.presence?.name}
+          />
+        ))}
       <span className="flex gap-1 items-center mr-1">
         <span
           className={`${

@@ -11,7 +11,7 @@ const Button = ({
   ...rest
 }: Props) => {
   const btnClassname =
-    'transition-all py-3 px-6 flex items-center justify-center gap-2.5 text-gray-1000 rounded outline-none font-semibold h-[48px] align-middle w-fit'
+    'transition-all py-3 px-6 flex items-center justify-center gap-2.5 text-gray-1000 rounded outline-none text-sm md:text-base font-semibold h-[48px] align-middle w-fit'
   const primaryClassname =
     'bg-main-600 hover:bg-main focus:bg-main-700 focus:shadow-main dark:disabled:bg-gray-300 disabled:bg-gray-100 disabled:shadow-none'
 

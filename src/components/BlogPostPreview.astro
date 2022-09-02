@@ -12,12 +12,12 @@ const { post } = Astro.props
   <header class="flex flex-col gap-3">
     <span>{post.frontmatter.publishDate}</span>
     <a href={post.url} class="p-2 reset-link">
-      <h2 class="!font-serif !text-3xl !leading-[40px]">
+      <h2 class="!font-serif !text-2xl md:!text-3xl !leading-[40px]">
         {post.frontmatter.title}
       </h2>
     </a>
   </header>
-  <p>{post.frontmatter.description}</p>
+  <p class="!mt-0">{post.frontmatter.description}</p>
   <a href={post.url} class="p-2 !pl-0">Read more</a>
 </article>
 
