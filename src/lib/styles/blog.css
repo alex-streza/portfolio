@@ -15,7 +15,7 @@
   }
 
   hr {
-    @apply !my-10 bg-white;
+    @apply my-10 bg-white;
   }
 
   a {
