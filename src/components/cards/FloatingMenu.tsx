@@ -13,7 +13,7 @@ const FloatingMenu = ({ text }: FloatingMenuProps) => {
   )
 
   return (
-    <div className="!fixed !left-0 !bottom-12 w-full grid place-content-center">
+    <div className="!sticky !left-0 !bottom-12 w-full grid place-content-center">
       <div className="dark:bg-gray-800 bg-light-gray-600 border-main flex gap-2 border p-2 rounded-8">
         <a
           href={`https://twitter.com/intent/tweet?text=${text}`}
