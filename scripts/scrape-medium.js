@@ -10,7 +10,7 @@ const generateHeaders = ({ date, title, description, readTime }) => {
     '---',
     'setup: |',
     "   import Layout from '../../layouts/BlogPost.astro'",
-    `publishDate: ${date}`,
+    `pubDate: ${date}`,
     `description: ${description}`,
     `title: ${title}`,
     `readTime: ${readTime}`,

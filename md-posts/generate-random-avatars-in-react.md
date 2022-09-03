@@ -1,7 +1,7 @@
 ---
 setup: |
   import Layout from '../../layouts/BlogPost.astro'
-publishDate: Jan 11 2022
+pubDate: Jan 11 2022
 description: Who doesn’t love mock data generators? Tools like Mockapi or the all-time favourite Faker open-source library which recently gave birth to FakerCloud. Those platforms provide ways to generate many…
 title: Generate Random Avatars in React
 readTime: 4 min read

@@ -1,7 +1,7 @@
 ---
 setup: |
   import Layout from '../../layouts/BlogPost.astro'
-publishDate: Jan 24 2022
+pubDate: Jan 24 2022
 description: Everyone who loves React in its entirety has had the unlucky moment of hating its optimization process. Here, I’m not talking about code splitting or server rendering but about the component level…
 title: React Conf 2021 — React Forget
 readTime: 2 min read

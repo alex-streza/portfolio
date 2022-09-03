@@ -1,7 +1,7 @@
 ---
 setup: |
   import Layout from '../../layouts/BlogPost.astro'
-publishDate: Feb 9 2022
+pubDate: Feb 9 2022
 description: You have an idea and want to turn it into a full-fledged product but are afraid of costs and don’t have the business acumen or knowledge to get funds for others to help you build it. That sounds a…
 title: How I Launched a SaaS in 60 Days with an Empty Pocket
 readTime: 6 min read

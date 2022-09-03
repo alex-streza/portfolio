@@ -1,7 +1,7 @@
 ---
 setup: |
   import Layout from '../../layouts/BlogPost.astro'
-publishDate: Jul 30 2021
+pubDate: Jul 30 2021
 description: 99% of the time it’s better, lighter and easier to use hooks, although classes provide some useful functionalities. A project may have both class & function components defined so you can mix and…
 title: Useful React Tricks for Beginners
 readTime: 4 min read

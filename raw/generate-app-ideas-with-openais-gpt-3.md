@@ -1,7 +1,7 @@
 ---
 setup: |
   import Layout from '../../layouts/BlogPost.astro'
-publishDate: Feb 9th 2022
+pubDate: Feb 9th 2022
 description: Every product whether it’s a SaaS, PaaS, DaaS (donut as a service app incoming), or a physical product was in its infancy an innocent idea brought in the hands of builders and innovators. My desire…
 title: Generate App Ideas With OpenAI’s GPT-3
 readTime: 4 min read

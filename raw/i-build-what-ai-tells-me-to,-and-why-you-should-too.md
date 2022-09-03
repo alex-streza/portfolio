@@ -1,7 +1,7 @@
 ---
 setup: |
   import Layout from '../../layouts/BlogPost.astro'
-publishDate: Apr 19th
+pubDate: Apr 19th
 description: Ideas are hard to come by, great ideas are rare but it doesn’t have to be like that. AI, the utterly abstract black box of endless creativity and wisdom can sometimes be of great aid at building the…
 title: I Build What AI Tells Me To, And Why You Should Too
 readTime: 4 min read

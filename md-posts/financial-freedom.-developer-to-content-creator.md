@@ -1,6 +1,6 @@
 ---
 layout: '../../layouts/BlogPost.astro'
-publishDate: Jan 22 2022
+pubDate: Jan 22 2022
 description: As developers we are often despised for our high paid jobs whether we’re working for FAANG companies with salaries of over $150k or a mere few thousands a month in other parts of the world. Since…
 title: Financial Freedom. Developer to Content Creator
 readTime: 6 min read

@@ -1,7 +1,7 @@
 ---
 setup: |
   import Layout from '../../layouts/BlogPost.astro'
-publishDate: Nov 14th 2021
+pubDate: Nov 14th 2021
 description: The days when the infinite money glitch of living off investments and dividends is boomer talk, crypto makes people millionaires left and right and other more broke than ever. Out of all the popular…
 title: Get Started With Solana Blockchain NFT Minting using Metaplex
 readTime: 5 min read

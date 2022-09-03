@@ -1,7 +1,7 @@
 ---
 setup: |
   import Layout from '../../layouts/BlogPost.astro'
-publishDate: Aug 15 2021
+pubDate: Aug 15 2021
 description: Lodash has been one of the most popular libraries on NPM for a long time with over 30M downloads per week as it brings great utility functions for every projects needs. It was regarded as a must have…
 title: JavaScript vs Lodash One-Liners
 readTime: 3 min read

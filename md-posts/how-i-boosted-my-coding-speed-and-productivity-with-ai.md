@@ -1,7 +1,7 @@
 ---
 setup: |
   import Layout from '../../layouts/BlogPost.astro'
-publishDate: Feb 27 2022
+pubDate: Feb 27 2022
 description: Last year was a marvelous time to be coding as AI got a major upgrade with the reveal of GPT-3 & GitHub Copilot which some considered to be the beginning of the end for programmers. But it’s really…
 title: How I Boosted My Coding Speed and Productivity with AI
 readTime: 4 min read

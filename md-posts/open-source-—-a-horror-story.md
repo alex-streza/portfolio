@@ -1,7 +1,7 @@
 ---
 setup: |
   import Layout from '../../layouts/BlogPost.astro'
-publishDate: Jan 21 2022
+pubDate: Jan 21 2022
 description: Things have been running wild in the Open Source community lately and this is a story of minds gone rogue. One bright and beautiful morning you wake up and decide to build something. The what, who…
 title: Open Source — A Horror Story
 readTime: 6 min read

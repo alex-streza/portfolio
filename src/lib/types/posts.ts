@@ -1,7 +1,7 @@
 export interface Frontmatter {
   title: string
   description: string
-  publishDate: string
+  pubDate: string
   readTime: string
 }
 

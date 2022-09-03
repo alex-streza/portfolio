@@ -1,7 +1,7 @@
 ---
 setup: |
   import Layout from '../../layouts/BlogPost.astro'
-publishDate: Jan 21 2022
+pubDate: Jan 21 2022
 description: Every year, the ES team gets many proposals to improve on the glorious JavaScript ecosystem and some of them eventually are implemented officially. In order to get accepted, a feature needs to go…
 title: New Year, New JavaScript Features from ES2022
 readTime: 7 min read

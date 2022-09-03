@@ -23,6 +23,7 @@
     "@astrojs/react": "^1.0.0",
     "@astrojs/sitemap": "^1.0.0",
     "@astrojs/tailwind": "^1.0.0",
+    "@astrojs/rss": "^1.0.0",
     "@typescript-eslint/eslint-plugin": "^5.33.1",
     "@typescript-eslint/parser": "^5.33.1",
     "astro": "^1.0.6",

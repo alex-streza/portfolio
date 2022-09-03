@@ -10,7 +10,7 @@ import FloatingMenu from '@components/cards/FloatingMenu'
 import { getPosts } from '@utils/server'
 
 const { content } = Astro.props
-const { title, description, publishDate, ogImage, readTime } = content
+const { title, description, pubDate, ogImage, readTime } = content
 
 const allPosts = getPosts(await Astro.glob('../pages/posts/*.mdx')).slice(0, 3)
 const permalink = `https://staging-blog.alexstreza.dev/posts/${title
@@ -30,7 +30,7 @@ const permalink = `https://staging-blog.alexstreza.dev/posts/${title
       data-barba="container"
       data-barba-namespace="blog"
     >
-      <BlogPost {publishDate} {readTime} alt={title}>
+      <BlogPost {pubDate} {readTime} alt={title}>
         <slot />
         <FloatingMenu
           text={`${title} by @alex_streza ${permalink}`}

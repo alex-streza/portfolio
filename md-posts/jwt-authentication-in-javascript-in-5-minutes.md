@@ -1,7 +1,7 @@
 ---
 setup: |
   import Layout from '../../layouts/BlogPost.astro'
-publishDate: Aug 31 2021
+pubDate: Aug 31 2021
 description: Authentication is a complex and mostly divided topic with some preferring Stateful Session Cookies approach and others choosing Stateless JWTs. I’m one of the latter as I like how quick and effective…
 title: JWT Authentication in JavaScript in 5 Minutes
 readTime: 4 min read

@@ -1,6 +1,6 @@
 ---
 layout: '../../layouts/BlogPost.astro'
-publishDate: Aug 23rd 2021
+pubDate: Aug 23rd 2021
 description: Whether you’re a designer or a developer, you’ve certainly heard of Figma. It’s a free tool that allows creating design mockups and prototypes with ease using the core features but also has an…
 title: Figma Plugins I Cannot Live Without
 readTime: 4 min read

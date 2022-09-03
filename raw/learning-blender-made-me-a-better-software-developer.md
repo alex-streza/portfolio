@@ -1,22 +1,20 @@
 ---
 setup: |
-   import Layout from '../../layouts/BlogPost.astro'
-publishDate: Jan 31st
+  import Layout from '../../layouts/BlogPost.astro'
+pubDate: Jan 31st
 description: That was me in 2017 when I first heard of it, as I wanted to create a game using Unity and I wanted to create custom 3D models. Blender was the most popular free 3D software, or at least that was the…
 title: Learning Blender Made Me A Better Software Developer
 readTime: 5 min read
 name: Alex Streza
 ---
+
 ![](https://miro.medium.com/max/1400/1*KTM29ODeFrmr050nQe5SjA.png)
 
-Learning Blender Made Me A Better Software Developer
-====================================================
+# Learning Blender Made Me A Better Software Developer
 
-Blender’s interface is scary at first sight but it shouldn’t be
----------------------------------------------------------------
+## Blender’s interface is scary at first sight but it shouldn’t be
 
-Intro
-=====
+# Intro
 
 That was me in 2017 when I first heard of it, as I wanted to create a game using [Unity](https://unity.com/) and I wanted to create custom 3D models. Blender was the most popular free 3D software, or at least that was the first result Google gave me.
 
@@ -34,8 +32,7 @@ Smooth, stunning animations, 3D models, tiny interactions were some of the thing
 
 I sincerely had no idea how most of the websites were built so I researched it, and boy what a research that was! I’m proud I can finally say I have at least some idea 😅.
 
-How to 3D in Web?
-=================
+# How to 3D in Web?
 
 Some extremely smart people created WebGL which is a low-level 3D API native to the browser that uses the HTML Canvas and provides access through JS. Unfortunately, it’s hard as it requires learning GLSL a language similar to C that executes directly on the GPU, on top of that you need to know **math.**
 
@@ -47,8 +44,7 @@ Three.js is a wrapper over the existing WebGL API and provides a simpler, more J
 
 Let me give some example websites and discuss the possible tooling involved on the development side of things.
 
-1\. [Github](https://github.com/)
----------------------------------
+## 1\. [Github](https://github.com/)
 
 ![](https://miro.medium.com/max/1400/1*O6MXfVZ5Xw6BYmGCtylGnA.png)
 
@@ -58,8 +54,7 @@ You likely had no idea Github used ThreeJS in their landing page, it’s insane 
 
 Tooling: React & [GSAP](https://greensock.com/gsap/) & Three.js (only for this landing page)
 
-**2\.** [**Swell Gallery**](https://gallery.swell.ripple.com/)
---------------------------------------------------------------
+## **2\.** [**Swell Gallery**](https://gallery.swell.ripple.com/)
 
 ![](https://miro.medium.com/max/1400/1*C8qQtkLOwGGWaUiKBZGasA.png)
 
@@ -71,8 +66,7 @@ Minimalistic interface with a lot of emphasis on the showcased art, uses backgro
 
 Tooling: Next.js & [GSAP](https://greensock.com/gsap/) & Three.js (or [react-three-fiber](https://github.com/pmndrs/react-three-fiber))
 
-3\. [Three.js Journey](https://threejs-journey.com/)
-----------------------------------------------------
+## 3\. [Three.js Journey](https://threejs-journey.com/)
 
 ![](https://miro.medium.com/max/1400/1*BpJBITO4vLk6J3-SX5VoTw.png)
 
@@ -88,8 +82,7 @@ Tooling: Vanilla JS & [GSAP](https://greensock.com/gsap/) & Three.js
 
 Other than the smooth experience, what makes these websites so unique is the content which consists of 3D models most of the time. Content is **king**. Blender is extremely powerful for anything 3D-related from sculpting to animation and composition and the best thing is it’s **free.**
 
-How to Blender?
-===============
+# How to Blender?
 
 2 words. Tutorials and Patience.
 

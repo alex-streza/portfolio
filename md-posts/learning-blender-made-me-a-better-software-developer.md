@@ -1,7 +1,7 @@
 ---
 setup: |
   import Layout from '../../layouts/BlogPost.astro'
-publishDate: Jan 31 2022
+pubDate: Jan 31 2022
 description: That was me in 2017 when I first heard of it, as I wanted to create a game using Unity and I wanted to create custom 3D models. Blender was the most popular free 3D software, or at least that was the…
 title: Learning Blender Made Me A Better Software Developer
 readTime: 5 min read

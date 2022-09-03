@@ -1,7 +1,7 @@
 ---
 setup: |
   import Layout from '../../layouts/BlogPost.astro'
-publishDate: Nov 25 2021
+pubDate: Nov 25 2021
 description: A few weeks ago Github announced a state-of-the-art, AI-based pair programmer beta extension for VSCode which shook considerably the software development industry. While many were concerned this AI…
 title: Master Github Copilot
 readTime: 6 min read

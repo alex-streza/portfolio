@@ -1,7 +1,7 @@
 ---
 setup: |
   import Layout from '../../layouts/BlogPost.astro'
-publishDate: Mar 31 2022
+pubDate: Mar 31 2022
 description: Blog images are essential in driving traffic to your blog and increasing your articles reach and performance. However, it’s not always easy to find blog images that are both engaging, unique and…
 title: I Used AI To Create Marvelous Art For Blog Images
 readTime: 5 min read

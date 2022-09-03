@@ -1,19 +1,18 @@
 ---
 setup: |
-   import Layout from '../../layouts/BlogPost.astro'
-publishDate: Mar 31st
+  import Layout from '../../layouts/BlogPost.astro'
+pubDate: Mar 31st
 description: Blog images are essential in driving traffic to your blog and increasing your articles reach and performance. However, it’s not always easy to find blog images that are both engaging, unique and…
 title: I Used AI To Create Marvelous Art For Blog Images
 readTime: 5 min read
 name: Alex Streza
 ---
+
 ![](https://miro.medium.com/max/700/1*EKO5gY_YIZkq79QF7xAZnQ.png)
 
-I Used AI To Create Marvelous Art For Blog Images
-=================================================
+# I Used AI To Create Marvelous Art For Blog Images
 
-Make your own art in seconds
-----------------------------
+## Make your own art in seconds
 
 Blog images are essential in driving traffic to your blog and increasing your articles reach and performance. However, it’s not always easy to find blog images that are both engaging, unique and aesthetically pleasing. So let’s **generate** them!
 
@@ -21,8 +20,7 @@ Blog images are essential in driving traffic to your blog and increasing your ar
 
 Developers = AI Artists
 
-Current State of Blog Images
-============================
+# Current State of Blog Images
 
 > Fancy but repetitive
 
@@ -38,8 +36,7 @@ The **overused** coding stock photos, they are great but nowadays they are every
 
 Placeholders to keep the reader **interested** but what good if the image is completely unrelated to the article. No question about their effectiveness, having attention grabbing pictures boosts retention and reduces click away ratios but I believe it could be done better.
 
-AI Art Generating Platform
-==========================
+# AI Art Generating Platform
 
 > Clean implementation but difficult to scale
 
@@ -81,15 +78,13 @@ The ML model will now generate the image through multiple iterations and you can
 
 Hopefully it’s been less than that but now you can view the end result and every decision (change) the AI made across multiple iterations.
 
-Alternatives
-============
+# Alternatives
 
 > Everyone is doing AI nowadays
 
 If you don’t like having to wait or to run some scripts yourself you may try any of the following feature-rich platforms.
 
-1\. [ArtBreeder](https://www.artbreeder.com/browse)
----------------------------------------------------
+## 1\. [ArtBreeder](https://www.artbreeder.com/browse)
 
 Yep it **breeds** art, sounds a bit creepy and may showcase a mundane interface but the outputs are anything but simple. Generate art from a multitude of categories and styles from landscape to fantasy characters.
 
@@ -101,8 +96,7 @@ The overall array of editing tools and features is mind blowing.
 
 ArtBreeder Categories
 
-2\. [GoArt](https://goart.fotor.com/) (Fotor)
----------------------------------------------
+## 2\. [GoArt](https://goart.fotor.com/) (Fotor)
 
 As I’m writing this article I wondered, what if I gave another AI art tool the output of the first one, what will it **make**? will it **break**? or will it **blossom**.
 
@@ -114,8 +108,7 @@ This is how my previous **AI revolution** painting (Generated with text2art) tur
 
 GoArt Robot Revolution
 
-3\. [Dream](https://play.google.com/store/apps/details?id=com.womboai.wombodream&hl=en_US&gl=US) (by WOMBO)
------------------------------------------------------------------------------------------------------------
+## 3\. [Dream](https://play.google.com/store/apps/details?id=com.womboai.wombodream&hl=en_US&gl=US) (by WOMBO)
 
 This list wouldn’t have been complete without a **mobile** app. Dream combines the best of both worlds performance (speed) & varied customizable options and splendid UI all packed in your smartphone.
 
@@ -131,13 +124,10 @@ Get your Medium subscription now to get your knowledge **over 9000:**
 
 [
 
-Join Medium with my referral link - Alex Streza
------------------------------------------------
+## Join Medium with my referral link - Alex Streza
 
 ### As a Medium member, a portion of your membership fee goes to writers you read, and you get full access to every story…
 
 medium.com
-
-
 
 ](/@alex.streza/membership)

@@ -1,7 +1,7 @@
 ---
 setup: |
   import Layout from '../../layouts/BlogPost.astro'
-publishDate: Feb 19 2022
+pubDate: Feb 19 2022
 description: If you are a programmer and have a CS degree than you understand how some subjects are awfully difficult for no reason and not worth the struggle. This article isn’t about one of those, rather about…
 title: I Tried OpenCV Face Recognition in C++
 readTime: 5 min read

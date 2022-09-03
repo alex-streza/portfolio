@@ -1,7 +1,7 @@
 ---
 setup: |
   import Layout from '../../layouts/BlogPost.astro'
-publishDate: Aug 18th 2021
+pubDate: Aug 18th 2021
 description: Nowadays every project has a ton of dependencies and a Frontend library like React is the perfect candidate for a black hole-sized node_modules folder. With NPM you can easily download libraries and…
 title: Great NPM Libraries for React
 readTime: 4 min read

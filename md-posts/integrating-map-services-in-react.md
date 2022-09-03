@@ -1,7 +1,7 @@
 ---
 setup: |
   import Layout from '../../layouts/BlogPost.astro'
-publishDate: Aug 18 2021
+pubDate: Aug 18 2021
 description: For years there’s been a never-ending debate in the development industry on which is the best map provider, let’s see who wins the Game of Map Providers. Google Maps SDK remained king for a long time…
 title: Integrating Map Services in React
 readTime: 4 min read

@@ -1,19 +1,18 @@
 ---
 setup: |
-   import Layout from '../../layouts/BlogPost.astro'
-publishDate: Feb 19th
+  import Layout from '../../layouts/BlogPost.astro'
+pubDate: Feb 19th
 description: If you are a programmer and have a CS degree than you understand how some subjects are awfully difficult for no reason and not worth the struggle. This article isn’t about one of those, rather about…
 title: I Tried OpenCV Face Recognition in C++
 readTime: 5 min read
 name: Alex Streza
 ---
+
 ![](https://miro.medium.com/max/700/1*BnfS5mpV0sfZbms6Qk_zZg.png)
 
-I Tried OpenCV Face Recognition in C++
-======================================
+# I Tried OpenCV Face Recognition in C++
 
-It was a horrible & creepy mistake
-==================================
+# It was a horrible & creepy mistake
 
 If you are a programmer and have a CS degree than you understand how some subjects are awfully difficult for no reason and not worth the struggle. This article isn’t about one of those, rather about those who’s titles and description sound fascinating using more buzzwords than Crypto DAO projects looking for funding.
 
@@ -27,8 +26,7 @@ Wait what? Yeah you heard me right, I get C++ is light years faster than Python 
 
 You weep a bit and quickly check you were still on mute, damnit Zoom calls, but go on and pay attention as the coding example of the day unveils. **Face recognition**. Your eyes spark with interest and your tears go dry, you are ready to write some glorious code and conquer the world of AI & ML.
 
-Face Detection vs. Face Recognition
-===================================
+# Face Detection vs. Face Recognition
 
 > I don’t like nouns, aren’t those the exact same thing? Nope.
 
@@ -42,15 +40,13 @@ Face recognition can work with masks and it’s scary
 
 Well that really sounds interesting so how come it ends up being a disappointing experience? Simply put **presentation** is key and code left unexplained is nothing more than irritating.
 
-Machine Learning In a Nutshell
-==============================
+# Machine Learning In a Nutshell
 
 > Buzzwords everywhere
 
 Most of Machine Learning implies using a ‘**shady**’ [Black Box](https://engineering.dynatrace.com/blog/understanding-black-box-ml-models-with-explainable-ai/) algorithm on an immense enough well structured and representative pool of a data (**training** set) to find correlations and then apply it’s discoveries to a new set of data called **testing** set to tweak and configure it for a high enough good prediction rate. (this is my very abstract understanding at least)
 
-The Code
-========
+# The Code
 
 > An overly simplified explanation
 

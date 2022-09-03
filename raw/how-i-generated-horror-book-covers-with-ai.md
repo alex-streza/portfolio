@@ -1,7 +1,7 @@
 ---
 setup: |
   import Layout from '../../layouts/BlogPost.astro'
-publishDate: Mar 22nd
+pubDate: Mar 22nd
 description: Halloween is not around the corner but that’s not an excuse to skip reading terrifying tales that make your spine shiver. Stories that keep you awake at night covered in goosebumps. Add AI on top of…
 title: How I Generated Horror Book Covers With AI
 readTime: 6 min read

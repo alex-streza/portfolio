@@ -1,7 +1,7 @@
 ---
 setup: |
   import Layout from '../../layouts/BlogPost.astro'
-publishDate: Apr 11 2022
+pubDate: Apr 11 2022
 description: No, I’m not selling courses or e-books, nor am I some sort of “guru” and my lovely audience is not in the tens of thousands. I’m just a regular person, who figured out how to make some bucks by…
 title: How I Earn 1300$ A Month Writing Stuff People Actually Read
 readTime: 4 min read

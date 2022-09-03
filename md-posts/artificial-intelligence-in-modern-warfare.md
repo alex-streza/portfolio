@@ -1,6 +1,6 @@
 ---
 layout: '../../layouts/BlogPost.astro'
-publishDate: Mar 4 2022
+pubDate: Mar 4 2022
 description: Artificial Intelligence (AI) has found its way onto the battlefield, and we’re just beginning to see its impact on modern warfare. Military applications of AI have the potential to transform how we…
 title: Artificial Intelligence In Modern Warfare
 readTime: 6 min read

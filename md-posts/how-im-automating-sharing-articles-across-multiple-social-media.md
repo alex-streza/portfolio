@@ -1,7 +1,7 @@
 ---
 setup: |
   import Layout from '../../layouts/BlogPost.astro'
-publishDate: Mar 10 2022
+pubDate: Mar 10 2022
 description: With this guide, you can now share your articles automatically across different social media platforms without having to do it manually every time.
 title: How I’m Automating Sharing Articles Across Multiple Social Media
 readTime: 5 min read

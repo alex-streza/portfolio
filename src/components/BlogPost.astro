@@ -3,12 +3,12 @@ import { Icon } from 'astro-icon'
 import Liveblock from './live/Liveblock'
 
 export interface Props {
-  publishDate: string
+  pubDate: string
   readTime: string
   shareCount: number
 }
 
-const { publishDate, readTime, shareCount } = Astro.props
+const { pubDate, readTime, shareCount } = Astro.props
 ---
 
 <section class="content">
@@ -22,7 +22,7 @@ const { publishDate, readTime, shareCount } = Astro.props
     </a>
     <div class="ml-auto text-sm">
       <span class="flex">
-        <Liveblock client:only="react" /> active - {readTime} - {publishDate}
+        <Liveblock client:only="react" /> active - {readTime} - {pubDate}
       </span>
       <!-- {shareCount} -->
       <!-- shares -->

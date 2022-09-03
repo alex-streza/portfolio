@@ -1,7 +1,7 @@
 ---
 setup: |
   import Layout from '../../layouts/BlogPost.astro'
-publishDate: Jan 30th 2022
+pubDate: Jan 30th 2022
 description: Every Frontend Developer will at some point in their journey write an ungodly sized form and often question their existence for countless hours. Serializing fields, error handling, validation, field…
 title: Form Handling in React
 readTime: 3 min read

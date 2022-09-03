@@ -1,7 +1,7 @@
 ---
 setup: |
   import Layout from '../../layouts/BlogPost.astro'
-publishDate: Aug 17th 2021
+pubDate: Aug 17th 2021
 description: There are many libraries that provide ways to make HTTP requests for the frontend but one remained the de facto leader for many years and that is Axios. It’s a neat library which allows for more…
 title: Data Fetching with React Query & Axios
 readTime: 4 min read
