@@ -21,7 +21,7 @@ const BlurryParticles = () => {
 
   return (
     <Particles
-      className="absolute top-0 left-0 right-0 bottom-0 blur-[90px]"
+      className="fixed w-screen h-screen top-0 left-0 right-0 bottom-0 blur-[100px]"
       id="tsparticles"
       init={particlesInit}
       loaded={particlesLoaded}
