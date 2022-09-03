@@ -1,6 +1,7 @@
 import LiveCursor from '@components/cursor/LiveCursor'
 import { useSessionStorageValue } from '@react-hookz/web'
-import { useEffect } from 'react'
+import { getRandomColor } from '@utils/color'
+import { useCallback, useEffect } from 'react'
 import {
   adjectives,
   animals,
@@ -18,19 +19,11 @@ const UserLiveblock = () => {
   const count = others.count + 1
 
   const updateMyPresence = useUpdateMyPresence()
+
   const [showCursors] = useSessionStorageValue('show_cursors', false)
 
-  useEffect(() => {
-    const randomName = uniqueNamesGenerator({
-      dictionaries: [adjectives, colors, animals],
-      length: 2,
-    })
-    updateMyPresence({
-      color: '#' + Math.floor(Math.random() * 16777215).toString(16),
-      name: randomName,
-    })
-
-    document.body.addEventListener('mousemove', (event) => {
+  const handleUpdateCursor = useCallback(
+    (event) => {
       const eventDoc = document
       const doc = eventDoc.documentElement
       const body = eventDoc.body
@@ -49,8 +42,28 @@ const UserLiveblock = () => {
             window.innerHeight,
         },
       })
-    })
-  }, [updateMyPresence])
+    },
+    [updateMyPresence],
+  )
+
+  useEffect(() => {
+    if (showCursors) {
+      const randomName = uniqueNamesGenerator({
+        dictionaries: [adjectives, colors, animals],
+        length: 2,
+      })
+
+      updateMyPresence({
+        color: getRandomColor(),
+        name: randomName,
+      })
+      document.body.addEventListener('mousemove', handleUpdateCursor)
+    } else {
+      updateMyPresence({})
+      document.body.removeEventListener('mousemove', handleUpdateCursor)
+    }
+  }, [handleUpdateCursor, showCursors, updateMyPresence])
+
   return (
     <>
       {showCursors &&

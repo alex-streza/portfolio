@@ -247,7 +247,7 @@ const HTML = () => {
         0,
       ]}
     >
-      <ScrollControls horizontal damping={10}>
+      <ScrollControls horiz ontal damping={10}>
         <Scroll>
           <Html
             className="h-full w-full px-5 md:px-32 pt-0"
