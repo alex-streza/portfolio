@@ -145,20 +145,20 @@ const Content = () => {
         <DesignProjectCard
           title="Snow Fox - Design System"
           description="Building an entire Design System from scratch is a huge undertaking. I undertook this project to build a system that I could use for my own personal projects and released it to the Figma community."
-          image="/assets/images/snow-fox-design-system/0.png"
+          image="https://imagedelivery.net/_X5WqasCPTrKkrSW6EvwJg/59c5892f-fadf-467a-efbc-012ffb79fd00/public"
           link="https://www.figma.com/community/file/1120750897470911763"
         >
           <a href="https://www.figma.com" aria-label="figma">
             <Figma color="#F24E1E" size={40} />
           </a>
-          <a href="https://www.producthunt.com" aria-label="product hunt">
+          <a href="https://www.proucthunt.com" aria-label="product hunt">
             <Producthunt color="#DA552F" size={40} />
           </a>
         </DesignProjectCard>
         <DesignProjectCard
           title="3D Resources"
           description="Looking to create great 3D experiences? Then you need 3D Resources! This collection of resources is perfect for creative developers & artists who want to push the boundaries of what's possible."
-          image="/assets/images/3d-resources/1.png"
+          image="https://imagedelivery.net/_X5WqasCPTrKkrSW6EvwJg/54117ca0-f9c0-429b-e169-6bc6a9738500/public"
           link="https://3d-resources.co"
         >
           <a href="https://www.blender.org" aria-label="figma">
@@ -174,7 +174,7 @@ const Content = () => {
         <DesignProjectCard
           title="Genidea"
           description="For my Master's Degree project I designed & developed an app that generates app ideas with OpenAI and allows collecting them as NFTs."
-          image="/assets/images/genidea/1.png"
+          image="https://imagedelivery.net/_X5WqasCPTrKkrSW6EvwJg/4264ae59-704a-4f94-5a2a-d97c31680d00/public"
           link="http://devnet.genidea.app/"
         >
           <a href="https://www.figma.com" aria-label="figma">
@@ -193,7 +193,7 @@ const Content = () => {
         <DesignProjectCard
           title="Portfolio"
           description="Portfolio websites need to be outstanding as much as the projects showcased. Building a 3D interactive experience to present my expertise in a glamorous way."
-          image="/assets/images/portfolio/0.png"
+          image="https://imagedelivery.net/_X5WqasCPTrKkrSW6EvwJg/0f12ad13-03a3-4947-b6c0-fee1fade2c00/public"
         >
           <a href="https://www.figma.com" aria-label="figma">
             <Figma color="#F24E1E" size={40} />

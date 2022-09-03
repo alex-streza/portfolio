@@ -4,6 +4,7 @@ import tailwind from '@astrojs/tailwind'
 import { defineConfig } from 'astro/config'
 import sitemap from '@astrojs/sitemap'
 import image from '@astrojs/image'
+import robotsTxt from 'astro-robots-txt'
 
 import compress from 'astro-compress'
 
@@ -18,6 +19,9 @@ export default defineConfig({
       chunkSizeWarningLimit: 1000,
     },
   },
+  experimental: {
+    integrations: true,
+  },
   integrations: [
     react(),
     tailwind({
@@ -29,5 +33,6 @@ export default defineConfig({
     mdx(),
     image(),
     compress(),
+    robotsTxt(),
   ],
 })

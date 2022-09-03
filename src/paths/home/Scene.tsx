@@ -1,11 +1,8 @@
 import { Canvas, useThree, Viewport } from '@react-three/fiber'
 
+import Intro from '@components/transition/Intro'
 import Loader from '@components/transition/Loader'
-import {
-  useLocalStorageValue,
-  useMediaQuery,
-  useSessionStorageValue,
-} from '@react-hookz/web'
+import { useMediaQuery, useSessionStorageValue } from '@react-hookz/web'
 import { animated, config, SpringRef, useSprings } from '@react-spring/three'
 import { Html, useTexture } from '@react-three/drei'
 import { EffectComposer, SSAO } from '@react-three/postprocessing'
@@ -13,32 +10,30 @@ import gsap from 'gsap'
 import {
   createRef,
   Suspense,
+  useCallback,
   useEffect,
   useLayoutEffect,
   useMemo,
   useRef,
-  useState,
 } from 'react'
 import MenuLink from './MenuLink'
 import ShowcaseImage from './ShowcaseImage'
-import HTML from '@paths/designer/Html'
-import Intro from '@components/transition/Intro'
 
 const images = {
   0: [
-    '/assets/images/portfolio/8.png',
-    '/assets/images/portfolio/7.png',
-    '/assets/images/portfolio/9.png',
+    'https://imagedelivery.net/_X5WqasCPTrKkrSW6EvwJg/99ef4318-b438-4f4c-c852-8c17cb57d900/public',
+    'https://imagedelivery.net/_X5WqasCPTrKkrSW6EvwJg/a61f68b4-c6b0-4659-d3aa-8ff4c8637a00/public',
+    'https://imagedelivery.net/_X5WqasCPTrKkrSW6EvwJg/720ca2e6-113e-4633-3838-3fa478e1a000/public',
   ],
   1: [
-    '/assets/images/portfolio/5.png',
-    '/assets/images/3d-resources/4.png',
-    '/assets/images/genidea/1.png',
+    'https://imagedelivery.net/_X5WqasCPTrKkrSW6EvwJg/2b2d7974-3e3a-480f-28a0-1f63fdd9f400/public',
+    'https://imagedelivery.net/_X5WqasCPTrKkrSW6EvwJg/64f849da-a63a-4823-2465-f40f1f7bbc00/public',
+    'https://imagedelivery.net/_X5WqasCPTrKkrSW6EvwJg/4264ae59-704a-4f94-5a2a-d97c31680d00/public',
   ],
   2: [
-    '/assets/images/genidea/2.png',
-    '/assets/images/snow-fox-design-system/0.png',
-    '/assets/images/3d-resources/1.png',
+    'https://imagedelivery.net/_X5WqasCPTrKkrSW6EvwJg/eb192c8c-b018-4904-d6a1-05b63f750d00/public',
+    'https://imagedelivery.net/_X5WqasCPTrKkrSW6EvwJg/9c3d8f72-59fe-4204-6eb7-622842146800/public',
+    'https://imagedelivery.net/_X5WqasCPTrKkrSW6EvwJg/54117ca0-f9c0-429b-e169-6bc6a9738500/public',
   ],
 }
 const paths = ['writer', 'developer', 'designer']
@@ -97,17 +92,16 @@ const HTMLContent = ({
       .map((_, i) => itemsRefs.current[i] || createRef())
   }
 
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  const initialRevealedIntro = useMemo(() => revealedIntro, [])
+  const refInitialRevealedIntro = useRef(revealedIntro)
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     const ctx = gsap.context(() => {
       gsap
         .timeline({
           ease: 'power3.easeInOut',
         })
         .to(menuRef.current, {
-          delay: initialRevealedIntro ? 0.5 : 3.5,
+          delay: refInitialRevealedIntro.current ? 0.5 : 3.5,
           opacity: 1,
           duration: 0,
         })
@@ -136,64 +130,70 @@ const HTMLContent = ({
           width: '0%',
         })
     }, menuRef)
-    return () => ctx.revert()
 
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+    return () => ctx.revert()
   }, [isDesktop])
 
   useEffect(() => {
     setPath('')
   }, [setPath])
 
-  const handleMouseLeave = (i) => {
-    const position = itemsRefs.current[i].current.getBoundingClientRect()
-    const x = (position.x / window.innerWidth) * 2 - 1
-    const y =
-      -(position.y / window.innerHeight) * 2 + (i == 2 ? 1.2 : i == 1 ? 1 : 0.8)
+  const handleMouseLeave = useCallback(
+    (i) => {
+      const position = itemsRefs.current[i].current.getBoundingClientRect()
+      const x = (position.x / window.innerWidth) * 2 - 1
+      const y =
+        -(position.y / window.innerHeight) * 2 +
+        (i == 2 ? 1.2 : i == 1 ? 1 : 0.8)
 
-    const api = i === 0 ? apiWriter : i === 1 ? apiDeveloper : apiDesigner
+      const api = i === 0 ? apiWriter : i === 1 ? apiDeveloper : apiDesigner
 
-    api.start((i) => ({
-      position: [x, y, 0.1 * i],
-      rotation: [0, 0, 0],
-      scale: [0, 0, 0],
-    }))
-    paths.forEach((path, index) => {
-      if (index === i) {
-        document.documentElement.classList.remove(path)
-        setPath('')
-      }
-    })
-  }
+      api.start((i) => ({
+        position: [x, y, 0.1 * i],
+        rotation: [0, 0, 0],
+        scale: [0, 0, 0],
+      }))
+      paths.forEach((path, index) => {
+        if (index === i) {
+          document.documentElement.classList.remove(path)
+          setPath('')
+        }
+      })
+    },
+    [apiDesigner, apiDeveloper, apiWriter, setPath],
+  )
 
-  const handleMouseEnter = (i) => {
-    const position = itemsRefs.current[i].current.getBoundingClientRect()
-    const x = (position.x / window.innerWidth) * 2 - 1
-    const y =
-      -(position.y / window.innerHeight) * 2 +
-      (i == 2 ? 1.05 : i == 1 ? 0.85 : 0.7)
+  const handleMouseEnter = useCallback(
+    (i) => {
+      const position = itemsRefs.current[i].current.getBoundingClientRect()
+      const x = (position.x / window.innerWidth) * 2 - 1
+      const y =
+        -(position.y / window.innerHeight) * 2 +
+        (i == 2 ? 1.05 : i == 1 ? 0.85 : 0.7)
 
-    const api = i === 0 ? apiWriter : i === 1 ? apiDeveloper : apiDesigner
+      const api = i === 0 ? apiWriter : i === 1 ? apiDeveloper : apiDesigner
 
-    api.start((i) => ({
-      position: [
-        mapNumber(x, -1, 1, -viewport.width / 2, viewport.width / 2) + i * 1,
-        mapNumber(y, -1, 1, -viewport.width / 2, viewport.width / 2),
-        i * 0.1,
-      ],
-      rotation: [0, 0.2, ((i == 0 ? i : -i) + 1) * 0.3],
-      scale: [0.7, 0.3, 1],
-    }))
+      api.start((i) => ({
+        position: [
+          mapNumber(x, -1, 1, -viewport.width / 2, viewport.width / 2) + i * 1,
+          mapNumber(y, -1, 1, -viewport.width / 2, viewport.width / 2),
+          i * 0.1,
+        ],
+        rotation: [0, 0.2, ((i == 0 ? i : -i) + 1) * 0.3],
+        scale: [0.7, 0.3, 1],
+      }))
 
-    paths.forEach((path, index) => {
-      if (index === i) {
-        document.documentElement.classList.add(path)
-        setPath(path)
-      } else {
-        document.documentElement.classList.remove(path)
-      }
-    })
-  }
+      paths.forEach((path, index) => {
+        if (index === i) {
+          document.documentElement.classList.add(path)
+          setPath(path)
+        } else {
+          document.documentElement.classList.remove(path)
+        }
+      })
+    },
+    [apiDesigner, apiDeveloper, apiWriter, setPath, viewport.width],
+  )
 
   return (
     <div

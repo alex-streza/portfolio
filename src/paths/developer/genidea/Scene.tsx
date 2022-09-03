@@ -26,7 +26,14 @@ const Collisions = () => {
   })
 }
 
-const urls = [...Array(6)].map((_, i) => `/assets/images/genidea/${i + 1}.png`)
+const urls = [
+  'https://imagedelivery.net/_X5WqasCPTrKkrSW6EvwJg/4264ae59-704a-4f94-5a2a-d97c31680d00/public',
+  'https://imagedelivery.net/_X5WqasCPTrKkrSW6EvwJg/eb192c8c-b018-4904-d6a1-05b63f750d00/public',
+  'https://imagedelivery.net/_X5WqasCPTrKkrSW6EvwJg/07bae8d0-74e9-4f8b-8947-86fed8387a00/public',
+  'https://imagedelivery.net/_X5WqasCPTrKkrSW6EvwJg/0ba8db9f-9533-471c-92ba-ecf8f7567200/public',
+  'https://imagedelivery.net/_X5WqasCPTrKkrSW6EvwJg/d3785d6f-b129-4698-983d-d027789f1a00/public',
+  'https://imagedelivery.net/_X5WqasCPTrKkrSW6EvwJg/3fc49f03-cd10-46a8-0f44-3d738f3eb600/public',
+]
 
 const Scene = () => {
   const { debug } = useControls({
