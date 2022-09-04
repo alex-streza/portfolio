@@ -1,6 +1,5 @@
 ---
-setup: |
-  import Layout from '../../layouts/BlogPost.astro'
+layout: '../../layouts/BlogPost.astro'
 pubDate: Jan 21 2022
 description: Things have been running wild in the Open Source community lately and this is a story of minds gone rogue. One bright and beautiful morning you wake up and decide to build something. The what, who…
 title: Open Source — A Horror Story
@@ -8,7 +7,9 @@ readTime: 6 min read
 name: Alex Streza
 ---
 
-![](https://miro.medium.com/max/1400/1*MuKzDwX6gFMou3h4FTfYqg.png)
+import BlogImage from '@components/image/BlogImage'
+
+<BlogImage src="https://miro.medium.com/max/1400/1*MuKzDwX6gFMou3h4FTfYqg.png" />
 
 # Open Source — A Horror Story
 
@@ -40,9 +41,9 @@ On the 5th of January 2022, a new version of Faker was released by Marak, versio
 
 The ‘Endgame’ commit includes the deletion of all the source files except for some config and Readme.md files.
 
-![](https://miro.medium.com/max/1400/1*_iZpSTfzBrbvZJNUqqPzmw.png)
-
-Endgame of faker
+<BlogImage src="https://miro.medium.com/max/1400/1*_iZpSTfzBrbvZJNUqqPzmw.png">
+  Endgame of faker
+</BlogImage>
 
 Now, this is where it gets interesting, this final commit added to the reader file the cryptic line that still haunts me as I’m writing this article.
 
@@ -54,7 +55,7 @@ Why would Marak write this and who is Aaron?
 
 [Aaron Swartz](https://www.internethalloffame.org/inductees/aaron-swartz) was one of the OG programmers of the Open Source having written the very thing that makes blogging possible, the RSS format. He also worked on Reddit a while after it was started and conducted activist work regarding freedom of information. He believed all data should be accessible and that may have led to his final demise.
 
-![](https://miro.medium.com/max/1400/0*Y0BThjtCoSmboug5)
+<BlogImage src="https://miro.medium.com/max/1400/0*Y0BThjtCoSmboug5" />
 
 In 2011, he hacked into the MIT through a computer within the network and attempted to make public several academic articles. He was caught and charged for multiple felonies including breaking and entering, wired fraud (publishing obtained through fraudulent information) and several Computer-related frauds. The large number of accusations was due to a prolonged pursuit after his long career of activism and attempts to freedom of information.
 
@@ -68,11 +69,11 @@ What Marak did to make his story viral by pointing to the Aaron Schwartz conspir
 
 A few days after the erasure of Faker & FakerCloud off the face of the internet, Marak pushed a controversial update to another of his maintained libraries colors.js.
 
-![](https://miro.medium.com/max/1250/1*gIyxPj1_LnU4eplWFZQ6iQ.png)
+<BlogImage src="https://miro.medium.com/max/1250/1*gIyxPj1_LnU4eplWFZQ6iQ.png" />
 
 A significantly more popular library with over 4.5k stars on Github and therefore it was a surprise for many that the new version contained an infinite loop.
 
-![](https://miro.medium.com/max/1400/0*USBcn4LQXrnyVtms.png)
+<BlogImage src="https://miro.medium.com/max/1400/0*USBcn4LQXrnyVtms.png" />
 
 In the [Github thread](https://github.com/Marak/colors.js/issues/285) covering this issue, it’s seen as if the ASCII Art (liberty) bug was published by mistake according to Marak and it even appeared he was fixing it. The time went on and people started suggesting it was purposefully put and demanded its fix immediately and he was nowhere to be found.
 
@@ -80,7 +81,7 @@ The masked destruction of colors.js was obvious and could be classified as an ac
 
 As of now, Github suspended Marak’s account denying him access to hundreds of repositories.
 
-![](https://miro.medium.com/max/1400/1*0v-JoTaESijjEzXlcg5wRw.png)
+<BlogImage src="https://miro.medium.com/max/1400/1*0v-JoTaESijjEzXlcg5wRw.png" />
 
 This may be reverted as of now so we need to be wary when using any of his remaining packages.
 
@@ -97,5 +98,3 @@ It’s scary to think how one day, one of our dependencies would be hijacked thr
 Many thanks to [**keystonelemur**](https://twitter.com/keystonelemur?s=20) for bringing light to this situation.
 
 Hope you liked this “horror” story, don’t forget to clap and follow for more software-related content🚀.
-
-_More content at_ [**_plainenglish.io_**](http://plainenglish.io/)_. Sign up for our_ [**_free weekly newsletter_**](http://newsletter.plainenglish.io/)_. Get exclusive access to writing opportunities and advice in our_ [**_community Discord_**](https://discord.gg/GtDtUAvyhW)_._

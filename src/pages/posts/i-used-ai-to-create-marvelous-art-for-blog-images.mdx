@@ -1,6 +1,5 @@
 ---
-setup: |
-  import Layout from '../../layouts/BlogPost.astro'
+layout: '../../layouts/BlogPost.astro'
 pubDate: Mar 31 2022
 description: Blog images are essential in driving traffic to your blog and increasing your articles reach and performance. However, it’s not always easy to find blog images that are both engaging, unique and…
 title: I Used AI To Create Marvelous Art For Blog Images
@@ -8,7 +7,9 @@ readTime: 5 min read
 name: Alex Streza
 ---
 
-![](https://miro.medium.com/max/700/1*EKO5gY_YIZkq79QF7xAZnQ.png)
+import BlogImage from '@components/image/BlogImage'
+
+<BlogImage src="https://miro.medium.com/max/700/1*EKO5gY_YIZkq79QF7xAZnQ.png" />
 
 # I Used AI To Create Marvelous Art For Blog Images
 
@@ -16,9 +17,9 @@ name: Alex Streza
 
 Blog images are essential in driving traffic to your blog and increasing your articles reach and performance. However, it’s not always easy to find blog images that are both engaging, unique and aesthetically pleasing. So let’s **generate** them!
 
-![](https://miro.medium.com/max/524/0*a-RJB-6_N160EKnT.jpg)
-
-Developers = AI Artists
+<BlogImage src="https://miro.medium.com/max/524/0*a-RJB-6_N160EKnT.jpg">
+  Developers = AI Artists
+</BlogImage>
 
 # Current State of Blog Images
 
@@ -28,9 +29,12 @@ Several free stock photo platforms like [Pexels](https://www.pexels.com/) & [Uns
 
 The professional look stock photos give is charming but I find them **less unique** since many people are reusing them across multiple services therefore they may lack personality so they become just placeholders.
 
-![](https://miro.medium.com/max/700/0*jkSTMUfZ_mrX7NI1)
-
-Photo by [Ilya Pavlov](https://unsplash.com/@ilyapavlov?utm_source=medium&utm_medium=referral) on [Unsplash](https://unsplash.com?utm_source=medium&utm_medium=referral)
+<BlogImage src="https://miro.medium.com/max/700/0*jkSTMUfZ_mrX7NI1">
+  <span>Photo by </span>
+  <a href="https://unsplash.com/@ilyapavlov?utm_source=medium&utm_medium=referral">
+    Ilya Pavlov
+  </a>
+</BlogImage>
 
 The **overused** coding stock photos, they are great but nowadays they are everywhere and they give almost nothing for the reader to remember. People remember ideas and words but throwing in some astonishing images can work greatly in your favour.
 
@@ -50,9 +54,9 @@ Text-2-Art has a simple UI that allows you to ‘convert’ text to images in mu
 
 Unfortunately when I tried it out it seems the demand has greatly overflowed the queue either with bots or real users wanting to impress their artsy friends for free. I have to wait ~85 days for the image generation to be finished which isn’t exactly ideal.
 
-![](https://miro.medium.com/max/647/1*uFbTuiVh4qf7AIaCTuOjQg.png)
-
-Queue Time
+<BlogImage src="https://miro.medium.com/max/647/1*uFbTuiVh4qf7AIaCTuOjQg.png">
+  Queue Time
+</BlogImage>
 
 AI services are insanely **difficult** (and expensive) to scale and maintain since they rely greatly on GPUs which have gone up in price due to the chip shortage and crypto mining rush.
 
@@ -62,15 +66,15 @@ Thankfully [**mfrashad**](https://github.com/mfrashad) provided the [Google Cola
 
 First we need to run the setup part to install dependencies and check the GPU size available. Don’t get scared by the robot **beeep** that the script makes when the GPU memory is lower than desired it may take a while so .
 
-![](https://miro.medium.com/max/700/1*RHb4_IW0JCdUTebL6RTQ-Q.png)
-
-Colab Setup
+<BlogImage src="https://miro.medium.com/max/700/1*RHb4_IW0JCdUTebL6RTQ-Q.png">
+  Colab Setup
+</BlogImage>
 
 Once the installation is finished you can update the prompt and run the section, now it’s gonna take a tad but at least you don’t have to wait 80 days.
 
-![](https://miro.medium.com/max/700/1*hiBIXNBZtp0bikCIaaImnQ.png)
-
-Example Prompt
+<BlogImage src="https://miro.medium.com/max/700/1*hiBIXNBZtp0bikCIaaImnQ.png">
+  Example Prompt
+</BlogImage>
 
 The ML model will now generate the image through multiple iterations and you can see the changes in real time so grab some 🍿 and watch AI doing AI stuff.
 
@@ -92,9 +96,9 @@ There’s an animate feature where you can create smooth transitions between lan
 
 The overall array of editing tools and features is mind blowing.
 
-![](https://miro.medium.com/max/700/1*IBVFdcPbz6WqF2Hg1gHYXg.png)
-
-ArtBreeder Categories
+<BlogImage src="https://miro.medium.com/max/700/1*IBVFdcPbz6WqF2Hg1gHYXg.png">
+  ArtBreeder Categories
+</BlogImage>
 
 ## 2\. [GoArt](https://goart.fotor.com/) (Fotor)
 
@@ -104,9 +108,9 @@ GoArt is a simpler more streamlined approach that instead of generating a brand 
 
 This is how my previous **AI revolution** painting (Generated with text2art) turned out in **pop art** & **structuralism** art styles.
 
-![](https://miro.medium.com/max/700/1*rbr0g4AvYHij9c509YZRfQ.png)
-
-GoArt Robot Revolution
+<BlogImage src="https://miro.medium.com/max/700/1*rbr0g4AvYHij9c509YZRfQ.png">
+  GoArt Robot Revolution
+</BlogImage>
 
 ## 3\. [Dream](https://play.google.com/store/apps/details?id=com.womboai.wombodream&hl=en_US&gl=US) (by WOMBO)
 
@@ -114,20 +118,8 @@ This list wouldn’t have been complete without a **mobile** app. Dream combines
 
 Those 2 art pieces are generated in seconds and they may leave you gobsmacked as I originally was.
 
-![](https://miro.medium.com/max/700/1*RJw00LGlGa3z1shEajzCOQ.png)
-
-Dreamy Scenes with Dream
+<BlogImage src="https://miro.medium.com/max/700/1*RJw00LGlGa3z1shEajzCOQ.png">
+  Dreamy Scenes with Dream
+</BlogImage>
 
 Hope you liked this short “**AI/Art**” story, don’t forget to **clap** 👏 and **follow** for more software-related content 🚀 & more AI articles coming sooner than you can say ‘NFTs are a Ponzi scheme’.
-
-Get your Medium subscription now to get your knowledge **over 9000:**
-
-[
-
-## Join Medium with my referral link - Alex Streza
-
-### As a Medium member, a portion of your membership fee goes to writers you read, and you get full access to every story…
-
-medium.com
-
-](/@alex.streza/membership)

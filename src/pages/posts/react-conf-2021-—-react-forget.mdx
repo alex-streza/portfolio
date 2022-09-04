@@ -1,6 +1,5 @@
 ---
-setup: |
-  import Layout from '../../layouts/BlogPost.astro'
+layout: '../../layouts/BlogPost.astro'
 pubDate: Jan 24 2022
 description: Everyone who loves React in its entirety has had the unlucky moment of hating its optimization process. Here, I’m not talking about code splitting or server rendering but about the component level…
 title: React Conf 2021 — React Forget
@@ -8,17 +7,19 @@ readTime: 2 min read
 name: Alex Streza
 ---
 
-![](https://miro.medium.com/max/1400/1*k9IbrpOjBd9paWzDwY7WRw.png)
+import BlogImage from '@components/image/BlogImage'
+
+<BlogImage src="https://miro.medium.com/max/1400/1*k9IbrpOjBd9paWzDwY7WRw.png" />
 
 # React Conf 2021 — React Forget
 
-# A Christmas miracle — End of ‘memo all the things’
+## A Christmas miracle — End of ‘memo all the things’
 
 Everyone who loves React in its entirety has had the unlucky moment of hating its optimization process. Here, I’m not talking about code splitting or server rendering but about the component level usage of memoization and useCallback.
 
-![](https://miro.medium.com/max/1006/0*KT3CeKIJ621Fljgu.jpg)
-
-UX/DX Struggle
+<BlogImage src="https://miro.medium.com/max/1006/0*KT3CeKIJ621Fljgu.jpg">
+  UX/DX Struggle
+</BlogImage>
 
 Those are great features but mandate much-unrequited attention to be implemented whenever a possible rerender may occur and we as developers really don’t like optimizing code ourselves.
 
@@ -26,9 +27,9 @@ During [React Conf. 2021](https://www.youtube.com/channel/UC1hOCRBN2mnXgN5reSoO3
 
 According to Dan Abramov, **this could eliminate the need to use** `React.memo()` **as well**. This is because the compiler apparently memoizes not just the calculation of `useMemo()` results, but also the resulting _React element objects returned by the component_.
 
-![](https://miro.medium.com/max/1400/1*SUiGsCY49mvtyJxlTdrJ5g.png)
-
-Compiled code in React Forget sneak peek video
+<BlogImage src="https://miro.medium.com/max/1400/1*SUiGsCY49mvtyJxlTdrJ5g.png">
+  Compiled code in React Forget sneak peek video
+</BlogImage>
 
 Often, to write an optimized UX app’s usage of memoization is mostly mandatory, increasing mental overhead for developers, therefore, creating a rather suboptimal DX.
 
@@ -39,5 +40,3 @@ The speaker in the [sneak peek video](https://www.youtube.com/watch?v=lGEMwh32so
 I highly recommend watching the original video as it showcases a more in-depth and hands-on experience of using React Forget.
 
 _I hope you enjoyed this short showcase of React Forget and don’t_ **_forget_** _to give this article a 👏!_
-
-_More content at_ [**_plainenglish.io_**](http://plainenglish.io/)_. Sign up for our_ [**_free weekly newsletter_**](http://newsletter.plainenglish.io/)_. Get exclusive access to writing opportunities and advice in our_ [**_community Discord_**](https://discord.gg/GtDtUAvyhW)_._

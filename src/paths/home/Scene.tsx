@@ -209,6 +209,7 @@ const HTMLContent = ({
             onMouseEnter={() => handleMouseEnter(i)}
             onMouseLeave={() => handleMouseLeave(i)}
             subtitle={subtitles[i]}
+            isEven={i % 2 === 0}
           />
         ))}
       </ul>

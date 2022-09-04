@@ -20,7 +20,7 @@ const { pubDate, readTime, shareCount } = Astro.props
       <Icon name="jam:arrow-left" width={24} />
       <span class="-mt-1 block">All posts</span>
     </a>
-    <div class="ml-auto text-sm">
+    <div class="ml-auto text-xs md:text-sm">
       <span class="flex">
         <Liveblock client:only="react" /> active - {readTime} - {pubDate}
       </span>

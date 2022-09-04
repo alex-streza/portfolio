@@ -6,10 +6,11 @@ interface MenuLinkProps {
   subtitle: string
   onMouseEnter: () => void
   onMouseLeave: () => void
+  isEven: boolean
 }
 
-const MenuLink = forwardRef<HTMLElement, MenuLinkProps>(
-  ({ link, subtitle, onMouseEnter, onMouseLeave }, ref) => {
+const MenuLink = forwardRef<HTMLLIElement, MenuLinkProps>(
+  ({ link, subtitle, onMouseEnter, onMouseLeave, isEven }, ref) => {
     const [styles, api] = useSpring(() => ({
       opacity: 0,
       bottom: -4,
@@ -49,7 +50,11 @@ const MenuLink = forwardRef<HTMLElement, MenuLinkProps>(
         >
           {subtitle}
         </animated.span>
-        <div className="overflow-hidden even:h-12 odd:h-[60px] md:even:h-[79.33px] md:odd:h-[106px]">
+        <div
+          className={`overflow-hidden ${
+            isEven ? 'h-12 md:h-[79.33px]' : 'h-[59px] md:h-[106px]'
+          }`}
+        >
           <a
             className="hover:!text-main reset-link block translate-y-full even:h-12 odd:h-[60px] md:even:h-[79.33px] md:odd:h-[106px]"
             href={`/${link}`}

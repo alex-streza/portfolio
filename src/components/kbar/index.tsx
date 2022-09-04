@@ -5,6 +5,7 @@ import {
   Gmail,
   Linkedin,
   Medium,
+  Rss,
   Twitter,
 } from '@icons-pack/react-simple-icons'
 import { Post } from '@models/posts'
@@ -123,6 +124,14 @@ const KBar = ({ posts }: KBarProps) => {
         keywords: 'contact',
         perform: () =>
           (window.location.href = 'https://twitter.com/alex_streza'),
+      },
+      {
+        id: 'twitter',
+        name: 'RSS',
+        section: 'Social links',
+        icon: <Rss />,
+        keywords: 'rss',
+        perform: () => (window.location.pathname = '/rss.xml'),
       },
 
       {

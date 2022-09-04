@@ -1,6 +1,5 @@
 ---
-setup: |
-  import Layout from '../../layouts/BlogPost.astro'
+layout: '../../layouts/BlogPost.astro'
 pubDate: Jan 21 2022
 description: Every year, the ES team gets many proposals to improve on the glorious JavaScript ecosystem and some of them eventually are implemented officially. In order to get accepted, a feature needs to go…
 title: New Year, New JavaScript Features from ES2022
@@ -8,7 +7,10 @@ readTime: 7 min read
 name: Alex Streza
 ---
 
-![](https://miro.medium.com/max/1400/1*tfkSTd2EWWzFgGELNJuNwQ.png)
+import BlogImage from '@components/image/BlogImage'
+import Sandbox from '@components/sandbox'
+
+<BlogImage src="https://miro.medium.com/max/1400/1*tfkSTd2EWWzFgGELNJuNwQ.png" />
 
 # New Year, New JavaScript Features from ES2022
 
@@ -22,9 +24,9 @@ The following sections are getting additions in the upcoming update:
 - For the savvy **OOP** lovers we have: **Classes**
 - For the marvelous **functional** programmers we have: **Built-in Objects**
 
-![](https://miro.medium.com/max/1400/1*c8F9XnDVOXuC6i3jXjpaxw.png)
-
-ES2022 > ES2021
+<BlogImage src="https://miro.medium.com/max/1400/1*c8F9XnDVOXuC6i3jXjpaxw.png">
+  ES2022 > ES2021
+</BlogImage>
 
 # 1\. Module Loading
 
@@ -36,11 +38,23 @@ In ES2022, we can use top-level await to import resources dynamically, this can 
 
 We can use it like this:
 
-```
-// load-resources.mjs
+<Sandbox
+  client:only="react"
+  template="vanilla"
+  files={{
+    '/load-resources.js': {
+      code: `// load-resources.mjs
 // with top-level await
 const data = await (await fetch("https://resources")).text();
-export const resource = JSON.parse(data).resource;
+export const resource = JSON.parse(data).resource;`,
+      active: true,
+    },
+  }}
+  showPreview={false}
+/>
+
+```
+
 ```
 
 It’s supported by [81% of devices](https://caniuse.com/mdn-javascript_operators_await_top_level) and Node.js 14.8+ as of January 2022.
@@ -53,8 +67,12 @@ It’s supported by [81% of devices](https://caniuse.com/mdn-javascript_operator
 
 Most OOP-oriented languages use private and public to limit or extend the visibility of fields, methods, or accessors. But JavaScript had no limits (or limitations) in this regard. Now, they are included in JavaScript by prefixing with #.
 
-```
-class LikeCounter {
+<Sandbox
+  client:only="react"
+  template="vanilla"
+  files={{
+    '/index.js': {
+      code: `class LikeCounter {
 #likes;constructor(likes) {
 this.#likes = likes;
 } #increment () {
@@ -67,8 +85,12 @@ this.#decrement()
 }const obj = new LikeCounter(123);
 console.log(object.#doSomethingWithIt()); // SyntaxError
 console.log(object.#likes); // SyntaxError
-object.doSomethingWithIt();
-```
+object.doSomethingWithIt();`,
+      active: true,
+    },
+  }}
+  showPreview={false}
+/>
 
 [Most browsers](https://caniuse.com/mdn-javascript_classes_private_class_fields) (January 2022 usage around 88%) and Node.js 12+ support private instance fields.
 
@@ -80,8 +102,12 @@ Regarding [private methods and accessors](https://caniuse.com/mdn-javascript_cla
 
 [**Static class fields**](https://github.com/tc39/proposal-static-class-features#static-public-fields) are a convenient new notation for appending properties to a class object.
 
-```
-// no static class fields:
+<Sandbox
+  client:only="react"
+  template="vanilla"
+  files={{
+    '/index.js': {
+      code: `// no static class fields:
 class Product {
 // ...
 }
@@ -89,8 +115,12 @@ Product.id = 1;// now static class fields:
 class Product {
 static id = 1;
 // ...
-}
-```
+}`,
+      active: true,
+    },
+  }}
+  showPreview={false}
+/>
 
 [Most browsers](https://caniuse.com/mdn-javascript_classes_static_class_fields) (January 2022 usage: ~89%) and Node.js 12+ support public class fields.
 
@@ -100,13 +130,21 @@ static id = 1;
 
 Since trying to access a non-existing private field on an object throws an unfortunate exception, there needs to **exist** a method to check if an object has a given private field. Here comes the [**in operator**](https://github.com/tc39/proposal-private-fields-in-in).
 
-```
-class Dog {
+<Sandbox
+  client:only="react"
+  template="vanilla"
+  files={{
+    '/index.js': {
+      code: `class Dog {
 #namestatic isDogInstance(object) {
 return #name in object;
 }
-}
-```
+}`,
+      active: true,
+    },
+  }}
+  showPreview={false}
+/>
 
 The [browser support for using the](https://caniuse.com/mdn-javascript_classes_private_class_fields_in) `[in](https://caniuse.com/mdn-javascript_classes_private_class_fields_in)` [operator on private fields](https://caniuse.com/mdn-javascript_classes_private_class_fields_in) is limited (January 2022 usage is around 70%). Node.js supports the feature since version 16.4.
 
@@ -172,13 +210,17 @@ Errors are often wrapped to attach meaningful messages and record the error cont
 
 The [**error cause feature**](https://github.com/tc39/proposal-error-cause) provides a standardized way to attach the original error to a wrapping error. It adds the `cause` option to the `Error` constructor and a `cause` field for retrieving the original error.
 
-```
-const getProduct = async (productId) => {
+<Sandbox
+  client:only="react"
+  template="vanilla"
+  files={{
+    '/index.js': {
+      code: `const getProduct = async (productId) => {
 try {
-return await fetch(\`https://server/api/products/${productId}\`);
+return await fetch(\`https://server/api/products/\${productId}\`);
 } catch (error) {
 throw new Error(
-\`Loading product data with id ${productId} failed\`,
+\`Loading product data with id \${productId} failed\`,
 { cause: error }
 );
 }
@@ -188,8 +230,12 @@ const productData = await load(69420);
 } catch (error) {
 console.log(error); // Error: Loading data for product with id 69420 failed
 console.log(error.cause); // TypeError: Failed to fetch
-}
-```
+}`,
+      active: true,
+    },
+  }}
+  showPreview={false}
+/>
 
 The [current browser support for the error clause feature](https://caniuse.com/mdn-javascript_builtins_error_cause) is limited (January 2022 usage: ~75%). Node.js supports the feature since version 16.9.
 
@@ -201,12 +247,20 @@ Getting elements from the end of an array or string was a hassle and often resul
 
 [.at() feature](https://github.com/tc39/proposal-relative-indexing-method) provides a shorter, more elegant way to get an element from the beginning or the end of a string or array without the need for a temporary variable.
 
-```
-const someString = "JSiscool";console.log(someString.at(3)); // i
+<Sandbox
+  client:only="react"
+  template="vanilla"
+  files={{
+    '/index.js': {
+      code: `const someString = "JSiscool";console.log(someString.at(3)); // i
 console.log(someString\[3\]); // iconst temp = someString;
 console.log(temp\[temp.length - 1\]); // l
-console.log(temp.at(-1)); // l - no temporary variable required
-```
+console.log(temp.at(-1)); // l - no temporary variable required`,
+      active: true,
+    },
+  }}
+  showPreview={false}
+/>
 
 [The browser support for the .at feature](https://caniuse.com/mdn-javascript_builtins_array_at) is currently limited (January 2022 usage is around 70%), and is only available in Node.js 16.6+.
 
@@ -216,14 +270,22 @@ console.log(temp.at(-1)); // l - no temporary variable required
 
 The [**Object.hasOwn feature**](https://github.com/tc39/proposal-accessible-object-hasownproperty) is a powerful and robust way of checking if a property is directly present on an object. It is a preferred alternative to using `hasOwnProperty`:
 
-```
-const dog = {
+<Sandbox
+  client:only="react"
+  template="vanilla"
+  files={{
+    '/index.js': {
+      code: `const dog = {
 name: "Olaf" // who would name his dog Olaf
 };console.log(Object.prototype.hasOwnProperty.call(dog, 'name'));
-console.log(Object.hasOwn(dog, 'name')); // better
+console.log(Object.hasOwn(dog, 'name')); // better`,
+      active: true,
+    },
+  }}
+  showPreview={false}
+/>
 
 The [browser support is currently limited](https://caniuse.com/mdn-javascript_builtins_object_hasown) (January 2022 usage is around 70%), and you need Node 16.9+ to use `hasOwn` directly.
-```
 
 ## RegExp: Match Indices (‘d’ Flag)
 
@@ -273,5 +335,3 @@ The [browser support for the RegExp match indices feature is currently limited](
 A new year of marvelous features is being added to the already glorious JavaScript ecosystem thanks to the TC39 team.
 
 Hope you liked this walkthrough of the new things coming in 2022 for JavaScript and **clap** on and follow for more programming articles 🦄.
-
-_More content at_ [**_plainenglish.io_**](http://plainenglish.io/)_. Sign up for our_ [**_free weekly newsletter_**](http://newsletter.plainenglish.io/)_. Get exclusive access to writing opportunities and advice in our_ [**_community Discord_**](https://discord.gg/GtDtUAvyhW)_._
