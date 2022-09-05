@@ -56,7 +56,7 @@ const Content = () => {
         </a>
       </div>
       <h1 className="text-5xl">3D Resources</h1>
-      <p className="max-w-[65ch] mb-8">
+      <p className="max-w-[652px] mb-8">
         Looking to create great 3D experiences? Then you need 3D Resources! This
         collection of resources is perfect for creative developers & artists who
         want to push the boundaries of what's possible. High-quality assets and
@@ -97,6 +97,7 @@ const HTML = () => {
 
   return (
     <group
+      // eslint-disable-next-line react/no-unknown-property
       position={[
         -width / 2 + (isDesktop ? 1 : 0),
         -height / 2 + (isDesktop ? 2 : 3),

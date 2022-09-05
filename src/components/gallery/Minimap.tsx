@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { useMediaQuery } from '@react-hookz/web'
 import { useScroll } from '@react-three/drei'
 import {
@@ -40,12 +41,12 @@ const Minimap = ({ urls }: { urls: string[] }) => {
       child.scale.y = damp(child.scale.y, 0.1 + y / 6, 8, delta)
     })
   })
+
   return (
     <group ref={ref}>
       {urls.map((_, i) => (
         <line
           key={i}
-          // @ts-ignore
           geometry={geometry}
           material={material}
           position={[

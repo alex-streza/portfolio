@@ -21,7 +21,9 @@ const BlurryParticles = () => {
 
   return (
     <Particles
-      className="fixed w-screen h-screen top-0 left-0 right-0 bottom-0 blur-[100px]"
+      className={`fixed w-screen h-screen top-0 left-0 right-0 bottom-0 ${
+        isDesktop ? 'blur-[100px]' : 'blur-[80px]'
+      }`}
       id="tsparticles"
       init={particlesInit}
       loaded={particlesLoaded}

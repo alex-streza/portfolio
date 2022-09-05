@@ -1,4 +1,16 @@
 @font-face {
+  font-family: 'PP Pangram Sans-fallback';
+  size-adjust: 105.45%;
+  src: local('sans-serif');
+}
+
+@font-face {
+  font-family: 'PP Migra-fallback';
+  size-adjust: 120.36%;
+  src: local('serif');
+}
+
+@font-face {
   font-family: 'PP Pangram Sans';
   src: url('/assets/fonts/PP Pangram Sans/PPPangramSans-Medium.woff2')
       format('woff2'),

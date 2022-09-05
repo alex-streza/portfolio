@@ -23,6 +23,7 @@ module.exports = {
     semi: 'off',
     'react-hooks/exhaustive-deps': 'error',
     curly: ['warn', 'multi-or-nest', 'consistent'],
+    'react/no-unknown-property': 'warn',
     'no-mixed-spaces-and-tabs': ['warn', 'smart-tabs'],
     'no-async-promise-executor': 'warn',
     '@typescript-eslint/no-explicit-any': 'warn',

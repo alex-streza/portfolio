@@ -62,7 +62,7 @@ const MenuLink = forwardRef<HTMLLIElement, MenuLinkProps>(
             <span>{link[0].toUpperCase() + link.slice(1)}</span>
           </a>
         </div>
-        <hr className="mt-2.5 bg-white w-0" />
+        <hr className="!mt-2.5 bg-white w-0" />
       </li>
     )
   },

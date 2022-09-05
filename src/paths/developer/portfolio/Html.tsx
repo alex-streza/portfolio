@@ -50,7 +50,7 @@ const Content = () => {
         </a>
       </div>
       <h1 className="text-5xl">Portfolio</h1>
-      <p className="max-w-[65ch] mb-8">
+      <p className="max-w-[652px] mb-8">
         Portfolio websites need to be outstanding as much as the projects
         showcased. Building a 3D interactive experience to present my expertise
         in a glamorous way.
@@ -65,6 +65,7 @@ const HTML = () => {
 
   return (
     <group
+      // eslint-disable-next-line react/no-unknown-property
       position={[
         -width / 2 + (isDesktop ? 1 : 0),
         -height / 2 + (isDesktop ? 2 : 3),

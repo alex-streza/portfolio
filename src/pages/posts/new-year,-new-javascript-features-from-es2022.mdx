@@ -28,7 +28,7 @@ The following sections are getting additions in the upcoming update:
   ES2022 > ES2021
 </BlogImage>
 
-# 1\. Module Loading
+## 1\. Module Loading
 
 > Tired of errors when awaiting at the root of a file? Upgrade incoming.
 
@@ -53,15 +53,13 @@ export const resource = JSON.parse(data).resource;`,
   showPreview={false}
 />
 
-```
-
-```
-
 It’s supported by [81% of devices](https://caniuse.com/mdn-javascript_operators_await_top_level) and Node.js 14.8+ as of January 2022.
 
-# 2\. Classes
+<hr />
 
-## Private everything
+## 2\. Classes
+
+### Private everything
 
 > As the saying goes keep your variables private but your relationship public.
 
@@ -96,7 +94,9 @@ object.doSomethingWithIt();`,
 
 Regarding [private methods and accessors](https://caniuse.com/mdn-javascript_classes_private_class_methods) support is around 82% for most browsers and Node.js supports this feature since version 14.6.
 
-## Public Static Class Fields
+<hr />
+
+### Public Static Class Fields
 
 > Wanna make your class more trendy? Add the brand new static fields.
 
@@ -124,7 +124,9 @@ static id = 1;
 
 [Most browsers](https://caniuse.com/mdn-javascript_classes_static_class_fields) (January 2022 usage: ~89%) and Node.js 12+ support public class fields.
 
-## Existence Checks For Private Fields
+<hr />
+
+### Existence Checks For Private Fields
 
 > To be or not be or better said to exist or not exist a goddamn property.
 
@@ -148,7 +150,9 @@ return #name in object;
 
 The [browser support for using the](https://caniuse.com/mdn-javascript_classes_private_class_fields_in) `[in](https://caniuse.com/mdn-javascript_classes_private_class_fields_in)` [operator on private fields](https://caniuse.com/mdn-javascript_classes_private_class_fields_in) is limited (January 2022 usage is around 70%). Node.js supports the feature since version 16.4.
 
-## Private Static Class Fields and Methods
+<hr />
+
+### Private Static Class Fields and Methods
 
 > Static variables are always public? Just **privatize** them (bad soviet joke).
 
@@ -169,7 +173,9 @@ console.log(customers.join(' ')); // c1 c2
 
 The support percentages are similar to the private instance fields and methods described before.
 
-## Static Class Initialization Blocks
+<hr />
+
+### Static Class Initialization Blocks
 
 > Wanna complicate static variables? Well here we go…
 
@@ -200,9 +206,11 @@ console.log(Example.#propertyB);
 
 The [browser support for static class initialization blocks](https://caniuse.com/mdn-javascript_classes_static_initialization_blocks) is limited (January 2022 exactly **69.69%)**. Node.js supports the feature since version 16.4.
 
-# 3\. Built-in Objects
+<hr />
 
-## Error: .cause
+## 3\. Built-in Objects
+
+### Error: .cause
 
 > Meaningful messages not meaningful enough? Add cause to your errors.
 
@@ -239,7 +247,9 @@ console.log(error.cause); // TypeError: Failed to fetch
 
 The [current browser support for the error clause feature](https://caniuse.com/mdn-javascript_builtins_error_cause) is limited (January 2022 usage: ~75%). Node.js supports the feature since version 16.9.
 
-## Array, String, and TypedArray: .at()
+<hr />
+
+### Array, String, and TypedArray: .at()
 
 > Pythonify your JavaScript code with at(-1)
 
@@ -264,7 +274,9 @@ console.log(temp.at(-1)); // l - no temporary variable required`,
 
 [The browser support for the .at feature](https://caniuse.com/mdn-javascript_builtins_array_at) is currently limited (January 2022 usage is around 70%), and is only available in Node.js 16.6+.
 
-## Object: .hasOwn()
+<hr />
+
+### Object: .hasOwn()
 
 > If hasOwn was IRL parenting tests would be obsolete
 
@@ -287,7 +299,9 @@ console.log(Object.hasOwn(dog, 'name')); // better`,
 
 The [browser support is currently limited](https://caniuse.com/mdn-javascript_builtins_object_hasown) (January 2022 usage is around 70%), and you need Node 16.9+ to use `hasOwn` directly.
 
-## RegExp: Match Indices (‘d’ Flag)
+<hr />
+
+### RegExp: Match Indices (‘d’ Flag)
 
 > If you speak RegEx this is for you crazy person
 
@@ -330,7 +344,9 @@ word: \[12, 15\]
 
 The [browser support for the RegExp match indices feature is currently limited](https://caniuse.com/mdn-javascript_builtins_regexp_hasindices) (January 2021 usage around 79%). In Node.js, you can enable the feature with the `--harmony-regexp-match-indices` flag, but it is disabled by default.
 
-# Overall
+<hr />
+
+## Overall
 
 A new year of marvelous features is being added to the already glorious JavaScript ecosystem thanks to the TC39 team.
 

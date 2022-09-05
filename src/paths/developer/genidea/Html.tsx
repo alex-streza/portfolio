@@ -53,7 +53,7 @@ const Content = () => {
         </a>
       </div>
       <h1 className="text-5xl">GenIdea</h1>
-      <p className="max-w-[65ch] mb-8">
+      <p className="max-w-[652px] mb-8">
         Get inspired on the go with ideas in diverse tech related fields with
         artificial intelligence. Users can generate app ideas with OpenAI and
         collect them as NFTs.

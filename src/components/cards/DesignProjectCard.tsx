@@ -18,7 +18,7 @@ const DesignProjectCard = ({
   children,
 }: DesignProjectCardProps) => {
   return (
-    <div className="rounded-8 md:max-w-[340px] dark:bg-gray-hex dark:bg-opacity-100 bg-light-gray-hex bg-opacity-50 md:shadow-main shadow-none backdrop-blur-sm">
+    <div className="rounded-8 md:max-w-[340px] dark:bg-gray-hex dark:bg-opacity-100 bg-light-gray-hex bg-opacity-50 backdrop-blur-sm">
       <div className="bg-no-repeat w-full h-[191px] rounded-t relative overflow-hidden mb-6 mt-0 ">
         <img
           className="hover:scale-110 absolute w-full h-full transition-all duration-500 ease-in-out transform bg-center bg-cover rounded-t-8"

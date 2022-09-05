@@ -11,8 +11,8 @@ const { post } = Astro.props
 <article class="mb-5">
   <header class="flex flex-col gap-3">
     <span>{post.frontmatter.pubDate}</span>
-    <a href={post.url} class="p-2 reset-link">
-      <h2 class="!font-serif !text-2xl md:!text-3xl !leading-[40px]">
+    <a href={post.url} class="p-2 reset-link dark:!text-white text-gray-1000">
+      <h2 class="!font-serif">
         {post.frontmatter.title}
       </h2>
     </a>

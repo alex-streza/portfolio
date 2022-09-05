@@ -17,14 +17,16 @@ const FloatingMenu = ({ text }: FloatingMenuProps) => {
       <div className="dark:bg-gray-hex dark:bg-opacity-70 backdrop-blur-md border-main flex gap-2 border p-2 rounded-8">
         <a
           href={`https://twitter.com/intent/tweet?text=${text}`}
-          className="hover:text-main dark:text-white text-gray-1000"
+          className="hover:text-main dark:!text-white !text-gray-1000"
           target="_blank"
           rel="noreferrer"
         >
           <Share />
         </a>
         <button
-          className={`${showCursors ? 'text-main' : ''}`}
+          className={`${
+            showCursors ? 'text-main' : 'dark:!text-white !text-gray-1000'
+          }`}
           onClick={() => setShowCursors((prev) => !prev)}
         >
           <Cursor />

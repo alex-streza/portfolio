@@ -171,8 +171,8 @@ const defaultTheme = {
     },
   },
   fontFamily: {
-    sans: ['PP Pangram Sans', 'sans-serif'],
-    serif: ['PP Migra', 'serif'],
+    sans: ['PP Pangram Sans', 'PP Pangram Sans-fallback', 'sans-serif'],
+    serif: ['PP Migra', 'PP Migra-fallback', 'serif'],
   },
   boxShadow: {
     green: '0px 0px 4px 4px hsla(169, 65%, 63%, 0.5)',
