@@ -1,5 +1,4 @@
 ---
-import '@styles/blog.css'
 import BaseHead from '@components/BaseHead.astro'
 import Header from '@components/Header.astro'
 import BlogPost from '@components/BlogPost.astro'
@@ -16,6 +15,8 @@ const allPosts = getPosts(await Astro.glob('../pages/posts/*.mdx')).slice(0, 3)
 const permalink = `https://staging-blog.alexstreza.dev/posts/${title
   .replaceAll(' ', '-')
   .toLowerCase()}`
+const randomStart = Math.floor(Math.random() * (allPosts.length - 3))
+const randomEnd = randomStart + 3
 ---
 
 <html lang={content.lang || 'en'}>
@@ -37,7 +38,7 @@ const permalink = `https://staging-blog.alexstreza.dev/posts/${title
           client:only="react"
         />
         <NewsletterCard />
-        {allPosts.map((p, i) => (
+        {allPosts.slice(randomStart, randomEnd).map((p, i) => (
           <div class="mt-10">
             <BlogPostPreview post={p} />
             {i < allPosts.length - 1 && <hr />}

@@ -20,6 +20,7 @@ const FloatingMenu = ({ text }: FloatingMenuProps) => {
           className="hover:text-main dark:!text-white !text-gray-1000"
           target="_blank"
           rel="noreferrer"
+          aria-label="share"
         >
           <Share />
         </a>
@@ -28,6 +29,7 @@ const FloatingMenu = ({ text }: FloatingMenuProps) => {
             showCursors ? 'text-main' : 'dark:!text-white !text-gray-1000'
           }`}
           onClick={() => setShowCursors((prev) => !prev)}
+          aria-label="cursors"
         >
           <Cursor />
         </button>

@@ -81,7 +81,7 @@ const updatePathIndicator = () => {
 }
 
 barba.init({
-  debug: true,
+  debug: false,
   transitions: [
     {
       name: 'home',

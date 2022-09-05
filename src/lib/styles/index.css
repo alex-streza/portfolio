@@ -1,6 +1,8 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+@import './fonts.css';
+@import './blog.css';
 
 @layer base {
   html {
@@ -34,7 +36,7 @@
   }
 
   h3 {
-    @apply font-sans font-bold text-lg;
+    @apply font-sans !font-extrabold !text-lg;
   }
 
   a {
