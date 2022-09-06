@@ -7,6 +7,7 @@ import { Suspense, useState } from 'react'
 import ResourcesS3Dcene from './3d-resources/Scene'
 import GenIdeaScene from './genidea/Scene'
 import PortfolioScene from './portfolio/Scene'
+import KeyboardScene from './interactive-keyboard/Scene'
 import Loader from '@components/transition/Loader'
 
 interface ProjectsProps {
@@ -28,7 +29,7 @@ const Projects = ({ selectedProject, onSelectProject }: ProjectsProps) => {
     >
       <Html center>
         <div className="dark:bg-gray-hex bg-white bg-opacity-75 backdrop-blur-sm rounded-8 p-4 flex md:flex-row flex-col gap-5">
-          {[...Array(3)].map((_, i) => (
+          {[...Array(4)].map((_, i) => (
             <button
               key={i}
               className={`dark:bg-gray-600 bg-light-gray-800 rotate-45 transition-all duration-300 hover:!bg-main-400 ${
@@ -52,6 +53,7 @@ const MainScene = () => {
         {project === 0 && <GenIdeaScene />}
         {project === 1 && <ResourcesS3Dcene />}
         {project === 2 && <PortfolioScene />}
+        {project === 3 && <KeyboardScene />}
       </Suspense>
       <Projects selectedProject={project} onSelectProject={setProject} />
       <EffectComposer multisampling={0}>

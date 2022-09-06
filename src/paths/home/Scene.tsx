@@ -194,7 +194,7 @@ const HTMLContent = ({
     },
     [apiDesigner, apiDeveloper, apiWriter, setPath, viewport.width],
   )
-
+  console.log('renderasd')
   return (
     <div
       ref={menuRef}
@@ -300,8 +300,9 @@ const MainScene = () => {
         ease: 'easeInOut',
         opacity: 0,
       })
-      return () => ctx.revert()
     }, ref)
+
+    return () => ctx.revert()
   }, [])
 
   return (

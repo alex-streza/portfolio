@@ -55,3 +55,23 @@ const posts = getPosts(await Astro.glob('../pages/posts/*.mdx')).map((p) => ({
     document.querySelector('#logo').classList.add('translate-y-3')
   }
 </script>
+
+<script is:inline src="https://unpkg.com/@barba/core">
+
+</script>
+
+<script is:inline src="https://unpkg.com/@barba/prefetch">
+
+</script>
+
+<script
+  is:inline
+  src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.1/gsap.min.js"
+>
+
+</script>
+
+<script is:inline type="module">
+  import '../assets/scripts/theme.js'
+  import '../assets/scripts/transition.js'
+</script>
