@@ -50,7 +50,7 @@ const MainScene = () => {
 
   return (
     <>
-      {project === 3 && <KeyboardTrainer onBack={() => setProject(3)} />}
+      {project === 3 && <KeyboardTrainer onBack={() => setProject(2)} />}
       <Canvas>
         <Suspense fallback={<Loader />}>
           {project === 0 && <GenIdeaScene />}
