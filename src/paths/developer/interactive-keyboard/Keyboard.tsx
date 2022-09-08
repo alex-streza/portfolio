@@ -1,14 +1,41 @@
 // @ts-nocheck
 
-import {
-  useSprings,
-  animated,
-  SpringValue,
-  SpringRef,
-  useSpring,
-} from '@react-spring/three'
+import { animated, useSprings } from '@react-spring/three'
 import { useGLTF } from '@react-three/drei'
 import { useEffect } from 'react'
+
+const specialCharacters = {
+  Escape: 'Esc',
+  Control: 'CtrlL',
+  Pause: '',
+  ' ': 'SpaceConvex',
+  Print: 'Print',
+  Scroll: 'Scroll',
+  Home: 'Home',
+  End: 'End',
+  PageUp: 'PgUp',
+  PageDown: 'PgDn',
+  Insert: 'Ins',
+  Delete: 'Del',
+  '`': 'Tilde',
+  Back: 'Back',
+  Close: 'Close',
+  Question: 'Question',
+  Tab: 'Tab',
+  Del: 'Delete',
+  Open: 'Open',
+  Backspace: 'Back',
+  '|': 'Pipe',
+  "'": 'Quote',
+  ';': 'SemiColon',
+  ',': 'Comma',
+  '=': 'Plus',
+  '-': 'Minus',
+  '/': 'Question',
+  CapsLock: 'Caps',
+  Shift: 'Shift',
+  Alt: 'Alt',
+}
 
 export default function Model(props) {
   const { nodes, materials } = useGLTF('/assets/models/Keyboard.glb')
@@ -24,10 +51,14 @@ export default function Model(props) {
 
   useEffect(() => {
     window.addEventListener('keydown', (e) => {
-      // TODO HANDLE SPECIAL CHARACTERS LIKE ESCAPE
-      const keyIndex = keycaps.findIndex((key) =>
-        key.name.toLowerCase().endsWith('_' + e.key.toLowerCase()),
+      const keyIndex = keycaps.findIndex(
+        (key) =>
+          key.name.toLowerCase().endsWith('_' + e.key.toLowerCase()) ||
+          key.name
+            .toLowerCase()
+            .endsWith('_' + (specialCharacters[e.key] ?? '').toLowerCase()),
       )
+
       if (keyIndex > -1) {
         api.start((i) => {
           if (i === keyIndex) {
@@ -35,9 +66,13 @@ export default function Model(props) {
               scale: 1.1,
               material: materials['GoldPins.001'],
               onRest: () => {
-                api.start({
-                  scale: 1,
-                  material: materials.Alu_Ano_KbdFans_DarkGreen,
+                api.start((i) => {
+                  if (i === keyIndex) {
+                    return {
+                      scale: 1,
+                      material: materials.Alu_Ano_KbdFans_DarkGreen,
+                    }
+                  }
                 })
               },
             }
@@ -51,8 +86,8 @@ export default function Model(props) {
     <group {...props} dispose={null}>
       <group
         name="Frog_Move"
-        position={[0, 0, -0.06]}
-        scale={10}
+        position={[0, -1, -0.06]}
+        scale={15}
         rotation={[0.6, -0.3, -0.1]}
       >
         <group

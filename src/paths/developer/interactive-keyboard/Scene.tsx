@@ -1,4 +1,4 @@
-import { OrbitControls, Stage } from '@react-three/drei'
+import { Environment } from '@react-three/drei'
 import { useRef } from 'react'
 import Model from './Keyboard'
 
@@ -7,10 +7,9 @@ const Scene = () => {
 
   return (
     <>
-      <Stage controls={ref} preset="rembrandt" intensity={1} environment="city">
-        <Model />
-      </Stage>
-      <OrbitControls ref={ref} />
+      <Environment preset="apartment" background={false} />
+      <Model />
+      {/* <OrbitControls ref={ref} /> */}
     </>
   )
 }

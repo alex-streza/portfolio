@@ -9,6 +9,7 @@ import GenIdeaScene from './genidea/Scene'
 import PortfolioScene from './portfolio/Scene'
 import KeyboardScene from './interactive-keyboard/Scene'
 import Loader from '@components/transition/Loader'
+import KeyboardTrainer from './interactive-keyboard/KeyboardTrainer'
 
 interface ProjectsProps {
   selectedProject: number
@@ -48,31 +49,36 @@ const MainScene = () => {
   const [project, setProject] = useState(0)
 
   return (
-    <Canvas>
-      <Suspense fallback={<Loader />}>
-        {project === 0 && <GenIdeaScene />}
-        {project === 1 && <ResourcesS3Dcene />}
-        {project === 2 && <PortfolioScene />}
-        {project === 3 && <KeyboardScene />}
-      </Suspense>
-      <Projects selectedProject={project} onSelectProject={setProject} />
-      <EffectComposer multisampling={0}>
-        <SSAO
-          samples={11}
-          radius={0.1}
-          intensity={20}
-          luminanceInfluence={0.6}
-          color="green"
-        />
-        <SSAO
-          samples={21}
-          radius={0.03}
-          intensity={10}
-          luminanceInfluence={0.6}
-          color="green"
-        />
-      </EffectComposer>
-    </Canvas>
+    <>
+      {project === 3 && <KeyboardTrainer onBack={() => setProject(3)} />}
+      <Canvas>
+        <Suspense fallback={<Loader />}>
+          {project === 0 && <GenIdeaScene />}
+          {project === 1 && <ResourcesS3Dcene />}
+          {project === 2 && <PortfolioScene />}
+          {project === 3 && <KeyboardScene />}
+        </Suspense>
+        {project !== 3 && (
+          <Projects selectedProject={project} onSelectProject={setProject} />
+        )}
+        <EffectComposer multisampling={0}>
+          <SSAO
+            samples={11}
+            radius={0.1}
+            intensity={20}
+            luminanceInfluence={0.6}
+            color="green"
+          />
+          <SSAO
+            samples={21}
+            radius={0.03}
+            intensity={10}
+            luminanceInfluence={0.6}
+            color="green"
+          />
+        </EffectComposer>
+      </Canvas>
+    </>
   )
 }
 

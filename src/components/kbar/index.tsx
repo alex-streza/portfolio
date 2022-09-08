@@ -62,7 +62,7 @@ const KBar = ({ posts }: KBarProps) => {
         id: 'command_center',
         section: 'Shortcuts',
         name: 'Commands center',
-        shortcut: ['ctrl', 'k'],
+        shortcut: ['ctrl', 'K'],
         keywords: 'writing words',
         perform: noop,
       },
@@ -70,7 +70,7 @@ const KBar = ({ posts }: KBarProps) => {
         id: 'switch_theme',
         section: 'Shortcuts',
         name: 'Switch theme',
-        shortcut: ['t'],
+        shortcut: ['ctrl', 'T'],
         keywords: 'switch theme',
         perform: () => {
           const theme = localStorage.getItem('theme') ?? 'light'
