@@ -12,7 +12,7 @@ const { content } = Astro.props
 const { title, description, pubDate, ogImage, readTime } = content
 
 const allPosts = getPosts(await Astro.glob('../pages/posts/*.mdx')).slice(0, 3)
-const permalink = `https://staging-blog.alexstreza.dev/posts/${title
+const permalink = `https://www.alexstreza.dev/posts/${title
   .replaceAll(' ', '-')
   .toLowerCase()}`
 const randomStart = Math.floor(Math.random() * (allPosts.length - 3))

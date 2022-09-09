@@ -10,7 +10,7 @@ import compress from 'astro-compress'
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://staging-blog.alexstreza.dev',
+  site: 'https://www.alexstreza.dev',
   vite: {
     ssr: {
       external: ['svgo', 'gsap', 'react', 'react-dom'],
