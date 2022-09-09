@@ -10,7 +10,7 @@ import {
   Supabase,
   Tailwindcss,
 } from '@icons-pack/react-simple-icons'
-import { useEffect, useRef } from 'react'
+import { useEffect, useLayoutEffect, useRef } from 'react'
 import gsap from 'gsap'
 import { useThree } from '@react-three/fiber'
 import { useLocalStorageValue, useMediaQuery } from '@react-hookz/web'
@@ -19,12 +19,10 @@ const Content = () => {
   const [theme] = useLocalStorageValue('theme', 'light')
 
   const ref = useRef(null)
-  const tl = useRef<gsap.core.Timeline>()
   const isDark = theme.includes('dark')
 
-  useEffect(() => {
-    tl.current = gsap.timeline().to(ref.current, {
-      duration: 1,
+  useLayoutEffect(() => {
+    gsap.timeline().to(ref.current, {
       opacity: 1,
       top: 0,
     })

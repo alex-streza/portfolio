@@ -3,7 +3,14 @@ import Character from '@components/icons/Character'
 import Refresh from '@components/icons/Refresh'
 import Timer from '@components/icons/Timer'
 import { useIntervalEffect } from '@react-hookz/web'
-import { useCallback, useEffect, useState, useTransition } from 'react'
+import {
+  useCallback,
+  useEffect,
+  useLayoutEffect,
+  useRef,
+  useState,
+  useTransition,
+} from 'react'
 
 const config = {
   time: [15, 30, 60],
@@ -33,6 +40,9 @@ const KeyboardTrainer = ({ onBack }: { onBack: () => void }) => {
   const [loading, setLoading] = useState(false)
   const [timeLeft, setTimeLeft] = useState(0)
 
+  const ref = useRef(null)
+  const tl = useRef<gsap.core.Timeline>()
+
   const handleInitializeSentence = useCallback(() => {
     setLoading(true)
     fetch(
@@ -56,6 +66,13 @@ const KeyboardTrainer = ({ onBack }: { onBack: () => void }) => {
         setTimeLeft(config.time[0])
       })
   }, [type, typeIndex])
+
+  useLayoutEffect(() => {
+    tl.current = gsap.timeline().from(ref.current, {
+      opacity: 0,
+      top: 0,
+    })
+  }, [])
 
   useEffect(() => {
     if (!showStats) handleInitializeSentence()
@@ -106,7 +123,10 @@ const KeyboardTrainer = ({ onBack }: { onBack: () => void }) => {
   }, [text, handleKeyDown])
 
   return (
-    <div className="absolute top-16 md:top-28 left-0 w-screen z-10 grid place-content-center rounded">
+    <div
+      ref={ref}
+      className="absolute top-16 md:top-28 left-0 w-screen z-10 grid place-content-center rounded"
+    >
       <div className="p-5 max-w-[530px] dark:bg-gray-hex dark:bg-opacity-20 bg-white bg-opacity-50">
         <button
           className="font-semibold flex gap-1 items-center w-fit p-2 pl-0 mb-4 reset-link dark:!text-white !text-gray-1000"

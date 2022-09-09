@@ -13,18 +13,16 @@ import {
 import { useLocalStorageValue, useMediaQuery } from '@react-hookz/web'
 import { useThree } from '@react-three/fiber'
 import gsap from 'gsap'
-import { useEffect, useRef } from 'react'
+import { useEffect, useLayoutEffect, useRef } from 'react'
 
 const Content = () => {
   const [theme] = useLocalStorageValue('theme', 'light')
 
   const ref = useRef(null)
-  const tl = useRef<gsap.core.Timeline>()
   const isDark = theme.includes('dark')
 
-  useEffect(() => {
-    tl.current = gsap.timeline().to(ref.current, {
-      duration: 1,
+  useLayoutEffect(() => {
+    gsap.timeline().to(ref.current, {
       opacity: 1,
       top: 0,
     })

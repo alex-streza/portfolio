@@ -99,7 +99,7 @@
   }
 
   .project-container {
-    @apply opacity-0 md:w-[500px] w-screen rounded-8 absolute -top-10 p-5 dark:bg-gray-hex dark:bg-opacity-20 bg-none backdrop-blur-sm;
+    @apply md:w-[500px] w-screen rounded-8 absolute opacity-0 -top-10 p-5 dark:bg-gray-hex dark:bg-opacity-20 bg-none backdrop-blur-sm;
   }
 
   .developer-content,

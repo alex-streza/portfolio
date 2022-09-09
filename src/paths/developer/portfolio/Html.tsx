@@ -11,7 +11,7 @@ import {
 import { useLocalStorageValue, useMediaQuery } from '@react-hookz/web'
 import { useThree } from '@react-three/fiber'
 import gsap from 'gsap'
-import { useEffect, useRef } from 'react'
+import { useEffect, useLayoutEffect, useRef } from 'react'
 
 const Content = () => {
   const [theme] = useLocalStorageValue('theme', 'light')
@@ -19,9 +19,8 @@ const Content = () => {
 
   const ref = useRef(null)
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     gsap.timeline().to(ref.current, {
-      duration: 1,
       opacity: 1,
       top: 0,
     })
