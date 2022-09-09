@@ -194,7 +194,7 @@ const HTMLContent = ({
     },
     [apiDesigner, apiDeveloper, apiWriter, setPath, viewport.width],
   )
-  console.log('renderasd')
+
   return (
     <div
       ref={menuRef}

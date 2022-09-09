@@ -1,10 +1,11 @@
 // @ts-nocheck
 
-import { b } from '@liveblocks/client/index-0007883d'
 import { useMediaQuery } from '@react-hookz/web'
 import { animated, useSprings, useTransition } from '@react-spring/three'
-import { useGLTF } from '@react-three/drei'
-import { useEffect, useMemo } from 'react'
+import { useGLTF, useHelper } from '@react-three/drei'
+import { useControls } from 'leva'
+import { useEffect, useMemo, useRef } from 'react'
+import { PointLightHelper } from 'three'
 
 const specialCharacters = {
   Escape: 'Esc',
@@ -42,6 +43,33 @@ const specialCharacters = {
 export default function Model(props) {
   const { nodes, materials } = useGLTF('/assets/models/Keyboard.glb')
   const isDesktop = useMediaQuery('(min-width: 768px)')
+  const light = useRef()
+  useHelper(light, PointLightHelper, 0.5, '#63DEC7')
+
+  const {
+    x: positionX,
+    y: positionY,
+    z: positionZ,
+  } = useControls({
+    x: {
+      min: -10,
+      max: 10,
+      step: 1,
+      value: 0,
+    },
+    y: {
+      min: -10,
+      max: 10,
+      step: 1,
+      value: 0,
+    },
+    z: {
+      min: -10,
+      max: 10,
+      step: 1,
+      value: 0,
+    },
+  })
 
   const keycaps = useMemo(
     () =>
@@ -57,7 +85,7 @@ export default function Model(props) {
     .filter((key) => key.name.startsWith('Frog_'))
 
   const [springs, api] = useSprings(keycaps.length, () => ({
-    scale: 1,
+    intensity: 0,
     material: materials['AluGrey.001'],
   }))
 
@@ -92,13 +120,13 @@ export default function Model(props) {
         api.start((i) => {
           if (i === keyIndex) {
             return {
-              scale: 1.1,
+              intensity: 0.5,
               material: materials['GoldPins.001'],
               onRest: () => {
                 api.start((i) => {
                   if (i === keyIndex) {
                     return {
-                      scale: 1,
+                      intensity: 0,
                       material: materials['AluGrey.001'],
                     }
                   }
@@ -126,14 +154,22 @@ export default function Model(props) {
         >
           {transitionedKeycaps((key, { geometry, position, index }) => {
             return (
-              <animated.mesh
-                {...key}
-                castShadow
-                receiveShadow
-                geometry={geometry}
-                position={position}
-                material={springs[index].material}
-              />
+              <>
+                <animated.mesh
+                  {...key}
+                  castShadow
+                  receiveShadow
+                  geometry={geometry}
+                  position={position}
+                  material={springs[index].material}
+                />
+                <animated.pointLight
+                  // position={[positionX, positionY, positionZ]}
+                  position={[position.x, position.y, position.z]}
+                  intensity={springs[index].intensity}
+                  color="#63DEC7"
+                />
+              </>
             )
           })}
         </group>

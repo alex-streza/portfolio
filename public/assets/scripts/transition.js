@@ -80,56 +80,66 @@ const updatePathIndicator = () => {
   document.getElementsByClassName('path')[0].innerHTML = path
 }
 
-barba.init({
-  debug: false,
-  transitions: [
-    {
-      name: 'home',
-      async leave() {
-        const done = this.async()
-        pageTransition()
-        await delay(900)
-        window.scrollTo({ top: 0 })
-        done()
-      },
-      enter() {
-        const done = this.async()
-        gsap.fromTo(
-          'main',
-          {
-            opacity: 0,
-            y: 150,
-          },
-          {
+const isMobile = () => {
+  const ua = navigator.userAgent
+  return /Mobile|Android|iP(hone|od)|IEMobile|BlackBerry|Kindle|Silk-Accelerated|(hpw|web)OS|Opera M(obi|ini)/.test(
+    ua,
+  )
+}
+
+if (!isMobile()) {
+  barba.init({
+    debug: false,
+    transitions: [
+      {
+        async leave() {
+          const done = this.async()
+          pageTransition()
+          await delay(900)
+          window.scrollTo({ top: 0 })
+          done()
+        },
+        enter() {
+          const done = this.async()
+          gsap.fromTo(
+            'main',
+            {
+              opacity: 0,
+              y: 150,
+            },
+            {
+              duration: 0.3,
+              opacity: 1,
+              y: 0,
+              onComplete: () => {
+                updatePathTheme()
+                updatePathIndicator()
+                updateNavbar()
+              },
+            },
+          )
+
+          done()
+        },
+        once() {
+          const done = this.async()
+
+          gsap.to('main', {
             duration: 0.3,
             opacity: 1,
-            y: 0,
             onComplete: () => {
               updatePathTheme()
               updatePathIndicator()
               updateNavbar()
             },
-          },
-        )
-
-        done()
+          })
+          done()
+        },
       },
-      once() {
-        const done = this.async()
-
-        gsap.to('main', {
-          duration: 0.3,
-          opacity: 1,
-          onComplete: () => {
-            updatePathTheme()
-            updatePathIndicator()
-            updateNavbar()
-          },
-        })
-        done()
-      },
-    },
-  ],
-})
+    ],
+  })
+}
 
 updatePathTheme()
+updatePathIndicator()
+updateNavbar()
