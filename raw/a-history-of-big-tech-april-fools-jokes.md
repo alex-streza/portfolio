@@ -1,7 +1,7 @@
 ---
 setup: |
   import Layout from '../../layouts/BlogPost.astro'
-publishDate: Apr 5th 2022
+pubDate: Apr 5th 2022
 description: April Fool’s is a time where companies like Stack Overflow pull out all the stops to show off their ‘latest and greatest’ features. But it’s also a time where we can look back and see some of the…
 title: A History Of Big Tech April Fool’s Jokes
 readTime: 7 min read

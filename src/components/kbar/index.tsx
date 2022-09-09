@@ -1,5 +1,14 @@
 import Command from '@components/icons/Command'
 import { toggleTheme } from '@components/theme-toggle'
+import {
+  Github,
+  Gmail,
+  Linkedin,
+  Medium,
+  Rss,
+  Twitter,
+} from '@icons-pack/react-simple-icons'
+import { Post } from '@models/posts'
 import { useLocalStorageValue } from '@react-hookz/web'
 import {
   KBarAnimator,
@@ -10,9 +19,8 @@ import {
   KBarSearch,
   useMatches,
 } from 'kbar'
+import { noop } from 'kbar/lib/utils'
 import { useMemo } from 'react'
-import MediumIcon from '../icons/Medium'
-import TwitterIcon from '../icons/Twitter'
 
 const RenderResults = () => {
   const { results } = useMatches()
@@ -41,7 +49,11 @@ const RenderResults = () => {
   )
 }
 
-const KBar = ({ posts }) => {
+interface KBarProps {
+  posts: Post[]
+}
+
+const KBar = ({ posts }: KBarProps) => {
   const [, setTheme] = useLocalStorageValue('theme', 'light')
 
   const actions = useMemo(
@@ -50,15 +62,15 @@ const KBar = ({ posts }) => {
         id: 'command_center',
         section: 'Shortcuts',
         name: 'Commands center',
-        shortcut: ['ctrl', 'k'],
+        shortcut: ['ctrl', 'K'],
         keywords: 'writing words',
-        perform: () => {},
+        perform: noop,
       },
       {
         id: 'switch_theme',
         section: 'Shortcuts',
         name: 'Switch theme',
-        shortcut: ['t'],
+        shortcut: ['ctrl', 'T'],
         keywords: 'switch theme',
         perform: () => {
           const theme = localStorage.getItem('theme') ?? 'light'
@@ -68,19 +80,39 @@ const KBar = ({ posts }) => {
         },
       },
       {
-        id: 'blog',
-        section: 'Navigation',
-        name: 'All blog posts',
-        shortcut: ['b'],
-        keywords: 'writing words',
-        perform: () => (window.location.pathname = '/'),
+        id: 'email',
+        name: 'alex.streza@snowfox.art',
+        section: 'Social links',
+        keywords: 'contact,email',
+        icon: <Gmail />,
+        perform: () =>
+          (window.location.href = 'mailto:alex.streza@snowfox.art'),
+      },
+      {
+        id: 'linkedin',
+        name: 'LinkedIn',
+        section: 'Social links',
+        keywords: 'contact',
+        icon: <Linkedin />,
+        perform: () =>
+          (window.location.href =
+            'https://www.linkedin.com/in/alexandru-streza-7a4254155/'),
+      },
+      {
+        id: 'github',
+        name: 'GitHub',
+        section: 'Social links',
+        keywords: 'contact',
+        icon: <Github />,
+        perform: () =>
+          (window.location.href = 'https://github.com/alex-streza/'),
       },
       {
         id: 'medium',
         name: 'Medium',
         section: 'Social links',
         keywords: 'contact',
-        icon: <MediumIcon />,
+        icon: <Medium />,
         perform: () =>
           (window.location.href = 'https://medium.com/@alex.streza'),
       },
@@ -88,10 +120,40 @@ const KBar = ({ posts }) => {
         id: 'twitter',
         name: 'Twitter',
         section: 'Social links',
-        icon: <TwitterIcon />,
+        icon: <Twitter />,
         keywords: 'contact',
         perform: () =>
           (window.location.href = 'https://twitter.com/alex_streza'),
+      },
+      {
+        id: 'twitter',
+        name: 'RSS',
+        section: 'Social links',
+        icon: <Rss />,
+        keywords: 'rss',
+        perform: () => (window.location.pathname = '/rss.xml'),
+      },
+
+      {
+        id: 'developer',
+        section: 'Paths',
+        name: 'Developer',
+        keywords: 'developer',
+        perform: () => (window.location.pathname = '/developer'),
+      },
+      {
+        id: 'designer',
+        section: 'Paths',
+        name: 'Designer',
+        keywords: 'designer',
+        perform: () => (window.location.pathname = '/designer'),
+      },
+      {
+        id: 'writer',
+        section: 'Paths',
+        name: 'Writer',
+        keywords: 'writer',
+        perform: () => (window.location.pathname = '/writer'),
       },
       ...posts.map((post, i) => {
         return {
@@ -102,7 +164,7 @@ const KBar = ({ posts }) => {
         }
       }),
     ],
-    [],
+    [posts, setTheme],
   )
 
   return (
@@ -120,7 +182,7 @@ const KBar = ({ posts }) => {
         <KBarPositioner className="command-center-positioner">
           <KBarAnimator className="command-center-animator">
             <KBarSearch className="command-center-input" />
-            <RenderResults actions={actions} />
+            <RenderResults />
           </KBarAnimator>
         </KBarPositioner>
       </KBarPortal>

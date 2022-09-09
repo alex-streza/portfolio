@@ -1,0 +1,77 @@
+---
+import ThemeToggle from '@components/theme-toggle'
+import Cursor from '@components/cursor'
+import { getPosts } from '@utils/server'
+import KBar from './kbar'
+
+const posts = getPosts(await Astro.glob('../pages/posts/*.mdx')).map((p) => ({
+  ...p.frontmatter,
+  url: p.url,
+}))
+---
+
+<nav class="navbar">
+  <a href="/" class="reset-link h-12" id="logo-container">
+    <span id="logo" class="leading-7 text-center"
+      ><span class="text-main transition-colors duration-300">A</span>lex Strez<span
+        class="text-main transition-colors duration-300"
+        >a
+      </span>
+    </span>
+    <span id="logo-path" class="path text-main"></span>
+  </a>
+  <div class="navbar-actions">
+    <Cursor client:only="react" />
+    <KBar client:only="react" {posts} />
+    <ThemeToggle client:only="react" />
+  </div>
+</nav>
+
+<style>
+  .navbar {
+    @apply flex z-10 justify-between items-center fixed top-0 p-5 md:py-8 md:px-[120px] w-full backdrop-blur-sm;
+  }
+
+  .navbar > a {
+    @apply flex flex-col items-start;
+  }
+  .navbar .path {
+    @apply -mt-5 text-base capitalize font-sans font-extrabold;
+  }
+
+  .navbar-actions {
+    @apply flex gap-5 h-[32px];
+  }
+  span {
+    @apply text-[28px] mb-0 font-serif font-black;
+  }
+</style>
+
+<script>
+  if (window.location.pathname == '/') {
+    document
+      .querySelector('#logo-path')
+      .classList.add('hidden', 'opacity-0', '-translate-y-5')
+    document.querySelector('#logo').classList.add('translate-y-3')
+  }
+</script>
+
+<script is:inline src="https://unpkg.com/@barba/core">
+
+</script>
+
+<script is:inline src="https://unpkg.com/@barba/prefetch">
+
+</script>
+
+<script
+  is:inline
+  src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.1/gsap.min.js"
+>
+
+</script>
+
+<script is:inline type="module">
+  import '../assets/scripts/theme.js'
+  import '../assets/scripts/transition.js'
+</script>

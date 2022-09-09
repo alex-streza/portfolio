@@ -1,17 +1,16 @@
 ---
 setup: |
-   import Layout from '../../layouts/BlogPost.astro'
-publishDate: Mar 10th
+  import Layout from '../../layouts/BlogPost.astro'
+pubDate: Mar 10th
 description: With this guide, you can now share your articles automatically across different social media platforms without having to do it manually every time.
 title: How I’m Automating Sharing Articles Across Multiple Social Media
 readTime: 5 min read
 name: Alex Streza
 ---
-Automating Sharing Articles Across Multiple Social Media In Minutes
-===================================================================
 
-Automation > Manual Labour
---------------------------
+# Automating Sharing Articles Across Multiple Social Media In Minutes
+
+## Automation > Manual Labour
 
 Writing is fun and extremely **rewarding** but sharing your articles across all of your social media accounts is exactly the opposite, so I went on a journey to fix it through automation, oh and what a journey it was.
 
@@ -19,8 +18,7 @@ Writing is fun and extremely **rewarding** but sharing your articles across all 
 
 Developers Being Developers
 
-The Mission
-===========
+# The Mission
 
 _Beep Bop. Initiating Share Automation._
 
@@ -38,14 +36,13 @@ A couple of days ago I decided to build some kind of automated pipeline that lis
 
 It should perform the following:
 
-*   run on a schedule
-*   extract title, description, URL & tags from post meta
-*   format data to resemble a tweet/post
-*   post to Twitter
-*   post to LinkedIn
+- run on a schedule
+- extract title, description, URL & tags from post meta
+- format data to resemble a tweet/post
+- post to Twitter
+- post to LinkedIn
 
-**Medium API**
-==============
+# **Medium API**
 
 Great but not enough.
 
@@ -61,11 +58,11 @@ That’s all nice & dandy so let’s not read the documented endpoints and go st
 
 A bit later I discovered there’s no way to get the post of a certain user through the official API as it allowed only the following:
 
-*   Authentication
-*   Current Users Data
-*   Get Publications
-*   **Create** Posts
-*   Upload Images
+- Authentication
+- Current Users Data
+- Get Publications
+- **Create** Posts
+- Upload Images
 
 No endpoint for requesting the latest post of a user… so a lot of work for nothing, being honest automating a task like this with traffic this low is similarly obsolete.
 
@@ -79,13 +76,11 @@ It doesn’t even require authentication, you simply make a GET request and get 
 
 Unfortunately, I couldn’t make it work for my username for some reason 😢, so I had to **move on** to a different, forgotten approach.
 
-RSS to the rescue
-=================
+# RSS to the rescue
 
 Not an anagram of the USSR.
 
-Isn’t that boomer tech?
------------------------
+## Isn’t that boomer tech?
 
 RSS stands for “rich site summary” or “straightforward syndication,” depending on who you ask. RSS, at its core, refers to simple text files containing necessary, up-to-date information — news stories, articles, and the like.
 
@@ -97,8 +92,7 @@ As internet content became more complex, so did RSS files, quickly adopting imag
 
 Medium RSS Feed API Sample
 
-Why RSS?
---------
+## Why RSS?
 
 Since RSS in a **nutshell** is a way to access site information in XML format and Medium provides a [**feed API**](https://help.medium.com/hc/en-us/articles/214874118-Using-RSS-feeds-of-profiles-publications-and-topics) for profiles we can parse the data and select the latest post of a user.
 
@@ -106,8 +100,7 @@ Since RSS in a **nutshell** is a way to access site information in XML format an
 
 All we need to do now is write some code to get the first post in the array and select title, description, URL, and categories (tags). Hmmm what if we write **No Code.**
 
-No Code Automation
-==================
+# No Code Automation
 
 What a twist.
 
@@ -123,8 +116,7 @@ That’s a mouthful and a lot of bragging but they are actually right, I have ne
 
 Social Media Auto Share Flow
 
-**Guide**
----------
+## **Guide**
 
 Go to [Make](https://www.make.com/en/register) and create a free account, keep in mind some nodes are available only for paid plans such as the Twitter integration.
 
@@ -144,4 +136,4 @@ I’m not certain how to debug a workflow without triggering the APIs to see whe
 
 Hope you liked this ‘Automation’ story following the steps to creating a **No Code Automated Scenario** with Make. Don’t forget to **follow** and **clap** for more marvelous software-related stories coming twice a week 🚀.
 
-_More content at_ [**_PlainEnglish.io_**](https://plainenglish.io/)_. Sign up for our_ [**_free weekly newsletter_**](http://newsletter.plainenglish.io/)_. Follow us on_  [**_Twitter_**](https://twitter.com/inPlainEngHQ) _and_ [**_LinkedIn_**](https://www.linkedin.com/company/inplainenglish/)_. Join our_ [**_community Discord_**](https://discord.gg/GtDtUAvyhW)_._
+_More content at_ [**_PlainEnglish.io_**](https://plainenglish.io/)_. Sign up for our_ [**_free weekly newsletter_**](http://newsletter.plainenglish.io/)_. Follow us on_ [**_Twitter_**](https://twitter.com/inPlainEngHQ) _and_ [**_LinkedIn_**](https://www.linkedin.com/company/inplainenglish/)_. Join our_ [**_community Discord_**](https://discord.gg/GtDtUAvyhW)_._

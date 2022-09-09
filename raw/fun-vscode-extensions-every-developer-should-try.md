@@ -1,7 +1,7 @@
 ---
 setup: |
   import Layout from '../../layouts/BlogPost.astro'
-publishDate: Aug 19th 2021
+pubDate: Aug 19th 2021
 description: VSCode is a great and insanely popular Code Editor but what makes it so amazing is the Extension Ecosystem it allows and how customizable it really is. I’ll list some extensions I use often and…
 title: Fun VSCode Extensions Every Developer Should Try
 readTime: 3 min read

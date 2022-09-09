@@ -1,7 +1,7 @@
 ---
 setup: |
   import Layout from '../../layouts/BlogPost.astro'
-publishDate: Jan 8th 2022
+pubDate: Jan 8th 2022
 description: Happy New Year dear reader! As developers we often get asked how we spend our time in a day, is it really only couch potato coding 24/7? A less asked question is what we do on special days like New…
 title: Building a SaaS on New Year’s Eve
 readTime: 3 min read

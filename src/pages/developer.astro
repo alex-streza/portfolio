@@ -1,0 +1,49 @@
+---
+import BaseHead from '@components/BaseHead.astro'
+import Header from '@components/Header.astro'
+import PageTransition from '@components/transition/PageTransition'
+import Scene from '@paths/developer/MainScene'
+import { Leva } from 'leva'
+
+let title = 'Developer | Alex Streza'
+let description =
+  "Everything JavaScript, Typescript and Web Development. I sometimes tackle AI, Web3 and have a massive soft spot for 3D and CGI. I also think I'm funny at times."
+let permalink = 'https://www.blog.alexstreza.dev/'
+---
+
+<html lang="en">
+  <head>
+    <BaseHead title={title} description={description} permalink={permalink} />
+
+    <style>
+      header {
+        @apply w-full h-full grid place-content-center;
+      }
+
+      .developer-content {
+        @apply absolute inset-0 p-0 w-screen h-screen mx-[none] z-0;
+      }
+      /* body {
+        cursor: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDgiIGhlaWdodD0iNDgiIHZpZXdCb3g9IjAgMCA0OCA0OCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTIxLjk5OTkgOEwyMC45OTk5IDZMMTkuOTk5OSA4TDE3Ljk5OTkgOC4yNUwxOS42Njc5IDkuNjY2TDE4Ljk5OTkgMTJMMjAuOTk5OSAxMC42NjhMMjIuOTk5OSAxMkwyMi4zMzE5IDkuNjY2TDIzLjk5OTkgOC4yNUwyMS45OTk5IDhaTTM4LjY2NzkgMjkuMzMyTDM2Ljk5OTkgMjZMMzUuMzMxOSAyOS4zMzJMMzEuOTk5OSAyOS43NUwzNC43Nzc5IDMyLjExMkwzMy42Njc5IDM2TDM2Ljk5OTkgMzMuNzc4TDQwLjMzMTkgMzZMMzkuMjIxOSAzMi4xMTJMNDEuOTk5OSAyOS43NUwzOC42Njc5IDI5LjMzMlpNMTMuMzMzOSAxMi42NjZMMTEuOTk5OSAxMEwxMC42NjU5IDEyLjY2Nkw3Ljk5OTg4IDEzTDEwLjIyMTkgMTQuODg4TDkuMzMzODggMThMMTEuOTk5OSAxNi4yMjJMMTQuNjY1OSAxOEwxMy43Nzc5IDE0Ljg4OEwxNS45OTk5IDEzTDEzLjMzMzkgMTIuNjY2Wk02LjgyNzg4IDM0QzYuODI3ODggMzUuMDY4IDcuMjQzODggMzYuMDcyIDcuOTk5ODggMzYuODI4TDExLjE3MTkgNDBDMTEuOTI3OSA0MC43NTYgMTIuOTMxOSA0MS4xNzIgMTMuOTk5OSA0MS4xNzJDMTUuMDY3OSA0MS4xNzIgMTYuMDcxOSA0MC43NTYgMTYuODI3OSA0MEwzOS45OTk5IDE2LjgyOEM0MC43NTU5IDE2LjA3MiA0MS4xNzE5IDE1LjA2OCA0MS4xNzE5IDE0QzQxLjE3MTkgMTIuOTMyIDQwLjc1NTkgMTEuOTI4IDM5Ljk5OTkgMTEuMTcyTDM2LjgyNzkgOEMzNS4zMTU5IDYuNDg4IDMyLjY4MzkgNi40ODggMzEuMTcxOSA4TDcuOTk5ODggMzEuMTcyQzcuMjQzODggMzEuOTI4IDYuODI3ODggMzIuOTMyIDYuODI3ODggMzRaTTMzLjk5OTkgMTAuODI4TDM3LjE3MTkgMTRMMjkuOTk5OSAyMS4xNzJMMjYuODI3OSAxOEwzMy45OTk5IDEwLjgyOFoiIGZpbGw9IiMyNkI1OUIiLz4KPC9zdmc+Cg=='),
+          auto;
+      } */
+    </style>
+  </head>
+
+  <body data-barba="wrapper">
+    <Header />
+    <Leva client:only="react" hidden={import.meta.env.PROD} />
+
+    <main
+      data-barba="container"
+      data-barba-namespace="developer"
+      class="absolute top-0"
+    >
+      <section class="developer-content">
+        <Scene client:only="react" />
+      </section>
+    </main>
+
+    <PageTransition />
+  </body>
+</html>

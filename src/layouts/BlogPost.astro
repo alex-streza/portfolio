@@ -1,55 +1,44 @@
 ---
 import BaseHead from '@components/BaseHead.astro'
-import BlogHeader from '@components/BlogHeader.astro'
+import Header from '@components/Header.astro'
 import BlogPost from '@components/BlogPost.astro'
 import BlogPostPreview from '@components/BlogPostPreview.astro'
 import NewsletterCard from '@components/cards/NewsletterCard'
 import PageTransition from '@components/transition/PageTransition'
-import PageLoader from '@components/transition/PageLoader'
+import FloatingMenu from '@components/cards/FloatingMenu'
 import { getPosts } from '@utils/server'
 
 const { content } = Astro.props
-const {
-  title,
-  description,
-  publishDate,
-  author,
-  heroImage,
-  permalink,
-  alt,
-  readTime,
-  likeCount,
-  commentCount,
-} = content
+const { title, description, pubDate, ogImage, readTime } = content
 
-const allPosts = getPosts(await Astro.glob('../pages/posts/*.md')).slice(0, 3)
+const allPosts = getPosts(await Astro.glob('../pages/posts/*.mdx')).slice(0, 3)
+const permalink = `https://staging-blog.alexstreza.dev/posts/${title
+  .replaceAll(' ', '-')
+  .toLowerCase()}`
+const randomStart = Math.floor(Math.random() * (allPosts.length - 3))
+const randomEnd = randomStart + 3
 ---
 
 <html lang={content.lang || 'en'}>
   <head>
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/prism-themes@1.9.0/themes/prism-lucario.css"
-    />
-    <BaseHead {title} {description} {permalink} />
+    <BaseHead {title} {description} {ogImage} {permalink} alt={title} />
   </head>
 
   <body data-barba="wrapper">
-    <BlogHeader />
-    <main data-barba="container" data-barba-namespace="blog">
-      <BlogPost
-        {title}
-        {author}
-        {heroImage}
-        {publishDate}
-        {alt}
-        {likeCount}
-        {commentCount}
-        {readTime}
-      >
+    <Header />
+    <main
+      class="h-screen relative"
+      data-barba="container"
+      data-barba-namespace="blog"
+    >
+      <BlogPost {pubDate} {readTime} alt={title}>
         <slot />
+        <FloatingMenu
+          text={`${title} by @alex_streza ${permalink}`}
+          client:only="react"
+        />
         <NewsletterCard />
-        {allPosts.map((p, i) => (
+        {allPosts.slice(randomStart, randomEnd).map((p, i) => (
           <div class="mt-10">
             <BlogPostPreview post={p} />
             {i < allPosts.length - 1 && <hr />}
@@ -59,7 +48,6 @@ const allPosts = getPosts(await Astro.glob('../pages/posts/*.md')).slice(0, 3)
     </main>
 
     <PageTransition />
-    {title.includes('Loading') && <PageLoader client:load />}
 
     <script is:inline src="https://unpkg.com/@barba/core">
 
@@ -77,8 +65,8 @@ const allPosts = getPosts(await Astro.glob('../pages/posts/*.md')).slice(0, 3)
     </script>
 
     <script is:inline type="module">
-      import '../assets/scripts/transition.js'
       import '../assets/scripts/theme.js'
+      import '../assets/scripts/transition.js'
     </script>
   </body>
 </html>

@@ -24,41 +24,33 @@ const SunIcon = () => (
 )
 
 export const toggleTheme = (theme) => {
-  if (theme.includes('light')) {
-    document.documentElement.classList.remove('dark')
-  } else {
-    document.documentElement.classList.add('dark')
-  }
+  if (theme.includes('light')) document.documentElement.classList.remove('dark')
+  else document.documentElement.classList.add('dark')
 }
 
 const ThemeToggle = () => {
-  const [theme, setTheme] = useLocalStorageValue('theme', 'light')
+  const [theme, setTheme] = useLocalStorageValue<string | null>(
+    'theme',
+    window.matchMedia('(prefers-color-scheme: dark)').matches
+      ? 'dark'
+      : 'light',
+  )
   const [isMounted, setIsMounted] = useState(false)
 
   const switchTheme = useCallback(() => {
-    const newTheme = theme.includes('dark') ? 'light' : 'dark'
-    console.log('newTheme', newTheme)
+    const newTheme = theme == null || theme.includes('dark') ? 'light' : 'dark'
     setTheme(newTheme)
     toggleTheme(newTheme)
-  }, [theme])
+  }, [setTheme, theme])
 
   useEffect(() => {
-    if (!isMounted) {
-      const id = setTimeout(() => {
-        document.getElementsByTagName('body')[0].classList.add('duration-500')
-        document
-          .getElementsByTagName('body')[0]
-          .classList.add('transition-colors')
-      }, 500)
-      setIsMounted(true)
-      return () => clearTimeout(id)
-    }
+    setIsMounted(true)
   }, [theme])
 
   if (!isMounted) return <SunIcon />
 
   return (
-    <button onClick={switchTheme} aria-label="Theme Toggle" >
+    <button onClick={switchTheme} aria-label="Theme Toggle">
       {theme.includes('dark') ? <MoonIcon /> : <SunIcon />}
     </button>
   )

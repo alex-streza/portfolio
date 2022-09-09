@@ -1,17 +1,16 @@
 ---
 setup: |
-   import Layout from '../../layouts/BlogPost.astro'
-publishDate: Feb 9th
+  import Layout from '../../layouts/BlogPost.astro'
+pubDate: Feb 9th
 description: You have an idea and want to turn it into a full-fledged product but are afraid of costs and don’t have the business acumen or knowledge to get funds for others to help you build it. That sounds a…
 title: How I Launched a SaaS in 60 Days with an Empty Pocket
 readTime: 6 min read
 name: Alex Streza
 ---
-How I Launched a SaaS in 60 Days with an Empty Pocket
-=====================================================
 
-Building a SaaS is expensive unless you are a developer.
---------------------------------------------------------
+# How I Launched a SaaS in 60 Days with an Empty Pocket
+
+## Building a SaaS is expensive unless you are a developer.
 
 ![](https://miro.medium.com/max/1400/1*VNjd_sg9sYsaaburpPm6PA.png)
 
@@ -25,8 +24,7 @@ I’ve been gathering the drive and motivation to build a digital product for a 
 
 Let’s see what are the main steps in building a SaaS and doing it efficiently.
 
-1\. Having an Idea
-==================
+# 1\. Having an Idea
 
 _Where can I get a great idea?_
 
@@ -38,8 +36,7 @@ GenIdea Preview
 
 Your idea can even not be entirely digital, platforms for your city/country for certain real services like food & transport if the local market isn’t already oversaturated with such apps.
 
-2\. Validating the Idea
-=======================
+# 2\. Validating the Idea
 
 _Why do I care what others care about?_
 
@@ -59,8 +56,7 @@ Secondly, a feedback/email recollection from somewhere on the website so you can
 
 I’ve gone for a more complex approach and built the MVP without this step and also skipped the Building an Audience one due to laziness and a do it later mentality which were mistakes.
 
-3\. Building an Audience
-========================
+# 3\. Building an Audience
 
 _What is an audience and why do I care?_
 
@@ -78,8 +74,7 @@ Creating a series of weekly Dev Log articles or even a YouTube channel covering 
 
 Another way of reaching potential users is by creating an email list with a service like [MailChimp](https://mailchimp.com/). I used it for the subscription form and it had a nice developer experience and it’s also free for up to 2000 contacts.
 
-4\. Creating the MVP
-====================
+# 4\. Creating the MVP
 
 _How can I do that for free?_
 
@@ -104,8 +99,7 @@ I understand being able to handle all those different technologies and integrati
 
 It took me **less than 30 days** to implement the basic functionality but got lost tweaking and removing features from the beta launch so it bumped up to 60 days.
 
-5\. Launching and Promoting
-===========================
+# 5\. Launching and Promoting
 
 _Where and what to do?_
 
@@ -123,9 +117,9 @@ Sample Usage of custom Meta component for SEO
 
 The most important meta tags you must make sure to add to your pages are:
 
-*   Title
-*   Description
-*   Image ([OG format](https://ogp.me/) for Social Media)
+- Title
+- Description
+- Image ([OG format](https://ogp.me/) for Social Media)
 
 Check this [gist for a simple Meta component](https://gist.github.com/alex-streza/17165b146e9807fa8c4ae707f3c1bed8) implementation for NextJS.
 

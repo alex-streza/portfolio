@@ -1,7 +1,7 @@
 ---
 setup: |
   import Layout from '../../layouts/BlogPost.astro'
-publishDate: Feb 17th 2022
+pubDate: Feb 17th 2022
 description: GDPR & EPR restrictions aren’t well known to developers outside of the EU or small websites with no legal team and this can affect many applications out there. Recently an article surfaced on…
 title: How Google Fonts Became Illegal in Europe
 readTime: 5 min read

@@ -1,0 +1,82 @@
+.content {
+  h1:first-of-type {
+    @apply mb-2;
+  }
+
+  h2:first-of-type {
+    @apply font-sans font-extrabold !text-2xl;
+  }
+  h2:not(:first-of-type) {
+    @apply mt-10;
+  }
+
+  hr {
+    @apply my-10 bg-white;
+  }
+
+  p {
+    @apply text-lg;
+  }
+
+  a {
+    @apply dark:text-main text-main-900 font-normal items-center gap-3 underline underline-offset-8;
+  }
+
+  a > code {
+    @apply relative text-main bg-transparent underline-offset-8;
+  }
+
+  a > code::before {
+    @apply absolute inset-0 block bg-gray-300 opacity-10 rounded;
+    content: '';
+  }
+
+  p {
+    @apply my-5 leading-8;
+  }
+
+  figure {
+    @apply mx-auto !mt-10;
+  }
+  img {
+    @apply rounded !mb-10 mx-auto;
+  }
+  figure > img {
+    @apply !mb-0;
+  }
+  figcaption > p,
+  figcaption {
+    @apply text-center text-gray-100 m-0 mt-2;
+  }
+
+  code {
+    @apply text-sm bg-gray-700 p-1 rounded break-words;
+  }
+
+  pre.astro-code > code {
+    all: unset;
+  }
+
+  pre {
+    @apply relative px-5 py-4 overflow-x-auto overflow-y-hidden rounded;
+  }
+
+  img.cover {
+    @apply w-full max-h-[50vh] object-cover;
+  }
+
+  blockquote {
+    @apply p-1 dark:text-main text-main-900 bg-main-hex bg-opacity-20 mt-3 text-lg font-semibold mb-5 w-fit rounded;
+  }
+  blockquote > p {
+    all: unset;
+  }
+
+  li:before {
+    @apply mr-2 content-['\1F95E'];
+  }
+
+  ul {
+    @apply !mb-5;
+  }
+}

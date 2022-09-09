@@ -1,7 +1,7 @@
 const pageTransition = () => {
-  var tl = gsap.timeline()
+  const tl = gsap.timeline()
 
-  tl.to('.transition li', {
+  tl.to('.transition-container li', {
     duration: 0.6,
     scaleY: 1,
     transformOrigin: 'bottom left',
@@ -15,8 +15,8 @@ const pageTransition = () => {
     y: -150,
   })
 
-  tl.to('.transition li', {
-    duration: 0.6,
+  tl.to('.transition-container li', {
+    duration: 1,
     scaleY: 0,
     transformOrigin: 'top right',
     stagger: 0.1,
@@ -35,41 +35,111 @@ const delay = (n) => {
 
 barba.use(barbaPrefetch)
 
-barba.init({
-  debug: true,
-  transitions: [
-    {
-      name: 'home',
-      async leave() {
-        const done = this.async()
-        pageTransition()
-        await delay(900)
-        window.scrollTo({ top: 0 })
-        done()
-      },
-      enter() {
-        const done = this.async()
+const updateNavbar = () => {
+  const tl = gsap.timeline()
 
-        gsap.fromTo(
-          'main',
-          {
-            opacity: 0,
-            y: 150,
-          },
-          {
+  if (location.pathname === '/') {
+    tl.to('#logo-path', {
+      duration: 0.3,
+      display: 'none',
+      opacity: 0,
+      y: 20,
+    }).to('#logo', {
+      y: 12,
+    })
+  } else {
+    tl.to('#logo', {
+      y: 0,
+    }).to('#logo-path', {
+      duration: 0.3,
+      display: 'block',
+      opacity: 1,
+      y: 0,
+    })
+  }
+  tl.play()
+}
+
+const updatePathTheme = () => {
+  const paths = ['developer', 'designer', 'writer']
+
+  const pathname = window.location.pathname.split('/')[1]
+  const currentPath = pathname.includes('posts') ? 'writer' : pathname
+
+  paths.forEach((path) => {
+    document.documentElement.classList.remove(path)
+  })
+  if (currentPath !== '') document.documentElement.classList.add(currentPath)
+}
+
+const updatePathIndicator = () => {
+  const pathname = window.location.pathname.split('/')[1]
+  const path =
+    pathname.includes('posts') || pathname == '' ? 'writer' : pathname
+
+  document.getElementsByClassName('path')[0].innerHTML = path
+}
+
+const isMobile = () => {
+  const ua = navigator.userAgent
+  return /Mobile|Android|iP(hone|od)|IEMobile|BlackBerry|Kindle|Silk-Accelerated|(hpw|web)OS|Opera M(obi|ini)/.test(
+    ua,
+  )
+}
+
+if (!isMobile()) {
+  barba.init({
+    debug: false,
+    transitions: [
+      {
+        async leave() {
+          const done = this.async()
+          pageTransition()
+          await delay(900)
+          window.scrollTo({ top: 0 })
+          done()
+        },
+        enter() {
+          const done = this.async()
+          gsap.fromTo(
+            'main',
+            {
+              opacity: 0,
+              y: 150,
+            },
+            {
+              duration: 0.3,
+              opacity: 1,
+              y: 0,
+              onComplete: () => {
+                updatePathTheme()
+                updatePathIndicator()
+                updateNavbar()
+              },
+            },
+          )
+
+          done()
+        },
+        once() {
+          const done = this.async()
+
+          gsap.to('main', {
             duration: 0.3,
             opacity: 1,
-            y: 0,
-          },
-        )
-        done()
+            onComplete: () => {
+              updatePathTheme()
+              updatePathIndicator()
+              updateNavbar()
+            },
+          })
+          done()
+        },
       },
-      once() {
-        return gsap.to('main', {
-          duration: 0.3,
-          opacity: 1,
-        })
-      },
-    },
-  ],
-})
+    ],
+  })
+}
+
+updatePathTheme()
+updatePathIndicator()
+updateNavbar()

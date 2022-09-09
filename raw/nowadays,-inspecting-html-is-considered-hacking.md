@@ -1,7 +1,7 @@
 ---
 setup: |
   import Layout from '../../layouts/BlogPost.astro'
-publishDate: Feb 28th
+pubDate: Feb 28th
 description: Yeah, the title is ridiculous and so is this story that really deserves more coverage. Inspecting website HTML is an extremely common feature most normal people are aware of, having learned in school…
 title: Nowadays, Inspecting HTML Is Considered Hacking
 readTime: 4 min read

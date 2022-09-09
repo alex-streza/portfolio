@@ -1,88 +1,30 @@
 ---
 import BaseHead from '@components/BaseHead.astro'
-import BlogHeader from '@components/BlogHeader.astro'
-import BlogPostPreview from '@components/BlogPostPreview.astro'
-import NewsletterForm from '@components/forms/NewsletterForm'
+import Header from '@components/Header.astro'
 import PageTransition from '@components/transition/PageTransition'
-import PageLoader from '@components/transition/PageLoader'
-import spacetime from 'spacetime'
-import { getPosts } from '@utils/server'
+import Scene from '@paths/home/Scene'
 
-let title = 'Blog | Alex Streza'
+let title = 'Portofolio | Alex Streza'
 let description =
-  "Everything JavaScript, Typescript and Web Development. I sometimes tackle AI, Web3 and have a massive soft spot for 3D and CGI. I also think I'm funny at times too."
+  "Everything JavaScript, Typescript and Web Development. I sometimes tackle AI, Web3 and have a massive soft spot for 3D and CGI. I also think I'm funny at times."
 let permalink = 'https://www.blog.alexstreza.dev/'
-
-const allPosts = getPosts(await Astro.glob('./posts/*.md'))
 ---
 
 <html lang="en">
   <head>
     <BaseHead title={title} description={description} permalink={permalink} />
-
-    <style>
-      header {
-        @apply w-full h-full grid place-content-center;
-      }
-
-      .content {
-        @apply my-10;
-      }
-
-      .intro {
-        @apply mb-20;
-      }
-
-      .latest {
-        font-size: 2.5rem;
-        font-weight: 700;
-      }
-      hr {
-        @apply bg-gray-100 opacity-50;
-      }
-    </style>
   </head>
 
   <body data-barba="wrapper">
-    <BlogHeader />
-    <main data-barba="container" data-barba-namespace="home">
-      <div class="content">
-        <section class="intro">
-          <h1 class="latest">{title}</h1>
-          <p>{description}</p>
-          <NewsletterForm />
-        </section>
-        <section aria-label="Blog post list">
-          {allPosts.map((p, i) => (
-            <>
-              <BlogPostPreview post={p} />
-              {i < allPosts.length - 1 && <hr />}
-            </>
-          ))}
-        </section>
-      </div>
+    <Header />
+    <main
+      data-barba="container"
+      data-barba-namespace="home"
+      class="absolute top-0"
+    >
+      <Scene client:only="react" />
     </main>
 
     <PageTransition />
-
-    <script is:inline src="https://unpkg.com/@barba/core">
-
-    </script>
-
-    <script is:inline src="https://unpkg.com/@barba/prefetch">
-
-    </script>
-
-    <script
-      is:inline
-      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.1/gsap.min.js"
-    >
-
-    </script>
-
-    <script is:inline type="module">
-      import '../assets/scripts/transition.js'
-      import '../assets/scripts/theme.js'
-    </script>
   </body>
 </html>
