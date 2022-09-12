@@ -86,7 +86,7 @@ export default function Model(props) {
 
   const [springs, api] = useSprings(keycaps.length, () => ({
     intensity: 0,
-    material: materials['AluGrey.001'],
+    material: materials['Alu_Ano_KbdFans_DarkGreen'],
   }))
 
   const transitionedKeycaps = useTransition(keycaps, {
@@ -127,7 +127,7 @@ export default function Model(props) {
                   if (i === keyIndex) {
                     return {
                       intensity: 0,
-                      material: materials['AluGrey.001'],
+                      material: materials['Alu_Ano_KbdFans_DarkGreen'],
                     }
                   }
                 })
@@ -181,7 +181,7 @@ export default function Model(props) {
             receiveShadow
             geometry={geometry}
             position={position}
-            material={materials['PCB_Black.001']}
+            material={materials['Alu_Ano_S+R_MidnightGreen']}
           />
         ))}
       </group>
