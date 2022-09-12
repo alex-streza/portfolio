@@ -86,7 +86,7 @@ const MainScene = () => {
   }, [isDesktop])
 
   return (
-    <div ref={contentRef} className="flex flex-col opacity-0">
+    <div ref={contentRef} className="flex flex-col opacity-0 z-10 relative">
       <h1 className="!text-5xl w-fit md:!text-8xl leading-[60px]">
         <span className="block overflow-hidden">
           <span className="block">Design</span>
@@ -108,7 +108,7 @@ const MainScene = () => {
       <a
         id="resume"
         className="flex gap-2 dark:!text-white w-fit !text-gray-1000 opacity-0 font-bold mt-3 mb-5 md:mb-10"
-        href="https://drive.google.com/file/d/11u_cYddP19wu7aAZdYpePpj4MOSQWOAe/view"
+        href="https://drive.google.com/file/d/12KbDuYVVN7ExJGq73OsQUXzlpBxktVCr/view"
         target="_blank"
         rel="noreferrer"
       >
@@ -211,7 +211,7 @@ const MainScene = () => {
       </span>
       <a
         className="flex gap-2 dark:!text-white !text-gray-1000 w-fit font-bold mt-5 mb-3"
-        href="https://drive.google.com/file/d/11u_cYddP19wu7aAZdYpePpj4MOSQWOAe/view"
+        href="https://drive.google.com/file/d/12KbDuYVVN7ExJGq73OsQUXzlpBxktVCr/view"
         target="_blank"
         rel="noreferrer"
       >

@@ -1,3 +1,4 @@
+import Book from '@components/icons/Book'
 import Command from '@components/icons/Command'
 import { toggleTheme } from '@components/theme-toggle'
 import {
@@ -78,6 +79,16 @@ const KBar = ({ posts }: KBarProps) => {
           setTheme(newTheme)
           toggleTheme(newTheme)
         },
+      },
+      {
+        id: 'resume',
+        name: 'Resume.pdf',
+        section: 'Social links',
+        keywords: 'resume,cv',
+        icon: <Book />,
+        perform: () =>
+          (window.location.href =
+            'https://drive.google.com/file/d/12KbDuYVVN7ExJGq73OsQUXzlpBxktVCr/view'),
       },
       {
         id: 'email',
