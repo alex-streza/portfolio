@@ -107,7 +107,7 @@ const MainScene = () => {
       </span>
       <a
         id="resume"
-        className="flex gap-2 dark:!text-white w-fit !text-gray-1000 opacity-0 font-bold mt-3 mb-5 md:mb-10"
+        className="flex gap-2 dark:!text-white w-fit !text-gray-1000 opacity-0 font-bold mt-3 mb-5 md:mb-10 underline"
         href="https://drive.google.com/file/d/12KbDuYVVN7ExJGq73OsQUXzlpBxktVCr/view"
         target="_blank"
         rel="noreferrer"
@@ -115,7 +115,7 @@ const MainScene = () => {
         <Book /> Resume.pdf
       </a>
       <p className="!mb-10 md:!mb-20 font-normal text-xl md:text-2xl max-w-[60ch] md:leading-10">
-        I’m a freelance designer & developer with
+        I’m a designer & developer with
         <b className="font-serif"> 4</b> years of experience in imagining and
         implementing solutions in various industries and fields ranging from AI,
         sport registrations, map-based visualizations to blockchain-powered
@@ -210,7 +210,7 @@ const MainScene = () => {
         alex.streza@snowfox.art
       </span>
       <a
-        className="flex gap-2 dark:!text-white !text-gray-1000 w-fit font-bold mt-5 mb-3"
+        className="flex gap-2 dark:!text-white !text-gray-1000 w-fit font-bold mt-5 mb-3 underline"
         href="https://drive.google.com/file/d/12KbDuYVVN7ExJGq73OsQUXzlpBxktVCr/view"
         target="_blank"
         rel="noreferrer"
