@@ -1,0 +1,46 @@
+---
+import BaseHead from '@components/BaseHead.astro'
+import Refraction from '@components/experiments/Refraction'
+import Header from '@components/Header.astro'
+import PageTransition from '@components/transition/PageTransition'
+import Scene from '@paths/developer/MainScene'
+import { Leva } from 'leva'
+
+let title = 'Developer | Alex Streza'
+let description =
+  "Everything JavaScript, Typescript and Web Development. I sometimes tackle AI, Web3 and have a massive soft spot for 3D and CGI. I also think I'm funny at times."
+let permalink = 'https://www.blog.alexstreza.dev/'
+---
+
+<html lang="en">
+  <head>
+    <BaseHead title={title} description={description} permalink={permalink} />
+
+    <style>
+      header {
+        @apply w-full h-full grid place-content-center;
+      }
+
+      .developer-content {
+        @apply absolute inset-0 p-0 w-screen h-screen mx-[none] z-0;
+      }
+    </style>
+  </head>
+
+  <body data-barba="wrapper">
+    <Header />
+    <Leva client:only="react" hidden={import.meta.env.PROD} />
+
+    <main
+      data-barba="container"
+      data-barba-namespace="developer"
+      class="absolute top-0"
+    >
+      <section class="developer-content">
+        <Refraction client:load/>
+      </section>
+    </main>
+
+    <PageTransition />
+  </body>
+</html>
