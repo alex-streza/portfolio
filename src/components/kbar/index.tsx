@@ -55,7 +55,9 @@ interface KBarProps {
 }
 
 const KBar = ({ posts }: KBarProps) => {
-  const [, setTheme] = useLocalStorageValue('theme', 'light')
+  const { set: setTheme } = useLocalStorageValue('theme', {
+    defaultValue: 'light',
+  })
 
   const actions = useMemo(
     () => [

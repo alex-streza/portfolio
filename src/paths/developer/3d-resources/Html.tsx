@@ -13,10 +13,15 @@ import {
 import { useLocalStorageValue, useMediaQuery } from '@react-hookz/web'
 import { useThree } from '@react-three/fiber'
 import gsap from 'gsap'
-import { useEffect, useLayoutEffect, useRef } from 'react'
+import { useLayoutEffect, useRef } from 'react'
 
 const Content = () => {
-  const [theme] = useLocalStorageValue('theme', 'light')
+  const { value: theme, set: setTheme } = useLocalStorageValue<string | null>(
+    'theme',
+    {
+      defaultValue: 'light',
+    },
+  )
 
   const ref = useRef(null)
   const isDark = theme.includes('dark')

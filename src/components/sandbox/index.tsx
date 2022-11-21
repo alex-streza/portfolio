@@ -39,7 +39,9 @@ const Sandbox = ({
 }: SandboxProps) => {
   const codemirrorInstance = useRef<CodeMirrorRef>()
 
-  const [theme] = useLocalStorageValue('theme', 'light')
+  const { value: theme } = useLocalStorageValue('theme', {
+    defaultValue: 'light',
+  })
 
   return (
     <SandpackProvider

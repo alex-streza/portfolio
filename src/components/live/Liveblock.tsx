@@ -20,7 +20,9 @@ const UserLiveblock = () => {
 
   const updateMyPresence = useUpdateMyPresence()
 
-  const [showCursors] = useSessionStorageValue('show_cursors', false)
+  const { value: showCursors } = useSessionStorageValue('show_cursors', {
+    defaultValue: false,
+  })
 
   const handleUpdateCursor = useCallback(
     (event) => {

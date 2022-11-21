@@ -78,10 +78,11 @@ const items = {
 }
 
 const Intro = () => {
-  const [revealedIntro, setRevealedIntro] = useSessionStorageValue(
-    'revealed_intro',
-    false,
-  )
+  const { value: revealedIntro, set: setRevealedIntro } =
+    useSessionStorageValue('revealed_intro', {
+      defaultValue: false,
+    })
+
   const ref = useRef()
 
   // eslint-disable-next-line react-hooks/exhaustive-deps

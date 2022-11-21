@@ -77,10 +77,15 @@ const HTMLContent = ({
   apiDesigner,
   viewport,
 }: HTMLContentProps) => {
-  const [, setPath] = useSessionStorageValue('path', '')
   const isDesktop = useMediaQuery('(min-width: 768px)')
 
-  const [revealedIntro] = useSessionStorageValue('revealed_intro', false)
+  const { set: setPath } = useSessionStorageValue('path', {
+    defaultValue: '',
+  })
+
+  const { value: revealedIntro } = useSessionStorageValue('revealed_intro', {
+    defaultValue: false,
+  })
 
   const menuRef = useRef<HTMLDivElement>(null)
 
@@ -287,7 +292,9 @@ const SceneContent = () => {
 }
 
 const MainScene = () => {
-  const [revealedIntro] = useSessionStorageValue('revealed_intro', false)
+  const { value: revealedIntro } = useSessionStorageValue('revealed_intro', {
+    defaultValue: false,
+  })
   const ref = useRef()
 
   // eslint-disable-next-line react-hooks/exhaustive-deps

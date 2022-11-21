@@ -21,7 +21,10 @@ const Blobby = () => {
   const light = useRef<LightProps>()
   const [down, setDown] = useState(false)
   const [hovered, setHovered] = useState(false)
-  const [theme, setTheme] = useLocalStorageValue('theme', 'light')
+
+  const { value: theme, set: setTheme } = useLocalStorageValue<string | null>('theme', {
+    defaultValue: 'light',
+  })
 
   const mode = theme.includes('dark')
 

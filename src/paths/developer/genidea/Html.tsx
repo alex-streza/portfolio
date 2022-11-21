@@ -16,8 +16,9 @@ import { useThree } from '@react-three/fiber'
 import { useLocalStorageValue, useMediaQuery } from '@react-hookz/web'
 
 const Content = () => {
-  const [theme] = useLocalStorageValue('theme', 'light')
-
+  const { value: theme } = useLocalStorageValue<string | null>('theme', {
+    defaultValue: 'light',
+  })
   const ref = useRef(null)
   const isDark = theme.includes('dark')
 
