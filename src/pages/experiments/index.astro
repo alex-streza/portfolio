@@ -3,7 +3,6 @@ import BaseHead from '@components/BaseHead.astro'
 import Refraction from '@components/experiments/Refraction'
 import Header from '@components/Header.astro'
 import PageTransition from '@components/transition/PageTransition'
-import Scene from '@paths/developer/MainScene'
 import { Leva } from 'leva'
 
 let title = 'Developer | Alex Streza'
@@ -37,7 +36,7 @@ let permalink = 'https://www.blog.alexstreza.dev/'
       class="absolute top-0"
     >
       <section class="developer-content">
-        <Refraction client:load/>
+        <Refraction client:load />
       </section>
     </main>
 
