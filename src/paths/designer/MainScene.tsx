@@ -10,7 +10,10 @@ import {
   Gumroad,
   Linkedin,
   Medium,
+  Nextdotjs,
+  Openai,
   Producthunt,
+  Tailwindcss,
   Twitter,
 } from '@icons-pack/react-simple-icons'
 import { useMediaQuery } from '@react-hookz/web'
@@ -114,7 +117,7 @@ const MainScene = () => {
       >
         <Book /> Resume.pdf
       </a>
-      <p className="!mb-10 md:!mb-20 font-normal text-xl md:text-2xl max-w-[60ch] md:leading-10">
+      <p className="!mb-10 md:!mb-20 font-normal text-xl md:text-2xl max-w-[60ch] leading-8 md:leading-10">
         I’m a designer & developer with
         <b className="font-serif"> 4</b> years of experience in imagining and
         implementing solutions in various industries and fields ranging from AI,
@@ -139,6 +142,28 @@ const MainScene = () => {
         development standpoint and what needs to be done from a UX perspective.
       </p>
       <div id="designProjects" className="flex flex-wrap gap-8 w-fit opacity-0">
+        <DesignProjectCard
+          title="Summon.AI"
+          description="Unlock the power of AI generated imagery with Summon AI, the premier directory powered by a free and open-source Figma plugin. Quickly generate professional-grade visuals for your projects and elevate your design skills"
+          image="https://imagedelivery.net/_X5WqasCPTrKkrSW6EvwJg/adab4c7c-3150-4b7a-02c1-853beb378a00/public"
+          link="https://www.figma.com/community/plugin/1172891596048319817"
+        >
+          <a href="https://www.figma.com" aria-label="figma">
+            <Figma color="#F24E1E" size={40} />
+          </a>
+          <a href="https://www.proucthunt.com" aria-label="product hunt">
+            <Producthunt color="#DA552F" size={40} />
+          </a>
+          <a href="https://openai.com" aria-label="open ai">
+            <Openai color="#412991" size={40} />
+          </a>
+          <a href="https://nextjs.org" aria-label="next.js">
+            <Nextdotjs color="#000000" size={40} />
+          </a>
+          <a href="https://tailwindcss.com/" aria-label="tailwind css">
+            <Tailwindcss color="#06B6D4" size={40} />
+          </a>
+        </DesignProjectCard>
         <DesignProjectCard
           title="Snow Fox - Design System"
           description="Building an entire Design System from scratch is a huge undertaking. I undertook this project to build a system that I could use for my own personal projects and released it to the Figma community."

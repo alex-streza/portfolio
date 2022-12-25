@@ -27,12 +27,11 @@ const DesignProjectCard = ({
         />
       </div>
       <div className="p-5 pt-0">
-        <div className="flex mb-5 gap-5">{children}</div>
-        <h2 className="!text-4xl !mb-4 !font-serif">{title}</h2>
-        <p className="!my-0">{description}</p>
+        <div className="flex mb-4 gap-5">{children}</div>
+        <h2 className="!text-4xl !mb-2.5 !font-serif">{title}</h2>
+        <p className="!my-0 leading-8 text-gray-25">{description}</p>
         {link && (
-          <Button className="mt-5 md:mt-8">
-            <BrowserIcon />
+          <Button className="mt-6 md:mt-8 !p-0 !pl-5 !h-fit !gap-1">
             <a
               href={link}
               className="reset-link !text-gray-1000"
@@ -41,6 +40,9 @@ const DesignProjectCard = ({
             >
               Check out
             </a>
+            <span className="block m-2">
+              <BrowserIcon />
+            </span>
           </Button>
         )}
       </div>

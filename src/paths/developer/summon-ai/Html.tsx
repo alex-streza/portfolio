@@ -5,6 +5,10 @@ import Button from '@components/button/Button'
 import {
   Astro,
   Cloudflarepages,
+  Figma,
+  Nextdotjs,
+  Openai,
+  Preact,
   Producthunt,
   ReactJs,
   Supabase,
@@ -31,56 +35,53 @@ const Content = () => {
   return (
     <div ref={ref} className="project-container">
       <div className="flex mb-4 md:mb-8 gap-5">
-        <a href="https://reactjs.org" aria-label="reactjs">
-          <ReactJs color="#61DAFB" size={40} />
+        <a href="https://www.figma.com" aria-label="figma">
+          <Figma color="#F24E1E" size={40} />
         </a>
-        <a href="https://astro.build" aria-label="astro">
-          <Astro color="#FF5D01" size={40} />
+        <a href="https://www.proucthunt.com" aria-label="product hunt">
+          <Producthunt color="#DA552F" size={40} />
         </a>
-        <a href="https://tailwindcss.com" aria-label="tailwindcss">
+        <a href="https://openai.com" aria-label="open ai">
+          <Openai color="#412991" size={40} />
+        </a>
+        <a href="https://nextjs.org" aria-label="next.js">
+          <Nextdotjs color="#000000" size={40} />
+        </a>
+        <a href="https://tailwindcss.com/" aria-label="tailwind css">
+          <Preact color="#673AB8" size={40} />
+        </a>
+        <a href="https://tailwindcss.com/" aria-label="tailwind css">
           <Tailwindcss color="#06B6D4" size={40} />
         </a>
-        <a href="https://supabase.com" aria-label="supabase">
-          <Supabase color="#3ecf8e" size={40} />
-        </a>
-        <a href="https://pages.cloudflare.com/" aria-label="cloudflare pages">
-          <Cloudflarepages color="#ef9530" size={40} />
-        </a>
-        <a
-          href="https://www.producthunt.com/posts/3d-resources"
-          aria-label="product hunt"
-        >
-          <Producthunt color="#ef9530" size={40} />
-        </a>
       </div>
-      <h1 className="text-5xl mb-2.5">3D Resources</h1>
+      <h1 className="text-5xl mb-2.5">Summon.AI</h1>
       <p className="max-w-[652px] mb-8 text-gray-25 leading-8">
-        Looking to create great 3D experiences? Then you need 3D Resources! This
-        collection of resources is perfect for creative developers & artists who
-        want to push the boundaries of what's possible. High-quality assets and
-        tools, to create beautiful visuals 😍.
+        Unlock the power of AI generated imagery with Summon AI, the premier
+        directory powered by a free and open-source Figma plugin. Quickly
+        generate professional-grade visuals for your projects and elevate your
+        design skills.
       </p>
       <div className="flex gap-4 items-center">
         <Button>
           <BrowserIcon />
           <a
-            href="http://3d-resources.co"
+            href="https://www.summon-ai.com"
             className="reset-link !text-gray-1000"
           >
             Check out
           </a>
         </Button>
         <a
-          href="https://www.producthunt.com/posts/3d-resources?utm_source=badge-featured&utm_medium=badge&utm_souce=badge-3d&#0045;resources"
+          href="https://www.producthunt.com/posts/summon-ai?utm_source=badge-top-post-topic-badge&utm_medium=badge&utm_souce=badge-summon&#0045;ai"
           target="_blank"
           rel="noopener noreferrer"
         >
           <img
             className="!mb-0 md:w-[230px] w-[180px]"
-            src={`https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=356448&theme=${
+            src={`https://api.producthunt.com/widgets/embed-image/v1/top-post-topic-badge.svg?post_id=366943&period=weekly&topic=Artificial Intelligence&theme=${
               isDark ? 'dark' : 'light'
             }`}
-            alt="3D&#0032;Resources - 3D&#0032;is&#0032;hard&#0044;&#0032;but&#0032;it&#0039;s&#0032;not&#0032;impossible&#0032;with&#0032;the&#0032;right&#0032;resources | Product Hunt"
+            alt="Summon&#0046;AI - Generate&#0032;beautiful&#0032;images&#0032;with&#0032;DALL&#0045;E&#0045;2&#0032;in&#0032;Figma | Product Hunt"
             width="230"
           />
         </a>

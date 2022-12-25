@@ -82,7 +82,7 @@
     @apply p-1 bg-main-hex bg-opacity-20 text-main uppercase font-bold rounded;
   }
   .command-center-result {
-    @apply flex gap-3 items-center dark:hover:text-main-300 hover:text-main-800 hover:bg-main-hex hover:bg-opacity-20 cursor-pointer;
+    @apply flex gap-3 items-center dark:hover:text-main-300 hover:text-main-800 hover:bg-main-hex hover:bg-opacity-50 cursor-pointer;
   }
   .command-center-section {
     @apply h-[33px] text-white px-6 bg-gray-600 flex items-center;
