@@ -30,7 +30,7 @@ const Content = () => {
 
   return (
     <div ref={ref} className="project-container">
-      <div className="flex mb-5 md:mb-8 gap-5">
+      <div className="flex mb-4 md:mb-8 gap-5">
         <a href="https://reactjs.org/" aria-label="reactjs">
           <ReactJs color="#61DAFB" size={40} />
         </a>
@@ -50,8 +50,8 @@ const Content = () => {
           <Openai color={isDark ? '#ffffff' : '#000000'} size={40} />
         </a>
       </div>
-      <h1 className="text-5xl">GenIdea</h1>
-      <p className="max-w-[652px] mb-8">
+      <h1 className="text-5xl mb-2.5">GenIdea</h1>
+      <p className="max-w-[652px] mb-8 text-gray-25 leading-8">
         Get inspired on the go with ideas in diverse tech related fields with
         artificial intelligence. Users can generate app ideas with OpenAI and
         collect them as NFTs.

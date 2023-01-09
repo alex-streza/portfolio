@@ -28,7 +28,7 @@ const Content = () => {
 
   return (
     <div ref={ref} className="project-container">
-      <div className="flex mb-5 md:mb-8 gap-5">
+      <div className="flex mb-4 md:mb-8 gap-5">
         <a href="https://reactjs.org" aria-label="reactjs">
           <ReactJs color="#61DAFB" size={40} />
         </a>
@@ -48,8 +48,8 @@ const Content = () => {
           <Blender color="#F5792A" size={40} />
         </a>
       </div>
-      <h1 className="text-5xl">Portfolio</h1>
-      <p className="max-w-[652px] mb-8">
+      <h1 className="text-5xl mb-2.5">Portfolio</h1>
+      <p className="max-w-[652px] mb-8 text-gray-25 leading-8">
         Portfolio websites need to be outstanding as much as the projects
         showcased. Building a 3D interactive experience to present my expertise
         in a glamorous way.
