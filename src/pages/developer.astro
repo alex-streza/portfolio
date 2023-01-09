@@ -1,9 +1,10 @@
 ---
 import BaseHead from '@components/BaseHead.astro'
 import Header from '@components/Header.astro'
-import PageTransition from '@components/transition/PageTransition'
+import Awwwards from '@components/Awwwards.astro'
 import Scene from '@paths/developer/MainScene'
 import { Leva } from 'leva'
+import PageTransition from '@components/transition/PageTransition'
 
 let title = 'Developer | Alex Streza'
 let description =
@@ -43,7 +44,7 @@ let permalink = 'https://www.blog.alexstreza.dev/'
         <Scene client:only="react" />
       </section>
     </main>
-
+    <Awwwards />
     <PageTransition />
   </body>
 </html>
