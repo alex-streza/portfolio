@@ -1,23 +1,23 @@
-import BrowserIcon from '@components/icons/Browser'
-import { Html } from '@react-three/drei'
-
 import Button from '@components/button/Button'
+import BrowserIcon from '@components/icons/Browser'
 import {
-  Astro,
-  Cloudflarepages,
-  Producthunt,
-  ReactJs,
-  Supabase,
-  Tailwindcss,
+  SiAstro,
+  SiCloudflarepages,
+  SiProducthunt,
+  SiReact,
+  SiSupabase,
+  SiTailwindcss,
 } from '@icons-pack/react-simple-icons'
 import { useLocalStorageValue, useMediaQuery } from '@react-hookz/web'
+import { Html } from '@react-three/drei'
 import { useThree } from '@react-three/fiber'
 import gsap from 'gsap'
-import { useEffect, useLayoutEffect, useRef } from 'react'
+import { useLayoutEffect, useRef } from 'react'
 
 const Content = () => {
-  const [theme] = useLocalStorageValue('theme', 'light')
-
+  const { value: theme } = useLocalStorageValue('theme', {
+    defaultValue: 'light',
+  })
   const ref = useRef(null)
   const isDark = theme.includes('dark')
 
@@ -32,25 +32,25 @@ const Content = () => {
     <div ref={ref} className="project-container">
       <div className="flex mb-4 md:mb-8 gap-5">
         <a href="https://reactjs.org" aria-label="reactjs">
-          <ReactJs color="#61DAFB" size={40} />
+          <SiReact color="#61DAFB" size={40} />
         </a>
         <a href="https://astro.build" aria-label="astro">
-          <Astro color="#FF5D01" size={40} />
+          <SiAstro color="#FF5D01" size={40} />
         </a>
         <a href="https://tailwindcss.com" aria-label="tailwindcss">
-          <Tailwindcss color="#06B6D4" size={40} />
+          <SiTailwindcss color="#06B6D4" size={40} />
         </a>
         <a href="https://supabase.com" aria-label="supabase">
-          <Supabase color="#3ecf8e" size={40} />
+          <SiSupabase color="#3ecf8e" size={40} />
         </a>
         <a href="https://pages.cloudflare.com/" aria-label="cloudflare pages">
-          <Cloudflarepages color="#ef9530" size={40} />
+          <SiCloudflarepages color="#ef9530" size={40} />
         </a>
         <a
           href="https://www.producthunt.com/posts/3d-resources"
           aria-label="product hunt"
         >
-          <Producthunt color="#ef9530" size={40} />
+          <SiProducthunt color="#ef9530" size={40} />
         </a>
       </div>
       <h1 className="text-5xl mb-2.5">3D Resources</h1>

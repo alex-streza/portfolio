@@ -2,12 +2,12 @@ import Book from '@components/icons/Book'
 import Command from '@components/icons/Command'
 import { toggleTheme } from '@components/theme-toggle'
 import {
-  Github,
-  Gmail,
-  Linkedin,
-  Medium,
-  Rss,
-  Twitter,
+  SiGithub,
+  SiGmail,
+  SiLinkedin,
+  SiMedium,
+  SiRss,
+  SiTwitter,
 } from '@icons-pack/react-simple-icons'
 import { Post } from '@models/posts'
 import { useLocalStorageValue } from '@react-hookz/web'
@@ -55,7 +55,9 @@ interface KBarProps {
 }
 
 const KBar = ({ posts }: KBarProps) => {
-  const [, setTheme] = useLocalStorageValue('theme', 'light')
+  const { set: setTheme } = useLocalStorageValue('theme', {
+    defaultValue: 'light',
+  })
 
   const actions = useMemo(
     () => [
@@ -95,7 +97,7 @@ const KBar = ({ posts }: KBarProps) => {
         name: 'alex.streza@snowfox.art',
         section: 'Social links',
         keywords: 'contact,email',
-        icon: <Gmail />,
+        icon: <SiGmail />,
         perform: () =>
           (window.location.href = 'mailto:alex.streza@snowfox.art'),
       },
@@ -104,7 +106,7 @@ const KBar = ({ posts }: KBarProps) => {
         name: 'LinkedIn',
         section: 'Social links',
         keywords: 'contact',
-        icon: <Linkedin />,
+        icon: <SiLinkedin />,
         perform: () =>
           (window.location.href =
             'https://www.linkedin.com/in/alexandru-streza-7a4254155/'),
@@ -114,7 +116,7 @@ const KBar = ({ posts }: KBarProps) => {
         name: 'GitHub',
         section: 'Social links',
         keywords: 'contact',
-        icon: <Github />,
+        icon: <SiGithub />,
         perform: () =>
           (window.location.href = 'https://github.com/alex-streza/'),
       },
@@ -123,7 +125,7 @@ const KBar = ({ posts }: KBarProps) => {
         name: 'Medium',
         section: 'Social links',
         keywords: 'contact',
-        icon: <Medium />,
+        icon: <SiMedium />,
         perform: () =>
           (window.location.href = 'https://medium.com/@alex.streza'),
       },
@@ -131,7 +133,7 @@ const KBar = ({ posts }: KBarProps) => {
         id: 'twitter',
         name: 'Twitter',
         section: 'Social links',
-        icon: <Twitter />,
+        icon: <SiTwitter />,
         keywords: 'contact',
         perform: () =>
           (window.location.href = 'https://twitter.com/alex_streza'),
@@ -140,7 +142,7 @@ const KBar = ({ posts }: KBarProps) => {
         id: 'twitter',
         name: 'RSS',
         section: 'Social links',
-        icon: <Rss />,
+        icon: <SiRss />,
         keywords: 'rss',
         perform: () => (window.location.pathname = '/rss.xml'),
       },

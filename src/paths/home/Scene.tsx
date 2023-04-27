@@ -1,10 +1,9 @@
-import { Canvas, useThree, Viewport } from '@react-three/fiber'
-
 import Intro from '@components/transition/Intro'
 import Loader from '@components/transition/Loader'
 import { useMediaQuery, useSessionStorageValue } from '@react-hookz/web'
 import { animated, config, SpringRef, useSprings } from '@react-spring/three'
 import { Html, useTexture } from '@react-three/drei'
+import { Canvas, useThree, Viewport } from '@react-three/fiber'
 import { EffectComposer, SSAO } from '@react-three/postprocessing'
 import gsap from 'gsap'
 import {
@@ -16,6 +15,7 @@ import {
   useMemo,
   useRef,
 } from 'react'
+
 import MenuLink from './MenuLink'
 import ShowcaseImage from './ShowcaseImage'
 
@@ -77,11 +77,14 @@ const HTMLContent = ({
   apiDesigner,
   viewport,
 }: HTMLContentProps) => {
-  const [, setPath] = useSessionStorageValue('path', '')
+  const { set: setPath } = useSessionStorageValue('path', {
+    defaultValue: '',
+  })
   const isDesktop = useMediaQuery('(min-width: 768px)')
 
-  const [revealedIntro] = useSessionStorageValue('revealed_intro', false)
-
+  const { value: revealedIntro } = useSessionStorageValue('revealed_intro', {
+    defaultValue: false,
+  })
   const menuRef = useRef<HTMLDivElement>(null)
 
   const itemsRefs = useRef([])
@@ -287,7 +290,10 @@ const SceneContent = () => {
 }
 
 const MainScene = () => {
-  const [revealedIntro] = useSessionStorageValue('revealed_intro', false)
+  const { value: revealedIntro, set: setRevealedIntro } =
+    useSessionStorageValue('revealed_intro', {
+      defaultValue: false,
+    })
   const ref = useRef()
 
   // eslint-disable-next-line react-hooks/exhaustive-deps

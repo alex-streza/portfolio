@@ -2,19 +2,19 @@ import DesignProjectCard from '@components/cards/DesignProjectCard'
 import Book from '@components/icons/Book'
 import Mail from '@components/icons/Mail'
 import {
-  Adobeaftereffects,
-  Blender,
-  Dribbble,
-  Figma,
-  Github,
-  Gumroad,
-  Linkedin,
-  Medium,
-  Nextdotjs,
-  Openai,
-  Producthunt,
-  Tailwindcss,
-  Twitter,
+  SiAdobeaftereffects,
+  SiBlender,
+  SiDribbble,
+  SiFigma,
+  SiGithub,
+  SiGumroad,
+  SiLinkedin,
+  SiMedium,
+  SiNextdotjs,
+  SiOpenai,
+  SiProducthunt,
+  SiTailwindcss,
+  SiTwitter,
 } from '@icons-pack/react-simple-icons'
 import { useMediaQuery } from '@react-hookz/web'
 import gsap from 'gsap'
@@ -23,22 +23,22 @@ import { useEffect, useRef } from 'react'
 const socialLinks = [
   {
     href: 'https://www.linkedin.com/in/alexandru-streza-7a4254155',
-    icon: <Linkedin />,
+    icon: <SiLinkedin />,
     label: 'LinkedIn',
   },
   {
     href: 'https://github.com/alex-streza',
-    icon: <Github />,
+    icon: <SiGithub />,
     label: 'GitHub',
   },
   {
     href: 'https://medium.com/@alex.streza',
-    icon: <Medium />,
+    icon: <SiMedium />,
     label: 'Medium',
   },
   {
     href: 'https://twitter.com/alex_streza',
-    icon: <Twitter />,
+    icon: <SiTwitter />,
     label: 'Twitter',
   },
 ]
@@ -149,19 +149,19 @@ const MainScene = () => {
           link="https://www.figma.com/community/plugin/1172891596048319817"
         >
           <a href="https://www.figma.com" aria-label="figma">
-            <Figma color="#F24E1E" size={40} />
+            <SiFigma color="#F24E1E" size={40} />
           </a>
           <a href="https://www.proucthunt.com" aria-label="product hunt">
-            <Producthunt color="#DA552F" size={40} />
+            <SiProducthunt color="#DA552F" size={40} />
           </a>
           <a href="https://openai.com" aria-label="open ai">
-            <Openai color="#412991" size={40} />
+            <SiOpenai color="#412991" size={40} />
           </a>
           <a href="https://nextjs.org" aria-label="next.js">
-            <Nextdotjs color="#000000" size={40} />
+            <SiNextdotjs color="#000000" size={40} />
           </a>
           <a href="https://tailwindcss.com/" aria-label="tailwind css">
-            <Tailwindcss color="#06B6D4" size={40} />
+            <SiTailwindcss color="#06B6D4" size={40} />
           </a>
         </DesignProjectCard>
         <DesignProjectCard
@@ -171,10 +171,10 @@ const MainScene = () => {
           link="https://www.figma.com/community/file/1120750897470911763"
         >
           <a href="https://www.figma.com" aria-label="figma">
-            <Figma color="#F24E1E" size={40} />
+            <SiFigma color="#F24E1E" size={40} />
           </a>
           <a href="https://www.proucthunt.com" aria-label="product hunt">
-            <Producthunt color="#DA552F" size={40} />
+            <SiProducthunt color="#DA552F" size={40} />
           </a>
         </DesignProjectCard>
         <DesignProjectCard
@@ -184,13 +184,13 @@ const MainScene = () => {
           link="https://3d-resources.co"
         >
           <a href="https://www.blender.org" aria-label="figma">
-            <Figma color="#F24E1E" size={40} />
+            <SiFigma color="#F24E1E" size={40} />
           </a>
           <a href="https://www.producthunt.com" aria-label="product hunt">
-            <Producthunt color="#DA552F" size={40} />
+            <SiProducthunt color="#DA552F" size={40} />
           </a>
           <a href="https://gumroad.com" aria-label="gumroad">
-            <Gumroad color="#36A9AE" size={40} />
+            <SiGumroad color="#36A9AE" size={40} />
           </a>
         </DesignProjectCard>
         <DesignProjectCard
@@ -200,16 +200,16 @@ const MainScene = () => {
           link="http://devnet.genidea.app/"
         >
           <a href="https://www.figma.com" aria-label="figma">
-            <Figma color="#F24E1E" size={40} />
+            <SiFigma color="#F24E1E" size={40} />
           </a>
           <a href="https://www.blender.org" aria-label="blender">
-            <Blender color="#F5792A" size={40} />
+            <SiBlender color="#F5792A" size={40} />
           </a>
           <a href="https://www.lottiefiles.com" aria-label="lottie">
-            <Adobeaftereffects color="#9999FF" size={40} />
+            <SiAdobeaftereffects color="#9999FF" size={40} />
           </a>
           <a href="https://dribbble.com" aria-label="dribbble">
-            <Dribbble color="#EA4C89" size={40} />
+            <SiDribbble color="#EA4C89" size={40} />
           </a>
         </DesignProjectCard>
         <DesignProjectCard
@@ -218,13 +218,14 @@ const MainScene = () => {
           image="https://imagedelivery.net/_X5WqasCPTrKkrSW6EvwJg/0f12ad13-03a3-4947-b6c0-fee1fade2c00/public"
         >
           <a href="https://www.figma.com" aria-label="figma">
-            <Figma color="#F24E1E" size={40} />
+            <SiFigma color="#F24E1E" size={40} />
           </a>
+          1
           <a href="https://www.blender.org" aria-label="blender">
-            <Blender color="#F5792A" size={40} />
+            <SiBlender color="#F5792A" size={40} />
           </a>
           <a href="https://dribbble.com" aria-label="dribbble">
-            <Dribbble color="#EA4C89" size={40} />
+            <SiDribbble color="#EA4C89" size={40} />
           </a>
         </DesignProjectCard>
       </div>

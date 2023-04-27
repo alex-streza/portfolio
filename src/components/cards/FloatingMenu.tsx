@@ -7,9 +7,11 @@ interface FloatingMenuProps {
 }
 
 const FloatingMenu = ({ text }: FloatingMenuProps) => {
-  const [showCursors, setShowCursors] = useSessionStorageValue(
+  const { value: showCursors, set: setShowCursors } = useSessionStorageValue(
     'show_cursors',
-    false,
+    {
+      defaultValue: false,
+    },
   )
 
   return (

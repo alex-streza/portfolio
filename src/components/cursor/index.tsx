@@ -34,7 +34,9 @@ const Cursor = () => {
     x: 0,
     y: 0,
   })
-  const [path, setPath] = useSessionStorageValue('path', '')
+  const { value: path, set: setPath } = useSessionStorageValue('path', {
+    defaultValue: '',
+  })
 
   const [hideCursor, setHideCursor] = useState(false)
 

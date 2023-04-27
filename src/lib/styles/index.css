@@ -10,7 +10,7 @@
   }
 
   body {
-    @apply dark:bg-gray-1000 dark:text-white bg-white text-gray-1000 overflow-x-hidden font-sans leading-normal;
+    @apply dark:bg-gray-1000 dark:text-white bg-white text-gray-1000 overflow-x-hidden font-sans leading-normal transition-colors duration-200;
   }
 
   h1,

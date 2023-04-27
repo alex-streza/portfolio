@@ -29,12 +29,11 @@ export const toggleTheme = (theme) => {
 }
 
 const ThemeToggle = () => {
-  const [theme, setTheme] = useLocalStorageValue<string | null>(
-    'theme',
-    window.matchMedia('(prefers-color-scheme: dark)').matches
+  const { value: theme, set: setTheme } = useLocalStorageValue('theme', {
+    defaultValue: window.matchMedia('(prefers-color-scheme: dark)').matches
       ? 'dark'
       : 'light',
-  )
+  })
   const [isMounted, setIsMounted] = useState(false)
 
   const switchTheme = useCallback(() => {

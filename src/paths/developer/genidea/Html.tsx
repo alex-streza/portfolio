@@ -1,23 +1,15 @@
 import Button from '@components/button/Button'
-import { Html } from '@react-three/drei'
-
 import BrowserIcon from '@components/icons/Browser'
-import {
-  Nextdotjs,
-  Openai,
-  Postgresql,
-  ReactJs,
-  Supabase,
-  Tailwindcss,
-} from '@icons-pack/react-simple-icons'
-import { useEffect, useLayoutEffect, useRef } from 'react'
-import gsap from 'gsap'
-import { useThree } from '@react-three/fiber'
 import { useLocalStorageValue, useMediaQuery } from '@react-hookz/web'
+import { Html } from '@react-three/drei'
+import { useThree } from '@react-three/fiber'
+import gsap from 'gsap'
+import { useLayoutEffect, useRef } from 'react'
 
 const Content = () => {
-  const [theme] = useLocalStorageValue('theme', 'light')
-
+  const { value: theme } = useLocalStorageValue('theme', {
+    defaultValue: 'light',
+  })
   const ref = useRef(null)
   const isDark = theme.includes('dark')
 
@@ -32,22 +24,22 @@ const Content = () => {
     <div ref={ref} className="project-container">
       <div className="flex mb-4 md:mb-8 gap-5">
         <a href="https://reactjs.org/" aria-label="reactjs">
-          <ReactJs color="#61DAFB" size={40} />
+          <SiReactJs color="#61DAFB" size={40} />
         </a>
         <a href="https://nextjs.org" aria-label="nextjs">
-          <Nextdotjs color={isDark ? '#ffffff' : '#000000'} size={40} />
+          <SiNextdotjs color={isDark ? '#ffffff' : '#000000'} size={40} />
         </a>
         <a href="https://tailwindcss.com/" aria-label="tailwindcss">
-          <Tailwindcss color="#06B6D4" size={40} />
+          <SiTailwindcss color="#06B6D4" size={40} />
         </a>
         <a href="https://www.postgresql.org" aria-label="postgresql">
-          <Postgresql color="#4169E1" size={40} />
+          <SiPostgresql color="#4169E1" size={40} />
         </a>
         <a href="https://supabase.com" aria-label="supabase">
-          <Supabase color="#3ecf8e" size={40} />
+          <SiSupabase color="#3ecf8e" size={40} />
         </a>
         <a href="https://openai.com" aria-label="openai">
-          <Openai color={isDark ? '#ffffff' : '#000000'} size={40} />
+          <SiOpenai color={isDark ? '#ffffff' : '#000000'} size={40} />
         </a>
       </div>
       <h1 className="text-5xl mb-2.5">GenIdea</h1>

@@ -1,27 +1,23 @@
-import BrowserIcon from '@components/icons/Browser'
-import { Html } from '@react-three/drei'
-
 import Button from '@components/button/Button'
+import BrowserIcon from '@components/icons/Browser'
 import {
-  Astro,
-  Cloudflarepages,
-  Figma,
-  Nextdotjs,
-  Openai,
-  Preact,
-  Producthunt,
-  ReactJs,
-  Supabase,
-  Tailwindcss,
+  SiFigma,
+  SiNextdotjs,
+  SiOpenai,
+  SiPreact,
+  SiProducthunt,
+  SiTailwindcss,
 } from '@icons-pack/react-simple-icons'
 import { useLocalStorageValue, useMediaQuery } from '@react-hookz/web'
+import { Html } from '@react-three/drei'
 import { useThree } from '@react-three/fiber'
 import gsap from 'gsap'
-import { useEffect, useLayoutEffect, useRef } from 'react'
+import { useLayoutEffect, useRef } from 'react'
 
 const Content = () => {
-  const [theme] = useLocalStorageValue('theme', 'light')
-
+  const { value: theme } = useLocalStorageValue('theme', {
+    defaultValue: 'light',
+  })
   const ref = useRef(null)
   const isDark = theme.includes('dark')
 
@@ -36,22 +32,22 @@ const Content = () => {
     <div ref={ref} className="project-container">
       <div className="flex mb-4 md:mb-8 gap-5">
         <a href="https://www.figma.com" aria-label="figma">
-          <Figma color="#F24E1E" size={40} />
+          <SiFigma color="#F24E1E" size={40} />
         </a>
         <a href="https://www.proucthunt.com" aria-label="product hunt">
-          <Producthunt color="#DA552F" size={40} />
+          <SiProducthunt color="#DA552F" size={40} />
         </a>
         <a href="https://openai.com" aria-label="open ai">
-          <Openai color="#412991" size={40} />
+          <SiOpenai color="#412991" size={40} />
         </a>
         <a href="https://nextjs.org" aria-label="next.js">
-          <Nextdotjs color="#000000" size={40} />
+          <SiNextdotjs color="#000000" size={40} />
         </a>
         <a href="https://tailwindcss.com/" aria-label="tailwind css">
-          <Preact color="#673AB8" size={40} />
+          <SiPreact color="#673AB8" size={40} />
         </a>
         <a href="https://tailwindcss.com/" aria-label="tailwind css">
-          <Tailwindcss color="#06B6D4" size={40} />
+          <SiTailwindcss color="#06B6D4" size={40} />
         </a>
       </div>
       <h1 className="text-5xl mb-2.5">Summon.AI</h1>
@@ -96,7 +92,6 @@ const HTML = () => {
 
   return (
     <group
-      // eslint-disable-next-line react/no-unknown-property
       position={[
         -width / 2 + (isDesktop ? 1 : 0),
         -height / 2 + (isDesktop ? 2 : 3),
