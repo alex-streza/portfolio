@@ -1,5 +1,13 @@
 import Button from '@components/button/Button'
 import BrowserIcon from '@components/icons/Browser'
+import {
+  SiNextdotjs,
+  SiOpenai,
+  SiPostgresql,
+  SiReact,
+  SiSupabase,
+  SiTailwindcss,
+} from '@icons-pack/react-simple-icons'
 import { useLocalStorageValue, useMediaQuery } from '@react-hookz/web'
 import { Html } from '@react-three/drei'
 import { useThree } from '@react-three/fiber'
@@ -24,7 +32,7 @@ const Content = () => {
     <div ref={ref} className="project-container">
       <div className="flex mb-4 md:mb-8 gap-5">
         <a href="https://reactjs.org/" aria-label="reactjs">
-          <SiReactJs color="#61DAFB" size={40} />
+          <SiReact color="#61DAFB" size={40} />
         </a>
         <a href="https://nextjs.org" aria-label="nextjs">
           <SiNextdotjs color={isDark ? '#ffffff' : '#000000'} size={40} />

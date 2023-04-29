@@ -25,6 +25,7 @@ const randomEnd = randomStart + 3
   </head>
 
   <body data-barba="wrapper">
+    <PageTransition />
     <Header />
     <main
       class="h-screen relative"
@@ -38,31 +39,25 @@ const randomEnd = randomStart + 3
           client:only="react"
         />
         <NewsletterCard />
-        {allPosts.slice(randomStart, randomEnd).map((p, i) => (
-          <div class="mt-10">
-            <BlogPostPreview post={p} />
-            {i < allPosts.length - 1 && <hr />}
-          </div>
-        ))}
+        {
+          allPosts.slice(randomStart, randomEnd).map((p, i) => (
+            <div class="mt-10">
+              <BlogPostPreview post={p} />
+              {i < allPosts.length - 1 && <hr />}
+            </div>
+          ))
+        }
       </BlogPost>
     </main>
 
-    <PageTransition />
+    <script is:inline src="https://unpkg.com/@barba/core"></script>
 
-    <script is:inline src="https://unpkg.com/@barba/core">
-
-    </script>
-
-    <script is:inline src="https://unpkg.com/@barba/prefetch">
-
-    </script>
+    <script is:inline src="https://unpkg.com/@barba/prefetch"></script>
 
     <script
       is:inline
       src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.1/gsap.min.js"
-    >
-
-    </script>
+    ></script>
 
     <script is:inline type="module">
       import '../assets/scripts/theme.js'

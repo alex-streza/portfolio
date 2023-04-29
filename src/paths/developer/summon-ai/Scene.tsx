@@ -1,6 +1,5 @@
 import Gallery from '@components/gallery/Gallery'
-import { useMediaQuery } from '@react-hookz/web'
-import { useRef, useState } from 'react'
+
 import HTML from './Html'
 
 const urls = [
@@ -13,10 +12,6 @@ const urls = [
 ]
 
 const Scene = () => {
-  const ref = useRef()
-  const [breakFree, setBreakFree] = useState(false)
-  const isDesktop = useMediaQuery('(min-width: 768px)')
-
   return (
     <>
       <HTML />

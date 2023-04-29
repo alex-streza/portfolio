@@ -119,7 +119,7 @@ const MainScene = () => {
       </a>
       <p className="!mb-10 md:!mb-20 font-normal text-xl md:text-2xl max-w-[60ch] leading-8 md:leading-10">
         I’m a designer & developer with
-        <b className="font-serif"> 4</b> years of experience in imagining and
+        <b className="font-serif"> 5</b> years of experience in imagining and
         implementing solutions in various industries and fields ranging from AI,
         sport registrations, map-based visualizations to blockchain-powered
         platforms.

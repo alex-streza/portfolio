@@ -9,6 +9,7 @@ import {
 import { Color, useFrame, useThree } from '@react-three/fiber'
 import { useEffect, useRef, useState } from 'react'
 import * as THREE from 'three'
+
 import Minimap from './Minimap'
 
 const damp = THREE.MathUtils.damp
@@ -54,6 +55,7 @@ const Item = ({
       index / urls.length - 1.5 / urls.length,
       4 / urls.length,
     )
+
     ref.current.material.scale[1] = ref.current.scale.y = damp(
       ref.current.scale.y,
       clicked === index ? height + 1 : height + y,
@@ -131,7 +133,7 @@ const Gallery = ({ urls }: { urls: string[] }) => {
   return (
     <ScrollControls
       horizontal
-      damping={10}
+      damping={0.1}
       pages={(width - xW + urls.length * xW) / width}
     >
       {isLoaded && <Minimap urls={urls} />}

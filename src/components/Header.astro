@@ -29,7 +29,7 @@ const posts = getPosts(await Astro.glob('../pages/posts/*.mdx')).map((p) => ({
 
 <style>
   .navbar {
-    @apply flex z-20 justify-between items-center fixed top-0 p-5 md:py-8 md:px-[120px] w-full backdrop-blur-sm;
+    @apply flex z-10 justify-between items-center fixed top-0 p-5 md:py-8 md:px-[120px] w-full backdrop-blur-sm;
   }
 
   .navbar > a {
@@ -56,24 +56,16 @@ const posts = getPosts(await Astro.glob('../pages/posts/*.mdx')).map((p) => ({
   }
 </script>
 
-<script is:inline async src="https://cdn.splitbee.io/sb.js">
+<script is:inline async src="https://cdn.splitbee.io/sb.js"></script>
 
-</script>
+<script is:inline src="https://unpkg.com/@barba/core"></script>
 
-<script is:inline src="https://unpkg.com/@barba/core">
-
-</script>
-
-<script is:inline src="https://unpkg.com/@barba/prefetch">
-
-</script>
+<script is:inline src="https://unpkg.com/@barba/prefetch"></script>
 
 <script
   is:inline
   src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.1/gsap.min.js"
->
-
-</script>
+></script>
 
 <script is:inline type="module">
   import '../assets/scripts/theme.js'
