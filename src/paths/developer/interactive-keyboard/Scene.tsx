@@ -7,7 +7,6 @@ const Scene = () => {
 
   return (
     <>
-      <Environment preset="apartment" background={false} />
       <Model />
       <OrbitControls ref={ref} />
     </>

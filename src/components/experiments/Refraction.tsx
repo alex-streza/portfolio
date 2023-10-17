@@ -83,7 +83,6 @@ const Refraction = () => {
         maxPolarAngle={Math.PI / 3}
       />
       {/** The environment is just a bunch of shapes emitting light. This is needed for the clear-coat */}
-      <Environment resolution={32}>
         <group rotation={[-Math.PI / 2, 0, 0]}>
           <Lightformer
             intensity={10}
@@ -174,7 +173,7 @@ const Geometries = ({ config, children, ...props }: any) => {
   const fbo = useFBO(1024)
   const texture = useLoader(
     RGBELoader,
-    'https://dl.polyhaven.org/file/ph-assets/HDRIs/hdr/1k/aerodynamics_workshop_1k.hdr',
+    '/assets/hdrs/aerodynamics-workshop.hdr',
   )
 
   let oldBg
@@ -234,7 +233,7 @@ const Text = ({
   const fbo = useFBO(1024)
   const texture = useLoader(
     RGBELoader,
-    'https://dl.polyhaven.org/file/ph-assets/HDRIs/hdr/1k/aerodynamics_workshop_1k.hdr',
+    '/assets/hdrs/aerodynamics-workshop.hdr',
   )
 
   let oldBg
